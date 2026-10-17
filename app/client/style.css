@@ -1,0 +1,45 @@
+/* Portal de juegos: misma ambientación que Catán (roble, bronce, oro y pergamino sobre muro de piedra). */
+@font-face { font-family: 'Pixelify Sans'; src: url('/fonts/PixelifySans.woff2') format('woff2'); font-weight: 400 700; font-display: swap; }
+@font-face { font-family: 'Jacquard 24'; src: url('/fonts/Jacquard24.woff2') format('woff2'); font-display: swap; }
+:root {
+  --ink: #1a0f08; --oak: #3d2a1a; --oak-2: #5b3d24; --bronze: #c9973a; --gold: #f0c35a;
+  --parch: #efe0b8; --parch-ink: #2b1a0b; --text: #f3e6c4; --muted: #c2a679;
+  --body: 'Pixelify Sans', 'Trebuchet MS', sans-serif; --gothic: 'Jacquard 24', 'Pixelify Sans', serif;
+}
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+body {
+  margin: 0; color: var(--text); font: 400 20px/1.35 var(--body); background-color: #1f1610;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='32' shape-rendering='crispEdges'><rect width='64' height='32' fill='%23251a12'/><g fill='%232c2017'><rect x='4' y='4' width='20' height='8'/><rect x='38' y='4' width='22' height='4'/><rect x='6' y='20' width='24' height='4'/><rect x='40' y='20' width='16' height='8'/></g><g fill='%23170f09'><rect x='0' y='0' width='64' height='2'/><rect x='0' y='16' width='64' height='2'/><rect x='0' y='0' width='2' height='16'/><rect x='32' y='16' width='2' height='16'/></g></svg>");
+  background-size: 128px 64px; image-rendering: pixelated;
+}
+#app { max-width: 1100px; margin: 0 auto; padding: 16px max(16px, env(safe-area-inset-right)) 32px max(16px, env(safe-area-inset-left)); }
+h1 { font: 400 52px/1 var(--gothic); color: var(--gold); text-shadow: 3px 3px 0 var(--ink); margin: 12px 0 6px; }
+h2 { font-size: 24px; margin: 6px 0; color: var(--gold); }
+p { margin: 0 0 10px; }
+a { color: var(--gold); }
+.muted { color: var(--muted); font-size: 18px; }
+.win { background: var(--oak); border: 4px solid var(--bronze); padding: 14px; margin: 14px 0; box-shadow: 0 0 0 4px var(--ink), 8px 10px 0 4px rgba(8, 4, 2, .6); }
+.filtros { display: flex; flex-direction: column; gap: 10px; }
+.grupo { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.grupo > span { min-width: 108px; color: var(--muted); }
+#q { width: 100%; font: inherit; padding: 10px 12px; color: var(--parch-ink); background: var(--parch); border: 4px solid var(--ink); }
+.chip, #limpiar { font: inherit; font-size: 18px; color: var(--text); background: var(--oak-2); border: 3px solid var(--ink); padding: 6px 12px; cursor: pointer; min-height: 40px; }
+.chip[aria-pressed="true"] { background: var(--bronze); color: var(--ink); border-color: var(--gold); font-weight: 700; }
+.chip:focus-visible, #limpiar:focus-visible, #q:focus-visible, .tarjeta:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+#limpiar { align-self: flex-start; background: transparent; border-color: var(--muted); }
+.check { display: flex; gap: 8px; align-items: center; min-height: 40px; }
+.check input { width: 22px; height: 22px; accent-color: var(--bronze); }
+.rejilla { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 18px; }
+.tarjeta { display: flex; flex-direction: column; gap: 4px; padding: 14px; color: var(--text); text-decoration: none; background: var(--oak); border: 4px solid var(--bronze); box-shadow: 0 0 0 3px var(--ink), 6px 8px 0 3px rgba(8, 4, 2, .6); }
+a.tarjeta:hover { transform: translate(-2px, -2px); background: var(--oak-2); }
+.tarjeta.pronto { opacity: .6; border-color: var(--oak-2); }
+.icono { font-size: 44px; line-height: 1; }
+.desc { color: var(--muted); font-size: 18px; flex: 1; }
+.meta { display: flex; flex-wrap: wrap; gap: 6px; font-size: 16px; }
+.meta span { background: var(--ink); padding: 2px 8px; border: 2px solid var(--oak-2); }
+.estado { margin-top: 6px; font-weight: 700; color: var(--gold); }
+.pronto .estado { color: var(--muted); font-weight: 400; }
+.vacio { grid-column: 1 / -1; text-align: center; padding: 30px; }
+.pie { margin-top: 28px; text-align: center; }
+@media (max-width: 560px) { h1 { font-size: 40px; } .grupo > span { min-width: 100%; } .rejilla { grid-template-columns: 1fr; } }
+@media (prefers-reduced-motion: no-preference) { a.tarjeta { transition: transform .1s; } }
