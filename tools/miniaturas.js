@@ -219,6 +219,23 @@ M.mus = (() => {
   L.R(4, 24, 32, 3, P.tinta); L.R(5, 25, 30, 1, P.sol);
   return L;
 })();
+M.impostor = (() => {
+  const L = lienzo(40, 30); L.fondo(P.noche, P.nocheO);
+  const cara = (x, c, gafas) => { L.B(x, 9, 9, 10, c); L.R(x + 2, 12, 2, 2, P.tinta); L.R(x + 5, 12, 2, 2, P.tinta); L.R(x + 3, 16, 3, 1, P.tinta); if (gafas) { L.R(x + 1, 12, 7, 1, P.tinta); L.R(x - 1, 8, 11, 2, P.tinta); L.R(x + 1, 6, 7, 2, P.tinta); } L.B(x + 1, 19, 7, 7, c); };
+  cara(4, P.sol, false); cara(15, '#9aa0b5', true); cara(26, P.sol, false);
+  L.R(17, 2, 5, 1, P.blanco); L.R(19, 1, 1, 3, P.blanco);
+  return L;
+})();
+M.stop = (() => {
+  const L = lienzo(40, 30); L.fondo(P.sol, P.solO);
+  L.B(5, 4, 30, 22, P.blanco);
+  for (let y = 9; y < 26; y += 4) L.R(6, y, 28, 1, '#c9d6ff');
+  L.R(6, 4, 9, 22, '#fff1c7'); L.R(15, 4, 1, 22, P.tomate);
+  L.T(1, 9, 6, P.tinta); L.T(2, 9, 10, P.tinta); L.T(3, 9, 14, P.tinta);
+  L.DB(29, 9, 5, P.tomate); L.R(26, 8, 7, 2, P.blanco);
+  for (let k = 0; k < 3; k++) L.R(18, 6 + k * 4, 7 + (k % 2) * 3, 1, P.cieloO);
+  return L;
+})();
 // ilustración de la portada: mesa con cartas, dados, mando y una moneda
 const hero = (() => {
   const L = lienzo(120, 80);

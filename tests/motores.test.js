@@ -221,3 +221,36 @@ test('Parchís: salir con 5, barreras, comer y partidas completas', () => {
     assert.ok(J.fin(g));
   }
 });
+
+test('Juegos de fiesta: impostor, stop, dibujo y hombre lobo (reglas básicas)', () => {
+  const I = JUEGOS.impostor, S = JUEGOS.stop, D = JUEGOS.dibujo, L = JUEGOS.lobo;
+  // impostor: no se puede decir la palabra; si le pillan y acierta, gana igual
+  const i = I.nuevo(4);
+  const civil = (i.impostor + 1) % 4;
+  i.turno = civil;
+  assert.match(I.accion(i, civil, { tipo: 'pista', texto: i.palabra }).error, /No puedes decir la palabra/);
+  // stop: puntuación 20 / 10 / 5 y tachar
+  const s = S.nuevo(3); const l = s.letra.toLowerCase();
+  S.accion(s, 0, { tipo: 'stop', resp: Object.fromEntries([0, 1, 2, 3, 4, 5, 6, 7].map((k) => [k, l + 'aaa' + k])) });
+  S.accion(s, 1, { tipo: 'guardar', resp: { 0: l + 'aaa0' } });
+  S.tiempo(s, Date.now() + 10000);
+  S.accion(s, 1, { tipo: 'vetar', j: 0, c: 2 }); S.accion(s, 2, { tipo: 'vetar', j: 0, c: 2 });
+  for (let j = 0; j < 3; j++) S.accion(s, j, { tipo: 'listo' });
+  assert.equal(s.tabla.filas[0].fila[0].pts, 5);
+  assert.equal(s.tabla.filas[1].fila[0].pts, 20);
+  assert.equal(s.tabla.filas[2].fila[0].ok, false, 'tachada por la mayoría');
+  // dibujo: el trazo va como evento sin vista; acertar puntúa
+  const d = D.nuevo(3);
+  D.accion(d, d.dibuja, { tipo: 'elegir', i: 0 });
+  const r = D.accion(d, d.dibuja, { tipo: 'trazo', c: 0, g: 1, p: [1, 2, 3, 4], nuevo: true });
+  assert.ok(r.sinVista && r.evento.tipo === 'trazo');
+  D.accion(d, (d.dibuja + 1) % 3, { tipo: 'adivinar', texto: d.palabra.toUpperCase() });
+  assert.ok(d.puntos[(d.dibuja + 1) % 3] > 0 && d.puntos[d.dibuja] === 25);
+  // hombre lobo: nadie ve los papeles ajenos (salvo los lobos entre ellos)
+  const h = L.nuevo(8);
+  const aldeano = h.papeles.indexOf('aldeano');
+  const visibles = L.vista(h, aldeano).papeles.filter((p, k) => p && k !== aldeano);
+  assert.equal(visibles.length, 0);
+  const lobo = h.papeles.indexOf('lobo');
+  assert.equal(L.vista(h, lobo).papeles.filter((p) => p === 'lobo').length, 2);
+});

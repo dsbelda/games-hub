@@ -69,12 +69,13 @@ function start({ port = 3400, host = '127.0.0.1', retardoCpu = 700, baseDatos = 
   app.set('trust proxy', false);
   app.disable('x-powered-by');
   const server = http.createServer(app);
-  const io = new Server(server, { maxHttpBufferSize: 10000, pingInterval: 25000, pingTimeout: 20000 });
+  const io = new Server(server, { maxHttpBufferSize: 20000, pingInterval: 25000, pingTimeout: 20000 });
 
   const sockets = new Map(); // id -> Set de sockets
   const conectado = (id) => (sockets.get(id)?.size || 0) > 0;
   const salas = new Salas({
     juegos: JUEGOS, retardoCpu, conectado, alCambiar: (s) => repartir(s),
+    alEvento: (sala, ev) => { for (const a of sala.asientos) if (!a.bot) emitir(a.id, 'evento', ev); },
     reservado: (n) => cuentas.existe(n),
     alTerminar: (sala) => sala.asientos.forEach((a, i) => {
       const u = !a.bot && salas.jugadores.get(a.id)?.usuario;
@@ -209,7 +210,7 @@ function start({ port = 3400, host = '127.0.0.1', retardoCpu = 700, baseDatos = 
     if (!sockets.has(id)) sockets.set(id, new Set());
     sockets.get(id).add(sock);
     salas.identificar(id, sock.data.usuario);
-    const permitido = cubo(20, 8);
+    const permitido = cubo(40, 20); // los trazos del dibujo llegan seguidos
     const on = (ev, fn) => sock.on(ev, (d, cb) => {
       if (typeof cb !== 'function') cb = () => {};
       if (!permitido()) return cb({ ok: false, error: 'Vas demasiado rápido' });

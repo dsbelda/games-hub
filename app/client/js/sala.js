@@ -16,6 +16,8 @@
   sock.on('disconnect', () => { est.conectado = false; pintar(); });
   sock.on('connect_error', () => aviso('Sin conexión con el servidor; reintentando…'));
   sock.on('yo', (y) => { est.yo = y; pintar(); });
+  // eventos en directo de la partida (p. ej. trazos del dibujo): los recibe el juego sin repintar todo
+  sock.on('evento', (ev) => { if (window.JUEGO.evento) window.JUEGO.evento(ev); });
   sock.on('salas', (l) => { est.publicas = l; if (!est.sala && !document.activeElement?.matches('input')) pintar(); });
   let desfase = 0; // reloj del servidor - reloj de este dispositivo
   sock.on('sala', async (s) => {
@@ -86,7 +88,8 @@
     for (const [v, t] of [['normal', 'CPU normal'], ['dificil', 'CPU difícil']]) { const o = el('option', null, t); o.value = v; nivel.append(o); }
     nivel.value = UI.leer('nivel', 'normal'); nivel.onchange = () => UI.guardar('nivel', nivel.value);
     const fila = el('div', 'fila');
-    fila.append(boton('Jugar ya contra la CPU', jugarYaCpu, 'oro'), nivel);
+    if (window.FICHA.modo.includes('cpu')) fila.append(boton('Jugar ya contra la CPU', jugarYaCpu, 'oro'), nivel);
+    else fila.append(el('p', 'suave', 'Este juego es para jugar con personas: crea una sala y pasa el enlace.'));
     const pub = el('label', 'check'); const cb = el('input'); cb.type = 'checkbox'; cb.checked = true; pub.append(cb, ' Que salga en la lista de salas');
     const fila2 = el('div', 'fila');
     fila2.append(boton('Crear sala para amigos', () => pedir('crear', { juego: JID, publica: cb.checked })), pub);
@@ -143,7 +146,7 @@
     if (JID === 'brisca' && s.asientos.length === 4) a.append(el('p', 'suave', 'A cuatro se juega por parejas: 1.º y 3.º contra 2.º y 4.º. Usa las flechas para cambiar las parejas.'));
     if (s.soyAnfitrion) {
       const f = el('div', 'fila');
-      if (s.asientos.length < s.max) { f.append(boton('+ CPU normal', () => pedir('cpu', { nivel: 'normal' })), boton('+ CPU difícil', () => pedir('cpu', { nivel: 'dificil' }))); }
+      if (s.asientos.length < s.max && !s.sinCpu) { f.append(boton('+ CPU normal', () => pedir('cpu', { nivel: 'normal' })), boton('+ CPU difícil', () => pedir('cpu', { nivel: 'dificil' }))); }
       a.append(f);
       const listo = s.asientos.length >= s.min;
       const emp = boton(listo ? 'Empezar partida' : `Faltan jugadores (mínimo ${s.min})`, () => pedir('empezar'), 'oro');
