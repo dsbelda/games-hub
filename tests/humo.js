@@ -9,7 +9,7 @@ const { chromium } = require(process.env.PLAYWRIGHT || '/home/ubuntu/herramienta
   await p.goto('https://games.dsbelda.dev/'); await p.waitForSelector('.ficha');
   const tarjetas = await p.locator('a.ficha-enlace').count();
   await p.goto('https://games.dsbelda.dev/j/cuatro');
-  await p.fill('input[autocomplete=nickname]', 'Prueba'); await p.click('text=Entrar');
+  await p.fill('input[autocomplete=nickname]', 'Prueba'); await p.click('form.panel button[type=submit]');
   await p.click('text=Jugar ya contra la CPU'); await p.waitForSelector('.c4-col:not([disabled])');
   await p.locator('.c4-col').nth(3).click();
   await p.waitForFunction(() => document.querySelectorAll('.disco.f1').length > 1, null, { timeout: 8000 });
