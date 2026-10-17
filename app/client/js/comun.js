@@ -17,6 +17,7 @@
     if (!pilaAvisos) { pilaAvisos = el('div', 'avisos'); pilaAvisos.setAttribute('role', 'status'); pilaAvisos.setAttribute('aria-live', 'polite'); document.body.append(pilaAvisos); }
     const t = el('div', 'aviso-item ' + tipo, texto);
     pilaAvisos.append(t);
+    while (pilaAvisos.children.length > 3) pilaAvisos.firstChild.remove(); // como mucho 3 a la vez
     setTimeout(() => { t.classList.add('sale'); setTimeout(() => t.remove(), 300); }, 3200);
   }
   // un aviso que debe verse tras recargar la página (p. ej. «Has entrado»)

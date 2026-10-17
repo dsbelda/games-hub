@@ -84,3 +84,47 @@ test('El juego de la Unidad: partidas completas de 2 a 8 y pillar a quien no lo 
   assert.ok(J.accion(e, 2, { tipo: 'pillar' }).ok);
   assert.equal(e.manos[0].length, 3);
 });
+
+test('Hundir la flota: colocar, disparar, repetir al acertar y partidas completas', () => {
+  const J = JUEGOS.hundir;
+  assert.match(J._.validar([{ f: 0, c: 0, largo: 5 }, { f: 1, c: 0, largo: 4 }, { f: 4, c: 0, largo: 3 }, { f: 6, c: 0, largo: 3 }, { f: 8, c: 0, largo: 2 }]).error, /tocarse/);
+  const e = J.nuevo();
+  const flota = [{ f: 0, c: 0, largo: 5 }, { f: 2, c: 0, largo: 4 }, { f: 4, c: 0, largo: 3 }, { f: 6, c: 0, largo: 3 }, { f: 8, c: 0, largo: 2 }];
+  assert.ok(J.accion(e, 0, { tipo: 'colocar', barcos: flota }).ok);
+  assert.ok(J.accion(e, 1, { tipo: 'colocar', barcos: flota }).ok);
+  assert.equal(e.fase, 'disparar');
+  assert.ok(J.accion(e, 0, { tipo: 'disparar', f: 0, c: 0 }).ok);
+  assert.equal(e.turno, 0, 'si aciertas, repites');
+  assert.ok(J.accion(e, 0, { tipo: 'disparar', f: 9, c: 9 }).ok);
+  assert.equal(e.turno, 1);
+  assert.equal(J.vista(e, 1).miFlota.length, 5);
+  assert.equal(J.vista(e, 0).flotaRival, null, 'no se ve la flota rival hasta el final');
+  for (let k = 0; k < 20; k++) jugar(J, 2, ['normal', 'dificil'], k + 3);
+});
+
+test('Damas: comer es obligatorio y por donde más se come', () => {
+  const J = JUEGOS.damas;
+  const e = J.nuevo();
+  e.t = Array.from({ length: 8 }, () => Array(8).fill(null));
+  e.t[5][2] = { j: 0, dama: false }; e.t[7][0] = { j: 0, dama: false };
+  e.t[4][3] = { j: 1, dama: false }; e.t[2][3] = { j: 1, dama: false }; e.t[4][1] = { j: 1, dama: false };
+  const ls = J._.legales(e);
+  assert.ok(ls.every((m) => m.comidas.length === 2), 'solo vale la que come dos');
+  assert.equal(J.accion(e, 0, { tipo: 'mover', ruta: [[7, 0], [6, 1]] }).ok, false);
+  assert.ok(J.accion(e, 0, { tipo: 'mover', ruta: ls[0].ruta }).ok);
+  for (let k = 0; k < 6; k++) jugar(J, 2, ['normal', 'normal'], k + 11);
+});
+
+test('Ajedrez: perft correcto (inicio, Kiwipete y posición 3) y mate del pastor', () => {
+  const J = JUEGOS.ajedrez;
+  const perft = (e, d) => { if (!d) return 1; let n = 0; for (const m of J._.legales(e)) { const x = J._.hacer(e, m); n += perft(e, d - 1); J._.deshacerJugada(e, x); } return n; };
+  const desdeFen = (fen, enroque) => { const e = J.nuevo(); e.b = fen.split('/').map((f) => f.replace(/\d/g, (d) => '.'.repeat(+d))).join('').split('').map((c) => (c === '.' ? null : c)); e.enroque = enroque; return e; };
+  assert.deepEqual([1, 2, 3].map((d) => perft(J.nuevo(), d)), [20, 400, 8902]);
+  assert.deepEqual([1, 2, 3].map((d) => perft(desdeFen('r3k2r/p1ppqpb1/bn2pnp1/3PN3/1p2P3/2N2Q1p/PPPBBPPP/R3K2R', { K: true, Q: true, k: true, q: true }), d)), [48, 2039, 97862]);
+  assert.deepEqual([1, 2, 3, 4].map((d) => perft(desdeFen('8/2p5/3p4/KP5r/1R3p1k/8/4P1P1/8', { K: false, Q: false, k: false, q: false }), d)), [14, 191, 2812, 43238]);
+  const e = J.nuevo();
+  const sq = (s) => (8 - +s[1]) * 8 + 'abcdefgh'.indexOf(s[0]);
+  for (const [j, de, a] of [[0, 'e2', 'e4'], [1, 'e7', 'e5'], [0, 'f1', 'c4'], [1, 'b8', 'c6'], [0, 'd1', 'h5'], [1, 'g8', 'f6'], [0, 'h5', 'f7']]) assert.ok(J.accion(e, j, { tipo: 'mover', de: sq(de), a: sq(a) }).ok, de + a);
+  assert.deepEqual(J.fin(e).ganadores, [0]);
+  assert.equal(e.jugadas.at(-1), 'Dxf7#');
+});

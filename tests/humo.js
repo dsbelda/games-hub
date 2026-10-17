@@ -8,6 +8,7 @@ const { chromium } = require(process.env.PLAYWRIGHT || '/home/ubuntu/herramienta
   const ws = []; p.on('websocket', w => ws.push(w.url()));
   await p.goto('https://games.dsbelda.dev/'); await p.waitForSelector('.ficha');
   const tarjetas = await p.locator('a.ficha-enlace').count();
+  const dic = (await fetch('https://games.dsbelda.dev/data/palabras5.txt')).status; if (dic !== 200) throw new Error('falta el diccionario: ' + dic);
   await p.goto('https://games.dsbelda.dev/j/cuatro');
   await p.fill('input[autocomplete=nickname]', 'Prueba'); await p.click('form.panel button[type=submit]');
   await p.click('text=Jugar ya contra la CPU'); await p.waitForSelector('.c4-col:not([disabled])');

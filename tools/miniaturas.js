@@ -163,6 +163,34 @@ M.solitario = (() => {
   cf(4, 14, false); cf(10, 16, true); cf(16, 18, false); cf(22, 14, true); cf(28, 15, false);
   return L;
 })();
+M.hundir = (() => {
+  const L = lienzo(40, 30); L.fondo(P.cielo, P.cieloO);
+  for (let y = 4; y < 28; y += 5) for (let x = (y % 2) * 3; x < 40; x += 7) L.R(x, y, 3, 1, '#7ea2ff');
+  L.R(6, 15, 22, 4, P.gris); L.R(8, 19, 18, 2, '#7c8296'); L.R(12, 11, 8, 4, P.gris); L.R(15, 8, 2, 3, P.tinta); L.R(14, 12, 2, 2, P.cielo); L.R(18, 12, 2, 2, P.cielo);
+  L.R(4, 15, 2, 2, P.gris); L.R(28, 16, 3, 2, P.gris);
+  L.DB(31, 8, 3, P.sol); L.D(31, 8, 2, P.tomate); L.R(30, 7, 2, 2, P.blanco);
+  for (const [x, y] of [[26, 4], [36, 6], [34, 12], [27, 11]]) L.R(x, y, 1, 1, P.sol);
+  return L;
+})();
+M.damas = (() => {
+  const L = lienzo(40, 30); L.fondo(P.marron, '#6e3f1d');
+  L.B(6, 1, 28, 28, '#efe3c8');
+  for (let f = 0; f < 7; f++) for (let c = 0; c < 7; c++) if ((f + c) % 2) L.R(7 + c * 4, 2 + f * 4, 4, 4, '#c08a5a');
+  for (const [f, c, b] of [[0, 1, 0], [0, 3, 0], [1, 2, 0], [4, 1, 1], [5, 2, 1], [5, 4, 1], [6, 3, 1], [2, 5, 0]]) { L.DB(9 + c * 4, 4 + f * 4, 1, b ? P.blanco : P.tinta); }
+  L.R(28, 22, 3, 1, P.sol); L.R(28, 21, 1, 1, P.sol); L.R(30, 21, 1, 1, P.sol);
+  return L;
+})();
+M.ajedrez = (() => {
+  const L = lienzo(40, 30); L.fondo(P.tinta, '#2a2640');
+  for (let f = 0; f < 5; f++) for (let c = 0; c < 10; c++) L.R(c * 4, 10 + f * 4, 4, 4, (f + c) % 2 ? '#c08a5a' : '#efe3c8');
+  const caballo = [[2, 0, 2], [1, 1, 5], [0, 2, 7], [0, 3, 3], [4, 3, 3], [0, 4, 2], [3, 4, 4], [3, 5, 4], [2, 6, 5], [1, 7, 7]];
+  for (const [x, y, w] of caballo) L.R(9 + x, 3 + y, w, 1, P.crema);
+  L.R(10, 5, 1, 1, P.tinta);
+  const rey = [[3, 0, 2], [2, 1, 4], [3, 2, 2], [1, 3, 6], [0, 4, 8], [1, 5, 6], [2, 6, 4], [1, 7, 6], [0, 8, 8]];
+  for (const [x, y, w] of rey) L.R(24 + x, 2 + y, w, 1, '#3a3456');
+  L.R(24, 10, 8, 1, P.tinta);
+  return L;
+})();
 // ilustración de la portada: mesa con cartas, dados, mando y una moneda
 const hero = (() => {
   const L = lienzo(120, 80);

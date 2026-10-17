@@ -3,7 +3,8 @@
 (() => {
   const id = location.pathname.split('/')[2];
   const V = document.querySelector('meta[name=v]')?.content || '';
-  const MULTI = ['cuatro', 'brisca', 'unidad'];
+  const MULTI = ['cuatro', 'brisca', 'unidad', 'hundir', 'damas', 'ajedrez'];
+  const EXTRA = { ajedrez: ['piezas'] }; // scripts que necesita antes un juego
   window.UI = {
     el(tag, cls, txt) { const e = document.createElement(tag); if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e; },
     boton(txt, fn, cls = '') { const b = UI.el('button', 'btn ' + cls, txt); b.type = 'button'; b.onclick = fn; return b; },
@@ -44,6 +45,7 @@
     fav.onclick = async () => { const on = !favs.has(j.id); if (!(await Cuenta.marcarFavorito(j.id, on))) return; on ? favs.add(j.id) : favs.delete(j.id); pintaFav(); fav.classList.remove('late'); void fav.offsetWidth; if (on) fav.classList.add('late'); UI.aviso(on ? 'En tus favoritos' : 'Fuera de favoritos'); };
     pintaFav();
     document.getElementById('titulo').append(fav);
+    for (const x of EXTRA[id] || []) await cargar(`/js/juegos/${x}.js?v=${V}`);
     if (MULTI.includes(id)) { await cargar('/socket.io/socket.io.js'); await cargar(`/js/juegos/${id}.js?v=${V}`); await cargar(`/js/sala.js?v=${V}`); }
     else { await cargar(`/js/juegos/${id}.js?v=${V}`); window.JUEGO.montar(document.getElementById('raiz')); }
   }).catch(() => UI.aviso('No se pudo cargar el juego'));

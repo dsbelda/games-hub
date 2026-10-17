@@ -224,6 +224,87 @@ button.sl-hueco { cursor: pointer; }
 @media (prefers-reduced-motion: no-preference) { .carta-f.reparte { animation: repartir .35s cubic-bezier(.2, 1.2, .4, 1) both; animation-delay: var(--d, 0ms); } }
 @keyframes temblor { 20%, 60% { transform: translateX(-6px); } 40%, 80% { transform: translateX(6px); } }
 
+/* Ajedrez */
+.aj-marco { position: relative; width: min(100%, 520px); display: flex; flex-direction: column; gap: 6px; }
+.aj-jugador { display: flex; align-items: center; gap: 8px; min-height: 30px; }
+.aj-color { width: 18px; height: 18px; border: 2px solid var(--borde); flex: none; }
+.aj-color.b { background: #f6f1e6; } .aj-color.n { background: #3a3456; }
+.aj-capturas { display: flex; flex-wrap: wrap; margin-left: auto; }
+.aj-capturas span { width: 20px; height: 20px; margin-left: -4px; }
+.aj-capturas svg, .aj-pieza svg, .aj-promo-op svg { width: 100%; height: 100%; display: block; }
+.aj-tablero { display: grid; grid-template-columns: repeat(8, 1fr); border: var(--linea); box-shadow: var(--sombra); aspect-ratio: 1; }
+.aj-casilla { position: relative; aspect-ratio: 1; padding: 0; border: 0; display: grid; place-items: center; cursor: pointer; }
+.aj-casilla:disabled { cursor: default; }
+.aj-casilla.clara { background: #efe3c8; } .aj-casilla.oscura { background: #c08a5a; }
+.aj-casilla.ultima { box-shadow: inset 0 0 0 999px rgba(255, 198, 61, .45); }
+.aj-casilla.sel { box-shadow: inset 0 0 0 999px rgba(77, 124, 254, .45); }
+.aj-casilla.jaque { box-shadow: inset 0 0 0 999px rgba(255, 90, 54, .7); }
+.aj-casilla.destino::after { content: ''; width: 26%; height: 26%; background: rgba(30, 27, 46, .45); }
+.aj-casilla.captura::after { content: ''; position: absolute; inset: 4px; border: 4px solid rgba(30, 27, 46, .5); }
+.aj-casilla:not(:disabled):hover { filter: brightness(1.08); }
+.aj-pieza { width: 86%; height: 86%; position: relative; z-index: 1; image-rendering: pixelated; }
+.aj-col, .aj-fila { position: absolute; font: 700 10px var(--texto); color: rgba(30, 27, 46, .55); pointer-events: none; }
+.aj-col { right: 3px; bottom: 1px; } .aj-fila { left: 3px; top: 1px; }
+.aj-promo { position: absolute; inset: 30% 10% auto; z-index: 5; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: var(--sup); border: var(--linea); box-shadow: 8px 8px 0 var(--borde); }
+.aj-promo-op { width: 56px; height: 56px; padding: 4px; background: var(--crema); border: 2px solid var(--borde); cursor: pointer; }
+.aj-promo-op:hover { background: var(--sol); }
+.aj-jugadas { list-style: none; counter-reset: jug; margin: 0; padding: 8px; width: min(100%, 520px); max-height: 120px; overflow-y: auto; display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 2px 12px; font: 600 13px var(--texto); background: var(--sup); border: 2px solid var(--borde); }
+.aj-jugadas:empty { display: none; }
+.aj-jugadas li { counter-increment: jug; display: grid; grid-template-columns: 26px 1fr 1fr; }
+.aj-jugadas li::before { content: counter(jug) '.'; color: var(--fg-2); }
+@media (prefers-reduced-motion: no-preference) { .aj-pieza.llega, .dm-ficha.llega { animation: llega .25s cubic-bezier(.3, 1.5, .5, 1); } @keyframes llega { from { transform: scale(.6); } } }
+
+/* Damas */
+.dm-marcador { gap: 18px; }
+.dm-jug { display: inline-flex; align-items: center; gap: 6px; font-weight: 600; }
+.dm-jug .dm-ficha { width: 18px; height: 18px; }
+.dm-tablero { display: grid; grid-template-columns: repeat(8, 1fr); width: min(100%, 500px); aspect-ratio: 1; border: var(--linea); box-shadow: var(--sombra); }
+.dm-casilla { position: relative; padding: 0; border: 0; display: grid; place-items: center; }
+.dm-casilla.clara { background: #efe3c8; } .dm-casilla.oscura { background: #8a5a35; cursor: pointer; }
+.dm-casilla:disabled { cursor: default; }
+.dm-casilla.ultima { box-shadow: inset 0 0 0 999px rgba(255, 198, 61, .35); }
+.dm-casilla.comida::after { content: '×'; position: absolute; font: 800 22px var(--texto); color: rgba(255, 90, 54, .8); }
+.dm-casilla.puede .dm-ficha { box-shadow: 0 0 0 3px var(--sol), 2px 3px 0 3px rgba(0, 0, 0, .35); }
+.dm-casilla.sel { box-shadow: inset 0 0 0 999px rgba(77, 124, 254, .5); }
+.dm-casilla.destino::after { content: ''; width: 28%; height: 28%; background: var(--sol); border: 2px solid var(--tinta); }
+.dm-ficha { width: 74%; aspect-ratio: 1; border-radius: 50%; border: 3px solid var(--tinta); box-shadow: 2px 3px 0 rgba(0, 0, 0, .35), inset 0 -4px 0 rgba(0, 0, 0, .2); display: grid; place-items: center; }
+.dm-ficha.b { background: #f6f1e6; } .dm-ficha.n { background: #3a3456; }
+.dm-ficha.dama::after { content: '♛'; font-size: 60%; color: var(--sol); text-shadow: 1px 1px 0 var(--tinta); }
+
+/* Hundir la flota */
+.hf-tableros { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; width: 100%; }
+.hf-lado { display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 8px; border: 3px dashed transparent; }
+.hf-lado.activo { border-color: var(--tomate); }
+.hf-lado h3 { font: 700 13px var(--pixel); text-transform: uppercase; margin: 0; }
+.hf-tablero { display: grid; gap: 0; width: min(100%, 360px); border: var(--linea); box-shadow: var(--sombra); background: #2f63c9; }
+.hf-cab, .hf-fila { display: grid; grid-template-columns: repeat(11, 1fr); }
+.hf-cab span, .hf-num { font: 700 10px var(--texto); color: #dce6ff; display: grid; place-items: center; aspect-ratio: 1; }
+.hf-celda { aspect-ratio: 1; padding: 0; border: 0; border-right: 1px solid rgba(255, 255, 255, .12); border-bottom: 1px solid rgba(255, 255, 255, .12); background: #4d7cfe; position: relative; }
+button.hf-celda { cursor: crosshair; }
+button.hf-celda:disabled { cursor: default; }
+.rival button.hf-celda:not(:disabled):hover { background: #ffc63d; }
+.hf-celda.barco { background: #9aa0b5; box-shadow: inset 0 0 0 2px #6b6f83; }
+.hf-celda.previa { background: var(--verde); } .hf-celda.previa-mal { background: var(--tomate); }
+.hf-celda.agua::after { content: ''; position: absolute; inset: 35%; border-radius: 50%; background: #dce6ff; }
+.hf-celda.tocado { background: var(--tomate); }
+.hf-celda.tocado::after { content: '✕'; position: absolute; inset: 0; display: grid; place-items: center; font: 800 12px var(--texto); color: var(--tinta); }
+.hf-celda.hundido { background: #3a3456; box-shadow: inset 0 0 0 2px var(--tomate); }
+.hf-celda.revelado { opacity: .7; }
+@media (prefers-reduced-motion: no-preference) {
+  .hf-celda.nuevo.agua::after { animation: salpica .5s ease-out; }
+  .hf-celda.nuevo.tocado, .hf-celda.nuevo.hundido { animation: boom .5s ease-out; }
+  @keyframes salpica { from { transform: scale(3); opacity: 0; } }
+  @keyframes boom { 0% { box-shadow: 0 0 0 0 var(--sol); } 50% { box-shadow: 0 0 0 10px rgba(255, 198, 61, .6); background: var(--sol); } }
+}
+.hf-dique { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+.hf-barco { display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 6px 8px; background: var(--sup); color: var(--fg); border: 2px solid var(--borde); cursor: pointer; font: 600 12px var(--texto); }
+.hf-barco.sel { background: var(--sol); color: var(--tinta); box-shadow: var(--sombra-s); }
+.hf-barco.puesto { opacity: .35; }
+.hf-forma { display: flex; gap: 1px; }
+.hf-forma i { width: 12px; height: 12px; background: #9aa0b5; border: 1px solid var(--tinta); }
+.hf-quedan { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; min-height: 14px; }
+@media (max-width: 760px) { .hf-tableros { grid-template-columns: 1fr; } }
+
 /* animaciones de las partidas */
 @media (prefers-reduced-motion: no-preference) {
   .nueva { animation: repartir .4s cubic-bezier(.2, 1.2, .4, 1) both; animation-delay: calc(var(--i, 0) * 70ms); }
