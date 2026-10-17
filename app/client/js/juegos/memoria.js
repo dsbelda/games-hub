@@ -25,7 +25,7 @@ window.JUEGO = {
       cartas = [...iconos, ...iconos].map((i) => ({ i, vista: false, hecha: false }));
       for (let k = cartas.length - 1; k > 0; k--) { const j = Math.floor(Math.random() * (k + 1)); [cartas[k], cartas[j]] = [cartas[j], cartas[k]]; }
       tablero.style.gridTemplateColumns = `repeat(${c}, 1fr)`;
-      vueltas = []; intentos = 0; bloqueo = false; jugador = 0; puntos = [0, 0];
+      vueltas = []; intentos = 0; bloqueo = false; jugador = 0; puntos = [0, 0]; pintar.avisado = false;
       pintar();
     }
     function pulsar(k) {
@@ -35,14 +35,15 @@ window.JUEGO = {
       if (vueltas.length === 2) {
         intentos++;
         const [a, b] = vueltas.map((x) => cartas[x]);
-        if (a.i === b.i) { a.hecha = b.hecha = true; puntos[jugador]++; vueltas = []; }
+        if (a.i === b.i) { a.hecha = b.hecha = true; a.recien = b.recien = true; puntos[jugador]++; vueltas = []; }
         else { bloqueo = true; setTimeout(() => { a.vista = b.vista = false; vueltas = []; bloqueo = false; if (modo.value === '2') jugador = 1 - jugador; pintar(); }, 900); }
       }
       pintar();
     }
     function pintar() {
       tablero.replaceChildren(...cartas.map((c, k) => {
-        const b = boton(c.vista || c.hecha ? c.i : '', () => pulsar(k), 'mem' + (c.vista || c.hecha ? ' vista' : '') + (c.hecha ? ' hecha' : ''));
+        const b = boton(c.vista || c.hecha ? c.i : '', () => pulsar(k), 'mem' + (c.vista || c.hecha ? ' vista' : '') + (c.hecha ? ' hecha' : '') + (c.recien ? ' pareja' : ''));
+        c.recien = false;
         b.setAttribute('aria-label', c.vista || c.hecha ? c.i : 'Carta boca abajo');
         return b;
       }));
@@ -50,7 +51,11 @@ window.JUEGO = {
       const clave = 'memoria-' + nivel.value;
       if (modo.value === '1') {
         let mejor = UI.leer(clave, null);
-        if (acabada && (mejor === null || intentos < mejor)) { mejor = intentos; UI.guardar(clave, mejor); UI.aviso('¡Nuevo récord!'); }
+        if (acabada && !pintar.avisado) {
+          pintar.avisado = true;
+          Cuenta.record(clave, intentos);
+          if (mejor === null || intentos < mejor) { mejor = intentos; UI.guardar(clave, mejor); UI.aviso('¡Nuevo récord!', 'bien'); Confeti(); }
+        }
         marcador.textContent = `Intentos: ${intentos}${mejor !== null ? ` · Récord: ${mejor}` : ''}${acabada ? ' · ¡Completado!' : ''}`;
       } else {
         marcador.textContent = acabada

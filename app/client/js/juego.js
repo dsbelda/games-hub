@@ -7,11 +7,7 @@
   window.UI = {
     el(tag, cls, txt) { const e = document.createElement(tag); if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e; },
     boton(txt, fn, cls = '') { const b = UI.el('button', 'btn ' + cls, txt); b.type = 'button'; b.onclick = fn; return b; },
-    aviso(txt) {
-      const t = document.getElementById('aviso');
-      t.textContent = txt; t.hidden = false;
-      clearTimeout(UI._t); UI._t = setTimeout(() => { t.hidden = true; }, 3000);
-    },
+    aviso(txt, tipo) { window.Avisar(txt, tipo); },
     // récord local (si el navegador no deja guardar, no pasa nada)
     leer(k, def) { try { const v = localStorage.getItem('games:' + k); return v == null ? def : JSON.parse(v); } catch (e) { return def; } },
     guardar(k, v) { try { localStorage.setItem('games:' + k, JSON.stringify(v)); } catch (e) { /* sin almacenamiento */ } },
@@ -38,6 +34,16 @@
     }));
     document.getElementById('buscador').onsubmit = (e) => { e.preventDefault(); location.href = '/#q=' + encodeURIComponent(document.getElementById('q').value.trim()); };
     window.FICHA = j;
+    // «Sigue jugando» de la portada
+    const rec = UI.leer('recientes', []).filter((x) => x !== j.id); rec.unshift(j.id); UI.guardar('recientes', rec.slice(0, 8));
+    // corazón de favorito en la barra del título
+    const favs = await Cuenta.favoritos();
+    const fav = UI.el('button', 'fav fav-titulo'); fav.type = 'button';
+    fav.innerHTML = '<svg viewBox="0 0 14 12" aria-hidden="true"><path d="M2 0h3v1h1v1h2V1h1V0h3v1h1v1h1v4h-1v1h-1v1h-1v1h-1v1H9v1H8v1H6v-1H5v-1H4V9H3V8H2V7H1V6H0V2h1V1h1z"/></svg>';
+    const pintaFav = () => { const on = favs.has(j.id); fav.setAttribute('aria-pressed', String(on)); fav.setAttribute('aria-label', on ? 'Quitar de favoritos' : 'Añadir a favoritos'); fav.title = fav.getAttribute('aria-label'); };
+    fav.onclick = async () => { const on = !favs.has(j.id); if (!(await Cuenta.marcarFavorito(j.id, on))) return; on ? favs.add(j.id) : favs.delete(j.id); pintaFav(); fav.classList.remove('late'); void fav.offsetWidth; if (on) fav.classList.add('late'); UI.aviso(on ? 'En tus favoritos' : 'Fuera de favoritos'); };
+    pintaFav();
+    document.getElementById('titulo').append(fav);
     if (MULTI.includes(id)) { await cargar('/socket.io/socket.io.js'); await cargar(`/js/juegos/${id}.js?v=${V}`); await cargar(`/js/sala.js?v=${V}`); }
     else { await cargar(`/js/juegos/${id}.js?v=${V}`); window.JUEGO.montar(document.getElementById('raiz')); }
   }).catch(() => UI.aviso('No se pudo cargar el juego'));

@@ -2,7 +2,8 @@
 .migas { padding-top: 18px; padding-bottom: 10px; font-size: 14px; color: var(--tinta-2); }
 .cuerpo-juego { display: grid; grid-template-columns: minmax(0, 1fr) 260px; gap: 24px; align-items: start; }
 .marco { margin: 0; }
-.marco > .caja-titulo { font-size: 20px; padding: 12px 16px; background: var(--sol); }
+.marco > .caja-titulo { font-size: 20px; padding: 12px 16px; background: var(--sol); display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.fav.fav-titulo { position: static; flex: none; }
 .raiz { padding: 16px; min-height: 440px; }
 .mas-juegos { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .mini-ficha { display: flex; flex-direction: column; gap: 4px; font-size: 13px; font-weight: 600; color: var(--tinta); text-decoration: none; line-height: 1.2; }
@@ -25,6 +26,8 @@
 .codigo { font: 700 56px/1 var(--pixel); color: var(--tomate); letter-spacing: 8px; margin: 6px 0 12px; text-shadow: 4px 4px 0 var(--tinta); }
 .asientos { list-style: none; padding: 0; margin: 6px 0; counter-reset: asiento; }
 .asientos li { display: flex; align-items: center; gap: 8px; padding: 6px 0; border-bottom: 2px dashed var(--crema); counter-increment: asiento; }
+.asientos .cara { width: 26px; height: 26px; display: grid; place-items: center; border: 2px solid var(--tinta); background: var(--crema); font: 700 12px var(--texto); flex: none; overflow: hidden; }
+.asientos .cara img { width: 22px; height: 22px; image-rendering: pixelated; }
 .asientos li::before { content: counter(asiento); font: 700 11px/1 var(--pixel); width: 20px; height: 20px; display: grid; place-items: center; background: var(--tinta); color: var(--papel); flex: none; }
 .asientos .desconectado { opacity: .5; }
 .sala-pub { border-top: 2px dashed var(--crema); padding-top: 8px; }
@@ -126,6 +129,28 @@ button.carta-u { cursor: pointer; transition: transform .1s; }
 .mem { aspect-ratio: 1; font-size: clamp(22px, 6vw, 34px); padding: 0; min-height: 0; border: var(--linea); box-shadow: var(--sombra-s); background-color: var(--uva); background-image: radial-gradient(rgba(255, 255, 255, .25) 2px, transparent 2.5px); background-size: 10px 10px; cursor: pointer; color: var(--tinta); }
 .mem.vista { background: var(--blanco); }
 .mem.hecha { background: #dff5ee; box-shadow: none; opacity: .7; }
+
+/* animaciones de las partidas */
+@media (prefers-reduced-motion: no-preference) {
+  .nueva { animation: repartir .4s cubic-bezier(.2, 1.2, .4, 1) both; animation-delay: calc(var(--i, 0) * 70ms); }
+  @keyframes repartir { from { opacity: 0; transform: translateY(-60px) rotate(-12deg) scale(.7); } }
+  .tirada { animation: tirar .3s cubic-bezier(.2, 1.3, .4, 1); }
+  @keyframes tirar { from { opacity: 0; transform: translateY(40px) scale(1.25) rotate(8deg); } }
+  .turno.pulso { animation: pulso .6s cubic-bezier(.3, 1.8, .5, 1) 2; }
+  @keyframes pulso { 50% { transform: scale(1.12); } }
+  .celda.sale { animation: aparece2048 .18s ease-out; }
+  .celda.fusion { animation: fusion .22s cubic-bezier(.3, 1.8, .5, 1); }
+  @keyframes aparece2048 { from { transform: scale(.3); } }
+  @keyframes fusion { 50% { transform: scale(1.18); } }
+  .mem { transition: transform .25s; }
+  .mem.vista { animation: girar .25s ease-out; }
+  @keyframes girar { from { transform: rotateY(90deg); } }
+  .mem.pareja { animation: pareja .5s cubic-bezier(.3, 1.8, .5, 1); }
+  @keyframes pareja { 50% { transform: scale(1.15) rotate(-4deg); } }
+  .rival.activo { animation: activo 1.6s ease-in-out infinite; }
+  @keyframes activo { 50% { transform: translate(-1px, -3px); } }
+}
+.mem:not(.vista):hover { transform: translateY(-3px); }
 
 @media (max-width: 1000px) {
   .cuerpo-juego { grid-template-columns: 1fr; }

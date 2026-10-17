@@ -40,8 +40,11 @@
     normas.append('Al jugar aceptas las ', an, ' (sé majo en el chat).');
     const i = el('input'); i.maxLength = 16; i.placeholder = 'Tu apodo'; i.autocomplete = 'nickname'; i.required = true; i.minLength = 2;
     i.value = UI.leer('apodo', '');
-    f.append(i, normas, boton('Entrar', null, 'oro'));
-    f.lastChild.type = 'submit';
+    const conCuenta = el('p', 'suave'); const ec = el('button', 'enlace-btn', 'entra con tu cuenta'); ec.type = 'button'; ec.onclick = () => Cuenta.ventana('entrar');
+    conCuenta.append('¿Tienes cuenta? ', ec, ' y se guardarán tus partidas.');
+    const entrar = boton('Entrar', null, 'oro');
+    entrar.type = 'submit';
+    f.append(i, normas, entrar, conCuenta);
     f.onsubmit = async (e) => { e.preventDefault(); const r = await pedir('hola', { nombre: i.value }); if (r.ok) UI.guardar('apodo', i.value.trim()); };
     raiz.replaceChildren(f);
     i.focus();
@@ -81,8 +84,8 @@
       r.append(el('span', 'grow', `Sala de ${s.anfitrion} · ${s.jugadores}/${s.max}`), boton('Entrar', () => pedir('unirse', { code: s.code })));
       b.append(r);
     }
-    const cambiar = boton(`Cambiar apodo (${est.yo.nombre})`, () => { est.yo = { nombre: null }; pintar(); }, 'flojo');
-    c.append(a, b, cambiar);
+    c.append(a, b);
+    if (!est.yo.cuenta) c.append(boton(`Cambiar apodo (${est.yo.nombre})`, () => { est.yo = { nombre: null }; pintar(); }, 'flojo'));
     raiz.replaceChildren(c);
   }
 
@@ -90,7 +93,11 @@
     const ul = el('ol', 'asientos');
     s.asientos.forEach((a, i) => {
       const li = el('li', a.conectado ? '' : 'desconectado');
-      li.append(el('span', 'grow', `${a.anfitrion ? '👑 ' : ''}${a.bot ? '🤖 ' : ''}${a.nombre}${a.bot && !a.sustituto ? ` (${a.nivel === 'dificil' ? 'difícil' : 'normal'})` : ''}${a.sustituto ? ' (le sustituye la CPU)' : ''}${i === s.yo ? ' · tú' : ''}${!a.conectado ? ' · desconectado' : ''}`));
+      const cara = el('span', 'cara');
+      if (a.avatar != null) { const im = el('img', 'px'); im.src = Cuenta.avatarUrl(a.avatar); im.alt = ''; im.width = 24; im.height = 24; cara.append(im); cara.title = 'Tiene cuenta'; }
+      else cara.textContent = a.bot ? '🤖' : (a.nombre[0] || '?').toUpperCase();
+      li.append(cara);
+      li.append(el('span', 'grow', `${a.anfitrion ? '👑 ' : ''}${a.nombre}${a.bot && !a.sustituto ? ` (${a.nivel === 'dificil' ? 'difícil' : 'normal'})` : ''}${a.sustituto ? ' (le sustituye la CPU)' : ''}${i === s.yo ? ' · tú' : ''}${!a.conectado ? ' · desconectado' : ''}`));
       if (editable) {
         if (i > 0) li.append(boton('↑', () => pedir('mover', { i, dir: -1 }), 'mini'));
         if (i < s.asientos.length - 1) li.append(boton('↓', () => pedir('mover', { i, dir: 1 }), 'mini'));
@@ -143,8 +150,11 @@
   }
 
   let chatAbierto = false;
+  let faseAntes = null, miTurnoAntes = false;
+  const tituloBase = document.title;
   function pantallaPartida() {
     const s = est.sala;
+    const miTurno = s.fase === 'juego' && s.partida && s.partida.turno === s.yo;
     // conservar lo que se esté escribiendo en el chat al repintar
     const activo = document.activeElement;
     const borrador = activo && activo.closest?.('.chat') ? activo.value : null;
@@ -166,6 +176,13 @@
     c.append(zona, toggle, lado);
     raiz.replaceChildren(c);
     if (borrador !== null) { const i = raiz.querySelector('.chat input'); i.value = borrador; i.focus(); }
+    // te toca: latido y aviso en la pestaña del navegador
+    if (miTurno && !miTurnoAntes) zona.querySelector('.turno')?.classList.add('pulso');
+    document.title = miTurno ? `🔔 ¡Te toca! · ${tituloBase}` : tituloBase;
+    miTurnoAntes = miTurno;
+    // al ganar, confeti
+    if (s.fase === 'fin' && faseAntes === 'juego' && s.resultado.ganadores.includes(s.yo)) Confeti();
+    faseAntes = s.fase;
   }
   // sin ventanas del navegador: confirmación en dos pulsaciones
   let confirmarHasta = 0;

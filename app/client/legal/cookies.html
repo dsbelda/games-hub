@@ -32,9 +32,11 @@
       <div class="tabla-scroll"><table>
         <tr><th>Nombre</th><th>Tipo</th><th>Para qué</th><th>Duración</th></tr>
         <tr><td><code>games_id</code></td><td>Cookie propia, técnica</td><td>Identificador aleatorio para reconocerte en las salas y reconectarte si se corta la conexión.</td><td>1 año</td></tr>
+        <tr><td><code>games_sesion</code></td><td>Cookie propia, técnica (solo si creas cuenta o entras)</td><td>Mantener tu sesión abierta.</td><td>90 días o hasta que cierres sesión</td></tr>
         <tr><td><code>__cf_bm</code>, <code>cf_clearance</code></td><td>Cookies de Cloudflare, técnicas</td><td>Las puede poner Cloudflare para frenar ataques y robots. No se usan para seguirte.</td><td>De 30 minutos a unos días</td></tr>
         <tr><td><code>games:apodo</code>, <code>games:nivel</code></td><td>Almacenamiento local</td><td>Recordar tu apodo y el nivel de la CPU que elegiste.</td><td>Hasta que lo borres</td></tr>
         <tr><td><code>games:serpiente</code>, <code>games:2048</code>, <code>games:2048-record</code>, <code>games:memoria-…</code></td><td>Almacenamiento local</td><td>Tus récords y la partida de 2048 a medias.</td><td>Hasta que lo borres</td></tr>
+        <tr><td><code>games:favoritos</code>, <code>games:recientes</code></td><td>Almacenamiento local</td><td>Tus favoritos (si juegas sin cuenta) y los últimos juegos que abriste, para «Sigue jugando».</td><td>Hasta que lo borres</td></tr>
         <tr><td><code>games:cookies</code></td><td>Almacenamiento local</td><td>Recordar lo que elijas en «Configurar cookies».</td><td>Hasta que lo borres</td></tr>
       </table></div>
 
@@ -43,7 +45,7 @@
 
       <h2>Si esto cambia</h2>
       <p>Si algún día se añade publicidad o analítica, se actualizará esta tabla y aparecerá un aviso para que aceptes o rechaces esas cookies <b>antes</b> de que se usen, con las dos opciones igual de visibles. Podrás cambiar de opinión cuando quieras desde «Configurar cookies».</p>
-      <p class="suave">Última actualización: 17 de octubre de 2026.</p>
+      <p class="suave">Última actualización: 17 de octubre de 2026 (cuentas de usuario).</p>
       <p><a href="/">← Volver a los juegos</a></p>
     </div>
   </main>
@@ -58,5 +60,6 @@
     </div>
   </footer>
   <script src="/js/cookies.js?v=__V__"></script>
+  <script src="/js/comun.js?v=__V__"></script>
 </body>
 </html>

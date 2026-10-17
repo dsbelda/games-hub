@@ -25,7 +25,7 @@
   <main class="legal caja">
     <h1 class="caja-titulo">Política de privacidad</h1>
     <div class="caja-in">
-      <p>En resumen: <b>no te pedimos nombre, correo ni contraseña</b>. Solo usamos lo imprescindible para que puedas jugar y para proteger el servidor.</p>
+      <p>En resumen: para jugar <b>no hace falta darnos nada</b>. Si creas una cuenta (es opcional), solo guardamos un nombre de usuario que tú eliges, tu contraseña cifrada y lo que juegas. <b>No pedimos correo, nombre real ni teléfono.</b></p>
 
       <h2>Responsable</h2>
       <p>David Sánchez Belda, Valencia (España). Correo: <a href="mailto:dsbelda@gmail.com">dsbelda@gmail.com</a>.</p>
@@ -37,30 +37,34 @@
         <tr><td>Tu apodo</td><td>Mostrarlo a los demás jugadores de tu sala.</td><td>Solo en la memoria del servidor mientras juegas; se borra al reiniciarlo</td></tr>
         <tr><td>Mensajes del chat y jugadas</td><td>Que funcionen la partida y el chat de la sala.</td><td>Solo en memoria, mientras exista la sala (como mucho 12 horas)</td></tr>
         <tr><td>Dirección IP, navegador, página pedida y hora</td><td>Seguridad: detectar ataques y abusos y resolver fallos.</td><td>14 días en los registros del servidor web</td></tr>
+        <tr><td><b>Si creas cuenta:</b> nombre de usuario, contraseña (guardada cifrada con scrypt: nadie puede leerla), avatar elegido, fecha de alta y de último acceso</td><td>Que puedas entrar, reservar tu nombre y ver tu perfil.</td><td>Hasta que borres la cuenta. Si no entras en 2 años, se borra sola</td></tr>
+        <tr><td><b>Si creas cuenta:</b> partidas jugadas y ganadas por juego, récords de los juegos en solitario y favoritos</td><td>Enseñártelos en tu perfil.</td><td>Igual que la cuenta</td></tr>
+        <tr><td><b>Si creas cuenta:</b> una cookie de sesión <code>games_sesion</code></td><td>Mantenerte dentro sin escribir la contraseña cada vez.</td><td>90 días o hasta que cierres sesión</td></tr>
         <tr><td>Récords, apodo y preferencias</td><td>Recordarlos para la próxima vez.</td><td>Se guardan <b>solo en tu navegador</b> (almacenamiento local); no llegan al servidor, salvo el apodo cuando juegas</td></tr>
       </table></div>
       <p>No se crean perfiles, no se toman decisiones automatizadas sobre ti y no se venden ni se ceden datos a nadie.</p>
 
       <h2>Base legal</h2>
       <ul>
-        <li>Darte el servicio que pides al entrar a jugar (art. 6.1.b del RGPD).</li>
+        <li>Darte el servicio que pides al entrar a jugar o al crear tu cuenta (art. 6.1.b del RGPD). Al crear la cuenta aceptas expresamente estas condiciones.</li>
         <li>Interés legítimo en mantener la web segura y evitar abusos (art. 6.1.f del RGPD), para los registros del servidor.</li>
       </ul>
 
       <h2>Quién más ve los datos</h2>
       <ul>
-        <li><b>Los demás jugadores de tu sala</b>: tu apodo y tus mensajes.</li>
+        <li><b>Los demás jugadores de tu sala</b>: tu apodo (o nombre de usuario y avatar) y tus mensajes. Tus estadísticas, récords y favoritos solo los ves tú.</li>
         <li><b>OVHcloud</b>: el servidor donde está la web, en Francia (Unión Europea).</li>
         <li><b>Cloudflare</b>: la red que protege y acelera la web; ve tu IP y las peticiones que haces. Es una empresa de EE. UU. adherida al Marco de Privacidad de Datos UE-EE. UU., que garantiza un nivel de protección adecuado.</li>
       </ul>
 
       <h2>Tus derechos</h2>
-      <p>Puedes pedir acceso, rectificación, supresión, oposición, limitación o portabilidad escribiendo a <a href="mailto:dsbelda@gmail.com">dsbelda@gmail.com</a>. Como no pedimos datos que te identifiquen, puede que no podamos saber qué datos son tuyos (art. 11 del RGPD); en ese caso te lo explicaremos. Para borrar al momento lo que hay en tu navegador, borra las cookies y los datos de este sitio.</p>
+      <p><b>Si tienes cuenta, lo haces tú mismo desde <a href="/cuenta">Tu cuenta</a></b>: descargar todos tus datos en un fichero (portabilidad y acceso), cambiar el avatar o la contraseña, o borrar la cuenta con todo lo que tiene (supresión), al momento.</p>
+      <p>Para cualquier otra cosa, puedes pedir acceso, rectificación, supresión, oposición, limitación o portabilidad escribiendo a <a href="mailto:dsbelda@gmail.com">dsbelda@gmail.com</a>. Si juegas sin cuenta, como no pedimos datos que te identifiquen, puede que no podamos saber qué datos son tuyos (art. 11 del RGPD); en ese caso te lo explicaremos. Para borrar al momento lo que hay en tu navegador, borra las cookies y los datos de este sitio.</p>
       <p>Si crees que no se respetan tus derechos, puedes reclamar ante la Agencia Española de Protección de Datos: <a href="https://www.aepd.es" rel="noopener">www.aepd.es</a>.</p>
 
       <h2>Cambios</h2>
       <p>Si se empieza a tratar algún dato nuevo (por ejemplo, con publicidad), se actualizará esta página antes de hacerlo y, cuando haga falta, se te pedirá permiso.</p>
-      <p class="suave">Última actualización: 17 de octubre de 2026.</p>
+      <p class="suave">Última actualización: 17 de octubre de 2026 (cuentas de usuario).</p>
       <p><a href="/">← Volver a los juegos</a></p>
     </div>
   </main>
@@ -75,5 +79,6 @@
     </div>
   </footer>
   <script src="/js/cookies.js?v=__V__"></script>
+  <script src="/js/comun.js?v=__V__"></script>
 </body>
 </html>

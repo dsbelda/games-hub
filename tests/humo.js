@@ -7,7 +7,7 @@ const { chromium } = require(process.env.PLAYWRIGHT || '/home/ubuntu/herramienta
   p.on('console', m => m.type() === 'error' && errs.push(m.text())); p.on('pageerror', e => errs.push(String(e)));
   const ws = []; p.on('websocket', w => ws.push(w.url()));
   await p.goto('https://games.dsbelda.dev/'); await p.waitForSelector('.ficha');
-  const tarjetas = await p.locator('a.ficha').count();
+  const tarjetas = await p.locator('a.ficha-enlace').count();
   await p.goto('https://games.dsbelda.dev/j/cuatro');
   await p.fill('input[autocomplete=nickname]', 'Prueba'); await p.click('text=Entrar');
   await p.click('text=Jugar ya contra la CPU'); await p.waitForSelector('.c4-col:not([disabled])');

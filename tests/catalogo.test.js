@@ -18,7 +18,7 @@ test('el catálogo es coherente', () => {
 });
 
 test('el servidor sirve portada, catálogo y healthz', async () => {
-  const { server, port } = await start({ port: 0 });
+  const { server, port } = await start({ baseDatos: ':memory:', port: 0 });
   try {
     const base = `http://127.0.0.1:${port}`;
     assert.equal((await fetch(base + '/healthz')).status, 200);
@@ -29,7 +29,7 @@ test('el servidor sirve portada, catálogo y healthz', async () => {
 });
 
 test('textos legales y página 404 propia', async () => {
-  const { server, io: srv, port } = await start({ port: 0 });
+  const { server, io: srv, port } = await start({ baseDatos: ':memory:', port: 0 });
   try {
     const base = `http://127.0.0.1:${port}`;
     for (const p of ['aviso', 'privacidad', 'cookies']) {
@@ -46,10 +46,10 @@ test('textos legales y página 404 propia', async () => {
 });
 
 test('las páginas piden CSS, JS e imágenes con versión y no se guardan en caché', async () => {
-  const { server, io: srv, port } = await start({ port: 0 });
+  const { server, io: srv, port } = await start({ baseDatos: ':memory:', port: 0 });
   try {
     const base = `http://127.0.0.1:${port}`;
-    for (const p of ['/', '/j/brisca', '/legal/cookies', '/no-existe']) {
+    for (const p of ['/', '/j/brisca', '/cuenta', '/legal/cookies', '/no-existe']) {
       const r = await fetch(base + p);
       const t = await r.text();
       assert.equal(r.headers.get('cache-control'), 'no-cache', p);
@@ -61,4 +61,12 @@ test('las páginas piden CSS, JS e imágenes con versión y no se guardan en cac
     const css = await fetch(base + '/style.css?v=x');
     assert.match(css.headers.get('cache-control'), /immutable/);
   } finally { srv.close(); server.close(); }
+});
+
+test('todos los scripts del navegador compilan', () => {
+  const fs = require('node:fs'), path = require('node:path'), vm = require('node:vm');
+  const dir = path.join(__dirname, '..', 'app', 'client', 'js');
+  const ficheros = [...fs.readdirSync(dir).map((f) => path.join(dir, f)), ...fs.readdirSync(path.join(dir, 'juegos')).map((f) => path.join(dir, 'juegos', f))].filter((f) => f.endsWith('.js'));
+  assert.ok(ficheros.length >= 12);
+  for (const f of ficheros) assert.doesNotThrow(() => new vm.Script(fs.readFileSync(f, 'utf8'), { filename: f }), f);
 });

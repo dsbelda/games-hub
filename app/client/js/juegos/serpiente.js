@@ -40,7 +40,8 @@ window.JUEGO = {
     }
     function morir() {
       vivo = false; clearInterval(temporizador);
-      if (puntos > record) { record = puntos; UI.guardar('serpiente', record); UI.aviso('¡Nuevo récord!'); }
+      if (puntos > record) { record = puntos; UI.guardar('serpiente', record); UI.aviso('¡Nuevo récord!', 'bien'); Confeti(); }
+      if (puntos > 0) Cuenta.record('serpiente', puntos);
       empezar.textContent = 'Otra vez'; empezar.hidden = false; dibujar();
     }
     function dibujar() {

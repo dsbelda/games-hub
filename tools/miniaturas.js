@@ -162,6 +162,30 @@ const logo = (() => {
   L.R(1, 9, 3, 1, P.tinta); L.R(8, 9, 3, 1, P.tinta);
   return L;
 })();
+// avatares: 12 personajes de 12×12 (piel, pelo, ropa y un detalle)
+const AVATARES = [
+  ['#f2c9a0', '#6b3f1d', P.tomate, 'nada'], ['#c98e5f', P.tinta, P.cielo, 'gafas'], ['#f5d6b8', P.sol, P.menta, 'lazo'],
+  ['#8d5a3b', P.tinta, P.uva, 'gorra'], ['#f2c9a0', P.tomate, P.sol, 'pecas'], ['#e0ac7e', P.gris, P.tinta, 'bigote'],
+  ['#f5d6b8', P.uva, P.rosa, 'corona'], ['#a86b45', '#3b2a1a', P.verde, 'auriculares'], ['#f2c9a0', P.cielo, P.tomate, 'gafas'],
+  ['#c98e5f', P.rosa, P.cielo, 'lazo'], ['#6e4a32', P.tinta, P.sol, 'gorra'], ['#f5d6b8', P.verde, P.uva, 'corona'],
+].map(([piel, pelo, ropa, extra]) => {
+  const L = lienzo(12, 12);
+  L.R(0, 0, 12, 12, P.crema);
+  L.R(1, 10, 10, 2, P.tinta); L.R(2, 10, 8, 2, ropa);                  // hombros
+  L.R(3, 2, 6, 8, P.tinta); L.R(2, 3, 8, 6, P.tinta); L.R(3, 3, 6, 6, piel); L.R(4, 9, 4, 1, piel); // cabeza
+  L.R(3, 2, 6, 2, pelo); L.R(2, 3, 1, 3, pelo); L.R(9, 3, 1, 3, pelo);      // pelo
+  L.R(4, 5, 1, 1, P.tinta); L.R(7, 5, 1, 1, P.tinta); L.R(5, 7, 2, 1, P.tomateO); // ojos y boca
+  if (extra === 'gafas') { L.R(3, 5, 3, 1, P.tinta); L.R(6, 5, 3, 1, P.tinta); L.R(4, 5, 1, 1, P.blanco); L.R(7, 5, 1, 1, P.blanco); }
+  if (extra === 'lazo') { L.R(8, 1, 3, 2, P.rosa); L.R(9, 1, 1, 2, P.rosaO); }
+  if (extra === 'gorra') { L.R(2, 1, 8, 2, P.tomate); L.R(8, 3, 3, 1, P.tomateO); }
+  if (extra === 'pecas') { L.R(3, 6, 1, 1, P.tomateO); L.R(8, 6, 1, 1, P.tomateO); }
+  if (extra === 'bigote') { L.R(4, 7, 4, 1, P.tinta); L.R(5, 7, 2, 1, pelo); }
+  if (extra === 'corona') { L.R(3, 0, 6, 2, P.sol); L.R(3, 0, 1, 1, P.crema); L.R(5, 0, 2, 1, P.crema); L.R(8, 0, 1, 1, P.crema); }
+  if (extra === 'auriculares') { L.R(3, 1, 6, 1, P.tinta); L.R(1, 4, 2, 3, P.tomate); L.R(9, 4, 2, 3, P.tomate); }
+  return L;
+});
+fs.mkdirSync(path.join(OUT, 'avatares'), { recursive: true });
+AVATARES.forEach((L, i) => fs.writeFileSync(path.join(OUT, 'avatares', `${i}.svg`), L.svg(4)));
 fs.mkdirSync(path.join(OUT, 'juegos'), { recursive: true });
 fs.writeFileSync(path.join(OUT, 'logo.svg'), logo.svg(3));
 for (const [id, L] of Object.entries(M)) fs.writeFileSync(path.join(OUT, 'juegos', `${id}.svg`), L.svg());

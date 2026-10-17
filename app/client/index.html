@@ -17,7 +17,7 @@
       <a class="logo" href="/" aria-label="dsbelda games, inicio"><img src="/img/logo.svg?v=__V__" alt="" width="36" height="36"><b>DSBELDA</b><em>games</em></a>
       <form class="buscador" role="search" action="/" id="buscador">
         <label class="oculto" for="q">Buscar juego</label>
-        <input id="q" name="q" type="search" placeholder="Buscar juego…" autocomplete="off">
+        <input id="q" name="q" type="search" placeholder="Buscar juego…  ( / )" autocomplete="off">
         <button type="submit">Buscar</button>
       </form>
     </div>
@@ -30,7 +30,8 @@
         <p>Brisca, cartas, tablero y juegos rápidos. Ponte un apodo, juega contra la CPU o crea una sala y pasa el enlace.</p>
         <div class="acciones">
           <a class="btn primario" href="/j/brisca">▶ Jugar a la Brisca</a>
-          <a class="btn" href="#catalogo">Ver todos los juegos</a>
+          <button class="btn sol" id="sorpresa" type="button"><span class="dado" aria-hidden="true"></span> Sorpréndeme</button>
+          <a class="btn" href="#catalogo">Ver todos</a>
         </div>
       </div>
       <img class="hero-img" src="/img/hero.svg?v=__V__" alt="" width="480" height="320">
@@ -38,6 +39,14 @@
   </section>
 
   <main class="envoltura">
+    <section class="seccion fila-mini" id="fila-recientes" hidden>
+      <h2 class="seccion-titulo">Sigue jugando</h2>
+      <div class="tira"></div>
+    </section>
+    <section class="seccion fila-mini" id="fila-favoritos" hidden>
+      <h2 class="seccion-titulo">Tus favoritos</h2>
+      <div class="tira"></div>
+    </section>
     <section class="seccion" id="zona-destacados">
       <h2 class="seccion-titulo">Destacados</h2>
       <div class="destacados" id="destacados"></div>
@@ -72,6 +81,7 @@
     </div>
   </footer>
   <script src="/js/cookies.js?v=__V__"></script>
+  <script src="/js/comun.js?v=__V__"></script>
   <script src="/js/portal.js?v=__V__"></script>
 </body>
 </html>

@@ -15,6 +15,7 @@
   }
   let eligiendo = null; // carta comodín pendiente de color
 
+  let vistas = new Set(), ultimaArriba = null; // cartas que ya estaban en la mano (las nuevas entran con animación)
   window.JUEGO = {
     render(zona, v, ctx) {
       const yo = ctx.yo;
@@ -34,20 +35,26 @@
       mazo.setAttribute('aria-label', 'Robar una carta');
       mazo.disabled = !miTurno || v.robada !== null;
       mazo.append(el('span', 'centro-u', 'Robar'));
-      centro.append(mazo, carta(arriba, { cls: 'arriba' }));
+      centro.append(mazo, carta(arriba, { cls: 'arriba' + (arriba.id !== ultimaArriba ? ' tirada' : '') }));
+      ultimaArriba = arriba.id;
       const color = el('div', `color-actual ${v.color}`); color.textContent = `Color: ${v.color} · ${v.dir === 1 ? '↻' : '↺'}`;
       centro.append(color);
       const estado = el('p', 'turno' + (miTurno ? ' mio' : ''));
       if (ctx.fase === 'juego') estado.textContent = miTurno ? (v.robada !== null ? 'Te sirve la que has robado: tírala o pasa' : 'Te toca') : `Turno de ${ctx.nombre(v.turno)}`;
       if (v.aviso && v.aviso.texto) estado.textContent += ` · ${ctx.nombre(v.aviso.j)} ${v.aviso.texto}`;
       const mano = el('div', 'mano');
+      let k = 0;
+      const ahora = new Set(v.mano.map((c) => c.id));
       for (const c of v.mano) {
+        const nueva = !vistas.has(c.id);
         const jugable = miTurno && sirve(c) && (v.robada === null || v.robada === c.id);
         mano.append(carta(c, {
-          cls: jugable ? 'jugable' : 'apagada',
+          cls: (jugable ? 'jugable' : 'apagada') + (nueva ? ' nueva' : ''),
           onclick: jugable ? () => { if (c.c === null) { eligiendo = c.id; window.JUEGO.render(zona.replaceChildren() || zona, v, ctx); } else ctx.enviar({ tipo: 'jugar', carta: c.id }); } : null,
         }));
       }
+      mano.querySelectorAll('.nueva').forEach((e) => e.style.setProperty('--i', k++));
+      vistas = ahora;
       const acciones = el('div', 'fila centro');
       if (eligiendo !== null) {
         acciones.append(el('span', null, 'Elige color:'));

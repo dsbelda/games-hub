@@ -30,6 +30,7 @@
   }
   const dorso = () => el('div', 'carta-es dorso');
 
+  let vistas = new Set(), mesaVista = new Set(); // cartas que ya estaban en la mano (las nuevas entran con animación)
   window.JUEGO = {
     render(zona, v, ctx) {
       const yo = ctx.yo;
@@ -52,20 +53,28 @@
       if (v.triunfo) mazo.append(carta(v.triunfo, { cls: 'triunfo' }));
       mazo.append(el('small', null, `Triunfo: ${v.palo} · quedan ${v.quedan}`));
       const mesa = el('div', 'baza');
-      if (v.mesa.length) for (const x of v.mesa) { const w = el('div', 'jugada'); w.append(carta(x.carta), el('small', null, ctx.nombre(x.j))); mesa.append(w); }
+      if (v.mesa.length) for (const x of v.mesa) { const w = el('div', 'jugada'); w.append(carta(x.carta, { cls: mesaVista.has(idc(x.carta)) ? '' : 'tirada' }), el('small', null, ctx.nombre(x.j))); mesa.append(w); }
       else if (v.ultimaBaza && ctx.fase === 'juego') {
         const w = el('div', 'ultima');
         w.append(el('small', null, `Última baza para ${ctx.nombre(v.ultimaBaza.ganador)} (+${v.ultimaBaza.puntos})`));
         const fila = el('div', 'fila'); for (const x of v.ultimaBaza.cartas) fila.append(carta(x.carta, { cls: 'peque' + (x.j === v.ultimaBaza.ganador ? ' gana' : '') })); w.append(fila);
         mesa.append(w);
       }
+      mesaVista = new Set(v.mesa.map((x) => idc(x.carta)));
       centro.append(mazo, mesa);
       const estado = el('p', 'turno' + (miTurno ? ' mio' : ''));
       if (ctx.fase === 'juego') estado.textContent = miTurno ? 'Te toca: elige carta' : `Turno de ${ctx.nombre(v.turno)}`;
       if (v.aviso) estado.textContent += ` · ${ctx.nombre(v.aviso.j)} ${v.aviso.texto}`;
       // mi mano
       const mano = el('div', 'mano');
-      for (const c of v.mano) mano.append(carta(c, { onclick: miTurno ? () => ctx.enviar({ tipo: 'jugar', carta: idc(c) }) : null, cls: c.p === v.palo ? 'es-triunfo' : '' }));
+      let k = 0;
+      for (const c of v.mano) {
+        const nueva = !vistas.has(idc(c));
+        const e = carta(c, { onclick: miTurno ? () => ctx.enviar({ tipo: 'jugar', carta: idc(c) }) : null, cls: (c.p === v.palo ? 'es-triunfo' : '') + (nueva ? ' nueva' : '') });
+        if (nueva) e.style.setProperty('--i', k++);
+        mano.append(e);
+      }
+      vistas = new Set(v.mano.map(idc));
       const acciones = el('div', 'fila centro');
       if (v.puedeCambiar7) acciones.append(UI.boton('Cambiar el 7 por el triunfo', () => ctx.enviar({ tipo: 'cambiar7' })));
       const marcador = el('p', 'suave centro');

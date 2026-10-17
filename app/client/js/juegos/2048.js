@@ -13,10 +13,14 @@ window.JUEGO = {
     const vacias = () => { const v = []; g.forEach((f, y) => f.forEach((x, c) => { if (!x) v.push([y, c]); })); return v; };
     const poner = () => { const v = vacias(); if (!v.length) return; const [y, c] = v[Math.floor(Math.random() * v.length)]; g[y][c] = Math.random() < 0.9 ? 2 : 4; };
     function nueva() { g = Array.from({ length: 4 }, () => Array(4).fill(0)); puntos = 0; ganado = false; poner(); poner(); guardar(); pintar(); }
-    function guardar() { UI.guardar('2048', { g, puntos, ganado }); if (puntos > record) { record = puntos; UI.guardar('2048-record', record); } }
+    let envio = null;
+    function guardar() {
+      UI.guardar('2048', { g, puntos, ganado });
+      if (puntos > record) { record = puntos; UI.guardar('2048-record', record); clearTimeout(envio); envio = setTimeout(() => Cuenta.record('2048', record), 1500); }
+    }
     function deslizar(fila) {
       const f = fila.filter(Boolean);
-      for (let i = 0; i < f.length - 1; i++) if (f[i] === f[i + 1]) { f[i] *= 2; puntos += f[i]; if (f[i] === 2048 && !ganado) { ganado = true; UI.aviso('¡2048! Puedes seguir jugando'); } f.splice(i + 1, 1); }
+      for (let i = 0; i < f.length - 1; i++) if (f[i] === f[i + 1]) { f[i] *= 2; puntos += f[i]; if (f[i] === 2048 && !ganado) { ganado = true; UI.aviso('¡2048! Puedes seguir jugando', 'bien'); Confeti(); } f.splice(i + 1, 1); }
       while (f.length < 4) f.push(0);
       return f;
     }
@@ -33,7 +37,13 @@ window.JUEGO = {
     }
     const atascado = () => !vacias().length && g.every((f, y) => f.every((x, c) => x !== f[c + 1] && x !== (g[y + 1] || [])[c]));
     function pintar() {
-      tablero.replaceChildren(...g.flat().map((x) => { const d = el('div', `celda v${Math.min(x, 4096)}`, x || ''); return d; }));
+      const prev = pintar.prev || [];
+      tablero.replaceChildren(...g.flat().map((x, i) => {
+        const d = el('div', `celda v${Math.min(x, 4096)}`, x || '');
+        if (x && prev[i] !== x) d.classList.add(prev[i] && x > prev[i] ? 'fusion' : 'sale');
+        return d;
+      }));
+      pintar.prev = g.flat();
       marcador.textContent = `Puntos: ${puntos} · Récord: ${record}${atascado() ? ' · Sin movimientos' : ''}`;
     }
     const TECLAS = { ArrowUp: 'arriba', w: 'arriba', ArrowDown: 'abajo', s: 'abajo', ArrowLeft: 'izquierda', a: 'izquierda', ArrowRight: 'derecha', d: 'derecha' };

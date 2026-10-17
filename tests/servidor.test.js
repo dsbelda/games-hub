@@ -17,7 +17,7 @@ async function cliente(base) {
 const espera = (ms) => new Promise((ok) => setTimeout(ok, ms));
 
 test('sala de Brisca con dos personas y dos CPUs hasta el final', async () => {
-  const { server, io: srv, port } = await start({ port: 0, retardoCpu: 0 });
+  const { server, io: srv, port } = await start({ baseDatos: ':memory:', port: 0, retardoCpu: 0 });
   const base = `http://127.0.0.1:${port}`;
   const a = await cliente(base), b = await cliente(base);
   try {
@@ -55,7 +55,7 @@ test('sala de Brisca con dos personas y dos CPUs hasta el final', async () => {
 });
 
 test('quien sale en plena partida deja a la CPU y puede volver con el código', async () => {
-  const { server, io: srv, port } = await start({ port: 0, retardoCpu: 0 });
+  const { server, io: srv, port } = await start({ baseDatos: ':memory:', port: 0, retardoCpu: 0 });
   const base = `http://127.0.0.1:${port}`;
   const a = await cliente(base), b = await cliente(base);
   try {
@@ -75,7 +75,7 @@ test('quien sale en plena partida deja a la CPU y puede volver con el código', 
 });
 
 test('las páginas de juego solo existen para juegos listos', async () => {
-  const { server, io: srv, port } = await start({ port: 0 });
+  const { server, io: srv, port } = await start({ baseDatos: ':memory:', port: 0 });
   const base = `http://127.0.0.1:${port}`;
   try {
     assert.equal((await fetch(base + '/j/brisca')).status, 200);
