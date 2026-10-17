@@ -128,7 +128,7 @@ img.px, .px { image-rendering: pixelated; }
 .pestana[aria-pressed="true"] { background: var(--c, var(--borde)); color: var(--blanco); box-shadow: var(--sombra-s); transform: translate(-1px, -1px); }
 .pestana[aria-pressed="true"] svg [fill="#1e1b2e"] { fill: var(--blanco); }
 .c-todos { --c: var(--negro); } .c-cartas { --c: var(--tomate); } .c-tablero { --c: var(--menta); } .c-habilidad { --c: var(--cielo); }
-.c-palabras { --c: var(--uva); } .c-fiesta { --c: var(--rosa); } .c-casino { --c: var(--sol-o); }
+.c-estrategia { --c: var(--verde); } .c-palabras { --c: var(--uva); } .c-fiesta { --c: var(--rosa); } .c-casino { --c: var(--sol-o); }
 .filtros { border: 2px dashed var(--borde); background: var(--papel); margin-bottom: 20px; }
 .filtros > summary { list-style: none; cursor: pointer; padding: 10px 14px; font: 700 13px/1 var(--pixel); text-transform: uppercase; display: flex; align-items: center; gap: 8px; }
 .filtros > summary::-webkit-details-marker { display: none; }

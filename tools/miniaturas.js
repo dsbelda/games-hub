@@ -236,6 +236,62 @@ M.stop = (() => {
   for (let k = 0; k < 3; k++) L.R(18, 6 + k * 4, 7 + (k % 2) * 3, 1, P.cieloO);
   return L;
 })();
+M.burbujas = (() => {
+  const L = lienzo(40, 30); L.fondo(P.noche, P.nocheO);
+  const cols = [P.tomate, P.sol, P.verde, P.cielo, P.uva, P.rosa];
+  for (let f = 0; f < 3; f++) for (let k = 0; k < 7 - (f % 2); k++) L.DB(4 + k * 5 + (f % 2) * 2, 3 + f * 4, 2, cols[(k * 3 + f * 2) % 6]);
+  L.DB(20, 25, 2, P.verde); for (let k = 0; k < 6; k++) L.R(19 - k, 21 - k * 2, 1, 1, P.blanco);
+  return L;
+})();
+M.torres = (() => {
+  const L = lienzo(40, 30); L.fondo(P.verde, P.verdeO);
+  L.R(0, 8, 14, 5, '#d9b27c'); L.R(10, 8, 5, 16, '#d9b27c'); L.R(10, 19, 30, 5, '#d9b27c');
+  for (const [x, y, c] of [[4, 9, P.tomate], [12, 14, P.cielo], [18, 20, P.sol], [27, 20, P.rosa]]) { L.R(x, y, 3, 3, P.tinta); L.R(x, y, 2, 2, c); }
+  L.B(18, 10, 6, 6, '#9a5b2e'); L.R(23, 12, 4, 2, P.tinta); L.B(30, 10, 6, 6, '#3a3456'); L.R(28, 12, 2, 2, P.tinta);
+  return L;
+})();
+M.eras = (() => {
+  const L = lienzo(40, 30); L.fondo('#9ad1ff', '#7fb8ff');
+  L.R(0, 24, 40, 6, P.verde);
+  L.B(1, 12, 9, 12, '#9a5b2e'); L.R(2, 12, 7, 2, P.cielo); L.B(30, 12, 9, 12, '#9aa0b5'); L.R(31, 12, 7, 2, P.tomate);
+  for (const [x, c] of [[13, P.cielo], [17, P.cielo], [22, P.tomate], [26, P.tomate]]) { L.R(x, 17, 3, 3, '#e0ac7e'); L.R(x, 20, 3, 4, c); }
+  L.R(19, 18, 2, 1, P.sol); for (const [x, y] of [[8, 3], [15, 5], [24, 2]]) { L.DB(x, y, 1, P.solO); }
+  return L;
+})();
+M.minero = (() => {
+  const L = lienzo(40, 30); L.fondo('#9ad1ff', '#7fb8ff');
+  L.R(0, 8, 40, 22, '#8a5a35'); L.R(0, 8, 40, 2, '#5fc46f');
+  L.R(14, 10, 6, 10, '#2a1c12');
+  L.B(14, 16, 6, 5, P.sol); L.R(17, 17, 2, 1, P.cielo); L.R(16, 21, 2, 2, '#9aa0b5');
+  for (const [x, y, c] of [[4, 14, '#d9803a'], [28, 13, '#9aa0b5'], [7, 22, P.sol], [30, 24, P.verde], [24, 19, P.tomate], [2, 27, '#8fe9ff']]) { L.R(x, y, 3, 3, P.tinta); L.R(x, y, 2, 2, c); }
+  L.R(0, 26, 6, 4, '#ff7a1a');
+  return L;
+})();
+M.tortuga = (() => {
+  const L = lienzo(40, 30); L.fondo('#9ad1ff', '#c9b48e');
+  L.R(0, 25, 40, 5, '#c9b48e');
+  L.B(1, 19, 9, 4, '#6b6680'); L.R(3, 23, 4, 2, '#9a5b2e');
+  for (let k = 0; k < 6; k++) L.R(10 + k * 3, 17 - k * 2 + Math.floor(k * k / 6), 1, 1, P.blanco);
+  L.B(26, 6, 8, 5, P.verde); L.R(28, 7, 2, 2, '#2f7a3a'); L.R(33, 7, 3, 2, '#9adf8c');
+  L.R(30, 24, 6, 2, P.verde);
+  return L;
+})();
+M.volar = (() => {
+  const L = lienzo(40, 30); L.fondo('#a8d4ff', '#dbe8ee');
+  L.R(0, 26, 40, 4, '#f4f8fb');
+  for (let k = 0; k < 12; k++) L.R(k, 14 + k, 1, 12 - k, '#9a5b2e');
+  L.B(20, 8, 9, 5, P.tinta); L.R(22, 10, 6, 2, P.blanco); L.R(29, 9, 2, 2, P.sol); L.R(17, 9, 3, 3, '#ff9f2e');
+  L.R(36, 14, 3, 12, '#8fe9ff');
+  return L;
+})();
+M.test = (() => {
+  const L = lienzo(40, 30); L.fondo(P.uva, P.uvaO);
+  L.B(6, 3, 28, 12, P.blanco);
+  L.R(18, 5, 4, 1, P.tinta); L.R(21, 6, 2, 2, P.tinta); L.R(19, 8, 2, 2, P.tinta); L.R(19, 11, 2, 2, P.tinta);
+  const bt = [[6, 18, P.tomate], [21, 18, P.verde], [6, 24, P.sol], [21, 24, P.cielo]];
+  for (const [x, y, c] of bt) L.B(x, y, 13, 5, c);
+  return L;
+})();
 // ilustración de la portada: mesa con cartas, dados, mando y una moneda
 const hero = (() => {
   const L = lienzo(120, 80);

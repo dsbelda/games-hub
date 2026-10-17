@@ -4,7 +4,7 @@
   const id = location.pathname.split('/')[2];
   const V = document.querySelector('meta[name=v]')?.content || '';
   const MULTI = ['cuatro', 'brisca', 'unidad', 'hundir', 'damas', 'ajedrez', 'tute', 'chinchon', 'poquer', 'mus', 'parchis', 'impostor', 'stop', 'dibujo', 'lobo'];
-  const EXTRA = { ajedrez: ['piezas'], tute: ['cartas-es'], chinchon: ['cartas-es'], mus: ['cartas-es'] }; // scripts que necesita antes un juego
+  const EXTRA = { ajedrez: ['piezas'], tute: ['cartas-es'], chinchon: ['cartas-es'], mus: ['cartas-es'], burbujas: ['lienzo'], torres: ['lienzo'], eras: ['lienzo'], minero: ['lienzo'], tortuga: ['lienzo'], volar: ['lienzo'] }; // scripts que necesita antes un juego
   window.UI = {
     el(tag, cls, txt) { const e = document.createElement(tag); if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e; },
     boton(txt, fn, cls = '') { const b = UI.el('button', 'btn ' + cls, txt); b.type = 'button'; b.onclick = fn; return b; },
@@ -18,7 +18,7 @@
   fetch('/api/juegos').then((r) => r.json()).then(async (cat) => {
     const j = cat.find((x) => x.id === id);
     if (!j) { location.href = '/'; return; }
-    const TIPOS = { cartas: 'Cartas', tablero: 'Tablero', habilidad: 'Habilidad', palabras: 'Palabras', fiesta: 'Fiesta', casino: 'Casino' };
+    const TIPOS = { cartas: 'Cartas', tablero: 'Tablero', habilidad: 'Habilidad', estrategia: 'Estrategia', palabras: 'Palabras', fiesta: 'Fiesta', casino: 'Casino' };
     document.title = `${j.nombre} · Juega gratis · dsbelda games`;
     document.getElementById('titulo').textContent = j.nombre;
     document.getElementById('miga-juego').textContent = j.nombre;
