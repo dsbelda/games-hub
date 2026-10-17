@@ -2,6 +2,7 @@
 // Cargador de la página de un juego (/j/ID): pone el título y carga los scripts que toquen.
 (() => {
   const id = location.pathname.split('/')[2];
+  const V = document.querySelector('meta[name=v]')?.content || '';
   const MULTI = ['cuatro', 'brisca', 'unidad'];
   window.UI = {
     el(tag, cls, txt) { const e = document.createElement(tag); if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e; },
@@ -21,7 +22,7 @@
     const j = cat.find((x) => x.id === id);
     if (!j) { location.href = '/'; return; }
     const TIPOS = { cartas: 'Cartas', tablero: 'Tablero', habilidad: 'Habilidad', dibujo: 'Dibujo', rol: 'Rol', casino: 'Casino' };
-    document.title = `${j.nombre} · Juega gratis · dsbelda Games`;
+    document.title = `${j.nombre} · Juega gratis · dsbelda games`;
     document.getElementById('titulo').textContent = j.nombre;
     document.getElementById('miga-juego').textContent = j.nombre;
     const miga = document.getElementById('miga-tipo');
@@ -31,13 +32,13 @@
     const otros = cat.filter((x) => x.id !== j.id && x.estado === 'listo').sort((a, b) => (b.tipo === j.tipo) - (a.tipo === j.tipo)).slice(0, 4);
     document.getElementById('mas').append(...otros.map((x) => {
       const a = UI.el('a', 'mini-ficha'); a.href = x.url;
-      const im = UI.el('img'); im.src = `/img/juegos/${x.id}.svg`; im.alt = ''; im.width = 160; im.height = 120; im.loading = 'lazy';
+      const im = UI.el('img'); im.src = `/img/juegos/${x.id}.svg?v=${V}`; im.className = 'px'; im.alt = ''; im.width = 160; im.height = 120; im.loading = 'lazy';
       a.append(im, UI.el('span', null, x.nombre));
       return a;
     }));
     document.getElementById('buscador').onsubmit = (e) => { e.preventDefault(); location.href = '/#q=' + encodeURIComponent(document.getElementById('q').value.trim()); };
     window.FICHA = j;
-    if (MULTI.includes(id)) { await cargar('/socket.io/socket.io.js'); await cargar(`/js/juegos/${id}.js`); await cargar('/js/sala.js'); }
-    else { await cargar(`/js/juegos/${id}.js`); window.JUEGO.montar(document.getElementById('raiz')); }
+    if (MULTI.includes(id)) { await cargar('/socket.io/socket.io.js'); await cargar(`/js/juegos/${id}.js?v=${V}`); await cargar(`/js/sala.js?v=${V}`); }
+    else { await cargar(`/js/juegos/${id}.js?v=${V}`); window.JUEGO.montar(document.getElementById('raiz')); }
   }).catch(() => UI.aviso('No se pudo cargar el juego'));
 })();

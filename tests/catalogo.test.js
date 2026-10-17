@@ -44,3 +44,21 @@ test('textos legales y página 404 propia', async () => {
     for (const j of CATALOGO) assert.equal((await fetch(`${base}/img/juegos/${j.id}.svg`)).status, 200, j.id);
   } finally { srv.close(); server.close(); }
 });
+
+test('las páginas piden CSS, JS e imágenes con versión y no se guardan en caché', async () => {
+  const { server, io: srv, port } = await start({ port: 0 });
+  try {
+    const base = `http://127.0.0.1:${port}`;
+    for (const p of ['/', '/j/brisca', '/legal/cookies', '/no-existe']) {
+      const r = await fetch(base + p);
+      const t = await r.text();
+      assert.equal(r.headers.get('cache-control'), 'no-cache', p);
+      assert.ok(!t.includes('__V__'), `${p}: queda __V__ sin sustituir`);
+      const refs = [...t.matchAll(/(?:href|src)="(\/[^"]+\.(?:css|js|svg))(\?v=[0-9a-f]{10})?"/g)];
+      assert.ok(refs.length >= 3, p);
+      for (const [, url, v] of refs) assert.ok(v, `${p}: ${url} sin ?v=`);
+    }
+    const css = await fetch(base + '/style.css?v=x');
+    assert.match(css.headers.get('cache-control'), /immutable/);
+  } finally { srv.close(); server.close(); }
+});

@@ -3,70 +3,75 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#1f5fbf">
-  <title>dsbelda Games · Juegos online para jugar con amigos</title>
+  <meta name="theme-color" content="#fbf7ee">
+  <meta name="v" content="__V__">
+  <title>dsbelda games · Juegos online para jugar con amigos</title>
   <meta name="description" content="Juegos gratis para jugar con amigos: Brisca, cartas, tablero, habilidad y más. Sin registro ni descargas.">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="/style.css">
+  <link rel="icon" href="/img/logo.svg?v=__V__" type="image/svg+xml">
+  <link rel="preload" href="/fonts/Silkscreen-700.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/style.css?v=__V__">
 </head>
 <body>
-  <header class="cabecera">
-    <div class="cabecera-in">
-      <a class="logo" href="/" aria-label="dsbelda Games, inicio"><b>dsbelda</b><span>GAMES</span></a>
-      <p class="lema">Juegos gratis para jugar con tus amigos · sin registro</p>
-      <form class="buscador" role="search" id="buscador">
+  <header class="top">
+    <div class="envoltura">
+      <a class="logo" href="/" aria-label="dsbelda games, inicio"><img src="/img/logo.svg?v=__V__" alt="" width="36" height="36"><b>DSBELDA</b><em>games</em></a>
+      <form class="buscador" role="search" action="/" id="buscador">
         <label class="oculto" for="q">Buscar juego</label>
-        <input id="q" type="search" placeholder="Buscar juego…" autocomplete="off">
+        <input id="q" name="q" type="search" placeholder="Buscar juego…" autocomplete="off">
         <button type="submit">Buscar</button>
       </form>
     </div>
   </header>
-  <nav class="categorias" aria-label="Categorías">
-    <div class="categorias-in" id="pestanas"></div>
-  </nav>
+  <section class="hero">
+    <div class="envoltura">
+      <div>
+        <span class="etiqueta">Gratis · sin registro · con amigos</span>
+        <h1>Echa una partida con tus amigos <mark>en un clic</mark></h1>
+        <p>Brisca, cartas, tablero y juegos rápidos. Ponte un apodo, juega contra la CPU o crea una sala y pasa el enlace.</p>
+        <div class="acciones">
+          <a class="btn primario" href="/j/brisca">▶ Jugar a la Brisca</a>
+          <a class="btn" href="#catalogo">Ver todos los juegos</a>
+        </div>
+      </div>
+      <img class="hero-img" src="/img/hero.svg?v=__V__" alt="" width="480" height="320">
+    </div>
+  </section>
 
-  <div class="cuerpo">
-    <aside>
-      <details class="caja plegable" id="filtros">
-        <summary><h2>Filtrar juegos</h2></summary>
-        <div class="caja-in">
-          <div class="filtro" data-filtro="jugadores"><span>Jugadores</span></div>
-          <div class="filtro" data-filtro="duracion"><span>Duración</span></div>
-          <div class="filtro" data-filtro="modo"><span>Cómo jugar</span></div>
-          <label class="check"><input id="solo-listos" type="checkbox"> Solo los que ya se pueden jugar</label>
-          <p><button id="limpiar" type="button" class="enlace-btn">Quitar filtros</button></p>
+  <main class="envoltura">
+    <section class="seccion" id="zona-destacados">
+      <h2 class="seccion-titulo">Destacados</h2>
+      <div class="destacados" id="destacados"></div>
+    </section>
+
+    <section class="seccion" id="catalogo">
+      <h2 class="seccion-titulo"><span id="titulo-lista">Todos los juegos</span> <small id="cuenta" aria-live="polite"></small></h2>
+      <nav class="categorias" id="pestanas" aria-label="Categorías"></nav>
+      <details class="filtros" id="filtros">
+        <summary>Filtros <span id="n-filtros"></span></summary>
+        <div class="filtros-in">
+          <div class="filtro" data-filtro="jugadores"><span>Jugadores</span><div class="opciones"></div></div>
+          <div class="filtro" data-filtro="duracion"><span>Duración</span><div class="opciones"></div></div>
+          <div class="filtro" data-filtro="modo"><span>Cómo jugar</span><div class="opciones"></div></div>
+          <div class="filtros-pie">
+            <label class="check"><input id="solo-listos" type="checkbox"> Solo los que ya se pueden jugar</label>
+            <button id="limpiar" type="button" class="enlace-btn">Quitar filtros</button>
+          </div>
         </div>
       </details>
-      <section class="caja naranja">
-        <h2>¿Cómo funciona?</h2>
-        <div class="caja-in">
-          <p>1. Elige un juego.</p>
-          <p>2. Ponte un apodo (no hace falta cuenta).</p>
-          <p>3. Juega contra la CPU o crea una sala y pasa el enlace a tus amigos.</p>
-        </div>
-      </section>
-    </aside>
-
-    <main>
-      <section id="zona-destacados">
-        <h2 class="seccion-titulo">⭐ Destacados</h2>
-        <div class="destacados" id="destacados"></div>
-      </section>
-      <h2 class="seccion-titulo"><span id="titulo-lista">Todos los juegos</span> <small id="cuenta" aria-live="polite"></small></h2>
-      <section id="lista" class="rejilla" aria-label="Juegos"></section>
-    </main>
-  </div>
-
+      <div id="lista" class="rejilla" aria-label="Juegos"></div>
+    </section>
+  </main>
+  <div class="pie-spacer"></div>
   <footer class="pie">
-    <div class="pie-in">
-      <span class="grow">© David Sánchez Belda · <a href="https://dsbelda.dev">dsbelda.dev</a></span>
+    <div class="envoltura">
+      <span class="grow"><span class="logo-pie">DSBELDA games</span> Hecho en Valencia por David Sánchez Belda · <a href="https://dsbelda.dev">dsbelda.dev</a></span>
       <a href="/legal/aviso">Aviso legal</a>
       <a href="/legal/privacidad">Privacidad</a>
       <a href="/legal/cookies">Cookies</a>
       <button type="button" class="enlace-btn" data-cookies-panel>Configurar cookies</button>
     </div>
   </footer>
-  <script src="/js/cookies.js"></script>
-  <script src="/js/portal.js"></script>
+  <script src="/js/cookies.js?v=__V__"></script>
+  <script src="/js/portal.js?v=__V__"></script>
 </body>
 </html>

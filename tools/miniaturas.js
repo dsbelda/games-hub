@@ -1,36 +1,169 @@
 'use strict';
-// Genera las miniaturas (160×120) de cada juego en app/client/img/juegos/ID.svg.
-// Estilo de portal clásico: fondo degradado, dibujo sencillo y brillo arriba. Uso: node tools/miniaturas.js
+// Genera las miniaturas de los juegos (pixel art suave: rejilla de 40×30 a 4 px = 160×120) y la ilustración
+// de la portada (hero.svg, 120×80 a 4 px) en app/client/img/. Uso: node tools/miniaturas.js
 const fs = require('node:fs');
 const path = require('node:path');
-const OUT = path.join(__dirname, '..', 'app', 'client', 'img', 'juegos');
+const OUT = path.join(__dirname, '..', 'app', 'client', 'img');
 
-const marco = (id, c1, c2, cuerpo) => `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 120" width="160" height="120">
-<defs><linearGradient id="f" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${c1}"/><stop offset="1" stop-color="${c2}"/></linearGradient>
-<linearGradient id="b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".45"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient></defs>
-<rect width="160" height="120" fill="url(#f)"/>
-<g opacity=".12" fill="#fff">${Array.from({ length: 8 }, (_, i) => `<circle cx="${(i * 47) % 160}" cy="${(i * 31) % 120}" r="${10 + (i % 3) * 8}"/>`).join('')}</g>
-${cuerpo}
-<path d="M0 0H160V46Q80 62 0 46Z" fill="url(#b)"/>
-</svg>
-`;
-const carta = (x, y, rot, fondo, simbolo, color, txt = '') => `<g transform="translate(${x} ${y}) rotate(${rot})"><rect x="-17" y="-26" width="34" height="52" rx="4" fill="${fondo}" stroke="#333" stroke-width="2"/>${simbolo}${txt ? `<text x="-12" y="-13" font-family="Arial Black,Arial" font-weight="900" font-size="11" fill="${color}">${txt}</text>` : ''}</g>`;
-const hex = (x, y, r, c) => `<polygon points="${[0, 1, 2, 3, 4, 5].map((k) => `${(x + r * Math.cos(Math.PI / 6 + k * Math.PI / 3)).toFixed(1)},${(y + r * Math.sin(Math.PI / 6 + k * Math.PI / 3)).toFixed(1)}`).join(' ')}" fill="${c}" stroke="#5a3a12" stroke-width="2"/>`;
-
-const M = {
-  catan: marco('catan', '#5ab0e8', '#2a6fb5', [[50, 48, '#e8a33c'], [80, 48, '#5aa83c'], [110, 48, '#d9d24a'], [65, 74, '#b85c34'], [95, 74, '#8a8a8a'], [80, 100, '#5aa83c']].map(([x, y, c]) => hex(x, y, 17, c)).join('') + '<rect x="74" y="38" width="12" height="12" fill="#c0392b" stroke="#333" stroke-width="2"/><path d="M72 40l8-8 8 8z" fill="#c0392b" stroke="#333" stroke-width="2"/>'),
-  swjack: marco('swjack', '#8e2de2', '#4a0e7a', '<rect x="35" y="22" width="90" height="76" rx="10" fill="#e8b13a" stroke="#5a3a00" stroke-width="3"/>' + [48, 80, 112].map((x) => `<rect x="${x - 13}" y="36" width="26" height="36" rx="3" fill="#fff" stroke="#5a3a00" stroke-width="2"/><text x="${x}" y="64" text-anchor="middle" font-family="Arial Black,Arial" font-size="24" font-weight="900" fill="#d6262b">7</text>`).join('') + '<rect x="55" y="80" width="50" height="10" rx="5" fill="#d6262b"/><line x1="130" y1="40" x2="140" y2="25" stroke="#888" stroke-width="4"/><circle cx="141" cy="23" r="6" fill="#d6262b"/>'),
-  brisca: marco('brisca', '#3fae5b', '#1e6b32', carta(62, 64, -12, '#fff8e6', '<circle r="11" fill="#e8b13a" stroke="#8a5a12" stroke-width="3"/>', '#8a5a12', '1') + carta(98, 62, 10, '#fff8e6', '<path d="M-10 -8h20l-4 12h-12zM-3 4h6v8h6v4h-18v-4h6z" fill="#c0392b"/>', '#8e231b', '3')),
-  unidad: marco('unidad', '#ff9a3c', '#e0451e', [['#d6262b', -24], ['#e8b13a', -8], ['#3a9a3c', 8], ['#2f63c9', 24]].map(([c, r], i) => `<g transform="translate(80 105) rotate(${r})"><rect x="-17" y="-80" width="34" height="52" rx="5" fill="${c}" stroke="#fff" stroke-width="3"/><ellipse cx="0" cy="-54" rx="11" ry="16" fill="#fff" transform="rotate(25 0 -54)"/><text x="0" y="-48" text-anchor="middle" font-family="Arial Black,Arial" font-weight="900" font-size="16" fill="${c}">${['7', '+2', '⇄', '1'][i]}</text></g>`).join('')),
-  mus: marco('mus', '#c94a4a', '#7a1c1c', carta(50, 62, -15, '#fff8e6', '<path d="M0 -14v22M-6 6h12M0 8v6" stroke="#2f63c9" stroke-width="4"/>', '#1e3555', 'R') + carta(80, 58, 0, '#fff8e6', '<path d="M0 -14v22M-6 6h12M0 8v6" stroke="#2f63c9" stroke-width="4"/>', '#1e3555', 'R') + carta(110, 62, 15, '#fff8e6', '<circle r="11" fill="#e8b13a" stroke="#8a5a12" stroke-width="3"/>', '#8a5a12', '3')),
-  parchis: marco('parchis', '#f3f3f3', '#cfcfcf', '<rect x="30" y="10" width="100" height="100" fill="#fff" stroke="#333" stroke-width="2"/><rect x="30" y="10" width="38" height="38" fill="#d6262b"/><rect x="92" y="10" width="38" height="38" fill="#2f63c9"/><rect x="30" y="72" width="38" height="38" fill="#e8b13a"/><rect x="92" y="72" width="38" height="38" fill="#3a9a3c"/><rect x="68" y="48" width="24" height="24" fill="#555"/>' + [[49, 29, '#a01a1e'], [111, 29, '#1a3f8a'], [49, 91, '#a07a1a'], [111, 91, '#1e6b32']].map(([x, y, c]) => `<circle cx="${x}" cy="${y}" r="9" fill="${c}" stroke="#fff" stroke-width="3"/>`).join('')),
-  cuatro: marco('cuatro', '#5ab0e8', '#1e5aa8', '<rect x="28" y="14" width="104" height="92" rx="6" fill="#2f63c9" stroke="#163a7a" stroke-width="3"/>' + Array.from({ length: 20 }, (_, k) => { const c = k % 5, f = Math.floor(k / 5); const col = [[3, 1], [3, 2], [2, 2], [3, 3]].some(([a, b]) => a === f && b === c) ? '#e8b13a' : [[3, 0], [2, 1], [1, 2], [2, 3], [3, 4]].some(([a, b]) => a === f && b === c) ? '#d6262b' : '#163a7a'; return `<circle cx="${42 + c * 19}" cy="${30 + f * 21}" r="8" fill="${col}"/>`; }).join('')),
-  dibujo: marco('dibujo', '#fff5c2', '#f2d65c', '<rect x="22" y="16" width="116" height="88" rx="4" fill="#fff" stroke="#a0a0a0" stroke-width="2"/><path d="M40 80q20-50 40-10t40-30" fill="none" stroke="#2f63c9" stroke-width="5" stroke-linecap="round"/><circle cx="58" cy="44" r="10" fill="none" stroke="#d6262b" stroke-width="4"/><g transform="translate(112 74) rotate(40)"><rect x="-5" y="-34" width="10" height="38" fill="#e8b13a" stroke="#5a3a00" stroke-width="2"/><path d="M-5 4l5 10 5-10z" fill="#f2c79a" stroke="#5a3a00" stroke-width="2"/></g>'),
-  lobo: marco('lobo', '#2b2f6b', '#0e1030', '<circle cx="104" cy="40" r="22" fill="#fff6c2"/><circle cx="110" cy="34" r="4" fill="#e6dca0"/>' + Array.from({ length: 14 }, (_, k) => `<circle cx="${(k * 37) % 150 + 5}" cy="${(k * 23) % 50 + 6}" r="1.5" fill="#fff"/>`).join('') + '<path d="M30 110l10-40 8 10 8-22 6 20 14-6-8 18 10 20z" fill="#111"/><circle cx="52" cy="78" r="2" fill="#ffd400"/><path d="M0 110q40-20 80-6t80-8v24H0z" fill="#0a0a1a"/>'),
-  serpiente: marco('serpiente', '#7ed957', '#2f8a1e', [[30, 80], [42, 80], [54, 80], [66, 80], [66, 68], [66, 56], [78, 56], [90, 56], [102, 56]].map(([x, y], i) => `<rect x="${x}" y="${y}" width="12" height="12" rx="3" fill="${i % 2 ? '#e8b13a' : '#f4c95a'}" stroke="#5a3a00" stroke-width="1.5"/>`).join('') + '<rect x="114" y="54" width="16" height="16" rx="4" fill="#ffd34d" stroke="#5a3a00" stroke-width="2"/><circle cx="125" cy="60" r="2" fill="#000"/><circle cx="125" cy="66" r="2" fill="#000"/><circle cx="140" cy="30" r="10" fill="#d6262b" stroke="#7a1010" stroke-width="2"/><path d="M140 20v-6" stroke="#2f5a24" stroke-width="3"/>'),
-  2048: marco('2048', '#ffd36b', '#e89a1e', [[0, 0, '2', '#eee4da'], [1, 0, '4', '#ede0c8'], [2, 0, '8', '#f2b179'], [0, 1, '16', '#f59563'], [1, 1, '128', '#edcf72'], [2, 1, '2048', '#edc22e']].map(([c, f, t, col]) => `<rect x="${32 + c * 33}" y="${22 + f * 40}" width="30" height="36" rx="4" fill="${col}" stroke="#776e65" stroke-width="2"/><text x="${47 + c * 33}" y="${46 + f * 40}" text-anchor="middle" font-family="Arial Black,Arial" font-weight="900" font-size="${t.length > 2 ? 10 : 15}" fill="${+t > 4 ? '#fff' : '#776e65'}">${t}</text>`).join('')),
-  memoria: marco('memoria', '#ff7eb6', '#c2185b', Array.from({ length: 8 }, (_, k) => { const c = k % 4, f = Math.floor(k / 4); const x = 30 + c * 26, y = 26 + f * 36; return k === 1 || k === 6 ? `<rect x="${x}" y="${y}" width="22" height="30" rx="3" fill="#fff" stroke="#7a1040" stroke-width="2"/><text x="${x + 11}" y="${y + 21}" text-anchor="middle" font-size="14">⭐</text>` : `<rect x="${x}" y="${y}" width="22" height="30" rx="3" fill="#7a1040" stroke="#fff" stroke-width="2"/><text x="${x + 11}" y="${y + 21}" text-anchor="middle" font-family="Arial Black,Arial" font-weight="900" font-size="14" fill="#fff">?</text>`; }).join('')),
+// paleta del diseño (igual que en style.css)
+const P = {
+  tinta: '#1e1b2e', papel: '#fbf7ee', crema: '#f1e9d6', blanco: '#ffffff',
+  tomate: '#ff5a36', tomateO: '#c93a1c', menta: '#18b39b', mentaO: '#0f7f6e', sol: '#ffc63d', solO: '#d99a12',
+  cielo: '#4d7cfe', cieloO: '#2f55c4', uva: '#8a5cf6', uvaO: '#5b37b8', rosa: '#ff6fa8', rosaO: '#c8457a',
+  verde: '#3fbf5f', verdeO: '#24863e', marron: '#9a5b2e', gris: '#9aa0b5', noche: '#23264f', nocheO: '#151838',
 };
-fs.mkdirSync(OUT, { recursive: true });
-for (const [id, svg] of Object.entries(M)) fs.writeFileSync(path.join(OUT, `${id}.svg`), svg);
-console.log(`${Object.keys(M).length} miniaturas en ${OUT}`);
+
+function lienzo(w, h) {
+  const px = [];
+  const R = (x, y, ww, hh, c) => { if (ww > 0 && hh > 0) px.push(`<rect x="${x}" y="${y}" width="${ww}" height="${hh}" fill="${c}"/>`); };
+  // rectángulo con borde de tinta de 1 px
+  const B = (x, y, ww, hh, c, borde = P.tinta) => { R(x, y, ww, hh, borde); R(x + 1, y + 1, ww - 2, hh - 2, c); };
+  const D = (cx, cy, r, c) => { for (let y = -r; y <= r; y++) { const a = Math.floor(Math.sqrt(r * r - y * y + r * 0.6)); R(cx - a, cy + y, 2 * a + 1, 1, c); } };
+  const DB = (cx, cy, r, c) => { D(cx, cy, r + 1, P.tinta); D(cx, cy, r, c); };
+  // fondo liso con «tramado» de píxeles abajo y unos destellos
+  const fondo = (c, o) => {
+    R(0, 0, w, h, c);
+    for (let y = h - 6; y < h; y++) for (let x = (y % 2); x < w; x += 2) if (y >= h - 3 || (x + y) % 4 === 0) R(x, y, 1, 1, o);
+    for (const [x, y] of [[3, 3], [w - 5, 5], [7, 11], [w - 9, 13]]) R(x, y, 1, 1, P.blanco);
+  };
+  // dígitos de 3×5
+  const DIG = { 0: '111101101101111', 1: '010110010010111', 2: '111001111100111', 3: '111001111001111', 4: '101101111001001', 6: '111100111101111', 8: '111101111101111' };
+  const T = (txt, x, y, c) => { for (const ch of String(txt)) { const g = DIG[ch]; if (g) for (let i = 0; i < 15; i++) if (g[i] === '1') R(x + (i % 3), y + Math.floor(i / 3), 1, 1, c); x += 4; } };
+  const svg = (escala = 4) => `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${w} ${h}" width="${w * escala}" height="${h * escala}" shape-rendering="crispEdges">${px.join('')}</svg>\n`;
+  return { R, B, D, DB, fondo, T, svg };
+}
+
+// palos en miniatura (dentro de una carta de 9×13 con esquina en x,y)
+const palo = (L, p, x, y) => {
+  const cx = x + 4, cy = y + 6;
+  if (p === 'oros') { L.D(cx, cy, 2, P.solO); L.D(cx, cy, 1, P.sol); }
+  if (p === 'copas') { L.R(cx - 2, cy - 2, 5, 2, P.tomate); L.R(cx - 1, cy, 3, 1, P.tomate); L.R(cx, cy + 1, 1, 1, P.tomateO); L.R(cx - 1, cy + 2, 3, 1, P.tomateO); }
+  if (p === 'espadas') { L.R(cx, cy - 3, 1, 5, P.cielo); L.R(cx - 2, cy + 1, 5, 1, P.cieloO); L.R(cx, cy + 2, 1, 2, P.cieloO); }
+  if (p === 'bastos') { for (let k = 0; k < 6; k++) L.R(cx + 1 - Math.floor(k / 2), cy - 3 + k, 2, 1, P.verdeO); L.R(cx, cy - 3, 2, 2, P.verde); }
+};
+const carta = (L, x, y, p, n) => { L.B(x, y, 11, 15, P.blanco); palo(L, p, x + 1, y + 1); if (n) L.T(n, x + 1, y + 1, P.tinta); };
+
+const M = {};
+M.catan = (() => {
+  const L = lienzo(40, 30); L.fondo(P.cielo, P.cieloO);
+  const hexa = (cx, cy, c) => { for (let dy = -5; dy <= 5; dy++) { const a = 5 - Math.max(0, Math.abs(dy) - 2); L.R(cx - a - 1, cy + dy, 2 * a + 3, 1, P.tinta); } for (let dy = -4; dy <= 4; dy++) { const a = 4 - Math.max(0, Math.abs(dy) - 2); L.R(cx - a, cy + dy, 2 * a + 1, 1, c); } };
+  hexa(14, 10, P.sol); hexa(26, 10, P.verde); hexa(8, 19, P.marron); hexa(20, 19, P.gris); hexa(32, 19, P.verde);
+  L.B(18, 6, 5, 4, P.tomate); L.R(19, 4, 3, 2, P.tinta); L.R(20, 3, 1, 1, P.tinta);
+  return L;
+})();
+M.swjack = (() => {
+  const L = lienzo(40, 30); L.fondo(P.uva, P.uvaO);
+  L.B(7, 4, 24, 22, P.sol); L.R(8, 5, 22, 2, P.solO);
+  for (const x of [9, 16, 23]) { L.B(x, 9, 6, 9, P.blanco); L.R(x + 2, 11, 3, 1, P.tomate); L.R(x + 3, 12, 2, 1, P.tomate); L.R(x + 3, 13, 1, 3, P.tomate); }
+  L.B(12, 20, 14, 3, P.tomate); L.R(32, 8, 1, 9, P.gris); L.DB(32, 7, 1, P.tomate);
+  return L;
+})();
+M.brisca = (() => { const L = lienzo(40, 30); L.fondo(P.menta, P.mentaO); carta(L, 9, 7, 'oros', 1); carta(L, 21, 6, 'copas', 3); L.B(15, 19, 11, 6, P.crema); return L; })();
+M.unidad = (() => {
+  const L = lienzo(40, 30); L.fondo(P.tomate, P.tomateO);
+  [[5, P.tomateO, P.sol], [12, P.sol, P.solO], [19, P.verde, P.verdeO], [26, P.cielo, P.cieloO]].forEach(([x, c, o], i) => {
+    const y = 7 - (i === 1 || i === 2 ? 2 : 0);
+    L.B(x, y, 10, 15, c, P.tinta); L.R(x + 1, y + 1, 8, 1, P.blanco); L.D(x + 5, y + 8, 3, P.blanco); L.T([7, 2, 4, 1][i], x + 4, y + 6, o);
+  });
+  return L;
+})();
+M.mus = (() => { const L = lienzo(40, 30); L.fondo(P.rosa, P.rosaO); carta(L, 5, 8, 'espadas', 0); carta(L, 15, 6, 'espadas', 0); carta(L, 25, 8, 'oros', 3); L.R(8, 9, 1, 1, P.tinta); L.R(18, 7, 1, 1, P.tinta); return L; })();
+M.parchis = (() => {
+  const L = lienzo(40, 30); L.fondo(P.crema, P.solO);
+  L.B(8, 2, 24, 25, P.blanco);
+  L.R(9, 3, 9, 9, P.tomate); L.R(22, 3, 9, 9, P.cielo); L.R(9, 17, 9, 9, P.sol); L.R(22, 17, 9, 9, P.verde); L.R(18, 12, 4, 5, P.tinta);
+  for (const [x, y, c] of [[13, 7, P.tomateO], [26, 7, P.cieloO], [13, 21, P.solO], [26, 21, P.verdeO]]) L.DB(x, y, 2, c);
+  return L;
+})();
+M.cuatro = (() => {
+  const L = lienzo(40, 30); L.fondo(P.sol, P.solO);
+  L.B(6, 3, 28, 23, P.cielo);
+  const rojas = [[3, 0], [2, 1], [1, 2], [3, 3]], amarillas = [[3, 1], [3, 2], [2, 2], [2, 3]];
+  for (let f = 0; f < 4; f++) for (let c = 0; c < 5; c++) {
+    const col = rojas.some(([a, b]) => a === f && b === c) ? P.tomate : amarillas.some(([a, b]) => a === f && b === c) ? P.sol : P.cieloO;
+    L.R(9 + c * 5, 6 + f * 5, 3, 3, col); if (col !== P.cieloO) L.R(9 + c * 5, 6 + f * 5, 1, 1, P.blanco);
+  }
+  return L;
+})();
+M.dibujo = (() => {
+  const L = lienzo(40, 30); L.fondo(P.sol, P.solO);
+  L.B(5, 3, 30, 22, P.blanco);
+  for (let x = 0; x < 18; x++) L.R(9 + x, 16 - Math.round(5 * Math.sin(x / 3)), 1, 1, P.cielo);
+  L.DB(13, 9, 2, P.blanco); L.D(13, 9, 2, P.tomate); L.D(13, 9, 1, P.blanco);
+  for (let k = 0; k < 9; k++) L.R(24 + k, 21 - k, 2, 2, k < 7 ? P.sol : P.rosa);
+  L.R(23, 22, 1, 1, P.tinta);
+  return L;
+})();
+M.lobo = (() => {
+  const L = lienzo(40, 30); L.fondo(P.noche, P.nocheO);
+  L.D(29, 8, 5, P.crema); L.R(27, 6, 2, 2, P.solO); L.R(31, 10, 1, 1, P.solO);
+  for (const [x, y] of [[4, 4], [10, 9], [16, 3], [20, 12], [36, 17], [6, 14]]) L.R(x, y, 1, 1, P.blanco);
+  // lobo aullando
+  const lobo = [[10, 26, 10, 1], [11, 25, 9, 1], [12, 22, 8, 3], [13, 19, 6, 3], [14, 16, 4, 3], [15, 13, 3, 3], [16, 11, 2, 2], [18, 12, 1, 1]];
+  for (const [x, y, w, h] of lobo) L.R(x, y, w, h, P.tinta);
+  L.R(14, 12, 1, 2, P.tinta); L.R(17, 14, 1, 1, P.sol);
+  L.R(0, 26, 40, 4, P.nocheO);
+  return L;
+})();
+M.serpiente = (() => {
+  const L = lienzo(40, 30); L.fondo(P.verde, P.verdeO);
+  for (let y = 0; y < 30; y += 4) for (let x = (y / 4) % 2 ? 0 : 4; x < 40; x += 8) L.R(x, y, 4, 4, '#47c968');
+  const cuerpo = [[6, 18], [10, 18], [14, 18], [14, 14], [18, 14], [22, 14]];
+  cuerpo.forEach(([x, y], i) => L.B(x, y, 5, 5, i % 2 ? P.sol : P.solO));
+  L.B(26, 13, 6, 6, P.sol); L.R(29, 14, 1, 1, P.tinta); L.R(29, 17, 1, 1, P.tinta); L.R(32, 15, 2, 1, P.tomate);
+  L.DB(33, 6, 2, P.tomate); L.R(33, 2, 1, 2, P.verdeO); L.R(32, 5, 1, 1, P.blanco);
+  return L;
+})();
+M['2048'] = (() => {
+  const L = lienzo(40, 30); L.fondo('#e8d9bf', '#c9b48e');
+  L.B(5, 3, 30, 24, '#bba98f');
+  const t = [[2, '#f4ecdf'], [4, '#efe0c6'], [8, '#f2b179'], [16, '#f59563'], [64, '#f65e3b'], [8, '#f2b179']];
+  t.forEach(([n, c], i) => { const x = 7 + (i % 3) * 9, y = 5 + Math.floor(i / 3) * 11; L.B(x, y, 8, 9, c, '#8f7e66'); L.T(n, x + (n > 9 ? 0 : 2), y + 2, n > 4 ? P.blanco : '#776e65'); });
+  return L;
+})();
+M.memoria = (() => {
+  const L = lienzo(40, 30); L.fondo(P.rosa, P.rosaO);
+  for (let k = 0; k < 8; k++) {
+    const x = 5 + (k % 4) * 8, y = 4 + Math.floor(k / 4) * 11;
+    if (k === 1 || k === 6) { L.B(x, y, 7, 10, P.blanco); L.R(x + 3, y + 3, 1, 1, P.sol); L.R(x + 2, y + 4, 3, 1, P.sol); L.R(x + 1, y + 5, 5, 1, P.sol); L.R(x + 2, y + 6, 3, 1, P.solO); }
+    else { L.B(x, y, 7, 10, P.uva); L.R(x + 2, y + 2, 3, 1, P.blanco); L.R(x + 4, y + 3, 1, 2, P.blanco); L.R(x + 3, y + 5, 1, 1, P.blanco); L.R(x + 3, y + 7, 1, 1, P.blanco); }
+  }
+  return L;
+})();
+// ilustración de la portada: mesa con cartas, dados, mando y una moneda
+const hero = (() => {
+  const L = lienzo(120, 80);
+  L.R(0, 0, 120, 80, 'rgba(0,0,0,0)');
+  L.B(10, 46, 100, 22, P.menta); L.R(11, 47, 98, 2, '#3fd0b5');
+  for (let y = 52; y < 66; y += 4) for (let x = 14 + (y % 8); x < 108; x += 8) L.R(x, y, 1, 1, P.mentaO);
+  L.R(14, 68, 6, 8, P.tinta); L.R(100, 68, 6, 8, P.tinta);
+  // cartas en abanico, apoyadas en la mesa
+  carta(L, 24, 36, 'oros', 1); carta(L, 34, 33, 'copas', 3); carta(L, 44, 36, 'espadas', 0);
+  L.B(56, 34, 12, 17, P.cielo); L.R(57, 35, 10, 1, P.blanco); L.D(62, 42, 3, P.blanco); L.T(4, 61, 40, P.cieloO);
+  // dados
+  const dado = (x, y, puntos) => { L.B(x, y, 11, 11, P.blanco); for (const [a, b] of puntos) L.R(x + a, y + b, 2, 2, P.tinta); };
+  dado(74, 42, [[2, 2], [7, 7], [4, 4]]); dado(87, 39, [[2, 2], [7, 2], [2, 7], [7, 7]]);
+  // mando
+  L.B(70, 14, 30, 14, P.tomate); L.R(71, 15, 28, 2, '#ff8466');
+  L.R(75, 19, 6, 2, P.tinta); L.R(77, 17, 2, 6, P.tinta);
+  L.DB(91, 19, 1, P.sol); L.DB(95, 22, 1, P.cielo);
+  // moneda y destellos
+  L.DB(20, 18, 5, P.sol); L.D(20, 18, 3, P.solO); L.R(19, 16, 2, 5, P.sol);
+  for (const [x, y] of [[8, 8], [108, 10], [50, 12], [112, 40], [4, 40]]) { L.R(x, y - 1, 1, 3, P.sol); L.R(x - 1, y, 3, 1, P.sol); }
+  return L;
+})();
+
+// logotipo: mando de 12×12
+const logo = (() => {
+  const L = lienzo(12, 12);
+  L.B(0, 3, 12, 7, P.tomate); L.R(1, 4, 10, 1, '#ff8466');
+  L.R(2, 6, 3, 1, P.tinta); L.R(3, 5, 1, 3, P.tinta);
+  L.R(8, 5, 1, 1, P.sol); L.R(9, 7, 1, 1, P.cielo);
+  L.R(1, 9, 3, 1, P.tinta); L.R(8, 9, 3, 1, P.tinta);
+  return L;
+})();
+fs.mkdirSync(path.join(OUT, 'juegos'), { recursive: true });
+fs.writeFileSync(path.join(OUT, 'logo.svg'), logo.svg(3));
+for (const [id, L] of Object.entries(M)) fs.writeFileSync(path.join(OUT, 'juegos', `${id}.svg`), L.svg());
+fs.writeFileSync(path.join(OUT, 'hero.svg'), hero.svg());
+console.log(`${Object.keys(M).length} miniaturas + hero.svg en ${OUT}`);

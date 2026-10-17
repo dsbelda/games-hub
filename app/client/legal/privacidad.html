@@ -2,13 +2,26 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Política de privacidad · dsbelda Games</title>
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#fbf7ee">
+  <meta name="v" content="__V__">
+  <title>Política de privacidad · dsbelda games</title>
+  <meta name="description" content="Política de privacidad">
+  <link rel="icon" href="/img/logo.svg?v=__V__" type="image/svg+xml">
+  <link rel="preload" href="/fonts/Silkscreen-700.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/style.css?v=__V__">
 </head>
 <body>
-  <header class="cabecera"><div class="cabecera-in"><a class="logo" href="/" aria-label="dsbelda Games, inicio"><b>dsbelda</b><span>GAMES</span></a><p class="lema">Textos legales</p></div></header>
+  <header class="top">
+    <div class="envoltura">
+      <a class="logo" href="/" aria-label="dsbelda games, inicio"><img src="/img/logo.svg?v=__V__" alt="" width="36" height="36"><b>DSBELDA</b><em>games</em></a>
+      <form class="buscador" role="search" action="/" id="buscador">
+        <label class="oculto" for="q">Buscar juego</label>
+        <input id="q" name="q" type="search" placeholder="Buscar juego…" autocomplete="off">
+        <button type="submit">Buscar</button>
+      </form>
+    </div>
+  </header>
   <main class="legal caja">
     <h1 class="caja-titulo">Política de privacidad</h1>
     <div class="caja-in">
@@ -51,15 +64,16 @@
       <p><a href="/">← Volver a los juegos</a></p>
     </div>
   </main>
+  <div class="pie-spacer"></div>
   <footer class="pie">
-    <div class="pie-in">
-      <span class="grow">© David Sánchez Belda · <a href="https://dsbelda.dev">dsbelda.dev</a></span>
+    <div class="envoltura">
+      <span class="grow"><span class="logo-pie">DSBELDA games</span> Hecho en Valencia por David Sánchez Belda · <a href="https://dsbelda.dev">dsbelda.dev</a></span>
       <a href="/legal/aviso">Aviso legal</a>
       <a href="/legal/privacidad">Privacidad</a>
       <a href="/legal/cookies">Cookies</a>
       <button type="button" class="enlace-btn" data-cookies-panel>Configurar cookies</button>
     </div>
   </footer>
-  <script src="/js/cookies.js"></script>
+  <script src="/js/cookies.js?v=__V__"></script>
 </body>
 </html>

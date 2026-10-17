@@ -1,0 +1,2 @@
+Silkscreen (Jason Kottke) y Rubik (Hubert y Fischer, Meir Sadan, Cyreal) se distribuyen con la SIL Open Font License 1.1: https://openfontlicense.org
+Copias obtenidas de Fontsource (@fontsource/silkscreen 5.2.5, @fontsource-variable/rubik 5.2.5).

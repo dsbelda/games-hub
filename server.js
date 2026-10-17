@@ -2,6 +2,7 @@
 // Portal de juegos: Express (catálogo y estáticos) + Socket.IO (salas de los juegos multijugador).
 // Un solo proceso: las salas viven en memoria (un reinicio corta las partidas en curso).
 const crypto = require('node:crypto');
+const fs = require('node:fs');
 const http = require('node:http');
 const path = require('node:path');
 const express = require('express');
@@ -13,6 +14,19 @@ const { Salas } = require('./lib/salas');
 const COOKIE = 'games_id';
 const ID_RE = /^[a-f0-9]{48}$/;
 const CLIENTE = path.join(__dirname, 'app', 'client');
+
+// Versión de los ficheros del cliente (hash de su contenido): las páginas piden style.css?v=VERSION, así que
+// cada despliegue cambia las URLs y ni el navegador ni Cloudflare (que fuerza 4 h de caché) sirven lo viejo.
+function versionCliente(dir) {
+  const h = crypto.createHash('sha1');
+  const recorrer = (d) => { for (const f of fs.readdirSync(d, { withFileTypes: true }).sort((a, b) => a.name.localeCompare(b.name))) {
+    const p = path.join(d, f.name);
+    if (f.isDirectory()) recorrer(p); else { h.update(p); h.update(fs.readFileSync(p)); }
+  } };
+  recorrer(dir);
+  return h.digest('hex').slice(0, 10);
+}
+const LEGALES = new Set(['aviso', 'privacidad', 'cookies']);
 
 function parseCookie(header = '') {
   const out = {};
@@ -70,12 +84,24 @@ function start({ port = 3400, host = '127.0.0.1', retardoCpu = 700 } = {}) {
     }
     next();
   });
+  const V = versionCliente(CLIENTE);
+  const paginas = new Map();
+  const html = (res, fichero, estado = 200) => {
+    if (!paginas.has(fichero)) paginas.set(fichero, fs.readFileSync(path.join(CLIENTE, fichero), 'utf8').replaceAll('__V__', V));
+    res.status(estado).set('Cache-Control', 'no-cache').type('html').send(paginas.get(fichero));
+  };
   app.get('/healthz', (req, res) => res.type('text').send('ok'));
-  app.get('/api/juegos', (req, res) => res.json(CATALOGO));
+  app.get('/api/juegos', (req, res) => res.set('Cache-Control', 'no-cache').json(CATALOGO));
   const listos = new Set(CATALOGO.filter((j) => j.estado === 'listo' && !j.externo).map((j) => j.id));
-  app.get('/j/:juego', (req, res, next) => (listos.has(req.params.juego) ? res.sendFile(path.join(CLIENTE, 'juego.html')) : next()));
-  app.use(express.static(CLIENTE, { maxAge: '5m', extensions: ['html'] })); // /legal/aviso → legal/aviso.html
-  app.use((req, res) => res.status(404).sendFile(path.join(CLIENTE, '404.html')));
+  app.get('/', (req, res) => html(res, 'index.html'));
+  app.get('/j/:juego', (req, res, next) => (listos.has(req.params.juego) ? html(res, 'juego.html') : next()));
+  app.get('/legal/:pagina', (req, res, next) => (LEGALES.has(req.params.pagina) ? html(res, `legal/${req.params.pagina}.html`) : next()));
+  // con ?v= la URL cambia en cada versión: se puede guardar un año
+  app.use(express.static(CLIENTE, { index: false, setHeaders: (res, f) => {
+    if (f.endsWith('.html')) res.set('Cache-Control', 'no-cache');
+    else res.set('Cache-Control', 'public, max-age=31536000, immutable');
+  } }));
+  app.use((req, res) => html(res, '404.html', 404));
 
   // --- Socket.IO ---------------------------------------------------------------------------
   io.use((sock, next) => {

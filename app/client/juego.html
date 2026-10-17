@@ -3,26 +3,28 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#1f5fbf">
-  <title>dsbelda Games</title>
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="/style.css">
-  <link rel="stylesheet" href="/juegos.css">
+  <meta name="theme-color" content="#fbf7ee">
+  <meta name="v" content="__V__">
+  <title>dsbelda games</title>
+  <meta name="description" content="Juega gratis con tus amigos.">
+  <link rel="icon" href="/img/logo.svg?v=__V__" type="image/svg+xml">
+  <link rel="preload" href="/fonts/Silkscreen-700.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/style.css?v=__V__">
+  <link rel="stylesheet" href="/juegos.css?v=__V__">
 </head>
 <body>
-  <header class="cabecera">
-    <div class="cabecera-in">
-      <a class="logo" href="/" aria-label="dsbelda Games, inicio"><b>dsbelda</b><span>GAMES</span></a>
+  <header class="top">
+    <div class="envoltura">
+      <a class="logo" href="/" aria-label="dsbelda games, inicio"><img src="/img/logo.svg?v=__V__" alt="" width="36" height="36"><b>DSBELDA</b><em>games</em></a>
       <form class="buscador" role="search" action="/" id="buscador">
         <label class="oculto" for="q">Buscar juego</label>
-        <input id="q" type="search" placeholder="Buscar otro juego…" autocomplete="off">
+        <input id="q" name="q" type="search" placeholder="Buscar juego…" autocomplete="off">
         <button type="submit">Buscar</button>
       </form>
     </div>
   </header>
-  <nav class="migas" aria-label="Estás en"><a href="/">Juegos</a> › <a id="miga-tipo" href="/">…</a> › <span id="miga-juego">…</span></nav>
-
-  <div class="cuerpo-juego">
+  <nav class="migas envoltura" aria-label="Estás en"><a href="/">Juegos</a> <span aria-hidden="true">›</span> <a id="miga-tipo" href="/">…</a> <span aria-hidden="true">›</span> <span id="miga-juego">…</span></nav>
+  <div class="cuerpo-juego envoltura">
     <main class="caja marco">
       <h1 id="titulo" class="caja-titulo">…</h1>
       <div id="raiz" class="raiz"></div>
@@ -32,18 +34,18 @@
       <section class="caja"><h2>Más juegos</h2><div class="caja-in mas-juegos" id="mas"></div></section>
     </aside>
   </div>
-
+  <div id="aviso" class="toast" role="status" aria-live="polite" hidden></div>
+  <div class="pie-spacer"></div>
   <footer class="pie">
-    <div class="pie-in">
-      <span class="grow">© David Sánchez Belda · <a href="https://dsbelda.dev">dsbelda.dev</a></span>
+    <div class="envoltura">
+      <span class="grow"><span class="logo-pie">DSBELDA games</span> Hecho en Valencia por David Sánchez Belda · <a href="https://dsbelda.dev">dsbelda.dev</a></span>
       <a href="/legal/aviso">Aviso legal</a>
       <a href="/legal/privacidad">Privacidad</a>
       <a href="/legal/cookies">Cookies</a>
       <button type="button" class="enlace-btn" data-cookies-panel>Configurar cookies</button>
     </div>
   </footer>
-  <div id="aviso" class="toast" role="status" aria-live="polite" hidden></div>
-  <script src="/js/cookies.js"></script>
-  <script src="/js/juego.js"></script>
+  <script src="/js/cookies.js?v=__V__"></script>
+  <script src="/js/juego.js?v=__V__"></script>
 </body>
 </html>
