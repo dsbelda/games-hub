@@ -68,10 +68,12 @@ M.unidad = (() => {
   return L;
 })();
 M.parchis = (() => {
-  const L = lienzo(40, 30); L.fondo(P.crema, P.solO);
-  L.B(8, 2, 24, 25, P.blanco);
-  L.R(9, 3, 9, 9, P.tomate); L.R(22, 3, 9, 9, P.cielo); L.R(9, 17, 9, 9, P.sol); L.R(22, 17, 9, 9, P.verde); L.R(18, 12, 4, 5, P.tinta);
-  for (const [x, y, c] of [[13, 7, P.tomateO], [26, 7, P.cieloO], [13, 21, P.solO], [26, 21, P.verdeO]]) L.DB(x, y, 2, c);
+  const L = lienzo(40, 30); L.fondo(P.cielo, P.cieloO);
+  L.B(7, 1, 26, 28, '#fffaf0');
+  L.R(8, 2, 10, 11, '#8fb0ff'); L.R(22, 2, 10, 11, '#ff8a72'); L.R(8, 17, 10, 11, '#ffd666'); L.R(22, 17, 10, 11, '#7fd98f');
+  L.R(19, 2, 2, 11, '#ff8a72'); L.R(19, 17, 2, 11, '#ffd666'); L.R(8, 14, 10, 2, '#8fb0ff'); L.R(22, 14, 10, 2, '#7fd98f');
+  L.R(18, 13, 4, 4, P.tinta);
+  for (const [x, y, c] of [[12, 7, P.cieloO], [27, 7, P.tomate], [12, 22, P.solO], [27, 22, P.verdeO], [20, 9, P.tomate], [15, 15, P.cieloO]]) L.DB(x, y, 1, c);
   return L;
 })();
 M.cuatro = (() => {

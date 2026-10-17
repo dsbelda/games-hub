@@ -197,3 +197,27 @@ test('Mus: jugadas y partidas completas a 40', () => {
     assert.ok(J.fin(e));
   }
 });
+
+test('Parchís: salir con 5, barreras, comer y partidas completas', () => {
+  const J = JUEGOS.parchis;
+  const e = J.nuevo(2);
+  e.pendiente = { tipo: 'dado', valor: 4 };
+  assert.equal(J._.movimientos(e, 0).length, 0, 'sin un 5 no se sale');
+  e.pendiente = { tipo: 'dado', valor: 5 };
+  assert.ok(J._.movimientos(e, 0).every((m) => e.fichas[0][m.f] === -1), 'con un 5 hay que sacar');
+  // barrera rival a 3 casillas: no se puede pasar
+  e.fichas[0] = [0, -1, -1, -1];
+  const t = J._.casilla(e, 0, 3);
+  const pr = (t - J._.salidaDe(J._.BRAZO.rojo) + 68) % 68;
+  e.fichas[1] = [pr, pr, -1, -1];
+  assert.equal(J._.destino(e, 0, 0, 5, true), null, 'no se pasa una barrera');
+  // comer fuera de seguro
+  e.fichas[1] = [pr, -1, -1, -1];
+  const d = J._.destino(e, 0, 0, 3, true);
+  assert.equal(!!d.come, !J._.SEGUROS.has(t));
+  for (let k = 0; k < 30; k++) {
+    const g = J.nuevo([2, 3, 4][k % 3]);
+    for (let i = 0; i < 30000 && !J.fin(g); i++) { const tt = J.turno(g); assert.ok(J.accion(g, tt, J.bot(g, tt, 'dificil', Math.random)).ok); }
+    assert.ok(J.fin(g));
+  }
+});
