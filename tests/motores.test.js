@@ -8,7 +8,7 @@ function jugar(J, n, niveles, semilla) {
   let s = semilla;
   const rnd = () => ((s = (s * 1103515245 + 12345) % 2147483648) / 2147483648);
   const e = J.nuevo(n, rnd);
-  for (let paso = 0; paso < 5000; paso++) {
+  for (let paso = 0; paso < 20000; paso++) {
     if (J.fin(e)) return { e, f: J.fin(e), paso };
     let hecho = false;
     const t = J.turno(e);
@@ -253,4 +253,22 @@ test('Juegos de fiesta: impostor, stop, dibujo y hombre lobo (reglas básicas)',
   assert.equal(visibles.length, 0);
   const lobo = h.papeles.indexOf('lobo');
   assert.equal(L.vista(h, lobo).papeles.filter((p) => p === 'lobo').length, 2);
+});
+
+test('Arqueros y Billar: física en el servidor y partidas completas', () => {
+  const A = JUEGOS.arqueros, B = JUEGOS.billar;
+  const a = A.nuevo(2);
+  assert.ok(A.accion(a, 0, { tipo: 'disparar', ang: 45, fuerza: 0.6 }).ok);
+  assert.ok(a.ultimo.puntos.length > 5, 'manda la trayectoria');
+  assert.equal(a.turno, 1);
+  for (let k = 0; k < 10; k++) jugar(A, 2, ['normal', 'dificil'], k + 1);
+  const b = B.nuevo();
+  assert.ok(B.accion(b, 0, { tipo: 'tirar', ang: 0, fuerza: 1 }).ok, 'saque');
+  assert.ok(b.ultimo.fotos.length > 10, 'manda los fotogramas');
+  // falta: meter la blanca da bola en mano al rival
+  const c = B.nuevo(); c.saque = false;
+  c.b[0].x = 60; c.b[0].y = 60;
+  B.accion(c, 0, { tipo: 'tirar', ang: Math.atan2(-60, -60), fuerza: 0.4 });
+  assert.equal(c.enMano, true); assert.equal(c.turno, 1);
+  for (let k = 0; k < 4; k++) jugar(B, 2, ['dificil', 'dificil'], k + 7);
 });

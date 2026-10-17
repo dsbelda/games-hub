@@ -292,6 +292,24 @@ M.test = (() => {
   for (const [x, y, c] of bt) L.B(x, y, 13, 5, c);
   return L;
 })();
+M.arqueros = (() => {
+  const L = lienzo(40, 30); L.fondo('#9ad1ff', '#7fb8ff');
+  L.R(0, 26, 40, 4, P.verde);
+  L.R(3, 16, 5, 10, '#9a5b2e'); L.R(32, 13, 5, 13, '#9a5b2e');
+  L.R(4, 10, 3, 6, P.cielo); L.R(4, 8, 3, 2, '#e0ac7e'); L.R(33, 7, 3, 6, P.tomate); L.R(33, 5, 3, 2, '#e0ac7e');
+  for (let k = 0; k < 9; k++) L.R(9 + k * 2, 9 - Math.round(Math.sin(k / 8 * Math.PI) * 5), 1, 1, P.tinta);
+  L.R(27, 8, 3, 1, P.tinta);
+  return L;
+})();
+M.billar = (() => {
+  const L = lienzo(40, 30); L.fondo('#6b4520', '#4a2f17');
+  L.B(3, 5, 34, 20, '#1b7a43');
+  for (const [x, y] of [[4, 6], [20, 5], [35, 6], [4, 23], [20, 24], [35, 23]]) L.R(x, y, 2, 2, P.tinta);
+  const cs = [P.sol, P.cielo, P.tomate, P.uva, '#ff9f2e', P.verde, P.tinta];
+  let k = 0; for (let f = 0; f < 4; f++) for (let i = 0; i <= f; i++) L.R(24 + f * 2, 13 - f + i * 2, 2, 2, cs[k++ % cs.length]);
+  L.R(10, 14, 2, 2, P.blanco); for (let x = 0; x < 9; x++) L.R(1 + x, 15, 1, 1, '#c08a5a');
+  return L;
+})();
 // ilustración de la portada: mesa con cartas, dados, mando y una moneda
 const hero = (() => {
   const L = lienzo(120, 80);

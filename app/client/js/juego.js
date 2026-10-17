@@ -3,8 +3,8 @@
 (() => {
   const id = location.pathname.split('/')[2];
   const V = document.querySelector('meta[name=v]')?.content || '';
-  const MULTI = ['cuatro', 'brisca', 'unidad', 'hundir', 'damas', 'ajedrez', 'tute', 'chinchon', 'poquer', 'mus', 'parchis', 'impostor', 'stop', 'dibujo', 'lobo'];
-  const EXTRA = { ajedrez: ['piezas'], tute: ['cartas-es'], chinchon: ['cartas-es'], mus: ['cartas-es'], burbujas: ['lienzo'], torres: ['lienzo'], eras: ['lienzo'], minero: ['lienzo'], tortuga: ['lienzo'], volar: ['lienzo'] }; // scripts que necesita antes un juego
+  const MULTI = ['cuatro', 'brisca', 'unidad', 'hundir', 'damas', 'ajedrez', 'tute', 'chinchon', 'poquer', 'mus', 'parchis', 'impostor', 'stop', 'dibujo', 'lobo', 'arqueros', 'billar'];
+  const EXTRA = { ajedrez: ['piezas'], tute: ['cartas-es'], chinchon: ['cartas-es'], mus: ['cartas-es'], burbujas: ['lienzo'], torres: ['lienzo'], eras: ['lienzo'], minero: ['lienzo'], tortuga: ['lienzo'], volar: ['lienzo'], arqueros: ['lienzo'], billar: ['lienzo'] }; // scripts que necesita antes un juego
   window.UI = {
     el(tag, cls, txt) { const e = document.createElement(tag); if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e; },
     boton(txt, fn, cls = '') { const b = UI.el('button', 'btn ' + cls, txt); b.type = 'button'; b.onclick = fn; return b; },

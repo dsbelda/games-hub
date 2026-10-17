@@ -527,6 +527,14 @@ button.st-celda:hover { background: #ffe2da; color: var(--tinta); }
 .tq-fin { text-align: center; width: 100%; }
 @media (max-width: 520px) { .tq-opciones { grid-template-columns: 1fr; } .tq-pregunta { font-size: 20px; } .td-tienda { grid-template-columns: 1fr 1fr; } }
 
+/* Billar */
+.billar-mesa { width: min(100%, 760px); }
+.bl-quedan { display: flex; flex-wrap: wrap; gap: 3px; justify-content: center; }
+.bl-bola { width: 22px; height: 22px; border-radius: 50%; display: grid; place-items: center; font: 800 10px var(--texto); background: var(--c); color: #fff; border: 2px solid var(--tinta); }
+.bl-bola.rayada { background: linear-gradient(#fbf7ee 25%, var(--c) 25% 75%, #fbf7ee 75%); color: var(--tinta); }
+.bl-bola.dentro { opacity: .2; }
+.dm-jug.activo { background: var(--sol); color: var(--tinta); padding: 2px 8px; }
+
 /* animaciones de las partidas */
 @media (prefers-reduced-motion: no-preference) {
   .nueva { animation: repartir .4s cubic-bezier(.2, 1.2, .4, 1) both; animation-delay: calc(var(--i, 0) * 70ms); }
