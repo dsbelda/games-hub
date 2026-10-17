@@ -17,13 +17,13 @@
   fetch('/api/juegos').then((r) => r.json()).then(async (cat) => {
     const j = cat.find((x) => x.id === id);
     if (!j) { location.href = '/'; return; }
-    const TIPOS = { cartas: 'Cartas', tablero: 'Tablero', habilidad: 'Habilidad', dibujo: 'Dibujo', rol: 'Rol', casino: 'Casino' };
+    const TIPOS = { cartas: 'Cartas', tablero: 'Tablero', habilidad: 'Habilidad', palabras: 'Palabras', fiesta: 'Fiesta', casino: 'Casino' };
     document.title = `${j.nombre} · Juega gratis · dsbelda games`;
     document.getElementById('titulo').textContent = j.nombre;
     document.getElementById('miga-juego').textContent = j.nombre;
     const miga = document.getElementById('miga-tipo');
     miga.textContent = TIPOS[j.tipo]; miga.href = `/#tipo=${j.tipo}`;
-    document.getElementById('como').append(UI.el('p', null, j.comoSeJuega), UI.el('p', 'suave', `👥 ${j.jugadores[0] === j.jugadores[1] ? j.jugadores[0] : j.jugadores.join('-')} jugadores`));
+    document.getElementById('como').append(UI.el('p', null, j.comoSeJuega), UI.el('p', 'suave', j.jugadores[1] === 1 ? '👤 Para jugar en solitario' : `👥 ${j.jugadores[0] === j.jugadores[1] ? j.jugadores[0] : j.jugadores.join('-')} jugadores`));
     // «Más juegos»: primero los del mismo tipo, luego el resto de los que ya se pueden jugar
     const otros = cat.filter((x) => x.id !== j.id && x.estado === 'listo').sort((a, b) => (b.tipo === j.tipo) - (a.tipo === j.tipo)).slice(0, 4);
     document.getElementById('mas').append(...otros.map((x) => {

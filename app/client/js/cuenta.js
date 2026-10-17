@@ -6,7 +6,7 @@
   const boton = (txt, fn, cls = '') => { const b = el('button', 'btn ' + cls, txt); b.type = 'button'; b.onclick = fn; return b; };
   const V = document.querySelector('meta[name=v]')?.content || '';
   const quieto = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const RECORDS = [['serpiente', 'Serpiente', 'puntos'], ['2048', '2048', 'puntos'], ['memoria-facil', 'Memoria 4×4', 'intentos'], ['memoria-medio', 'Memoria 6×4', 'intentos'], ['memoria-dificil', 'Memoria 6×6', 'intentos']];
+  const RECORDS = [['palabra-racha', 'Palabra del día', 'días de racha'], ['serpiente', 'Serpiente', 'puntos'], ['2048', '2048', 'puntos'], ['bloques', 'Bloques', 'puntos'], ['solitario', 'Solitario', 'segundos'], ['buscaminas-facil', 'Buscaminas fácil', 'segundos'], ['buscaminas-medio', 'Buscaminas medio', 'segundos'], ['buscaminas-dificil', 'Buscaminas difícil', 'segundos'], ['memoria-facil', 'Memoria 4×4', 'intentos'], ['memoria-medio', 'Memoria 6×4', 'intentos'], ['memoria-dificil', 'Memoria 6×6', 'intentos']];
   const caja = (titulo, ...hijos) => { const c = el('section', 'caja'); const h = el('h2', null, titulo); const d = el('div', 'caja-in'); d.append(...hijos); c.append(h, d); return c; };
   // números que cuentan hacia arriba
   const contar = (nodo, fin) => {

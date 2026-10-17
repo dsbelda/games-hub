@@ -1,7 +1,7 @@
 'use strict';
 // Portada: categorías, filtros (en la URL), favoritos, «sigue jugando», «sorpréndeme» y rejilla animada.
 (() => {
-  const TIPOS = [['', 'Todos'], ['cartas', 'Cartas'], ['tablero', 'Tablero'], ['habilidad', 'Habilidad'], ['dibujo', 'Dibujo'], ['rol', 'Rol'], ['casino', 'Casino']];
+  const TIPOS = [['', 'Todos'], ['cartas', 'Cartas'], ['tablero', 'Tablero'], ['habilidad', 'Habilidad'], ['palabras', 'Palabras'], ['fiesta', 'Fiesta'], ['casino', 'Casino']];
   const OPCIONES = {
     jugadores: [['1', 'Solo'], ['2', '2'], ['3-4', '3-4'], ['5+', '5 o más']],
     duracion: [['rapido', 'Rápido'], ['medio', 'Medio'], ['largo', 'Largo']],
@@ -13,8 +13,8 @@
     cartas: '0111110001000100010101000100010001111100',
     tablero: '1100110011001100001100110011001111001100',
     habilidad: '0001000000111000011111001111111000111000',
-    dibujo: '0000011000001110000111000011100001100000',
-    rol: '0011100001111100011111000101010001010100',
+    palabras: '0011100001000100011111000100010001000100',
+    fiesta: '0000001000010100001001000100100011110000',
     casino: '0011100001000100010101000100010000111000',
   };
   const DURACION = { rapido: 'Rápido', medio: 'Medio', largo: 'Largo' };

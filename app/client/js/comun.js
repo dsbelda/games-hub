@@ -210,5 +210,41 @@
     }
   });
 
-  cargarCuenta().then(pintarCabecera);
+  // --- tema claro / oscuro --------------------------------------------------------------------------
+  const SOL = '<svg class="sol-i" viewBox="0 0 16 16" aria-hidden="true" fill="currentColor"><rect x="6" y="5" width="4" height="6"/><rect x="5" y="6" width="6" height="4"/><rect x="7" y="0" width="2" height="3"/><rect x="7" y="13" width="2" height="3"/><rect x="0" y="7" width="3" height="2"/><rect x="13" y="7" width="3" height="2"/><rect x="2" y="2" width="2" height="2"/><rect x="12" y="2" width="2" height="2"/><rect x="2" y="12" width="2" height="2"/><rect x="12" y="12" width="2" height="2"/></svg>';
+  const LUNA = '<svg class="luna" viewBox="0 0 16 16" aria-hidden="true" fill="currentColor"><rect x="5" y="1" width="5" height="2"/><rect x="3" y="3" width="4" height="2"/><rect x="2" y="5" width="4" height="6"/><rect x="3" y="11" width="5" height="2"/><rect x="5" y="13" width="7" height="2"/><rect x="8" y="11" width="6" height="2"/><rect x="12" y="9" width="2" height="2"/><rect x="11" y="3" width="1" height="1"/><rect x="13" y="5" width="1" height="1"/></svg>';
+  function botonTema() {
+    const barra = document.querySelector('.top .envoltura');
+    if (!barra || barra.querySelector('.tema-btn')) return;
+    const b = el('button', 'tema-btn'); b.type = 'button';
+    b.innerHTML = SOL + LUNA;
+    const etiqueta = () => { const o = document.documentElement.dataset.tema === 'oscuro'; b.setAttribute('aria-label', o ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro'); b.title = b.getAttribute('aria-label'); };
+    etiqueta();
+    b.onclick = () => {
+      const raizDoc = document.documentElement;
+      const nuevo = raizDoc.dataset.tema === 'oscuro' ? 'claro' : 'oscuro';
+      const aplicar = () => {
+        raizDoc.dataset.tema = nuevo;
+        try { localStorage.setItem('games:tema', nuevo); } catch (e) { /* nada */ }
+        const m = document.querySelector('meta[name="theme-color"]'); if (m) m.content = nuevo === 'oscuro' ? '#14121e' : '#fbf7ee';
+        etiqueta();
+      };
+      b.classList.remove('gira'); void b.offsetWidth; b.classList.add('gira');
+      if (document.startViewTransition && !quieto) {
+        const r = b.getBoundingClientRect();
+        const x = r.left + r.width / 2, y = r.top + r.height / 2;
+        raizDoc.style.setProperty('--tx', `${x}px`); raizDoc.style.setProperty('--ty', `${y}px`);
+        raizDoc.style.setProperty('--tr', `${Math.hypot(Math.max(x, innerWidth - x), Math.max(y, innerHeight - y))}px`);
+        document.startViewTransition(aplicar);
+      } else {
+        raizDoc.classList.add('cambiando-tema'); aplicar();
+        setTimeout(() => raizDoc.classList.remove('cambiando-tema'), 450);
+      }
+    };
+    const hueco = barra.querySelector('.cuenta-hueco');
+    barra.insertBefore(b, hueco || null);
+  }
+  botonTema();
+
+  cargarCuenta().then((c) => { pintarCabecera(c); botonTema(); });
 })();

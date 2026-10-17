@@ -130,6 +130,39 @@ M.memoria = (() => {
   }
   return L;
 })();
+M.palabra = (() => {
+  const L = lienzo(40, 30); L.fondo(P.uva, P.uvaO);
+  const cols = [[P.verde, P.sol, P.gris, P.gris, P.verde], [P.verde, P.verde, P.sol, P.verde, P.verde], [P.verde, P.verde, P.verde, P.verde, P.verde]];
+  cols.forEach((fila, f) => fila.forEach((c, k) => L.B(6 + k * 6, 4 + f * 7, 6, 6, c)));
+  for (let k = 0; k < 5; k++) L.B(6 + k * 6, 25, 6, 4, P.blanco);
+  return L;
+})();
+M.buscaminas = (() => {
+  const L = lienzo(40, 30); L.fondo(P.gris, '#7c8296');
+  L.B(6, 3, 28, 24, '#c9cede');
+  for (let f = 0; f < 4; f++) for (let c = 0; c < 5; c++) { const x = 7 + c * 5 + (c ? 0 : 0), y = 4 + f * 5 + (f ? 1 : 0); const abierta = (f + c) % 3 !== 0; if (!abierta) { L.R(x, y, 5, 5, P.blanco); L.R(x + 1, y + 1, 4, 4, '#a8aec0'); } }
+  L.T(1, 13, 10, P.cielo); L.T(2, 23, 15, P.verde); L.T(3, 18, 20, P.tomate);
+  L.DB(28, 21, 2, P.tinta); L.R(29, 18, 1, 1, P.sol);
+  L.R(10, 20, 1, 5, P.tinta); L.R(11, 20, 3, 2, P.tomate);
+  return L;
+})();
+M.bloques = (() => {
+  const L = lienzo(40, 30); L.fondo(P.noche, P.nocheO);
+  L.B(10, 1, 20, 28, '#2b2f5e');
+  const c = (x, y, col) => L.B(11 + x * 3, 2 + y * 3, 3, 3, col);
+  [[0, 8, P.cielo], [1, 8, P.cielo], [2, 8, P.sol], [3, 8, P.sol], [4, 8, P.verde], [5, 8, P.tomate], [0, 7, P.uva], [1, 7, P.cielo], [3, 7, P.sol], [4, 7, P.verde], [5, 7, P.verde], [0, 6, P.uva], [5, 6, P.tomate]].forEach(([x, y, col]) => c(x, y, col));
+  [[2, 2], [3, 2], [3, 3], [4, 3]].forEach(([x, y]) => c(x, y, P.tomate));
+  [[1, 5], [2, 5], [2, 6], [2, 4]].forEach(([x, y]) => c(x, y, '#ff9f2e'));
+  return L;
+})();
+M.solitario = (() => {
+  const L = lienzo(40, 30); L.fondo(P.verde, P.verdeO);
+  const cf = (x, y, rojo) => { L.B(x, y, 9, 13, P.blanco); const c = rojo ? P.tomate : P.tinta; L.R(x + 2, y + 2, 1, 2, c); L.R(x + 4, y + 5, 2, 3, c); L.R(x + 3, y + 6, 4, 1, c); };
+  for (let k = 0; k < 4; k++) L.B(3 + k * 9, 2, 8, 10, k === 0 ? P.blanco : P.verdeO);
+  L.R(5, 4, 1, 1, P.tinta); L.R(6, 6, 3, 3, P.tinta);
+  cf(4, 14, false); cf(10, 16, true); cf(16, 18, false); cf(22, 14, true); cf(28, 15, false);
+  return L;
+})();
 // ilustración de la portada: mesa con cartas, dados, mando y una moneda
 const hero = (() => {
   const L = lienzo(120, 80);
