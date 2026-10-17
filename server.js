@@ -74,7 +74,7 @@ function start({ port = 3400, host = '127.0.0.1', retardoCpu = 700 } = {}) {
   app.get('/api/juegos', (req, res) => res.json(CATALOGO));
   const listos = new Set(CATALOGO.filter((j) => j.estado === 'listo' && !j.externo).map((j) => j.id));
   app.get('/j/:juego', (req, res, next) => (listos.has(req.params.juego) ? res.sendFile(path.join(CLIENTE, 'juego.html')) : next()));
-  app.use(express.static(CLIENTE, { maxAge: '5m' }));
+  app.use(express.static(CLIENTE, { maxAge: '5m', extensions: ['html'] })); // /legal/aviso → legal/aviso.html
   app.use((req, res) => res.status(404).sendFile(path.join(CLIENTE, '404.html')));
 
   // --- Socket.IO ---------------------------------------------------------------------------

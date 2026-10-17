@@ -1,20 +1,17 @@
 'use strict';
-// Brisca: baraja española dibujada en píxeles con SVG.
+// Brisca: baraja española dibujada con SVG.
 (() => {
   const { el } = UI;
-  // palos en 16×16, un rectángulo por píxel (con shape-rendering crispEdges)
+  // palos de la baraja española en vectorial (viewBox 40×40), a juego con las miniaturas del portal
   const PALOS = {
-    oros: { c: '#e2b33c', d: '#8a5a12', px: ['5,1,6,1', '3,2,10,1', '2,3,12,1', '2,4,3,8', '11,4,3,8', '2,12,12,1', '3,13,10,1', '5,14,6,1', '6,5,4,6'] },
-    copas: { c: '#c0392b', d: '#5e1410', px: ['2,2,12,2', '3,4,10,2', '4,6,8,2', '6,8,4,2', '7,10,2,2', '5,12,6,1', '4,13,8,2'] },
-    espadas: { c: '#4a7fc1', d: '#1e3555', px: ['7,1,2,9', '6,2,1,7', '9,2,1,7', '3,10,10,2', '7,12,2,2', '6,14,4,1'] },
-    bastos: { c: '#4f8a3d', d: '#6b3f1d', px: ['8,1,3,3', '7,4,3,3', '6,7,3,3', '5,10,3,3', '4,13,3,2', '11,2,2,2', '4,6,2,2'] },
+    oros: '<circle cx="20" cy="20" r="15" fill="#f2b51c" stroke="#a06a10" stroke-width="3"/><circle cx="20" cy="20" r="8" fill="none" stroke="#a06a10" stroke-width="2.5"/><circle cx="20" cy="20" r="3" fill="#a06a10"/>',
+    copas: '<path d="M8 6h24q0 12-8 16v5h5v4H11v-4h5v-5Q8 18 8 6z" fill="#d6262b" stroke="#7a1010" stroke-width="2.5" stroke-linejoin="round"/><path d="M12 9h16" stroke="#f2b51c" stroke-width="3"/>',
+    espadas: '<path d="M20 3l3 5v18h-6V8z" fill="#bcd3f0" stroke="#1e4d8a" stroke-width="2.5" stroke-linejoin="round"/><rect x="10" y="25" width="20" height="4" rx="2" fill="#2f63c9" stroke="#1e4d8a" stroke-width="2"/><rect x="18" y="29" width="4" height="7" fill="#2f63c9" stroke="#1e4d8a" stroke-width="2"/>',
+    bastos: '<path d="M24 4q6 1 5 7l-11 26q-3 2-5 0l8-27q-1-5 3-6z" fill="#3a9a3c" stroke="#1e5a22" stroke-width="2.5" stroke-linejoin="round"/><circle cx="23" cy="15" r="2.5" fill="#1e5a22"/><circle cx="19" cy="25" r="2.5" fill="#1e5a22"/>',
   };
   const svgPalo = (p, cls = '') => {
-    const P = PALOS[p];
-    const r = P.px.map((s) => { const [x, y, w, h] = s.split(','); return `<rect x="${x}" y="${y}" width="${w}" height="${h}"/>`; }).join('');
-    const sombra = P.px.map((s) => { const [x, y, w, h] = s.split(','); return `<rect x="${+x + 1}" y="${+y + 1}" width="${w}" height="${h}"/>`; }).join('');
     const span = el('span', 'palo ' + cls);
-    span.innerHTML = `<svg viewBox="0 0 17 17" shape-rendering="crispEdges" aria-hidden="true"><g fill="${P.d}">${sombra}</g><g fill="${P.c}">${r}</g></svg>`;
+    span.innerHTML = `<svg viewBox="0 0 40 40" aria-hidden="true">${PALOS[p]}</svg>`;
     return span;
   };
   const FIG = { 10: 'Sota', 11: 'Caballo', 12: 'Rey', 1: 'As' };
@@ -71,7 +68,7 @@
       for (const c of v.mano) mano.append(carta(c, { onclick: miTurno ? () => ctx.enviar({ tipo: 'jugar', carta: idc(c) }) : null, cls: c.p === v.palo ? 'es-triunfo' : '' }));
       const acciones = el('div', 'fila centro');
       if (v.puedeCambiar7) acciones.append(UI.boton('Cambiar el 7 por el triunfo', () => ctx.enviar({ tipo: 'cambiar7' })));
-      const marcador = el('p', 'muted centro');
+      const marcador = el('p', 'suave centro');
       const bz = v.bazas.map((b, i) => (v.n === 4 ? `Pareja ${i + 1}: ${b}` : `${ctx.nombre(i)}: ${b}`)).join(' · ');
       marcador.textContent = v.puntos ? `Puntos — ${v.puntos.map((p, i) => (v.n === 4 ? `Pareja ${i + 1}: ${p}` : `${ctx.nombre(i)}: ${p}`)).join(' · ')}` : `Bazas — ${bz}`;
       if (v.n === 4 && yo >= 0) marcador.textContent += ` (tú eres la ${equipoDe(yo)})`;

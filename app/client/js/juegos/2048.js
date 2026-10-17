@@ -3,11 +3,11 @@
 window.JUEGO = {
   montar(raiz) {
     const { el, boton } = UI;
-    const caja = el('div', 'solo win');
+    const caja = el('div', 'solo');
     const marcador = el('p', 'marcador');
     const tablero = el('div', 't2048');
     tablero.setAttribute('aria-label', 'Tablero de 2048'); tablero.tabIndex = 0;
-    caja.append(marcador, tablero, boton('Nueva partida', () => nueva(), 'oro'), el('p', 'muted', 'Flechas o WASD; en el móvil, desliza el dedo.'));
+    caja.append(marcador, tablero, boton('Nueva partida', () => nueva(), 'oro'), el('p', 'suave', 'Flechas o WASD; en el móvil, desliza el dedo.'));
     raiz.replaceChildren(caja);
     let g, puntos, record = UI.leer('2048-record', 0), ganado;
     const vacias = () => { const v = []; g.forEach((f, y) => f.forEach((x, c) => { if (!x) v.push([y, c]); })); return v; };

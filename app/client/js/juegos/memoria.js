@@ -5,7 +5,7 @@ window.JUEGO = {
     const { el, boton } = UI;
     const ICONOS = ['🏰', '🐉', '⚔️', '🛡️', '👑', '🍷', '🐴', '🦉', '🗝️', '🔥', '🌙', '🍄', '🎲', '🪙', '🏹', '📜', '🐺', '🌻'];
     const TAM = { facil: [4, 4], medio: [6, 4], dificil: [6, 6] };
-    const caja = el('div', 'solo win');
+    const caja = el('div', 'solo');
     const opciones = el('div', 'fila centro');
     const nivel = el('select'); nivel.setAttribute('aria-label', 'Tamaño');
     for (const [v, t] of [['facil', '4×4'], ['medio', '6×4'], ['dificil', '6×6']]) { const o = el('option', null, t); o.value = v; nivel.append(o); }

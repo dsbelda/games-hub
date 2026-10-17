@@ -20,8 +20,22 @@
   fetch('/api/juegos').then((r) => r.json()).then(async (cat) => {
     const j = cat.find((x) => x.id === id);
     if (!j) { location.href = '/'; return; }
-    document.title = `${j.nombre} · Salón de juegos`;
-    document.getElementById('titulo').textContent = `${j.icono} ${j.nombre}`;
+    const TIPOS = { cartas: 'Cartas', tablero: 'Tablero', habilidad: 'Habilidad', dibujo: 'Dibujo', rol: 'Rol', casino: 'Casino' };
+    document.title = `${j.nombre} · Juega gratis · dsbelda Games`;
+    document.getElementById('titulo').textContent = j.nombre;
+    document.getElementById('miga-juego').textContent = j.nombre;
+    const miga = document.getElementById('miga-tipo');
+    miga.textContent = TIPOS[j.tipo]; miga.href = `/#tipo=${j.tipo}`;
+    document.getElementById('como').append(UI.el('p', null, j.comoSeJuega), UI.el('p', 'suave', `👥 ${j.jugadores[0] === j.jugadores[1] ? j.jugadores[0] : j.jugadores.join('-')} jugadores`));
+    // «Más juegos»: primero los del mismo tipo, luego el resto de los que ya se pueden jugar
+    const otros = cat.filter((x) => x.id !== j.id && x.estado === 'listo').sort((a, b) => (b.tipo === j.tipo) - (a.tipo === j.tipo)).slice(0, 4);
+    document.getElementById('mas').append(...otros.map((x) => {
+      const a = UI.el('a', 'mini-ficha'); a.href = x.url;
+      const im = UI.el('img'); im.src = `/img/juegos/${x.id}.svg`; im.alt = ''; im.width = 160; im.height = 120; im.loading = 'lazy';
+      a.append(im, UI.el('span', null, x.nombre));
+      return a;
+    }));
+    document.getElementById('buscador').onsubmit = (e) => { e.preventDefault(); location.href = '/#q=' + encodeURIComponent(document.getElementById('q').value.trim()); };
     window.FICHA = j;
     if (MULTI.includes(id)) { await cargar('/socket.io/socket.io.js'); await cargar(`/js/juegos/${id}.js`); await cargar('/js/sala.js'); }
     else { await cargar(`/js/juegos/${id}.js`); window.JUEGO.montar(document.getElementById('raiz')); }

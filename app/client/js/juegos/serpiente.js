@@ -4,7 +4,7 @@ window.JUEGO = {
   montar(raiz) {
     const { el, boton } = UI;
     const N = 20;
-    const caja = el('div', 'solo win');
+    const caja = el('div', 'solo');
     const marcador = el('p', 'marcador');
     const lienzo = el('canvas', 'lienzo'); lienzo.width = N * 16; lienzo.height = N * 16;
     lienzo.setAttribute('aria-label', 'Tablero de la serpiente');
@@ -15,7 +15,7 @@ window.JUEGO = {
       const b = boton(t, () => girar(DIRS[k]), 'mini ' + k); b.setAttribute('aria-label', k); flechas.append(b);
     }
     const empezar = boton('Empezar', () => reiniciar(), 'oro');
-    caja.append(marcador, lienzo, flechas, empezar, el('p', 'muted', 'Flechas o WASD; en el móvil, desliza el dedo. Espacio: pausa.'));
+    caja.append(marcador, lienzo, flechas, empezar, el('p', 'suave', 'Flechas o WASD; en el móvil, desliza el dedo. Espacio: pausa.'));
     raiz.replaceChildren(caja);
 
     let cuerpo, dir, siguiente, comida, puntos, vivo = false, pausa = false, temporizador;

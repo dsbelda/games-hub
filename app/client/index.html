@@ -3,33 +3,70 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#2a1b10">
-  <title>Juegos · dsbelda.dev</title>
-  <meta name="description" content="Juegos para jugar con amigos: cartas, tablero, dibujo y más.">
+  <meta name="theme-color" content="#1f5fbf">
+  <title>dsbelda Games · Juegos online para jugar con amigos</title>
+  <meta name="description" content="Juegos gratis para jugar con amigos: Brisca, cartas, tablero, habilidad y más. Sin registro ni descargas.">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-  <main id="app">
-    <header class="cab">
-      <h1>Salón de juegos</h1>
-      <p class="muted">Juegos para jugar con amigos. Sin cuentas, sin descargas.</p>
-    </header>
+  <header class="cabecera">
+    <div class="cabecera-in">
+      <a class="logo" href="/" aria-label="dsbelda Games, inicio"><b>dsbelda</b><span>GAMES</span></a>
+      <p class="lema">Juegos gratis para jugar con tus amigos · sin registro</p>
+      <form class="buscador" role="search" id="buscador">
+        <label class="oculto" for="q">Buscar juego</label>
+        <input id="q" type="search" placeholder="Buscar juego…" autocomplete="off">
+        <button type="submit">Buscar</button>
+      </form>
+    </div>
+  </header>
+  <nav class="categorias" aria-label="Categorías">
+    <div class="categorias-in" id="pestanas"></div>
+  </nav>
 
-    <section class="win filtros" aria-label="Filtros">
-      <input id="q" type="search" placeholder="Buscar juego…" autocomplete="off" aria-label="Buscar juego">
-      <div class="grupo" data-filtro="jugadores"><span>Jugadores</span></div>
-      <div class="grupo" data-filtro="duracion"><span>Duración</span></div>
-      <div class="grupo" data-filtro="tipo"><span>Tipo</span></div>
-      <div class="grupo" data-filtro="modo"><span>Modo</span></div>
-      <label class="check"><input id="solo-listos" type="checkbox"> Solo los que ya se pueden jugar</label>
-      <button id="limpiar" type="button">Limpiar filtros</button>
-    </section>
+  <div class="cuerpo">
+    <aside>
+      <details class="caja plegable" id="filtros">
+        <summary><h2>Filtrar juegos</h2></summary>
+        <div class="caja-in">
+          <div class="filtro" data-filtro="jugadores"><span>Jugadores</span></div>
+          <div class="filtro" data-filtro="duracion"><span>Duración</span></div>
+          <div class="filtro" data-filtro="modo"><span>Cómo jugar</span></div>
+          <label class="check"><input id="solo-listos" type="checkbox"> Solo los que ya se pueden jugar</label>
+          <p><button id="limpiar" type="button" class="enlace-btn">Quitar filtros</button></p>
+        </div>
+      </details>
+      <section class="caja naranja">
+        <h2>¿Cómo funciona?</h2>
+        <div class="caja-in">
+          <p>1. Elige un juego.</p>
+          <p>2. Ponte un apodo (no hace falta cuenta).</p>
+          <p>3. Juega contra la CPU o crea una sala y pasa el enlace a tus amigos.</p>
+        </div>
+      </section>
+    </aside>
 
-    <p id="cuenta" class="muted" aria-live="polite"></p>
-    <section id="lista" class="rejilla" aria-label="Juegos"></section>
-    <footer class="muted pie">Hecho por David · <a href="https://dsbelda.dev">dsbelda.dev</a></footer>
-  </main>
+    <main>
+      <section id="zona-destacados">
+        <h2 class="seccion-titulo">⭐ Destacados</h2>
+        <div class="destacados" id="destacados"></div>
+      </section>
+      <h2 class="seccion-titulo"><span id="titulo-lista">Todos los juegos</span> <small id="cuenta" aria-live="polite"></small></h2>
+      <section id="lista" class="rejilla" aria-label="Juegos"></section>
+    </main>
+  </div>
+
+  <footer class="pie">
+    <div class="pie-in">
+      <span class="grow">© David Sánchez Belda · <a href="https://dsbelda.dev">dsbelda.dev</a></span>
+      <a href="/legal/aviso">Aviso legal</a>
+      <a href="/legal/privacidad">Privacidad</a>
+      <a href="/legal/cookies">Cookies</a>
+      <button type="button" class="enlace-btn" data-cookies-panel>Configurar cookies</button>
+    </div>
+  </footer>
+  <script src="/js/cookies.js"></script>
   <script src="/js/portal.js"></script>
 </body>
 </html>

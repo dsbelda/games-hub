@@ -27,3 +27,20 @@ test('el servidor sirve portada, catálogo y healthz', async () => {
     assert.equal(d.length, CATALOGO.length);
   } finally { server.close(); }
 });
+
+test('textos legales y página 404 propia', async () => {
+  const { server, io: srv, port } = await start({ port: 0 });
+  try {
+    const base = `http://127.0.0.1:${port}`;
+    for (const p of ['aviso', 'privacidad', 'cookies']) {
+      const r = await fetch(`${base}/legal/${p}`);
+      assert.equal(r.status, 200, p);
+      assert.match(await r.text(), /David Sánchez Belda/);
+    }
+    const r = await fetch(`${base}/no-existe`);
+    assert.equal(r.status, 404);
+    assert.match(await r.text(), /Aquí no hay nada/);
+    // todas las miniaturas existen
+    for (const j of CATALOGO) assert.equal((await fetch(`${base}/img/juegos/${j.id}.svg`)).status, 200, j.id);
+  } finally { srv.close(); server.close(); }
+});

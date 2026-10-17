@@ -3,19 +3,47 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#2a1b10">
-  <title>Salón de juegos</title>
+  <meta name="theme-color" content="#1f5fbf">
+  <title>dsbelda Games</title>
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/style.css">
   <link rel="stylesheet" href="/juegos.css">
 </head>
-<body class="pag-juego">
-  <header class="barra">
-    <a class="volver" href="/">← Salón</a>
-    <h1 id="titulo">…</h1>
+<body>
+  <header class="cabecera">
+    <div class="cabecera-in">
+      <a class="logo" href="/" aria-label="dsbelda Games, inicio"><b>dsbelda</b><span>GAMES</span></a>
+      <form class="buscador" role="search" action="/" id="buscador">
+        <label class="oculto" for="q">Buscar juego</label>
+        <input id="q" type="search" placeholder="Buscar otro juego…" autocomplete="off">
+        <button type="submit">Buscar</button>
+      </form>
+    </div>
   </header>
-  <main id="raiz" class="raiz"></main>
+  <nav class="migas" aria-label="Estás en"><a href="/">Juegos</a> › <a id="miga-tipo" href="/">…</a> › <span id="miga-juego">…</span></nav>
+
+  <div class="cuerpo-juego">
+    <main class="caja marco">
+      <h1 id="titulo" class="caja-titulo">…</h1>
+      <div id="raiz" class="raiz"></div>
+    </main>
+    <aside>
+      <section class="caja naranja"><h2>Cómo se juega</h2><div class="caja-in" id="como"></div></section>
+      <section class="caja"><h2>Más juegos</h2><div class="caja-in mas-juegos" id="mas"></div></section>
+    </aside>
+  </div>
+
+  <footer class="pie">
+    <div class="pie-in">
+      <span class="grow">© David Sánchez Belda · <a href="https://dsbelda.dev">dsbelda.dev</a></span>
+      <a href="/legal/aviso">Aviso legal</a>
+      <a href="/legal/privacidad">Privacidad</a>
+      <a href="/legal/cookies">Cookies</a>
+      <button type="button" class="enlace-btn" data-cookies-panel>Configurar cookies</button>
+    </div>
+  </footer>
   <div id="aviso" class="toast" role="status" aria-live="polite" hidden></div>
+  <script src="/js/cookies.js"></script>
   <script src="/js/juego.js"></script>
 </body>
 </html>

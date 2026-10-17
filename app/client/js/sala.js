@@ -26,7 +26,7 @@
 
   // --- pantallas -----------------------------------------------------------------------------
   function pintar() {
-    if (est.sala === undefined || est.yo === null) { raiz.replaceChildren(el('p', 'muted centro', 'Conectando…')); return; }
+    if (est.sala === undefined || est.yo === null) { raiz.replaceChildren(el('p', 'suave centro', 'Conectando…')); return; }
     if (!est.yo.nombre) return pantallaApodo();
     if (!est.sala) return pantallaVestibulo();
     if (est.sala.fase === 'espera') return pantallaEspera();
@@ -34,11 +34,13 @@
   }
 
   function pantallaApodo() {
-    const f = el('form', 'win caja');
-    f.append(el('h2', null, '¿Cómo te llamas?'), el('p', 'muted', 'Solo es un apodo para la partida. Sin cuentas ni contraseñas.'));
+    const f = el('form', 'panel');
+    f.append(el('h2', null, '¿Cómo te llamas?'), el('p', 'suave', 'Solo es un apodo para la partida. Sin cuentas ni contraseñas.'));
+    const normas = el('p', 'suave'); const an = el('a', null, 'normas'); an.href = '/legal/aviso'; an.target = '_blank';
+    normas.append('Al jugar aceptas las ', an, ' (sé majo en el chat).');
     const i = el('input'); i.maxLength = 16; i.placeholder = 'Tu apodo'; i.autocomplete = 'nickname'; i.required = true; i.minLength = 2;
     i.value = UI.leer('apodo', '');
-    f.append(i, boton('Entrar', null, 'oro'));
+    f.append(i, normas, boton('Entrar', null, 'oro'));
     f.lastChild.type = 'submit';
     f.onsubmit = async (e) => { e.preventDefault(); const r = await pedir('hola', { nombre: i.value }); if (r.ok) UI.guardar('apodo', i.value.trim()); };
     raiz.replaceChildren(f);
@@ -55,8 +57,8 @@
 
   function pantallaVestibulo() {
     const c = el('div', 'vestibulo');
-    const a = el('section', 'win caja');
-    a.append(el('h2', null, `Hola, ${est.yo.nombre}`), el('p', 'muted', window.FICHA.descripcion));
+    const a = el('section', 'panel');
+    a.append(el('h2', null, `Hola, ${est.yo.nombre}`), el('p', 'suave', window.FICHA.descripcion));
     const nivel = el('select'); nivel.setAttribute('aria-label', 'Nivel de la CPU');
     for (const [v, t] of [['normal', 'CPU normal'], ['dificil', 'CPU difícil']]) { const o = el('option', null, t); o.value = v; nivel.append(o); }
     nivel.value = UI.leer('nivel', 'normal'); nivel.onchange = () => UI.guardar('nivel', nivel.value);
@@ -71,9 +73,9 @@
     f.lastChild.type = 'submit';
     f.onsubmit = (e) => { e.preventDefault(); if (code.value.trim()) pedir('unirse', { code: code.value.trim() }); };
     a.append(fila, fila2, el('h3', null, 'Tengo un código'), f);
-    const b = el('section', 'win caja');
+    const b = el('section', 'panel');
     b.append(el('h2', null, 'Salas abiertas'));
-    if (!est.publicas.length) b.append(el('p', 'muted', 'Ahora mismo no hay ninguna. ¡Crea tú una!'));
+    if (!est.publicas.length) b.append(el('p', 'suave', 'Ahora mismo no hay ninguna. ¡Crea tú una!'));
     for (const s of est.publicas) {
       const r = el('div', 'fila sala-pub');
       r.append(el('span', 'grow', `Sala de ${s.anfitrion} · ${s.jugadores}/${s.max}`), boton('Entrar', () => pedir('unirse', { code: s.code })));
@@ -102,16 +104,16 @@
   function pantallaEspera() {
     const s = est.sala;
     const c = el('div', 'vestibulo');
-    const a = el('section', 'win caja');
+    const a = el('section', 'panel');
     const enlace = `${location.origin}/j/${JID}?sala=${s.code}`;
     a.append(el('h2', null, 'Sala de espera'), el('p', 'codigo', s.code));
-    a.append(el('p', 'muted', 'Pasa este enlace a tus amigos:'));
+    a.append(el('p', 'suave', 'Pasa este enlace a tus amigos:'));
     const fe = el('div', 'fila');
     const inp = el('input'); inp.readOnly = true; inp.value = enlace; inp.className = 'grow'; inp.setAttribute('aria-label', 'Enlace de invitación');
     fe.append(inp, boton('Copiar', () => { navigator.clipboard?.writeText(enlace).then(() => aviso('Enlace copiado'), () => inp.select()); }));
     a.append(fe);
     a.append(el('h3', null, `Jugadores (${s.asientos.length}/${s.max})`), listaAsientos(s, s.soyAnfitrion));
-    if (JID === 'brisca' && s.asientos.length === 4) a.append(el('p', 'muted', 'A cuatro se juega por parejas: 1.º y 3.º contra 2.º y 4.º. Usa las flechas para cambiar las parejas.'));
+    if (JID === 'brisca' && s.asientos.length === 4) a.append(el('p', 'suave', 'A cuatro se juega por parejas: 1.º y 3.º contra 2.º y 4.º. Usa las flechas para cambiar las parejas.'));
     if (s.soyAnfitrion) {
       const f = el('div', 'fila');
       if (s.asientos.length < s.max) { f.append(boton('+ CPU normal', () => pedir('cpu', { nivel: 'normal' })), boton('+ CPU difícil', () => pedir('cpu', { nivel: 'dificil' }))); }
@@ -120,14 +122,14 @@
       const emp = boton(listo ? 'Empezar partida' : `Faltan jugadores (mínimo ${s.min})`, () => pedir('empezar'), 'oro');
       emp.disabled = !listo;
       a.append(emp);
-    } else a.append(el('p', 'muted', 'Esperando a que el anfitrión empiece…'));
+    } else a.append(el('p', 'suave', 'Esperando a que el anfitrión empiece…'));
     a.append(boton('Salir de la sala', () => pedir('salir'), 'flojo'));
     c.append(a, panelChat(s));
     raiz.replaceChildren(c);
   }
 
   function panelChat(s) {
-    const box = el('section', 'win chat');
+    const box = el('section', 'panel chat');
     box.append(el('h3', null, 'Chat'));
     const log = el('div', 'chat-log');
     for (const m of s.chat.slice(-40)) { const p = el('p'); p.append(el('b', null, m.nombre + ': '), document.createTextNode(m.texto)); log.append(p); }
@@ -155,7 +157,7 @@
     window.JUEGO.render(zona, s.partida, ctx);
     if (s.fase === 'fin') zona.append(panelFin(s));
     const lado = el('aside', 'lado' + (chatAbierto ? ' abierto' : ''));
-    const jug = el('section', 'win');
+    const jug = el('section', 'panel');
     jug.append(el('h3', null, `Sala ${s.code}`), listaAsientos(s, false));
     const salir = boton('Salir', () => { if (s.fase === 'fin' || confirmar()) pedir('salir'); }, 'flojo mini');
     jug.append(salir);
@@ -176,13 +178,13 @@
 
   function panelFin(s) {
     const r = s.resultado;
-    const p = el('div', 'win fin');
+    const p = el('div', 'panel fin');
     const gano = r.ganadores.includes(s.yo);
     p.append(el('h2', null, !r.ganadores.length ? 'Empate' : gano ? '¡Has ganado!' : `Gana ${r.ganadores.map((i) => s.asientos[i]?.nombre).join(' y ')}`));
-    p.append(el('p', 'muted', r.texto));
+    p.append(el('p', 'suave', r.texto));
     const f = el('div', 'fila');
     if (s.soyAnfitrion) f.append(boton('Revancha', () => pedir('empezar'), 'oro'));
-    else f.append(el('span', 'muted', 'El anfitrión puede pedir la revancha.'));
+    else f.append(el('span', 'suave', 'El anfitrión puede pedir la revancha.'));
     f.append(boton('Salir', () => pedir('salir'), 'flojo'));
     p.append(f);
     return p;

@@ -7,7 +7,7 @@ window.JUEGO = {
     const estado = el('p', 'turno' + (miTurno ? ' mio' : ''));
     estado.textContent = ctx.fase !== 'juego' ? '' : miTurno ? 'Te toca: elige columna' : `Turno de ${ctx.nombre(v.turno)}`;
     const leyenda = el('div', 'fila leyenda');
-    for (const j of [0, 1]) { const s = el('span'); s.append(el('i', `ficha f${j}`), ` ${ctx.nombre(j)}`); leyenda.append(s); }
+    for (const j of [0, 1]) { const s = el('span'); s.append(el("i", `disco f${j}`), ` ${ctx.nombre(j)}`); leyenda.append(s); }
     const t = el('div', 'c4');
     t.setAttribute('role', 'grid'); t.setAttribute('aria-label', 'Tablero');
     const enLinea = new Set(v.linea.map(([f, c]) => `${f},${c}`));
@@ -22,7 +22,7 @@ window.JUEGO = {
         const h = el('span', 'c4-hueco');
         if (x >= 0) {
           const ultima = v.ultima && v.ultima[0] === f && v.ultima[1] === c;
-          h.append(el('i', `ficha f${x}${enLinea.has(`${f},${c}`) ? ' gana' : ''}${ultima ? ' cae' : ''}`));
+          h.append(el('i', `disco f${x}${enLinea.has(`${f},${c}`) ? ' gana' : ''}${ultima ? ' cae' : ''}`));
           if (ultima) h.style.setProperty('--caida', `${(f + 1) * -100}%`);
         }
         col.append(h);
