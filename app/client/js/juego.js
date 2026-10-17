@@ -3,8 +3,8 @@
 (() => {
   const id = location.pathname.split('/')[2];
   const V = document.querySelector('meta[name=v]')?.content || '';
-  const MULTI = ['cuatro', 'brisca', 'unidad', 'hundir', 'damas', 'ajedrez'];
-  const EXTRA = { ajedrez: ['piezas'] }; // scripts que necesita antes un juego
+  const MULTI = ['cuatro', 'brisca', 'unidad', 'hundir', 'damas', 'ajedrez', 'tute', 'chinchon', 'poquer', 'mus'];
+  const EXTRA = { ajedrez: ['piezas'], tute: ['cartas-es'], chinchon: ['cartas-es'], mus: ['cartas-es'] }; // scripts que necesita antes un juego
   window.UI = {
     el(tag, cls, txt) { const e = document.createElement(tag); if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e; },
     boton(txt, fn, cls = '') { const b = UI.el('button', 'btn ' + cls, txt); b.type = 'button'; b.onclick = fn; return b; },
@@ -35,6 +35,7 @@
     }));
     document.getElementById('buscador').onsubmit = (e) => { e.preventDefault(); location.href = '/#q=' + encodeURIComponent(document.getElementById('q').value.trim()); };
     window.FICHA = j;
+    window.CATALOGO = cat;
     // «Sigue jugando» de la portada
     const rec = UI.leer('recientes', []).filter((x) => x !== j.id); rec.unshift(j.id); UI.guardar('recientes', rec.slice(0, 8));
     // corazón de favorito en la barra del título

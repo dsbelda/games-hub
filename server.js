@@ -86,7 +86,7 @@ function start({ port = 3400, host = '127.0.0.1', retardoCpu = 700, baseDatos = 
     for (const a of sala.asientos) if (!a.bot || a.sustituto) emitir(a.id, 'sala', salas.vista(sala, a.id));
   }
   const listas = (juego) => io.to('lista:' + juego).emit('salas', salas.lista(juego));
-  const reloj = setInterval(() => salas.tick(), 5000);
+  const reloj = setInterval(() => salas.tick(), 1000); // también mueve los relojes de los juegos
   reloj.unref();
   cuentas.limpiar();
   setInterval(() => cuentas.limpiar(), 86400000).unref();

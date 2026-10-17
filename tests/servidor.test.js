@@ -79,7 +79,7 @@ test('las páginas de juego solo existen para juegos listos', async () => {
   const base = `http://127.0.0.1:${port}`;
   try {
     assert.equal((await fetch(base + '/j/brisca')).status, 200);
-    assert.equal((await fetch(base + '/j/mus')).status, 404);
+    assert.equal((await fetch(base + '/j/parchis')).status, 404);
     assert.equal((await fetch(base + '/j/catan')).status, 404);
   } finally { srv.close(); server.close(); }
 });

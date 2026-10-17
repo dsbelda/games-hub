@@ -17,8 +17,12 @@
   sock.on('connect_error', () => aviso('Sin conexión con el servidor; reintentando…'));
   sock.on('yo', (y) => { est.yo = y; pintar(); });
   sock.on('salas', (l) => { est.publicas = l; if (!est.sala && !document.activeElement?.matches('input')) pintar(); });
+  let desfase = 0; // reloj del servidor - reloj de este dispositivo
   sock.on('sala', async (s) => {
-    if (s && s.juego !== JID) { location.href = `/j/${s.juego}?sala=${s.code}`; return; }
+    if (s && s.ahora) desfase = s.ahora - Date.now();
+    // estás en una sala de otro juego: preguntar en vez de llevarte sin avisar
+    if (s && s.juego !== JID) { est.otra = s; est.sala = null; pintar(); return; }
+    est.otra = null;
     est.sala = s;
     if (!s && intentoUnirse && est.yo?.nombre) { intentoUnirse = false; await pedir('unirse', { code: paramSala }); return; }
     pintar();
@@ -27,6 +31,7 @@
   // --- pantallas -----------------------------------------------------------------------------
   function pintar() {
     if (est.sala === undefined || est.yo === null) { raiz.replaceChildren(el('p', 'suave centro', 'Conectando…')); return; }
+    if (est.otra) return pantallaOtra();
     if (!est.yo.nombre) return pantallaApodo();
     if (!est.sala) return pantallaVestibulo();
     if (est.sala.fase === 'espera') return pantallaEspera();
@@ -50,10 +55,25 @@
     i.focus();
   }
 
+  function pantallaOtra() {
+    const o = est.otra;
+    const nombre = (window.CATALOGO || []).find((j) => j.id === o.juego)?.nombre || o.juego;
+    const p = el('section', 'panel');
+    p.append(el('h2', null, 'Tienes otra partida abierta'));
+    p.append(el('p', null, `Estás en una sala de ${nombre} (código ${o.code})${o.fase === 'juego' ? ' con la partida en marcha' : ''}.`));
+    const f = el('div', 'fila');
+    f.append(
+      boton(`Volver a ${nombre}`, () => { location.href = `/j/${o.juego}?sala=${o.code}`; }, 'oro'),
+      boton(o.fase === 'juego' ? 'Dejarla (te sustituye la CPU) y jugar aquí' : 'Salir de esa sala y jugar aquí', async () => { await pedir('salir'); est.otra = null; pintar(); }),
+    );
+    p.append(f);
+    raiz.replaceChildren(p);
+  }
+
   async function jugarYaCpu() {
     const r = await pedir('crear', { juego: JID, publica: false });
     if (!r.ok) return;
-    const n = { cuatro: 1, brisca: 1, unidad: 3 }[JID] || 1;
+    const n = { unidad: 3, mus: 3, poquer: 3, chinchon: 2 }[JID] || 1; // CPUs para «Jugar ya»
     for (let k = 0; k < n; k++) await pedir('cpu', { nivel: UI.leer('nivel', 'normal') });
     await pedir('empezar');
   }
@@ -206,6 +226,14 @@
     p.append(f);
     return p;
   }
+
+  // cuentas atrás en vivo: <elemento data-cuenta-atras="ms del servidor" data-texto="… {s} …">
+  setInterval(() => {
+    for (const t of document.querySelectorAll('[data-cuenta-atras]')) {
+      const s = Math.max(0, Math.ceil((+t.dataset.cuentaAtras - (Date.now() + desfase)) / 1000));
+      t.textContent = (t.dataset.texto || '{s}').replace('{s}', s);
+    }
+  }, 250);
 
   pintar();
 })();

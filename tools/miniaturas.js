@@ -67,7 +67,6 @@ M.unidad = (() => {
   });
   return L;
 })();
-M.mus = (() => { const L = lienzo(40, 30); L.fondo(P.rosa, P.rosaO); carta(L, 5, 8, 'espadas', 0); carta(L, 15, 6, 'espadas', 0); carta(L, 25, 8, 'oros', 3); L.R(8, 9, 1, 1, P.tinta); L.R(18, 7, 1, 1, P.tinta); return L; })();
 M.parchis = (() => {
   const L = lienzo(40, 30); L.fondo(P.crema, P.solO);
   L.B(8, 2, 24, 25, P.blanco);
@@ -189,6 +188,33 @@ M.ajedrez = (() => {
   const rey = [[3, 0, 2], [2, 1, 4], [3, 2, 2], [1, 3, 6], [0, 4, 8], [1, 5, 6], [2, 6, 4], [1, 7, 6], [0, 8, 8]];
   for (const [x, y, w] of rey) L.R(24 + x, 2 + y, w, 1, '#3a3456');
   L.R(24, 10, 8, 1, P.tinta);
+  return L;
+})();
+M.tute = (() => {
+  const L = lienzo(40, 30); L.fondo(P.uva, P.uvaO);
+  carta(L, 5, 9, 'copas', 0); carta(L, 14, 7, 'oros', 0); carta(L, 23, 9, 'espadas', 0);
+  for (const x of [8, 17, 26]) { L.R(x, 3 + (x === 17 ? -2 : 0), 5, 2, P.sol); L.R(x, 2 + (x === 17 ? -2 : 0), 1, 1, P.sol); L.R(x + 2, 2 + (x === 17 ? -2 : 0), 1, 1, P.sol); L.R(x + 4, 2 + (x === 17 ? -2 : 0), 1, 1, P.sol); }
+  L.T(4, 33, 22, P.blanco); L.T(0, 33, 22, P.blanco);
+  return L;
+})();
+M.chinchon = (() => {
+  const L = lienzo(40, 30); L.fondo(P.tomate, P.tomateO);
+  for (let k = 0; k < 4; k++) carta(L, 3 + k * 8, 6, 'copas', [4, 5, 6, 7][k]);
+  L.R(3, 23, 34, 2, P.sol); L.R(3, 25, 34, 1, P.solO);
+  return L;
+})();
+M.poquer = (() => {
+  const L = lienzo(40, 30); L.fondo(P.verde, P.verdeO);
+  L.B(3, 4, 34, 22, '#2f9a55'); L.R(4, 5, 32, 1, '#47c968');
+  const naipe = (x, y, rojo, t) => { L.B(x, y, 9, 12, P.blanco); L.T(t, x + 2, y + 2, rojo ? P.tomate : P.tinta); L.R(x + 3, y + 8, 3, 2, rojo ? P.tomate : P.tinta); };
+  naipe(8, 9, false, 1); naipe(16, 9, true, 1); naipe(24, 9, false, 8);
+  for (const [x, y, c] of [[6, 22, P.tomate], [10, 22, P.cielo], [29, 21, P.sol], [32, 22, P.tomate]]) { L.DB(x, y, 2, c); L.R(x - 1, y, 3, 1, P.blanco); }
+  return L;
+})();
+M.mus = (() => {
+  const L = lienzo(40, 30); L.fondo(P.rosa, P.rosaO);
+  carta(L, 3, 8, 'oros', 3); carta(L, 11, 6, 'copas', 3); carta(L, 19, 6, 'espadas', 0); carta(L, 27, 8, 'bastos', 1);
+  L.R(4, 24, 32, 3, P.tinta); L.R(5, 25, 30, 1, P.sol);
   return L;
 })();
 // ilustración de la portada: mesa con cartas, dados, mando y una moneda

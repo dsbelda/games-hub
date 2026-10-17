@@ -128,3 +128,72 @@ test('Ajedrez: perft correcto (inicio, Kiwipete y posición 3) y mate del pastor
   assert.deepEqual(J.fin(e).ganadores, [0]);
   assert.equal(e.jugadas.at(-1), 'Dxf7#');
 });
+
+test('Tute: obligaciones de asistir y montar, cantes y 130 puntos', () => {
+  const J = JUEGOS.tute;
+  const e = J.nuevo(4, Math.random);
+  e.palo = 'oros';
+  e.manos[1] = [{ p: 'copas', n: 4 }, { p: 'copas', n: 1 }, { p: 'oros', n: 5 }, { p: 'bastos', n: 7 }];
+  e.mesa = [{ j: 0, carta: { p: 'copas', n: 12 } }];
+  e.turno = 1;
+  assert.deepEqual(J._.legales(e, 1).map((c) => c.n), [1], 'debe asistir y montar con el As');
+  e.manos[1] = [{ p: 'espadas', n: 4 }, { p: 'oros', n: 5 }, { p: 'oros', n: 2 }];
+  assert.deepEqual(J._.legales(e, 1).map((c) => c.p), ['oros', 'oros'], 'sin palo, falla con triunfo');
+  for (const n of [2, 3, 4]) for (let k = 0; k < 20; k++) {
+    const { e: f } = jugar(J, n, ['normal', 'dificil'], k * 5 + n);
+    if (f.tute < 0) assert.equal(f.puntos.reduce((a, b) => a + b, 0), 130);
+  }
+});
+
+test('Chinchón: combinaciones, cierre y partidas completas', () => {
+  const J = JUEGOS.chinchon;
+  const c = (p, n) => ({ p, n });
+  assert.equal(J._.mejor([c('oros', 5), c('oros', 6), c('oros', 7), c('oros', 10), c('copas', 3), c('espadas', 3), c('bastos', 3)]).puntos, 0);
+  assert.ok(J._.esChinchon([1, 2, 3, 4, 5, 6, 7].map((n) => c('copas', n))));
+  assert.ok(J._.puedeCerrar([c('oros', 5), c('oros', 6), c('oros', 7), c('copas', 3), c('espadas', 3), c('bastos', 3), c('copas', 4)]));
+  assert.ok(!J._.puedeCerrar([c('oros', 5), c('oros', 6), c('oros', 7), c('copas', 3), c('espadas', 3), c('bastos', 3), c('copas', 12)]));
+  for (const n of [2, 4]) for (let k = 0; k < 5; k++) {
+    const e = J.nuevo(n, Math.random);
+    for (let i = 0; i < 100000 && !J.fin(e); i++) { if (e.resumen) { J.tiempo(e, Date.now() + 1e9); continue; } const t = J.turno(e); assert.ok(J.accion(e, t, J.bot(e, t, 'dificil', Math.random)).ok); }
+    assert.ok(J.fin(e));
+  }
+});
+
+test('Póquer: jugadas, botes paralelos y fichas que no se pierden', () => {
+  const J = JUEGOS.poquer;
+  const c = (s) => s.split(' ').map((x) => ({ r: '--23456789TJQKA'.indexOf(x[0]), s: x[1] }));
+  assert.equal(J._.mejorMano(c('Ah 2d 3c 4s 5h 9c Kd')).nombre, 'Escalera');
+  assert.equal(J._.mejorMano(c('As Ks Qs Js Ts 2h 3d')).nombre, 'Escalera real');
+  assert.ok(J._.comparar(J._.mejorMano(c('Kh Kd Kc 2s 2h 9c 3d')).valor, J._.mejorMano(c('2h 5h 9h Jh Kh 3c 4c')).valor) > 0, 'full gana a color');
+  J._.config.sims = 15;
+  for (const n of [2, 5, 8]) for (let k = 0; k < 2; k++) {
+    const e = J.nuevo(n, Math.random);
+    for (let i = 0; i < 200000 && !J.fin(e); i++) {
+      if (e.fase === 'fin') { J.tiempo(e, Date.now() + 1e9); continue; }
+      const t = J.turno(e); assert.ok(J.accion(e, t, J.bot(e, t, 'normal', Math.random)).ok);
+      const enMesa = e.fase === 'fin' ? 0 : e.total.reduce((a, b) => a + b, 0);
+      assert.equal(e.fichas.reduce((a, b) => a + b, 0) + enMesa, n * 1000);
+    }
+    assert.ok(J.fin(e));
+  }
+  J._.config.sims = 0;
+});
+
+test('Mus: jugadas y partidas completas a 40', () => {
+  const J = JUEGOS.mus;
+  const c = (p, n) => ({ p, n });
+  assert.equal(J._.pares([c('oros', 12), c('copas', 3), c('espadas', 1), c('bastos', 2)]).nombre, 'duples');
+  assert.ok(J._.comparar('juego', [c('oros', 12), c('copas', 11), c('espadas', 7), c('bastos', 4)], [c('oros', 12), c('copas', 11), c('espadas', 10), c('bastos', 10)]) > 0, 'la 31 gana a la 40');
+  assert.ok(J._.comparar('grande', [c('oros', 3), c('copas', 1), c('espadas', 1), c('bastos', 1)], [c('oros', 11), c('copas', 11), c('espadas', 11), c('bastos', 11)]) > 0, 'un tres es rey');
+  for (let k = 0; k < 30; k++) {
+    const e = J.nuevo(4, Math.random);
+    for (let i = 0; i < 20000 && !J.fin(e); i++) {
+      if (e.fase === 'resumen') { J.tiempo(e, Date.now() + 1e9); continue; }
+      const quien = e.fase === 'descarte' ? [0, 1, 2, 3] : [J.turno(e)];
+      let hecho = false;
+      for (const j of quien) { const a = J.bot(e, j, 'normal', Math.random); if (a) { assert.ok(J.accion(e, j, a).ok); hecho = true; break; } }
+      assert.ok(hecho, `atascado en ${e.fase}`);
+    }
+    assert.ok(J.fin(e));
+  }
+});
