@@ -90,6 +90,7 @@
     const fila = el('div', 'fila');
     if (window.FICHA.modo.includes('cpu')) fila.append(boton('Jugar ya contra la CPU', jugarYaCpu, 'oro'), nivel);
     else fila.append(el('p', 'suave', 'Este juego es para jugar con personas: crea una sala y pasa el enlace.'));
+    if (window.JUEGO.local) fila.append(boton('Jugar aquí (2 en el mismo teclado)', () => window.JUEGO.local(raiz), 'oro'));
     const pub = el('label', 'check'); const cb = el('input'); cb.type = 'checkbox'; cb.checked = true; pub.append(cb, ' Que salga en la lista de salas');
     const fila2 = el('div', 'fila');
     fila2.append(boton('Crear sala para amigos', () => pedir('crear', { juego: JID, publica: cb.checked })), pub);

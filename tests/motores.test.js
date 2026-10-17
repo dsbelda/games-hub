@@ -272,3 +272,36 @@ test('Arqueros y Billar: física en el servidor y partidas completas', () => {
   assert.equal(c.enMano, true); assert.equal(c.turno, 1);
   for (let k = 0; k < 4; k++) jugar(B, 2, ['dificil', 'dificil'], k + 7);
 });
+
+test('Tiempo real: tanques y cabezones terminan; Fuego y Agua reenvía y sus niveles se pueden pasar', () => {
+  const Tq = JUEGOS.tanques, Cb = JUEGOS.cabezones, FA = JUEGOS.fuegoagua;
+  const t = Tq.nuevo(3); Tq.configurar(t, [0, 1, 2].map(() => ({ bot: true, nivel: 'dificil' })));
+  for (let s = 0; s < 30 * 60 * 20 && !Tq.fin(t); s++) Tq.paso(t, 1 / 30);
+  assert.ok(Tq.fin(t), 'la partida de tanques termina');
+  assert.ok(Tq.accion(t, 0, { tipo: 'teclas', k: 255 }).sinVista);
+  const c = Cb.nuevo(2); Cb.configurar(c, [{ bot: true, nivel: 'normal' }, { bot: true, nivel: 'dificil' }]);
+  for (let s = 0; s < 30 * 120 && !Cb.fin(c); s++) Cb.paso(c, 1 / 30);
+  assert.ok(Cb.fin(c), 'el partido acaba a los 90 s');
+  const f = FA.nuevo(2);
+  assert.equal(FA.accion(f, 1, { tipo: 'foto', f: {} }).ok, false, 'solo el anfitrión manda fotos');
+  assert.equal(FA.accion(f, 0, { tipo: 'teclas', k: 1 }).ok, false, 'el anfitrión no manda teclas');
+  for (let n = 0; n < 4; n++) assert.ok(FA.accion(f, 0, { tipo: 'nivel', n, segundos: 30 }).ok);
+  assert.ok(FA.fin(f));
+  // niveles: medidas y caminos (saltos de 3 de alto y 4 de largo)
+  const NIV = require('../app/client/js/juegos/fuegoagua-niveles.js');
+  const SOLIDO = new Set(['#', 'r', 'w', 'g', 'D']);
+  for (const nv of NIV) {
+    const m = nv.mapa.map((x) => x.split(''));
+    assert.ok(m.length === 20 && m.every((x) => x.length === 30), nv.nombre);
+    for (const [ini, mata, gema, puerta] of [['1', 'wg', 'R', 'F'], ['2', 'rg', 'B', 'A']]) {
+      const libre = (x, y) => y >= 0 && y < 20 && x >= 0 && x < 30 && (!SOLIDO.has(m[y][x]) || m[y][x] === 'D');
+      const pie = (x, y) => y + 1 < 20 && SOLIDO.has(m[y + 1][x]) && m[y + 1][x] !== 'D' && !mata.includes(m[y + 1][x]);
+      const pos = []; for (let y = 0; y < 20; y++) for (let x = 0; x < 30; x++) if (libre(x, y) && pie(x, y)) pos.push([x, y]);
+      let s; m.forEach((fila, y) => fila.forEach((ch, x) => { if (ch === ini) s = [x, y]; }));
+      const visto = new Set([s.join()]), cola = [s];
+      while (cola.length) { const [x, y] = cola.shift(); for (const [x2, y2] of pos) { if (visto.has(`${x2},${y2}`)) continue; const dy = y2 - y, dx = Math.abs(x2 - x); if (dy < -3 || dx > 4 + Math.max(0, dy)) continue; let b = false; for (let yy = Math.min(y, y2) - (dy < 0 ? 1 : 0); yy <= y2; yy++) if (!libre(x2, yy)) b = true; if (!b) { visto.add(`${x2},${y2}`); cola.push([x2, y2]); } } }
+      const llega = (ch) => m.every((fila, y) => fila.every((c2, x) => c2 !== ch || [...visto].some((v) => { const [vx, vy] = v.split(',').map(Number); return Math.abs(vx - x) <= 1 && vy >= y && vy - y <= 3; })));
+      assert.ok(llega(gema) && llega(puerta), `${nv.nombre}: ${ini === '1' ? 'Fuego' : 'Agua'} no llega a todo`);
+    }
+  }
+});

@@ -310,6 +310,31 @@ M.billar = (() => {
   L.R(10, 14, 2, 2, P.blanco); for (let x = 0; x < 9; x++) L.R(1 + x, 15, 1, 1, '#c08a5a');
   return L;
 })();
+M.tanques = (() => {
+  const L = lienzo(40, 30); L.fondo('#e9e2d0', '#ddd4bd');
+  for (const [x, y, w, h] of [[2, 2, 36, 1], [2, 27, 36, 1], [2, 2, 1, 26], [37, 2, 1, 26], [12, 2, 1, 10], [12, 18, 14, 1], [25, 8, 1, 11], [6, 12, 10, 1], [30, 14, 1, 13]]) L.R(x, y, w, h, P.tinta);
+  L.B(5, 5, 6, 5, P.cielo); L.R(11, 7, 3, 1, P.tinta); L.B(28, 21, 6, 5, P.tomate); L.R(25, 23, 3, 1, P.tinta);
+  for (const [x, y] of [[16, 8], [20, 12], [23, 15]]) L.R(x, y, 1, 1, P.tinta);
+  return L;
+})();
+M.cabezones = (() => {
+  const L = lienzo(40, 30); L.fondo('#9ad1ff', P.verde);
+  L.R(0, 24, 40, 6, P.verde); L.R(0, 15, 3, 9, 'rgba(255,255,255,.5)'); L.R(37, 15, 3, 9, 'rgba(255,255,255,.5)'); L.R(0, 14, 4, 1, P.blanco); L.R(36, 14, 4, 1, P.blanco);
+  L.DB(11, 15, 4, '#e0ac7e'); L.R(7, 12, 9, 2, P.cielo); L.R(9, 14, 2, 2, P.tinta); L.R(13, 14, 2, 2, P.tinta);
+  L.DB(28, 15, 4, '#a86b45'); L.R(24, 12, 9, 2, P.tomate); L.R(25, 14, 2, 2, P.tinta); L.R(29, 14, 2, 2, P.tinta);
+  L.R(9, 20, 4, 4, P.cielo); L.R(26, 20, 4, 4, P.tomate);
+  L.DB(20, 8, 2, P.blanco); L.R(20, 8, 1, 1, P.tinta);
+  return L;
+})();
+M.fuegoagua = (() => {
+  const L = lienzo(40, 30); L.fondo('#2b2f5e', '#23264f');
+  L.R(0, 25, 40, 5, '#6b6680'); L.R(10, 24, 6, 2, P.tomate); L.R(24, 24, 6, 2, P.cielo);
+  L.R(4, 13, 10, 2, '#6b6680'); L.R(26, 13, 10, 2, '#6b6680');
+  L.B(6, 17, 5, 5, P.tomate); L.R(7, 14, 3, 3, P.sol); L.R(8, 12, 1, 2, P.sol);
+  L.B(29, 17, 5, 5, P.cielo); L.R(30, 14, 3, 3, '#9ad1ff');
+  L.B(8, 9, 3, 3, P.tomate); L.B(29, 9, 3, 3, P.cielo);
+  return L;
+})();
 // ilustración de la portada: mesa con cartas, dados, mando y una moneda
 const hero = (() => {
   const L = lienzo(120, 80);

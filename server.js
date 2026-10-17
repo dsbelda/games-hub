@@ -89,6 +89,10 @@ function start({ port = 3400, host = '127.0.0.1', retardoCpu = 700, baseDatos = 
   const listas = (juego) => io.to('lista:' + juego).emit('salas', salas.lista(juego));
   const reloj = setInterval(() => salas.tick(), 1000); // también mueve los relojes de los juegos
   reloj.unref();
+  // juegos en tiempo real: 30 pasos por segundo y una foto cada 50 ms (20 por segundo)
+  let pasos = 0;
+  const rapido = setInterval(() => { pasos++; salas.tickRapido(1 / 30, pasos % 3 !== 0); }, 1000 / 30);
+  rapido.unref();
   cuentas.limpiar();
   setInterval(() => cuentas.limpiar(), 86400000).unref();
 
@@ -210,7 +214,7 @@ function start({ port = 3400, host = '127.0.0.1', retardoCpu = 700, baseDatos = 
     if (!sockets.has(id)) sockets.set(id, new Set());
     sockets.get(id).add(sock);
     salas.identificar(id, sock.data.usuario);
-    const permitido = cubo(40, 20); // los trazos del dibujo llegan seguidos
+    const permitido = cubo(60, 30); // trazos del dibujo y teclas de los juegos en tiempo real llegan seguidos
     const on = (ev, fn) => sock.on(ev, (d, cb) => {
       if (typeof cb !== 'function') cb = () => {};
       if (!permitido()) return cb({ ok: false, error: 'Vas demasiado rápido' });
