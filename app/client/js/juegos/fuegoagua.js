@@ -94,8 +94,7 @@
     const d = el('div', 'tk-mandos cabezones');
     for (const [txt, bit] of [['◀', IZQ], ['▶', DER], ['⤒', SALTO]]) {
       const b = boton(txt, null, 'mini'); b.setAttribute('aria-label', txt);
-      b.addEventListener('pointerdown', (e) => { e.preventDefault(); setBit(bit, true); });
-      for (const n of ['pointerup', 'pointerleave', 'pointercancel']) b.addEventListener(n, () => setBit(bit, false));
+      UI.mantener(b, () => setBit(bit, true), () => setBit(bit, false));
       d.append(b);
     }
     if (quien) d.prepend(el('small', 'suave', quien));

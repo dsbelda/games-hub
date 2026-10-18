@@ -8,6 +8,7 @@
   let toqueAntes = 0;
   st.lz.c.addEventListener('pointerdown', (e) => { if (e.pointerType === 'mouse') return; const t = performance.now(); if (t - toqueAntes < 300) { st.mando.k |= 1; setTimeout(() => { st.mando.k &= ~1; }, 150); } toqueAntes = t; });
   let cam = { x: 1500, y: 1500, z: 1 };
+  const dividir = A.botonTactil(st, '✂ Dividir', 1);
   function pintar(g) {
     const m = A.marco(st); if (!m) return;
     const celulas = A.mezclar(m.a.c, m.b.c, m.k, [2, 3, 4]);
@@ -39,7 +40,7 @@
     evento: base.evento,
     render(zona, v, ctx) {
       if (v.comida && (!st.v || v.comida.length)) { comida.clear(); for (const [id, ...c] of v.comida) comida.set(id, c); }
-      base.render(zona, v, ctx, 'Ratón o dedo para moverte · espacio (o doble toque) para dividirte y cazar · hay que ser un 25 % más grande para comerse a otra');
+      base.render(zona, v, ctx, 'Ratón o dedo para moverte · espacio (o el botón Dividir) para partirte en dos y cazar · hay que ser un 25 % más grande para comerse a otra', [dividir]);
     },
   };
 })();

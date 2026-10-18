@@ -32,8 +32,7 @@ window.JUEGO = {
     const pulsadas = new Set();
     for (const [txt, k] of [['◀', 'ArrowLeft'], ['▲', 'ArrowUp'], ['▼', 'ArrowDown'], ['▶', 'ArrowRight']]) {
       const b = boton(txt, null, 'mini'); b.setAttribute('aria-label', k);
-      b.addEventListener('pointerdown', (e) => { e.preventDefault(); pulsadas.add(k); });
-      for (const ev of ['pointerup', 'pointerleave', 'pointercancel']) b.addEventListener(ev, () => pulsadas.delete(k));
+      UI.mantener(b, () => pulsadas.add(k), () => pulsadas.delete(k));
       cruceta.append(b);
     }
     const tecla = (k) => L.teclas.has(k) || pulsadas.has(k);
@@ -94,7 +93,7 @@ window.JUEGO = {
       if (izq) m.vx -= 300 * motor * dt; if (der) m.vx += 300 * motor * dt;
       if (!izq && !der) m.vx *= Math.pow(0.001, dt);
       m.vx = Math.max(-70 * motor, Math.min(70 * motor, m.vx));
-      if (arr && m.gas > 0) { m.vy -= 420 * motor * dt; m.gas -= 0.6 * dt; }
+      if (arr && m.gas > 0) { m.vy -= (700 + 260 * motor) * dt; m.gas -= 0.6 * dt; }
       m.vy += 420 * dt; m.vy = Math.max(-110 * motor, Math.min(260, m.vy));
       m.gas -= 0.12 * dt * (Math.abs(m.vx) > 5 ? 1.5 : 1);
       // taladrar abajo o a los lados (solo apoyado)
@@ -111,6 +110,7 @@ window.JUEGO = {
         m.vy = 0;
       }
       m.x = Math.max(0, Math.min((ANCHO - 1) * T, m.x));
+      if (m.y < 0) { m.y = 0; m.vy = Math.max(0, m.vy); } // techo: el cielo no es infinito
       // lava
       for (const [px, py] of [[m.x + 8, m.y + 15], [m.x + 2, m.y + 8], [m.x + 14, m.y + 8]]) if (celda(Math.floor(px / T), Math.floor(py / T)) === 3) { m.vida -= 6 * dt; if (Math.random() < 0.1) UI.aviso('¡Lava!', 'mal'); }
       // edificios (en la superficie, parado)

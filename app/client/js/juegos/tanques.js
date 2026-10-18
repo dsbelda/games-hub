@@ -56,8 +56,7 @@
       const mandos = el('div', 'tk-mandos');
       for (const [txt, bit, cls] of [['◀', IZQ, 'izq'], ['▲', ARRIBA, 'arr'], ['▶', DER, 'der'], ['▼', ABAJO, 'aba'], ['💥', FUEGO, 'fuego']]) {
         const b = boton(txt, null, 'mini ' + cls); b.setAttribute('aria-label', cls);
-        b.addEventListener('pointerdown', (e) => { e.preventDefault(); botonesK |= bit; mandar(); });
-        for (const n of ['pointerup', 'pointerleave', 'pointercancel']) b.addEventListener(n, () => { botonesK &= ~bit; mandar(); });
+        UI.mantener(b, () => { botonesK |= bit; mandar(); }, () => { botonesK &= ~bit; mandar(); });
         mandos.append(b);
       }
       zona.append(marcador, info, cont, mandos, el('p', 'suave centro', '↑ ↓ avanzar · ← → girar · espacio disparar. ¡Las balas rebotan!'));

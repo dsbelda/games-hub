@@ -7,8 +7,6 @@
   const st = A.crear();
   // E: disparo automático (interruptor; el bit 4 queda puesto mientras está activo)
   document.addEventListener('keydown', (e) => { if (e.code !== 'KeyE' || e.repeat || e.target.closest('input, textarea') || !st.v) return; st.mando.k ^= 4; UI.aviso(st.mando.k & 4 ? 'Disparo automático activado' : 'Disparo automático desactivado'); });
-  st.lz.c.addEventListener('pointerdown', (e) => { if (e.pointerType !== 'mouse') st.mando.k |= 64; });
-  for (const n of ['pointerup', 'pointercancel']) st.lz.c.addEventListener(n, () => { st.mando.k &= ~64; });
   const figs = new Map();
   const cam = { x: 1200, y: 1200 };
   const FIG = { c: ['#ffc63d', '#d99a12', 4, 11], t: ['#ff5a36', '#c93a1c', 3, 13], p: ['#4d7cfe', '#2f55c4', 5, 22] };

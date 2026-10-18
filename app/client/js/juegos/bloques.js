@@ -26,7 +26,7 @@ window.JUEGO = {
     zona.append(lienzo, lado);
     const mandos = el('div', 'bq-mandos');
     // los de moverse y bajar se repiten al mantener pulsado
-    const mando = (txt, fn, etq, repite = false) => { const b = boton(txt, null, 'mini'); b.setAttribute('aria-label', etq); let rep; const parar = () => clearInterval(rep); b.addEventListener('pointerdown', (e) => { e.preventDefault(); fn(); if (repite) rep = setInterval(fn, 110); }); b.addEventListener('pointerup', parar); b.addEventListener('pointerleave', parar); return b; };
+    const mando = (txt, fn, etq, repite = false) => { const b = boton(txt, null, 'mini'); b.setAttribute('aria-label', etq); let rep; UI.mantener(b, () => { fn(); if (repite) rep = setInterval(fn, 110); }, () => clearInterval(rep)); return b; };
     mandos.append(mando('◀', () => mover(-1), 'Izquierda', true), mando('⟳', () => girar(1), 'Girar'), mando('▶', () => mover(1), 'Derecha', true), mando('▼', () => bajar(true), 'Bajar', true), mando('⤓', () => caer(), 'Caer'), mando('⇄', () => reservar(), 'Reservar'));
     const empezar = boton('Empezar', () => nueva(), 'oro');
     caja.append(marcador, zona, mandos, empezar, el('p', 'suave centro', '← → mover · ↑ girar · ↓ bajar · espacio caer · C reservar · P pausa'));

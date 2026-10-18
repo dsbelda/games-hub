@@ -58,7 +58,7 @@ window.JUEGO = {
       if (!vivo) return;
       t += dt; siguiente -= dt;
       if (siguiente <= 0) { lanzar(); siguiente = Math.max(0.6, 1.6 - t / 60); }
-      for (const o of objs) { o.vy += 500 * dt; o.x += o.vx * dt; o.y += o.vy * dt; o.giro += o.vg * dt; if (!o.cortado && !o.bomba && o.vy > 0 && o.y > H + o.r) { o.caida = true; vidas--; if (vidas <= 0) return fin(); } }
+      for (const o of objs) { o.vy += 500 * dt; o.x += o.vx * dt; o.y += o.vy * dt; o.giro += o.vg * dt; if (!o.cortado && !o.bomba && !o.caida && o.vy > 0 && o.y > H + o.r) { o.caida = true; vidas--; if (vidas <= 0) return fin(); } }
       objs = objs.filter((o) => !o.cortado && !(o.vy > 0 && o.y > H + 20));
     }
     function fruta(x, y, r, f, ang, medio) {

@@ -12,7 +12,20 @@
     // récord local (si el navegador no deja guardar, no pasa nada)
     leer(k, def) { try { const v = localStorage.getItem('games:' + k); return v == null ? def : JSON.parse(v); } catch (e) { return def; } },
     guardar(k, v) { try { localStorage.setItem('games:' + k, JSON.stringify(v)); } catch (e) { /* sin almacenamiento */ } },
+    // botón táctil de «mantener pulsado»: captura el dedo (no se suelta al rozar el borde), no hace scroll ni
+    // menú de pulsación larga, y se suelta siempre, aunque el botón desaparezca al repintar la partida
+    mantener(b, alPulsar, alSoltar) {
+      b.classList.add('mando-tactil');
+      let activo = false;
+      const soltar = () => { if (!activo) return; activo = false; sueltas.delete(soltar); alSoltar(); };
+      b.addEventListener('pointerdown', (e) => { e.preventDefault(); try { b.setPointerCapture(e.pointerId); } catch (x) { /* sin captura */ } if (activo) return; activo = true; sueltas.add(soltar); alPulsar(); });
+      for (const n of ['pointerup', 'pointercancel', 'lostpointercapture']) b.addEventListener(n, soltar);
+      b.addEventListener('contextmenu', (e) => e.preventDefault());
+      return b;
+    },
   };
+  const sueltas = new Set();
+  for (const n of ['pointerup', 'pointercancel', 'blur']) (n === 'blur' ? window : document).addEventListener(n, () => { for (const f of [...sueltas]) f(); });
   const cargar = (src) => new Promise((ok, mal) => { const s = document.createElement('script'); s.src = src; s.onload = ok; s.onerror = mal; document.body.append(s); });
 
   fetch('/api/juegos').then((r) => r.json()).then(async (cat) => {

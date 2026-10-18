@@ -124,26 +124,36 @@ window.JUEGO = {
     }
     function perder() { vivo = false; enMarcha = false; UI.aviso(`¡Se acabó! Llegaste a la oleada ${oleada}`, 'mal'); if (oleada - 1 > record) { record = oleada - 1; UI.guardar('torres', record); } pintarUI(); }
     // --- interfaz ---
-    let ultimaUI = '';
+    // la interfaz se crea una vez y solo se actualiza: si se rehiciera con cada globo reventado (el dinero
+    // cambia sin parar), un botón podía desaparecer entre pulsar y soltar y el clic se perdía
     const auto = el('input'); auto.type = 'checkbox';
+    const botTienda = {};
+    for (const [k, t] of Object.entries(TORRES)) { const b = el('button', 'td-torre'); b.type = 'button'; b.append(icono(k), el('b', null, t.nombre), el('small', null, `${t.precio} 💰`)); b.onclick = () => { elegida = elegida === k ? null : k; seleccion = null; pintarUI(); }; botTienda[k] = b; tienda.append(b); }
+    let ultimaBarra = '', ultimoPanel = '', ultimosMandos = '', botMejora = null, precioMejora = 0;
     function pintarUI() {
-      const clave = [dinero, vidas, oleada, enMarcha, vivo, elegida, seleccion && seleccion.id, seleccion && seleccion.nivel, velocidad].join();
-      if (clave === ultimaUI) return; ultimaUI = clave;
-      barra.replaceChildren(el('span', null, `💰 ${dinero}`), el('span', null, `❤️ ${Math.max(0, vidas)}`), el('span', null, `🎈 Oleada ${oleada}`), el('span', null, `🏆 ${record}`));
-      tienda.replaceChildren(...Object.entries(TORRES).map(([k, t]) => { const b = el('button', 'td-torre' + (elegida === k ? ' sel' : '')); b.type = 'button'; b.disabled = dinero < t.precio || !vivo; b.append(icono(k), el('b', null, t.nombre), el('small', null, `${t.precio} 💰`)); b.onclick = () => { elegida = elegida === k ? null : k; seleccion = null; pintarUI(); }; return b; }));
-      panel.replaceChildren();
-      if (seleccion) {
-        const t = seleccion, def = TORRES[t.tipo];
-        panel.append(el('b', null, `${def.nombre} (mejoras: ${t.nivel}/2)`));
-        if (t.nivel < 2) { const [n, p, f] = def.mejoras[t.nivel]; const b = boton(`${n} · ${p} 💰`, () => { if (dinero >= p) { dinero -= p; f(t); t.nivel++; t.gastado += p; pintarUI(); } }, 'mini oro'); b.disabled = dinero < p; panel.append(b); }
-        panel.append(boton(`Vender · ${Math.floor(t.gastado * 0.7)} 💰`, () => { dinero += Math.floor(t.gastado * 0.7); torres = torres.filter((x) => x !== t); seleccion = null; pintarUI(); }, 'mini flojo'));
+      const cb = [dinero, vidas, oleada, record].join();
+      if (cb !== ultimaBarra) { ultimaBarra = cb; barra.replaceChildren(el('span', null, `💰 ${dinero}`), el('span', null, `❤️ ${Math.max(0, vidas)}`), el('span', null, `🎈 Oleada ${oleada}`), el('span', null, `🏆 ${record}`)); }
+      for (const [k, b] of Object.entries(botTienda)) { b.disabled = dinero < TORRES[k].precio || !vivo; b.classList.toggle('sel', elegida === k); }
+      const cp = seleccion ? `${seleccion.id}|${seleccion.nivel}` : '';
+      if (cp !== ultimoPanel) {
+        ultimoPanel = cp; panel.replaceChildren(); botMejora = null;
+        if (seleccion) {
+          const t = seleccion, def = TORRES[t.tipo];
+          panel.append(el('b', null, `${def.nombre} (mejoras: ${t.nivel}/2)`));
+          if (t.nivel < 2) { const [n, pr, f] = def.mejoras[t.nivel]; precioMejora = pr; botMejora = boton(`${n} · ${pr} 💰`, () => { if (dinero >= pr) { dinero -= pr; f(t); t.nivel++; t.gastado += pr; pintarUI(); } }, 'mini oro'); panel.append(botMejora); }
+          panel.append(boton(`Vender · ${Math.floor(t.gastado * 0.7)} 💰`, () => { dinero += Math.floor(t.gastado * 0.7); torres = torres.filter((x) => x !== t); seleccion = null; pintarUI(); }, 'mini flojo'));
+        }
       }
-      mandos.replaceChildren();
-      if (vivo) {
-        const sig = boton(enMarcha ? 'Oleada en marcha…' : `▶ Oleada ${oleada + 1}`, siguienteOleada, 'oro'); sig.disabled = enMarcha;
-        const lab = el('label', 'check'); lab.append(auto, ' Seguidas');
-        mandos.append(sig, boton(velocidad === 1 ? '⏩ ×2' : '▶ ×1', () => { velocidad = velocidad === 1 ? 2 : 1; pintarUI(); }, 'mini'), lab);
-      } else mandos.append(boton('Nueva partida', () => nueva(), 'oro'));
+      if (botMejora) botMejora.disabled = dinero < precioMejora;
+      const cm = [enMarcha, vivo, velocidad, oleada].join();
+      if (cm !== ultimosMandos) {
+        ultimosMandos = cm; mandos.replaceChildren();
+        if (vivo) {
+          const sig = boton(enMarcha ? 'Oleada en marcha…' : `▶ Oleada ${oleada + 1}`, siguienteOleada, 'oro'); sig.disabled = enMarcha;
+          const lab = el('label', 'check'); lab.append(auto, ' Seguidas');
+          mandos.append(sig, boton(velocidad === 1 ? '⏩ ×2' : '▶ ×1', () => { velocidad = velocidad === 1 ? 2 : 1; pintarUI(); }, 'mini'), lab);
+        } else mandos.append(boton('Nueva partida', () => nueva(), 'oro'));
+      }
     }
     function icono(k) { const cv = document.createElement('canvas'); cv.width = cv.height = 16; const gg = cv.getContext('2d'); dibujarTorre(gg, { tipo: k, x: 8, y: 8, ang: -0.6, nivel: 0 }); cv.className = 'td-icono'; return cv; }
     function dibujarTorre(gg, t) {

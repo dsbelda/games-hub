@@ -7,6 +7,7 @@
   const comida = new Map(), rastros = new Map();
   const PAL = ['#ff5a36', '#ff9f2e', '#ffc63d', '#3fbf5f', '#18b39b', '#4d7cfe', '#8a5cf6', '#ff6fa8', '#c93a1c', '#d99a12', '#24863e', '#0f7f6e', '#2f55c4', '#5b37b8', '#c8457a', '#9a5b2e'];
   const cam = { x: 1300, y: 1300 };
+  const turbo = A.botonTactil(st, '⚡ Turbo', 1);
   function pintar(g) {
     const m = A.marco(st); if (!m) return;
     const serps = A.mezclar(m.a.s, m.b.s, m.k, [2, 3]);
@@ -50,7 +51,7 @@
     render(zona, v, ctx) {
       comida.clear(); for (const [id, ...c] of v.comida) comida.set(id, c);
       rastros.clear(); for (const [id, pts] of Object.entries(v.cuerpos)) rastros.set(Number(id), pts.map((p) => [...p]));
-      base.render(zona, v, ctx, 'Ratón o dedo para girar · espacio o mantener pulsado para acelerar (pierdes longitud) · que tu cabeza no toque a otra serpiente');
+      base.render(zona, v, ctx, 'Ratón o dedo para girar · espacio, clic mantenido o el botón Turbo para acelerar (pierdes longitud) · que tu cabeza no toque a otra serpiente', [turbo]);
     },
   };
 })();

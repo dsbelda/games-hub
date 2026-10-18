@@ -3,13 +3,16 @@
 // Cada vez más rápido; a partir de 700 se hace de noche.
 window.JUEGO = {
   montar(raiz) {
-    const { el } = UI;
+    const { el, boton } = UI;
     const L = window.Lienzo;
     const W = 320, H = 110, SUELO = 92;
     const caja = el('div', 'solo dino');
     const marcador = el('p', 'marcador');
     const cont = el('div', 'lz-cont');
-    caja.append(marcador, cont, el('p', 'suave centro', 'Espacio o ↑ para saltar, ↓ para agacharte. En el móvil, toca para saltar.'));
+    const mandos = el('div', 'fila centro dino-mandos');
+    let agachaToque = false;
+    mandos.append(UI.mantener(boton('▼ Agacharse', null, 'mini'), () => { agachaToque = true; }, () => { agachaToque = false; }), UI.mantener(boton('▲ Saltar', null, 'oro'), () => saltar(), () => {}));
+    caja.append(marcador, cont, mandos, el('p', 'suave centro', 'Espacio o ↑ para saltar, ↓ para agacharte. En el móvil, toca la pantalla o «Saltar»; mantén «Agacharse».'));
     raiz.replaceChildren(caja);
     const { c, g } = L.crear(cont, W, H);
     const DINO = ['.....#####', '....##.###', '....######', '....###...', '#...#####.', '##.####...', '#######...', '.######...', '..####....', '..#..#....', '..##.##...'];
@@ -23,8 +26,9 @@ window.JUEGO = {
     document.addEventListener('keydown', (e) => { if (e.target.closest('input')) return; if (e.code === 'Space' || e.code === 'ArrowUp') { e.preventDefault(); if (!e.repeat || vivo) saltar(); } });
     function actualizar(dt) {
       if (!empezado || !vivo) return;
-      d.agachado = L.teclas.has('ArrowDown') && d.y === 0;
-      if (L.teclas.has('ArrowDown') && d.y > 0) d.vy -= 1600 * dt;
+      const abajo = L.teclas.has('ArrowDown') || agachaToque;
+      d.agachado = abajo && d.y === 0;
+      if (abajo && d.y > 0) d.vy -= 1600 * dt;
       d.vy -= 1100 * dt; d.y = Math.max(0, d.y + d.vy * dt); if (d.y === 0) d.vy = Math.max(0, d.vy);
       v = Math.min(420, v + 4 * dt); dist += v * dt / 10;
       for (const n of nubes) { n[0] -= v * 0.15 * dt; if (n[0] < -30) { n[0] = W + Math.random() * 60; n[1] = 10 + Math.random() * 30; } }
@@ -32,7 +36,7 @@ window.JUEGO = {
       obs = obs.filter((o) => o.x > -40);
       const ultimo = obs[obs.length - 1];
       if (!ultimo || ultimo.x < W - (v * 0.7 + Math.random() * 300)) {
-        if (dist > 300 && Math.random() < 0.25) obs.push({ x: W + 10, ave: true, alto: [8, 26, 40][Math.floor(Math.random() * 3)], w: 20, h: 10 });
+        if (dist > 300 && Math.random() < 0.25) obs.push({ x: W + 10, ave: true, alto: [6, 14, 40][Math.floor(Math.random() * 3)], w: 20, h: 10 });
         else { const n = 1 + Math.floor(Math.random() * (dist > 200 ? 3 : 2)), grande = Math.random() < 0.4; obs.push({ x: W + 10, w: n * (grande ? 10 : 7), h: grande ? 22 : 15, n, grande }); }
       }
       // choque con cajas algo más pequeñas que el dibujo (para que no sea injusto)

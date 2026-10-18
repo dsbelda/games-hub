@@ -75,7 +75,7 @@ window.JUEGO = {
       tienda.replaceChildren();
       if (fase === 'listo') mandos.append(boton('🐧 ¡A volar!', () => { fase = 'rampa'; pintarTienda(); }, 'oro'));
       if (fase === 'rampa' || fase === 'aire') {
-        const mk = (txt, on, off) => { const b = boton(txt, null, 'mini'); b.addEventListener('pointerdown', (e) => { e.preventDefault(); on(); }); for (const ev of ['pointerup', 'pointerleave', 'pointercancel']) b.addEventListener(ev, off); return b; };
+        const mk = (txt, on, off) => UI.mantener(boton(txt, null, 'mini'), on, off);
         mandos.append(mk('▲ Subir morro', () => { tocaArriba = true; }, () => { tocaArriba = false; }), mk('▼ Bajar morro', () => { tocaAbajo = true; }, () => { tocaAbajo = false; }));
         if (val('cohete')) mandos.append(mk('🚀 Cohete', () => { tocaCohete = true; cohete = true; }, () => { tocaCohete = false; cohete = false; }));
       }

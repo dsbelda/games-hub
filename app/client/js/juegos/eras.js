@@ -130,20 +130,32 @@ window.JUEGO = {
       }
     }
     // --- interfaz ---
-    let ultima = '';
+    // los botones se rehacen solo al cambiar de era o de estado; el resto del tiempo se actualizan (si se
+    // rehicieran cada vez que cambia el oro, un clic podía perderse)
+    let ultima = '', ultimaBarra = '', bots = null;
     function pintarUI() {
       const yo = lados[0];
-      const clave = [Math.floor(yo.oro), yo.xp, yo.era, yo.cola.length, Math.ceil(yo.especial), yo.torreta, vivo, empezado].join();
-      if (clave === ultima) return; ultima = clave;
-      barra.replaceChildren(el('span', null, `💰 ${Math.floor(yo.oro)}`), el('span', null, `⭐ ${yo.xp}${yo.era < ERAS.length - 1 ? ` / ${ERAS[yo.era].xp}` : ''}`), el('span', null, ERAS[yo.era].nombre), el('span', null, `🏆 ${record == null ? '—' : `${Math.floor(record / 60)}:${String(record % 60).padStart(2, '0')}`}`));
-      mandos.replaceChildren();
-      if (!vivo || !empezado) { opciones.replaceChildren(dif, boton(empezado ? 'Otra partida' : 'Empezar', () => nueva(), 'oro')); return; }
-      opciones.replaceChildren();
-      ERAS[yo.era].tropas.forEach((tr, k) => { const b = el('button', 'er-boton'); b.type = 'button'; b.disabled = yo.oro < tr[1] || yo.cola.length >= 5; b.append(el('b', null, tr[0]), el('small', null, `${tr[1]} 💰`)); b.onclick = () => comprar(0, k); mandos.append(b); });
-      const tor = el('button', 'er-boton'); tor.type = 'button'; tor.disabled = yo.oro < PRECIO_TORRETA(yo.era) || yo.torreta > yo.era; tor.append(el('b', null, 'Torreta'), el('small', null, yo.torreta > yo.era ? 'puesta' : `${PRECIO_TORRETA(yo.era)} 💰`)); tor.onclick = () => torreta(0); mandos.append(tor);
-      const esp = el('button', 'er-boton especial'); esp.type = 'button'; esp.disabled = yo.especial > 0; esp.append(el('b', null, ERAS[yo.era].especial), el('small', null, yo.especial > 0 ? `${Math.ceil(yo.especial)} s` : '¡listo!')); esp.onclick = () => especial(0); mandos.append(esp);
-      const ev = el('button', 'er-boton evo'); ev.type = 'button'; ev.disabled = yo.era >= ERAS.length - 1 || yo.xp < ERAS[yo.era].xp; ev.append(el('b', null, 'Evolucionar'), el('small', null, yo.era >= ERAS.length - 1 ? 'última era' : `${ERAS[yo.era].xp} ⭐`)); ev.onclick = () => evolucionar(0); mandos.append(ev);
-      if (yo.cola.length) mandos.append(el('small', 'suave', `En cola: ${yo.cola.length}`));
+      const cb = [Math.floor(yo.oro), yo.xp, yo.era, record].join();
+      if (cb !== ultimaBarra) { ultimaBarra = cb; barra.replaceChildren(el('span', null, `💰 ${Math.floor(yo.oro)}`), el('span', null, `⭐ ${yo.xp}${yo.era < ERAS.length - 1 ? ` / ${ERAS[yo.era].xp}` : ''}`), el('span', null, ERAS[yo.era].nombre), el('span', null, `🏆 ${record == null ? '—' : `${Math.floor(record / 60)}:${String(record % 60).padStart(2, '0')}`}`)); }
+      const clave = [yo.era, vivo, empezado].join();
+      if (clave !== ultima) {
+        ultima = clave; mandos.replaceChildren(); bots = null;
+        if (!vivo || !empezado) { opciones.replaceChildren(dif, boton(empezado ? 'Otra partida' : 'Empezar', () => nueva(), 'oro')); return; }
+        opciones.replaceChildren();
+        const mk = (cls, titulo, fn) => { const b = el('button', 'er-boton ' + cls); b.type = 'button'; const sm = el('small'); b.append(el('b', null, titulo), sm); b.onclick = fn; mandos.append(b); return { b, sm }; };
+        bots = {
+          tropas: ERAS[yo.era].tropas.map((tr, k) => mk('', tr[0], () => comprar(0, k))),
+          tor: mk('', 'Torreta', () => torreta(0)), esp: mk('especial', ERAS[yo.era].especial, () => especial(0)), evo: mk('evo', 'Evolucionar', () => evolucionar(0)),
+          cola: el('small', 'suave'),
+        };
+        mandos.append(bots.cola);
+      }
+      if (!bots) return;
+      ERAS[yo.era].tropas.forEach((tr, k) => { const x = bots.tropas[k]; x.b.disabled = yo.oro < tr[1] || yo.cola.length >= 5; x.sm.textContent = `${tr[1]} 💰`; });
+      bots.tor.b.disabled = yo.oro < PRECIO_TORRETA(yo.era) || yo.torreta > yo.era; bots.tor.sm.textContent = yo.torreta > yo.era ? 'puesta' : `${PRECIO_TORRETA(yo.era)} 💰`;
+      bots.esp.b.disabled = yo.especial > 0; bots.esp.sm.textContent = yo.especial > 0 ? `${Math.ceil(yo.especial)} s` : '¡listo!';
+      bots.evo.b.disabled = yo.era >= ERAS.length - 1 || yo.xp < ERAS[yo.era].xp; bots.evo.sm.textContent = yo.era >= ERAS.length - 1 ? 'última era' : `${ERAS[yo.era].xp} ⭐`;
+      bots.cola.textContent = yo.cola.length ? `En cola: ${yo.cola.length}` : '';
     }
     // arrastrar para mover la vista
     let arrastre = null;

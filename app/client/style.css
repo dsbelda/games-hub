@@ -359,3 +359,7 @@ img.px, .px { image-rendering: pixelated; }
   .logo b { font-size: 18px; }
 }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; animation: none !important; } .aparece { opacity: 1; translate: none; } }
+/* botones de mando táctil (mantener pulsado) */
+.mando-tactil { touch-action: none; user-select: none; -webkit-user-select: none; -webkit-touch-callout: none; -webkit-tap-highlight-color: transparent; }
+/* los hijos de la rejilla de la página de juego no pueden ensancharla (en el móvil se salía de la pantalla) */
+.cuerpo-juego > * { min-width: 0; }

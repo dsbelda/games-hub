@@ -4,7 +4,9 @@
 // clasificación, minimapa y cartel de «vuelves en…».
 window.Arena = (() => {
   const { el } = UI;
-  const W = 720, H = 450;
+  // en un móvil en vertical el lienzo también es vertical (apaisado quedaba diminuto)
+  const movil = window.matchMedia('(max-width: 640px)').matches;
+  const W = movil ? 480 : 720, H = movil ? 640 : 450;
   function crear({ teclas = {}, pantallaW = W, pantallaH = H } = {}) {
     const st = { fotos: [], ctx: null, v: null, lz: null, mando: { a: 0, f: 0, x: 0, y: 0, k: 0 }, enviado: '', ultimoEnvio: 0, raton: false, toque: false };
     st.cont = el('div', 'lz-cont ar-cont');
@@ -13,8 +15,8 @@ window.Arena = (() => {
     const c = st.lz.c;
     const apuntar = (e) => { const p = st.lz.punto(e); const dx = p.x - pantallaW / 2, dy = p.y - pantallaH / 2; st.mando.a = Math.round(Math.atan2(dy, dx) * 100) / 100; st.mando.f = Math.min(1, Math.round(Math.hypot(dx, dy) / (pantallaH / 3) * 20) / 20); st.mando.mx = p.x; st.mando.my = p.y; };
     c.addEventListener('pointermove', (e) => { if (e.pointerType === 'mouse' || st.toque) apuntar(e); });
-    c.addEventListener('pointerdown', (e) => { e.preventDefault(); c.setPointerCapture(e.pointerId); if (e.pointerType !== 'mouse') st.toque = true; apuntar(e); st.raton = true; st.mando.k |= 128; });
-    for (const n of ['pointerup', 'pointercancel']) c.addEventListener(n, () => { st.raton = false; st.toque = false; st.mando.k &= ~128; });
+    c.addEventListener('pointerdown', (e) => { e.preventDefault(); c.setPointerCapture(e.pointerId); if (e.pointerType !== 'mouse') { st.toque = true; st.mando.k |= 64; } apuntar(e); st.raton = true; st.mando.k |= 128; });
+    for (const n of ['pointerup', 'pointercancel']) c.addEventListener(n, () => { st.raton = false; st.toque = false; st.mando.k &= ~(128 | 64); });
     // teclas: { Space: 1, KeyW: 2, … } → bits de mando.k; flechas/WASD también como x, y (para Tanques)
     const dirs = { ArrowUp: [0, -1], KeyW: [0, -1], ArrowDown: [0, 1], KeyS: [0, 1], ArrowLeft: [-1, 0], KeyA: [-1, 0], ArrowRight: [1, 0], KeyD: [1, 0] };
     const pulsadas = new Set();
@@ -34,6 +36,8 @@ window.Arena = (() => {
     }, 50);
     return st;
   }
+  // botón táctil (solo se ve en pantallas táctiles) que mantiene un bit del mando
+  function botonTactil(st, texto, bit) { const b = UI.mantener(UI.boton(texto, null, 'oro'), () => { st.mando.k |= bit; }, () => { st.soltar = (st.soltar || 0) | bit; }); b.classList.add('ar-tactil'); return b; }
   // par de fotos alrededor de «ahora − 90 ms» y fracción entre ellas
   function marco(st) {
     const f = st.fotos; if (!f.length) return null;
@@ -87,15 +91,16 @@ window.Arena = (() => {
     window.Lienzo.bucle(() => {}, () => { if (st.v && st.ctx) pintar(st.lz.g); });
     return {
       evento(ev) { if (ev.tipo !== 'foto') return; st.ultimaF = ev.f; if (alFoto) alFoto(ev.f); st.fotos.push({ t: performance.now(), f: ev.f }); if (st.fotos.length > 8) st.fotos.shift(); },
-      render(zona, v, ctx, extra) {
+      render(zona, v, ctx, extra, botones = []) {
         const nuevo = !st.v;
         st.v = v; st.ctx = ctx;
         if (nuevo || v.foto) { if (!st.fotos.length) st.fotos.push({ t: performance.now(), f: v.foto }); }
         const info = el('p', 'suave centro', extra || '');
-        zona.append(st.cont, info);
+        const fila = UI.el('div', 'fila centro ar-botones'); fila.append(...botones);
+        zona.append(st.cont, fila, info);
         if (v.ganadores) st.fotos = [];
       },
     };
   }
-  return { crear, marco, mezclar, rejilla, tabla, minimapa, cartel, enganchar, nombreDe, colorDe, yo, W, H };
+  return { crear, botonTactil, marco, mezclar, rejilla, tabla, minimapa, cartel, enganchar, nombreDe, colorDe, yo, W, H };
 })();
