@@ -457,6 +457,14 @@ M.telefono = (() => {
   L.B(12, 17, 16, 9, P.tomate); L.R(15, 19, 10, 5, P.tomateO); L.R(14, 15, 3, 3, P.tinta); L.R(23, 15, 3, 3, P.tinta); L.R(14, 15, 12, 1, P.tinta);
   return L;
 })();
+M.palabreria = (() => {
+  const L = lienzo(40, 30); L.R(0, 0, 40, 30, '#e9dfc8');
+  for (let y = 0; y < 30; y += 5) L.R(0, y, 40, 1, '#d5c8a8'); for (let x = 0; x < 40; x += 5) L.R(x, 0, 1, 30, '#d5c8a8');
+  L.R(0, 0, 5, 5, P.tomate); L.R(35, 25, 5, 5, P.tomate); L.R(10, 20, 5, 5, P.cielo); L.R(30, 5, 5, 5, '#ff9fbf');
+  for (const [x, y] of [[6, 11], [11, 11], [16, 11], [21, 11], [16, 6], [16, 16]]) L.B(x, y, 5, 5, '#ffe7a8');
+  L.R(4, 26, 32, 4, P.marron); for (let k = 0; k < 5; k++) L.B(6 + k * 6, 24, 5, 5, '#ffe7a8');
+  return L;
+})();
 // avatares: 12 personajes de 12×12 (piel, pelo, ropa y un detalle)
 const AVATARES = [
   ['#f2c9a0', '#6b3f1d', P.tomate, 'nada'], ['#c98e5f', P.tinta, P.cielo, 'gafas'], ['#f5d6b8', P.sol, P.menta, 'lazo'],

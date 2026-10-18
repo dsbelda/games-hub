@@ -370,3 +370,23 @@ test('Teléfono dibujado: cada cadena pasa por todos, el tiempo rellena huecos y
   for (let k = 0; k < 16; k++) J.accion(e, 1, { tipo: 'siguiente' });
   assert.ok(J.fin(e));
 });
+
+test('Palabrería: reglas de colocación, puntos, la CPU juega partidas enteras y no se filtra la bolsa', () => {
+  const J = JUEGOS.palabreria;
+  const e = J.nuevo(2);
+  const { validar } = J._;
+  assert.match(validar(e, [{ f: 0, c: 0, l: 'c' }, { f: 0, c: 1, l: 'a' }]).error, /estrella/);
+  assert.match(validar(e, [{ f: 7, c: 6, l: 'c' }, { f: 7, c: 8, l: 'a' }]).error, /seguidas/);
+  assert.match(validar(e, [{ f: 7, c: 7, l: 'c' }, { f: 8, c: 8, l: 'a' }]).error, /misma fila/);
+  assert.match(validar(e, [{ f: 7, c: 7, l: 'x' }, { f: 7, c: 8, l: 'q' }]).error, /diccionario/);
+  const r = validar(e, [{ f: 7, c: 7, l: 'c' }, { f: 7, c: 8, l: 'a' }, { f: 7, c: 9, l: 's' }, { f: 7, c: 10, l: 'a' }]);
+  assert.equal(r.puntos, (3 + 1 + 1 + 1) * 2, 'CASA en el centro: doble palabra');
+  e.atriles[0] = ['c', 'a', 's', 'a', 'e', 'e', 'e'];
+  assert.ok(J.accion(e, 0, { tipo: 'jugar', fichas: r.puestas }).ok);
+  assert.match(validar(e, [{ f: 0, c: 0, l: 'a' }, { f: 0, c: 1, l: 'l' }]).error, /tocar/);
+  const v = J.vista(e, 1);
+  assert.ok(!('bolsa' in v && Array.isArray(v.bolsa)) && !('atriles' in v), 'ni bolsa ni atriles ajenos');
+  assert.equal(v.atril.length, 7);
+  const { f } = jugar(J, 2, ['dificil', 'normal'], 3);
+  assert.ok(f.ganadores.length >= 1);
+});
