@@ -416,3 +416,25 @@ test('Serpientes: crecen, chocan y se convierten en bolitas, y la partida acaba'
   assert.ok(e.jug.some((p) => p.max > 40), 'alguna crece');
   assert.ok(Object.keys(J.vista(e, 0).cuerpos).length > 0);
 });
+
+test('Territorio: rodear captura, pisar un rastro mata y la partida acaba', () => {
+  const J = JUEGOS.territorio;
+  const e = J.nuevo(1);
+  J.configurar(e, [{ bot: false }]);
+  J.paso(e, 0.01); // reaparecen todos
+  const p = e.jug[0];
+  // a mano: casa en (10,10), salir 3 a la derecha, bajar 3, volver
+  for (let k = 0; k < 64 * 64; k++) { e.dueno[k] = -1; e.rastro[k] = -1; }
+  for (let dy = -1; dy <= 1; dy++) for (let dx = -1; dx <= 1; dx++) e.dueno[(10 + dy) * 64 + 10 + dx] = p.i;
+  Object.assign(p, { cx: 11, cy: 10, d: 0, prog: 0, fuera: 0, sig: null });
+  for (const o of e.jug.slice(1)) Object.assign(o, { cx: 50, cy: 50, vivo: false, espera: 999 });
+  const mover = (d, n) => { p.mando = { a: 0, f: 0, x: [1, 0, -1, 0][d], y: [0, 1, 0, -1][d], k: 0 }; for (let i = 0; i < n; i++) J.paso(e, 1 / 6.5 + 1e-6); };
+  mover(0, 3); mover(1, 4); mover(2, 3); mover(3, 3);
+  assert.ok(p.vivo);
+  assert.ok(e.dueno[(12) * 64 + 13] === p.i, 'lo rodeado es suyo');
+  assert.ok(e.dueno.filter((d) => d === p.i).length > 15);
+  const e2 = J.nuevo(1); J.configurar(e2, [{ bot: true, nivel: 'dificil' }]);
+  let muertes = 0;
+  for (let k = 0; k < 30 * 245 && !J.fin(e2); k++) { const a = e2.jug.filter((x) => x.vivo).length; J.paso(e2, 1 / 30); if (e2.jug.filter((x) => x.vivo).length < a) muertes++; if (k % 3 === 0) J.foto(e2); }
+  assert.ok(J.fin(e2)); assert.ok(muertes > 0, 'hay cortes');
+});

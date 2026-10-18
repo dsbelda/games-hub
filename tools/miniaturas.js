@@ -483,6 +483,15 @@ M.serpientes = (() => {
   L.R(12, 9, 3, 3, P.tinta); L.R(12, 9, 2, 2, P.verde); L.R(15, 9, 4, 3, P.tinta); L.R(15, 9, 3, 2, P.verde);
   return L;
 })();
+M.territorio = (() => {
+  const L = lienzo(40, 30); L.R(0, 0, 40, 30, '#f3eddc');
+  L.R(3, 3, 14, 11, P.cielo); L.R(3, 13, 14, 1, P.cieloO);
+  L.R(22, 14, 15, 13, P.tomate); L.R(22, 26, 15, 1, P.tomateO);
+  for (let x = 17; x < 30; x++) L.R(x, 8, 1, 1, '#9fc7ff'); for (let y = 8; y < 20; y++) L.R(29, y, 1, 1, '#9fc7ff');
+  L.B(28, 19, 4, 4, P.cielo);
+  L.R(5, 20, 9, 7, P.verde); L.R(5, 26, 9, 1, P.verdeO);
+  return L;
+})();
 // avatares: 12 personajes de 12×12 (piel, pelo, ropa y un detalle)
 const AVATARES = [
   ['#f2c9a0', '#6b3f1d', P.tomate, 'nada'], ['#c98e5f', P.tinta, P.cielo, 'gafas'], ['#f5d6b8', P.sol, P.menta, 'lazo'],
