@@ -473,6 +473,16 @@ M.celulas = (() => {
   L.DB(30, 15, 3, P.tomate);
   return L;
 })();
+M.serpientes = (() => {
+  const L = lienzo(40, 30); L.R(0, 0, 40, 30, '#20233f');
+  for (const [x, y, c] of [[5, 5, P.tomate], [34, 4, P.verde], [6, 25, P.sol], [33, 24, P.rosa], [20, 4, P.cielo]]) L.R(x, y, 2, 2, c);
+  const cuerpo = [[6, 16], [9, 18], [12, 19], [15, 18], [18, 16], [21, 14], [24, 13], [27, 14], [30, 15]];
+  for (const [x, y] of cuerpo) L.R(x - 2, y - 2, 5, 5, P.tinta);
+  for (const [x, y] of cuerpo) L.R(x - 1, y - 1, 3, 3, P.uva);
+  L.R(29, 13, 4, 5, P.uva); L.R(31, 14, 1, 1, P.blanco); L.R(31, 16, 1, 1, P.blanco);
+  L.R(12, 9, 3, 3, P.tinta); L.R(12, 9, 2, 2, P.verde); L.R(15, 9, 4, 3, P.tinta); L.R(15, 9, 3, 2, P.verde);
+  return L;
+})();
 // avatares: 12 personajes de 12×12 (piel, pelo, ropa y un detalle)
 const AVATARES = [
   ['#f2c9a0', '#6b3f1d', P.tomate, 'nada'], ['#c98e5f', P.tinta, P.cielo, 'gafas'], ['#f5d6b8', P.sol, P.menta, 'lazo'],

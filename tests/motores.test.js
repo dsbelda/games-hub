@@ -403,3 +403,16 @@ test('Células: la CPU crece, se come a otras, se reaparece y la partida acaba a
   assert.ok(f, 'termina'); assert.ok(e.jug.some((p) => p.max > 100), 'alguien crece');
   assert.ok(f.ganadores.every((j) => j === 0 || j === 1), 'gana una persona de la sala (o su CPU)');
 });
+
+test('Serpientes: crecen, chocan y se convierten en bolitas, y la partida acaba', () => {
+  const J = JUEGOS.serpientes;
+  const e = J.nuevo(1);
+  J.configurar(e, [{ bot: true, nivel: 'dificil' }]);
+  let muertes = 0;
+  const vivas = () => e.jug.filter((p) => p.vivo).length;
+  for (let k = 0; k < 30 * 245 && !J.fin(e); k++) { const antes = vivas(); J.paso(e, 1 / 30); if (vivas() < antes) muertes++; if (k % 3 === 0) J.foto(e); }
+  assert.ok(J.fin(e), 'termina');
+  assert.ok(muertes > 0, 'hay choques');
+  assert.ok(e.jug.some((p) => p.max > 40), 'alguna crece');
+  assert.ok(Object.keys(J.vista(e, 0).cuerpos).length > 0);
+});
