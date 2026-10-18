@@ -1,5 +1,5 @@
 'use strict';
-// Plantas contra zombis: recoge soles, planta en el jardín y aguanta 10 oleadas sin que un zombi llegue a la casa.
+// Huerto contra zombis: recoge soles, planta en el jardín y aguanta 10 oleadas sin que un zombi llegue a la casa.
 window.JUEGO = {
   montar(raiz) {
     const { el, boton } = UI;

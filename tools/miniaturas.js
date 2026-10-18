@@ -434,6 +434,12 @@ M.plantas = (() => {
   L.B(29, 8, 6, 18, '#6b4520'); L.B(29, 7, 6, 6, '#8fb98a'); L.R(31, 9, 1, 1, P.tomate); L.R(26, 14, 4, 2, '#8fb98a'); L.B(30, 4, 4, 4, '#ff9f2e');
   return L;
 })();
+M.revueltas = (() => {
+  const L = lienzo(40, 30); L.fondo(P.uva, P.uvaO);
+  for (let k = 0; k < 12; k++) { const x = 3 + (k % 4) * 9, y = 2 + Math.floor(k / 4) * 8; L.B(x, y, 8, 7, k === 0 || k === 1 || k === 6 ? P.sol : P.blanco); }
+  L.R(7, 5, 9, 1, P.tomate); L.R(16, 5, 1, 8, P.tomate); L.R(16, 13, 9, 1, P.tomate);
+  return L;
+})();
 // avatares: 12 personajes de 12×12 (piel, pelo, ropa y un detalle)
 const AVATARES = [
   ['#f2c9a0', '#6b3f1d', P.tomate, 'nada'], ['#c98e5f', P.tinta, P.cielo, 'gafas'], ['#f5d6b8', P.sol, P.menta, 'lazo'],

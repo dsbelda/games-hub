@@ -305,3 +305,28 @@ test('Tiempo real: tanques y cabezones terminan; Fuego y Agua reenvía y sus niv
     }
   }
 });
+
+test('Letras revueltas: tableros con palabras, validación de rutas, CPUs y 3 rondas', () => {
+  const J = JUEGOS.revueltas;
+  const e = J.nuevo(2);
+  J.configurar(e, [{ bot: false }, { bot: true, nivel: 'dificil' }]);
+  assert.ok(e.sol.size >= 40, `pocas palabras: ${e.sol.size}`);
+  assert.equal(J.vista(e, 0).total, null, 'no se ve cuántas hay mientras se juega');
+  assert.ok(!JSON.stringify(J.vista(e, 0)).includes('"sol"'));
+  const [w, ruta] = [...e.sol.entries()][0];
+  const r = J.accion(e, 0, { tipo: 'palabra', ruta });
+  assert.ok(r.ok, r.error); assert.equal(r.evento.w, w);
+  assert.equal(J.accion(e, 0, { tipo: 'palabra', ruta }).ok, false, 'repetida');
+  assert.equal(J.accion(e, 0, { tipo: 'palabra', ruta: [0, 5, 15] }).ok, false, 'letras separadas');
+  assert.equal(J.accion(e, 0, { tipo: 'palabra', ruta: [0, 1, 0] }).ok, false, 'casilla repetida');
+  for (let ronda = 1; ronda <= 3; ronda++) {
+    J.tiempo(e, e.inicio + 50000);
+    J.tiempo(e, e.hasta + 1);
+    assert.equal(e.fase, 'resultado');
+    assert.ok(e.halladas[1].length > 5, 'la CPU encuentra palabras');
+    if (ronda < 3) { assert.ok(J.accion(e, 1, { tipo: 'seguir' }).ok); assert.equal(e.ronda, ronda + 1); }
+  }
+  const f = J.fin(e);
+  assert.ok(f && f.ganadores.length);
+  assert.ok(e.puntos[1] > 0);
+});
