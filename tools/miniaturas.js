@@ -585,6 +585,32 @@ M.cocina = (() => {
   L.R(3, 6, 3, 3, P.verde); L.R(34, 6, 3, 3, P.sol);
   return L;
 })();
+M.hockey = (() => {
+  const L = lienzo(40, 30); L.R(0, 0, 40, 30, '#dff3ff'); L.R(0, 14, 40, 2, P.tomate);
+  L.R(14, 0, 12, 2, P.tinta); L.R(14, 28, 12, 2, P.tinta); L.R(0, 0, 1, 30, P.tinta); L.R(39, 0, 1, 30, P.tinta);
+  L.DB(20, 23, 4, P.cielo); L.DB(26, 6, 4, P.tomate); L.DB(16, 12, 2, P.sol);
+  return L;
+})();
+M.sumo = (() => {
+  const L = lienzo(40, 30); L.R(0, 0, 40, 30, P.cielo);
+  L.D(20, 15, 12, P.tinta); L.D(20, 15, 11, '#e8d5a8'); L.D(20, 15, 9, '#c93a1c'); L.D(20, 15, 8, '#e8d5a8');
+  L.DB(15, 14, 3, P.cielo); L.DB(23, 12, 3, P.tomate); L.DB(31, 22, 3, P.verde);
+  return L;
+})();
+M.bombas = (() => {
+  const L = lienzo(40, 30); L.R(0, 0, 40, 30, '#5fc46f');
+  for (let y = 0; y < 30; y += 6) for (let x = 0; x < 40; x += 6) if ((x / 6) % 2 === 1 && (y / 6) % 2 === 1) L.B(x, y, 6, 6, '#6b6680');
+  L.B(18, 0, 6, 6, '#c08a5a'); L.B(30, 12, 6, 6, '#c08a5a'); L.B(0, 18, 6, 6, '#c08a5a');
+  L.R(12, 12, 18, 6, P.sol); L.R(18, 6, 6, 18, P.sol); L.DB(21, 15, 3, P.tinta); L.R(23, 10, 1, 3, P.tomate);
+  L.DB(9, 3, 2, P.blanco);
+  return L;
+})();
+M.carreras = (() => {
+  const L = lienzo(40, 30); L.R(0, 0, 40, 30, '#5fc46f');
+  for (let a = 0; a < 6.28; a += 0.05) { const x = 20 + Math.cos(a) * 14, y = 15 + Math.sin(a) * 9; L.R(Math.round(x) - 2, Math.round(y) - 2, 5, 5, '#4a4560'); }
+  L.B(28, 20, 6, 4, P.tomate); L.B(8, 6, 6, 4, P.cielo); L.R(30, 11, 1, 6, P.blanco);
+  return L;
+})();
 // avatares: 12 personajes de 12×12 (piel, pelo, ropa y un detalle)
 const AVATARES = [
   ['#f2c9a0', '#6b3f1d', P.tomate, 'nada'], ['#c98e5f', P.tinta, P.cielo, 'gafas'], ['#f5d6b8', P.sol, P.menta, 'lazo'],

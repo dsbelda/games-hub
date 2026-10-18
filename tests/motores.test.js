@@ -666,3 +666,22 @@ test('Cocina loca: cortar, cocinar, montar y entregar un pedido; la carne se que
   for (let i = 0; i < 60 * 7; i++) J.paso(e, 1 / 60); assert.ok(!J._.listo(e.cosas['12,4']), 'quemada');
   e.reloj = 0.01; J.paso(e, 0.1); assert.ok(J.fin(e));
 });
+
+test('Acción en tiempo real: Hockey, Sumo, Bombas y Carreras acaban entre CPUs', () => {
+  for (const [id, n] of [['hockey', 2], ['sumo', 3], ['bombas', 4], ['carreras', 4]]) {
+    const J = JUEGOS[id];
+    for (let k = 0; k < 3; k++) {
+      const e = J.nuevo(n); J.configurar(e, Array.from({ length: n }, (_, j) => ({ bot: true, nivel: j % 2 ? 'normal' : 'dificil' })));
+      let s = 0; while (!J.fin(e) && s < 30 * 60 * 15) { J.paso(e, 1 / 30); if (s % 3 === 0) J.foto(e); s++; }
+      assert.ok(J.fin(e), `${id} acaba`);
+    }
+  }
+  // mandos: una pulsación de bomba muy corta no se pierde
+  const B = JUEGOS.bombas, e = B.nuevo(2); B.configurar(e, [{ bot: false }, { bot: true, nivel: 'normal' }]); e.pausa = 0;
+  B.accion(e, 0, { tipo: 'teclas', k: 16 }); B.accion(e, 0, { tipo: 'teclas', k: 0 }); B.paso(e, 1 / 30);
+  assert.equal(e.bombasEn.filter((b) => b.j === 0).length, 1);
+  // hockey: la difícil gana a la normal
+  const H = JUEGOS.hockey; let dif = 0;
+  for (let k = 0; k < 6; k++) { const h = H.nuevo(2); H.configurar(h, k % 2 ? [{ bot: true, nivel: 'normal' }, { bot: true, nivel: 'dificil' }] : [{ bot: true, nivel: 'dificil' }, { bot: true, nivel: 'normal' }]); let s = 0; while (!H.fin(h) && s < 30 * 600) { H.paso(h, 1 / 30); s++; } if (H.fin(h).ganadores[0] === k % 2) dif++; }
+  assert.ok(dif >= 4, `hockey difícil ${dif}/6`);
+});

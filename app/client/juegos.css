@@ -907,3 +907,24 @@ button.st-celda:hover { background: #ffe2da; color: var(--tinta); }
 .co-cruz .btn { min-height: 54px; font-size: 20px; }
 .co-acc { display: flex; flex-direction: column; gap: 8px; } .co-acc .btn { min-height: 52px; min-width: 150px; }
 @media (hover: hover) and (pointer: fine) { .co-mandos { display: none; } }
+
+/* ===== Hockey de aire ===== */
+.hk-mesa { width: auto; height: min(78vh, 720px); max-width: 100%; image-rendering: auto; cursor: none; touch-action: none; background: #dff3ff; }
+
+/* ===== Sumo, Bombas y Carreras ===== */
+.su-ring { width: auto; height: min(70vh, 640px); max-width: 100%; image-rendering: auto; touch-action: none; background: #4d7cfe; }
+.su-emb { display: block; margin: 8px auto 0; min-width: 180px; min-height: 52px; }
+@media (hover: hover) and (pointer: fine) { .su-emb { display: none; } }
+.bo-mapa { width: min(100%, 620px); image-rendering: auto; }
+.ca-pista { width: min(100%, 900px); image-rendering: auto; background: #5fc46f; }
+.md-mandos { display: flex; justify-content: space-between; align-items: center; gap: 12px; width: min(560px, 100%); margin: 8px auto 0; }
+.md-grupo { display: flex; gap: 8px; align-items: center; }
+.md-grupo .btn { min-height: 54px; min-width: 60px; font-size: 18px; } .md-grupo .btn.grande { min-width: 110px; }
+.md-grupo.cruz { display: grid; grid-template-columns: repeat(3, 54px); grid-template-rows: repeat(2, 54px); gap: 4px; }
+.md-grupo.cruz .arr { grid-column: 2; grid-row: 1; } .md-grupo.cruz .izq { grid-column: 1; grid-row: 2; } .md-grupo.cruz .aba { grid-column: 2; grid-row: 2; } .md-grupo.cruz .der { grid-column: 3; grid-row: 2; }
+.md-grupo.cruz .btn { min-width: 0; }
+@media (hover: hover) and (pointer: fine) { .md-mandos { display: none; } }
+/* lienzos altos o cuadrados: el ancho sale de la proporción (--ar) y el alto lo sigue, así nunca se deforman */
+.lz-lienzo.vertical, .su-ring, .hk-mesa { width: min(100%, calc(76vh * var(--ar, 1)), 720px); height: auto; max-width: 100%; }
+.md-mandos { flex-wrap: wrap; justify-content: center; }
+@media (max-width: 480px) { .md-grupo .btn { min-width: 50px; padding-left: 8px; padding-right: 8px; } .md-grupo .btn.grande { min-width: 84px; } }

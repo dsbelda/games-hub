@@ -75,7 +75,7 @@
   async function jugarYaCpu() {
     const r = await pedir('crear', { juego: JID, publica: false });
     if (!r.ok) return;
-    const n = { unidad: 3, mus: 3, poquer: 3, chinchon: 2, parchis: 3, revueltas: 2, saber: 2, oca: 3, chinas: 1, domino: 3, mentiroso: 3, mente: 1, isla: 1 }[JID] || 1; // CPUs para «Jugar ya»
+    const n = { unidad: 3, mus: 3, poquer: 3, chinchon: 2, parchis: 3, revueltas: 2, saber: 2, oca: 3, chinas: 1, domino: 3, mentiroso: 3, mente: 1, isla: 1, sumo: 3, bombas: 3, carreras: 3 }[JID] || 1; // CPUs para «Jugar ya»
     for (let k = 0; k < n; k++) await pedir('cpu', { nivel: UI.leer('nivel', 'normal') });
     await pedir('empezar');
   }

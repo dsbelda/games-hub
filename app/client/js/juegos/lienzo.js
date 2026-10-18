@@ -7,6 +7,7 @@ window.Lienzo = (() => {
     const c = el('canvas', 'lz-lienzo ' + clase);
     c.width = ancho; c.height = alto;
     c.style.aspectRatio = `${ancho} / ${alto}`;
+    c.style.setProperty('--ar', String(ancho / alto)); // para limitar el ancho sin deformar (ver .vertical en juegos.css)
     const g = c.getContext('2d');
     g.imageSmoothingEnabled = false;
     raiz.append(c);
