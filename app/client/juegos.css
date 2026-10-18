@@ -583,3 +583,38 @@ button.st-celda:hover { background: #ffe2da; color: var(--tinta); }
   .carta-u { width: 56px; height: 84px; } .carta-u .centro-u { font-size: 18px; width: 36px; height: 44px; }
   .codigo { font-size: 42px; }
 }
+
+/* ===== Clásicos de los 2010 ===== */
+.solo.pajaro, .solo.saltos, .solo.carretera { max-width: 760px; }
+.lz-lienzo.vertical { width: auto; height: min(78vh, 640px); max-width: 100%; }
+.solo.frutas .lz-lienzo, .solo.plantas .lz-lienzo, .solo.honda .lz-lienzo { width: min(100%, 860px); }
+.solo.dino .lz-lienzo { width: min(100%, 760px); background: transparent; }
+.solo.frutas, .solo.plantas, .solo.honda, .solo.dino { max-width: 900px; }
+.solo.honda .fila { flex-wrap: wrap; justify-content: center; }
+
+.galletas { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 20px; max-width: 900px; margin: 0 auto; }
+.gal-izq { position: relative; display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 16px; border: var(--linea); background: var(--pastel-rosa, var(--sup)); box-shadow: var(--sombra); min-height: 380px; overflow: hidden; }
+.gal-cuenta { font-family: Silkscreen, monospace; font-size: clamp(1.2rem, 4vw, 1.8rem); color: var(--fg); text-align: center; margin: 0; }
+.gal-izq .suave { color: var(--fg); opacity: .75; }
+.gal-galleta { position: relative; width: min(240px, 70vw); aspect-ratio: 1; border: 0; background: none; cursor: pointer; padding: 0; transition: transform .1s; -webkit-tap-highlight-color: transparent; }
+.gal-galleta svg { width: 100%; height: 100%; image-rendering: pixelated; filter: drop-shadow(4px 4px 0 rgba(30, 27, 46, .35)); }
+.gal-galleta:hover { transform: scale(1.04); }
+.gal-galleta.late { animation: gal-late .12s; }
+@keyframes gal-late { 50% { transform: scale(.94); } }
+.gal-mas { position: absolute; pointer-events: none; font-family: Silkscreen, monospace; font-weight: 700; color: var(--fg); text-shadow: 1px 1px 0 #fff; animation: gal-sube .9s ease-out forwards; transform: translate(-50%, -50%); }
+@keyframes gal-sube { to { opacity: 0; margin-top: -60px; } }
+.gal-frenesi { min-height: 1.4em; margin: 0; font-weight: 700; color: var(--fg); }
+.gal-dorada { position: absolute; font-size: 2.2rem; border: 0; background: none; cursor: pointer; filter: sepia(1) saturate(4) hue-rotate(5deg) drop-shadow(0 0 6px #ffc63d); animation: gal-brilla 1s ease-in-out infinite alternate; }
+@keyframes gal-brilla { to { transform: scale(1.2) rotate(15deg); } }
+.gal-der h3 { margin: 0 0 8px; font-family: Silkscreen, monospace; font-size: 1rem; }
+.gal-mejoras { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
+.gal-mejora { display: flex; flex-direction: column; padding: 6px 8px; border: var(--linea); background: var(--sup); color: var(--fg); cursor: pointer; font: inherit; font-size: .8rem; text-align: left; }
+.gal-mejora small, .gal-edif small { color: var(--fg-2); }
+.gal-tienda { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
+.gal-edif { display: grid; grid-template-columns: 36px 1fr auto; align-items: center; gap: 10px; padding: 8px 10px; border: var(--linea); background: var(--sup); color: var(--fg); cursor: pointer; font: inherit; text-align: left; box-shadow: 3px 3px 0 var(--borde); transition: transform .1s; }
+.gal-edif:not(:disabled):hover, .gal-mejora:not(:disabled):hover { transform: translate(-1px, -1px); }
+.gal-edif:disabled, .gal-mejora:disabled { opacity: .5; cursor: default; }
+.gal-ico { font-size: 1.6rem; }
+.gal-nom { display: flex; flex-direction: column; }
+.gal-cant { font-family: Silkscreen, monospace; font-size: 1.4rem; opacity: .6; }
+@media (max-width: 700px) { .galletas { grid-template-columns: 1fr; } .gal-izq { min-height: 0; } }

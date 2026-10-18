@@ -367,6 +367,73 @@ const logo = (() => {
   L.R(1, 9, 3, 1, P.tinta); L.R(8, 9, 3, 1, P.tinta);
   return L;
 })();
+M.pajaro = (() => {
+  const L = lienzo(40, 30); L.fondo(P.cielo, P.cieloO);
+  for (const [x, y, h] of [[8, 0, 9], [8, 21, 9], [28, 0, 5], [28, 17, 13]]) { L.B(x, y, 6, h, P.verde); L.R(x + 1, y, 1, h, '#7fe08f'); }
+  L.B(7, 8, 8, 2, P.verde); L.B(7, 20, 8, 2, P.verde); L.B(27, 4, 8, 2, P.verde); L.B(27, 16, 8, 2, P.verde);
+  L.B(17, 11, 8, 7, P.sol); L.R(21, 12, 3, 2, P.blanco); L.R(22, 13, 1, 1, P.tinta); L.R(24, 15, 2, 2, P.tomate); L.R(18, 14, 3, 2, '#ff9f2e');
+  return L;
+})();
+M.saltos = (() => {
+  const L = lienzo(40, 30); L.fondo(P.crema, '#e8dcc0');
+  for (const [x, y, c] of [[4, 24, P.verde], [20, 18, P.gris], [8, 12, P.verde], [24, 6, P.marron]]) L.B(x, y, 12, 3, c);
+  L.B(11, 3, 6, 6, P.sol); L.R(11, 7, 6, 2, P.verde); L.R(14, 4, 1, 1, P.tinta); L.R(16, 5, 2, 1, P.tinta);
+  L.R(13, 9, 1, 2, P.tinta); L.R(15, 9, 1, 2, P.tinta);
+  return L;
+})();
+M.frutas = (() => {
+  const L = lienzo(40, 30); L.fondo(P.marron, '#6b4520');
+  L.DB(11, 12, 6, P.verde); L.D(11, 12, 4, P.tomate); L.R(6, 12, 11, 1, P.tinta);
+  L.DB(28, 9, 4, '#ff9f2e'); L.DB(26, 21, 3, P.tomate); L.R(25, 17, 1, 2, P.verdeO);
+  for (let k = 0; k < 9; k++) L.R(3 + k * 4, 25 - k * 2, 3, 1, P.blanco);
+  return L;
+})();
+M.carretera = (() => {
+  const L = lienzo(40, 30);
+  L.R(0, 0, 40, 6, '#7fd98f'); L.R(0, 6, 40, 8, '#4a4560'); L.R(0, 14, 40, 8, P.cielo); L.R(0, 22, 40, 8, '#7fd98f');
+  for (let x = 0; x < 40; x += 8) L.R(x, 13, 4, 1, P.gris);
+  L.B(3, 7, 10, 6, P.tomate); L.R(10, 8, 2, 3, '#bfe9ff'); L.B(26, 7, 9, 6, P.sol);
+  L.B(2, 15, 14, 6, P.marron); L.B(22, 15, 12, 6, P.marron);
+  L.B(17, 22, 6, 7, P.blanco); L.R(19, 21, 2, 2, P.tomate); L.R(19, 25, 2, 1, P.sol); L.R(18, 24, 1, 1, P.tinta); L.R(21, 24, 1, 1, P.tinta);
+  L.R(4, 24, 5, 5, P.verdeO); L.R(32, 23, 5, 6, P.verdeO);
+  return L;
+})();
+M.dino = (() => {
+  const L = lienzo(40, 30); L.R(0, 0, 40, 30, P.papel);
+  const t = '#3c3850';
+  L.R(0, 24, 40, 1, t); L.R(6, 26, 2, 1, t); L.R(25, 27, 3, 1, t);
+  L.R(10, 9, 8, 5, t); L.R(12, 10, 1, 1, P.papel); L.R(10, 14, 3, 1, t); L.R(4, 13, 2, 3, t); L.R(5, 14, 8, 6, t); L.R(6, 20, 5, 2, t); L.R(6, 22, 1, 2, t); L.R(9, 22, 1, 2, t); L.R(13, 16, 2, 1, t);
+  L.R(28, 15, 3, 9, t); L.R(26, 17, 2, 3, t); L.R(31, 16, 2, 3, t); L.R(35, 19, 2, 5, t);
+  L.R(24, 4, 6, 1, '#d7d2c8'); L.R(26, 3, 3, 1, '#d7d2c8');
+  return L;
+})();
+M.galletas = (() => {
+  const L = lienzo(40, 30); L.fondo(P.rosa, P.rosaO);
+  L.DB(20, 14, 10, '#d9a35b'); L.D(20, 14, 8, '#e6b672');
+  for (const [x, y] of [[15, 9], [23, 8], [25, 15], [17, 18], [20, 13]]) L.R(x, y, 2, 2, '#5a3a1b');
+  L.R(32, 4, 3, 1, P.blanco); L.R(33, 3, 1, 3, P.blanco); L.R(5, 22, 3, 1, P.blanco); L.R(6, 21, 1, 3, P.blanco);
+  return L;
+})();
+M.honda = (() => {
+  const L = lienzo(40, 30); L.R(0, 0, 40, 30, '#9fdcff'); L.R(0, 25, 40, 5, P.verde);
+  L.R(6, 16, 2, 9, P.marron); L.R(4, 13, 1, 4, P.marron); L.R(9, 13, 1, 4, P.marron);
+  L.B(12, 8, 5, 5, P.tomate); L.R(15, 9, 1, 1, P.blanco);
+  for (let k = 0; k < 4; k++) L.R(5 + k * 2, 11 - k, 1, 1, P.blanco);
+  L.B(25, 15, 3, 10, '#c08a5a'); L.B(34, 15, 3, 10, '#c08a5a'); L.B(24, 12, 14, 3, P.gris);
+  L.DB(31, 21, 3, P.verde); L.R(29, 20, 1, 1, P.blanco); L.R(32, 20, 1, 1, P.blanco);
+  L.DB(31, 8, 3, P.verde); L.R(29, 7, 1, 1, P.blanco); L.R(32, 7, 1, 1, P.blanco);
+  return L;
+})();
+M.plantas = (() => {
+  const L = lienzo(40, 30);
+  for (let f = 0; f < 3; f++) for (let c = 0; c < 5; c++) L.R(c * 8, f * 10, 8, 10, (f + c) % 2 ? '#7fd98f' : '#6fcf80');
+  L.R(4, 6, 1, 4, P.verdeO); L.B(1, 1, 7, 6, P.sol); L.R(3, 3, 3, 2, '#ff9f2e');
+  L.R(4, 16, 1, 4, P.verdeO); L.B(1, 11, 7, 6, P.verde); L.B(7, 13, 3, 3, P.verde);
+  L.B(14, 13, 2, 2, '#7fe08f'); L.B(20, 13, 2, 2, '#7fe08f');
+  L.B(12, 21, 7, 8, '#c08a5a');
+  L.B(29, 8, 6, 18, '#6b4520'); L.B(29, 7, 6, 6, '#8fb98a'); L.R(31, 9, 1, 1, P.tomate); L.R(26, 14, 4, 2, '#8fb98a'); L.B(30, 4, 4, 4, '#ff9f2e');
+  return L;
+})();
 // avatares: 12 personajes de 12×12 (piel, pelo, ropa y un detalle)
 const AVATARES = [
   ['#f2c9a0', '#6b3f1d', P.tomate, 'nada'], ['#c98e5f', P.tinta, P.cielo, 'gafas'], ['#f5d6b8', P.sol, P.menta, 'lazo'],
