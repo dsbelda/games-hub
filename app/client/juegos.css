@@ -737,3 +737,61 @@ button.st-celda:hover { background: #ffe2da; color: var(--tinta); }
 .ar-tactil { min-width: 140px; min-height: 52px; }
 @media (hover: hover) and (pointer: fine) { .ar-tactil { display: none; } }
 @media (max-width: 640px) { .ar-lienzo { width: 100%; max-height: 70vh; object-fit: contain; } }
+
+/* ===== La Oca ===== */
+.oc-tablero { display: grid; grid-template-columns: repeat(8, 1fr); grid-template-rows: repeat(8, 1fr); gap: 3px; width: min(560px, 100%); margin: 0 auto; padding: 6px; background: #3f9a4f; border: var(--linea); box-shadow: var(--sombra); }
+.oc-celda { position: relative; aspect-ratio: 1; background: #fbf3e0; border: 2px solid var(--tinta); display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--tinta); }
+.oc-celda small { position: absolute; left: 3px; top: 1px; font: 700 10px var(--texto); }
+.oc-celda.oca { background: #fff1c7; } .oc-celda.muerte { background: #d9d4e8; } .oc-celda.jardin { background: #ffe0ec; } .oc-celda.salida { background: #d3f3ec; }
+.oc-celda.puente, .oc-celda.dado { background: #dde6ff; } .oc-celda.posada, .oc-celda.pozo, .oc-celda.laberinto, .oc-celda.carcel { background: #ffd6c7; }
+.oc-ico { font-size: clamp(14px, 4vw, 24px); line-height: 1; }
+.oc-fichas { position: absolute; inset: auto 2px 2px 2px; display: flex; flex-wrap: wrap; gap: 1px; justify-content: center; }
+.oc-ficha { width: clamp(9px, 2.6vw, 14px); height: clamp(9px, 2.6vw, 14px); border-radius: 50%; border: 2px solid var(--tinta); display: block; }
+.oc-ficha.salta { animation: oc-salta .17s; }
+@keyframes oc-salta { 50% { transform: translateY(-6px) scale(1.2); } }
+.oc-punto { display: inline-block; width: 10px; height: 10px; border-radius: 50%; border: 2px solid var(--tinta); vertical-align: -1px; }
+.oc-panel { display: flex; gap: 14px; align-items: center; justify-content: center; min-height: 72px; }
+.oc-texto p { margin: 2px 0; font-weight: 600; }
+
+/* ===== Damas chinas ===== */
+.dc-tablero { display: block; width: min(560px, 100%); margin: 0 auto; background: #e9dcc0; border: var(--linea); box-shadow: var(--sombra); border-radius: 50%; touch-action: manipulation; }
+.dc-agujero { fill: #b99a6a; }
+.dc-hueco { cursor: default; } .dc-hueco.mia, .dc-hueco.destino { cursor: pointer; }
+.dc-hueco.mia .dc-ficha { animation: dc-late 1.2s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+.dc-hueco.sel .dc-ficha { stroke: #fff; stroke-width: .2; animation: none; }
+.dc-marca { fill: rgba(255, 255, 255, .85); stroke: #1e1b2e; stroke-width: .1; }
+@keyframes dc-late { 50% { transform: scale(1.12); } }
+
+/* ===== Dominó ===== */
+.dmn-ficha { display: inline-flex; background: #fbf7ee; border: 3px solid var(--tinta); border-radius: 6px; box-shadow: 2px 2px 0 var(--borde); }
+.dmn-mitad { width: 30px; height: 30px; display: grid; grid-template-columns: repeat(3, 1fr); padding: 4px; gap: 2px; }
+.dmn-mitad + .dmn-mitad { border-left: 2px solid var(--tinta); }
+.dmn-mitad i.si { background: var(--tinta); border-radius: 50%; }
+.dmn-ficha.doble { flex-direction: column; } .dmn-ficha.doble .dmn-mitad + .dmn-mitad { border-left: 0; border-top: 2px solid var(--tinta); }
+.dmn-ficha.peque .dmn-mitad { width: 18px; height: 18px; padding: 2px; gap: 1px; }
+.dmn-mesa { display: flex; flex-wrap: wrap; gap: 3px; justify-content: center; align-items: center; min-height: 90px; padding: 12px; background: #1d7a4e; border: var(--linea); box-shadow: var(--sombra); }
+.dmn-mesa .dmn-ficha .dmn-mitad { width: 22px; height: 22px; padding: 3px; }
+.dmn-mesa .dmn-ficha.extremo { outline: 3px solid var(--sol); }
+.dmn-mano { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+.dmn-mano .dmn-ficha.puede { cursor: pointer; animation: dc-late 1.2s ease-in-out infinite; }
+.dmn-mano .dmn-ficha.no { opacity: .45; }
+.dmn-mano .dmn-ficha.sel { outline: 4px solid var(--sol); animation: none; }
+.dmn-otros { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+.dmn-otro { border: var(--linea); background: var(--sup); padding: 6px 10px; display: flex; flex-direction: column; align-items: center; gap: 2px; min-width: 110px; }
+.dmn-otro.pareja { background: var(--pastel-menta); } .dmn-otro.activo { box-shadow: 0 0 0 3px var(--sol); }
+.dmn-dorsos { display: flex; gap: 2px; } .dmn-dorsos i { width: 8px; height: 16px; background: var(--tinta); border-radius: 2px; }
+.dmn-res { margin-top: 10px; } .dmn-res .fila { gap: 4px; flex-wrap: wrap; }
+
+/* ===== Mentiroso de dados ===== */
+.mt-jugadores { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+.mt-jug { border: var(--linea); background: var(--sup); padding: 8px 10px; display: flex; flex-direction: column; gap: 6px; align-items: center; min-width: 130px; }
+.mt-jug.activo { background: var(--pastel-sol); box-shadow: var(--sombra-s); } .mt-jug.fuera { opacity: .4; }
+.mt-dados { display: flex; gap: 4px; flex-wrap: wrap; justify-content: center; }
+.mt-dado { width: 32px; height: 32px; padding: 4px; gap: 2px; box-shadow: none; border-width: 2px; }
+.mt-dado.cuenta { background: var(--sol); } .mt-dado.apagado { opacity: .35; }
+.mt-cubilete { font: 700 18px var(--texto); }
+.mt-apuesta { display: flex; gap: 8px; align-items: center; justify-content: center; font-size: 18px; min-height: 48px; }
+.mt-control { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 10px; border: var(--linea); background: var(--sup); }
+.mt-cant { display: flex; align-items: center; gap: 10px; } .mt-cant b { font: 700 28px var(--pixel); min-width: 40px; text-align: center; }
+.mt-caras { display: flex; gap: 6px; flex-wrap: wrap; justify-content: center; }
+.mt-cara { border: 0; background: none; padding: 2px; cursor: pointer; } .mt-cara.sel .pc-dado { background: var(--sol); outline: 3px solid var(--tinta); }

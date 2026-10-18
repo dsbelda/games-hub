@@ -461,3 +461,58 @@ test('Tanques mejorables: disparo, experiencia, mejoras, clase y fin de partida'
   for (let k = 0; k < 30 * 245 && !J.fin(e2); k++) { J.paso(e2, 1 / 30); if (k % 3 === 0) J.foto(e2); }
   assert.ok(J.fin(e2)); assert.ok(e2.jug.some((p) => p.max > 300), 'alguien sube de nivel');
 });
+
+test('La Oca: casillas especiales, rebote y partidas que acaban', () => {
+  const J = JUEGOS.oca;
+  const e = J.nuevo(2);
+  J._.tirar(e, 0, 5); assert.equal(e.pos[0], 9); assert.equal(e.turno, 0, 'de oca a oca y tiro');
+  e.pos[0] = 60; J._.tirar(e, 0, 5); assert.equal(e.pos[0], 61, 'rebota en la 63');
+  e.pos[1] = 55; e.turno = 1; J._.tirar(e, 1, 3); assert.equal(e.pos[1], 0, 'la muerte');
+  e.pos[0] = 50; e.turno = 0; J._.tirar(e, 0, 2); assert.equal(e.castigo[0], 2, 'cárcel');
+  for (let k = 0; k < 20; k++) jugar(J, 2 + (k % 5), ['normal'], k + 1);
+});
+
+test('Damas chinas: pasos y saltos encadenados, la CPU difícil gana a la normal', () => {
+  const J = JUEGOS.chinas;
+  const e = J.nuevo(2);
+  assert.equal(e.t.filter((x) => x === 0).length, 10);
+  // la punta de destino es la opuesta: su vértice es el simétrico del de salida
+  for (let p = 0; p < 6; p++) { const a = J._.CELDAS[J._.VERTICE[p]], b = J._.CELDAS[J._.VERTICE[J._.CONTRARIA[p]]]; assert.deepEqual(a.map((x) => -x), b, `punta ${p}`); }
+  const de = e.t.findIndex((x, i) => x === 0 && J._.destinos(e, i).size > 0);
+  assert.ok(de >= 0, 'alguna ficha puede moverse al empezar');
+  assert.equal(J.accion(e, 1, { tipo: 'mover', de, a: [...J._.destinos(e, de).keys()][0] }).ok, false, 'no es su turno');
+  let dif = 0, nor = 0;
+  for (let k = 0; k < 10; k++) { const { f } = jugar(J, 2, k % 2 ? ['normal', 'dificil'] : ['dificil', 'normal'], k + 3); if (f.ganadores.length === 1) { if (f.ganadores[0] === (k % 2 ? 1 : 0)) dif++; else nor++; } }
+  assert.ok(dif > nor, `difícil ${dif} – normal ${nor}`);
+  jugar(J, 6, ['normal'], 9);
+});
+
+test('Dominó: abre el seis doble, encajar, pases automáticos y partidas a 100', () => {
+  const J = JUEGOS.domino;
+  const e = J.nuevo(4);
+  const t = e.turno;
+  assert.ok(e.manos[t].some(([a, b]) => a === 6 && b === 6));
+  const i = e.manos[t].findIndex(([a, b]) => a === 6 && b === 6);
+  const otra = e.manos[t].findIndex(([a, b]) => !(a === 6 && b === 6));
+  assert.equal(J.accion(e, t, { tipo: 'poner', i: otra }).ok, false, 'se abre con el seis doble');
+  assert.ok(J.accion(e, t, { tipo: 'poner', i }).ok);
+  assert.deepEqual(e.extremos, [6, 6]);
+  assert.equal(J.vista(e, (t + 1) % 4).mia.length, 7);
+  assert.ok(!('manos' in J.vista(e, 0)), 'no se ven las manos ajenas');
+  for (let k = 0; k < 10; k++) jugar(J, 4, ['dificil', 'normal'], k + 11);
+});
+
+test('Mentiroso de dados: apuestas que suben, comodines, dudar y fin', () => {
+  const J = JUEGOS.mentiroso;
+  const e = J.nuevo(3);
+  assert.ok(J.accion(e, 0, { tipo: 'apostar', q: 3, cara: 4 }).ok);
+  assert.equal(J.accion(e, 1, { tipo: 'apostar', q: 3, cara: 2 }).ok, false, 'misma cantidad, cara más baja');
+  assert.ok(J.accion(e, 1, { tipo: 'apostar', q: 2, cara: 1 }).ok, 'a unos basta la mitad');
+  assert.equal(J.accion(e, 2, { tipo: 'apostar', q: 4, cara: 5 }).ok, false, 'volver de unos pide el doble más uno');
+  assert.ok(J.accion(e, 2, { tipo: 'apostar', q: 5, cara: 5 }).ok);
+  const v = J.vista(e, 0); assert.equal(v.mios.length, 5); assert.ok(!('cubiletes' in v));
+  assert.ok(J.accion(e, 0, { tipo: 'dudar' }).ok);
+  assert.equal(e.dados.reduce((s, x) => s + x, 0), 14, 'alguien pierde un dado');
+  J.tiempo(e, e.hasta + 1); assert.equal(e.revelado, null);
+  for (let k = 0; k < 10; k++) { const e2 = J.nuevo(4); let s = 0; while (!J.fin(e2) && s++ < 5000) { if (e2.revelado) { J.accion(e2, 0, { tipo: 'seguir' }); continue; } const t = J.turno(e2); assert.ok(J.accion(e2, t, J.bot(e2, t, 'dificil', Math.random)).ok); } assert.ok(J.fin(e2)); }
+});

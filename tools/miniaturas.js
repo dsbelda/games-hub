@@ -501,6 +501,33 @@ M.blindados = (() => {
   for (const [x, y] of [[32, 14], [35, 14]]) L.R(x, y, 2, 2, P.cieloO);
   return L;
 })();
+M.oca = (() => {
+  const L = lienzo(40, 30); L.fondo(P.verde, P.verdeO);
+  for (let k = 0; k < 7; k++) L.B(3 + k * 5, 3, 5, 5, k % 3 === 1 ? P.sol : P.crema);
+  for (let k = 0; k < 7; k++) L.B(3 + k * 5, 19, 5, 5, k % 3 === 2 ? P.sol : P.crema);
+  L.B(33, 8, 5, 11, P.crema); L.B(3, 8, 5, 11, P.crema);
+  L.R(15, 10, 9, 6, P.blanco); L.R(22, 8, 3, 4, P.blanco); L.R(25, 9, 2, 1, '#ff9f2e'); L.R(23, 9, 1, 1, P.tinta); L.R(17, 16, 1, 2, '#ff9f2e'); L.R(21, 16, 1, 2, '#ff9f2e');
+  return L;
+})();
+M.chinas = (() => {
+  const L = lienzo(40, 30); L.R(0, 0, 40, 30, '#e9dcc0');
+  const cols = [P.tomate, P.cielo, P.verde, P.sol, P.uva, P.rosa];
+  for (let f = 0; f < 13; f++) for (let k = 0; k < 13; k++) { const x = 5 + k * 2.5 + (f % 2) * 1.25, y = 2 + f * 2; const dx = Math.abs(k - 6 + (f % 2) * 0.5), dy = Math.abs(f - 6); if (dx + dy * 0.5 > 6.5) continue; L.R(Math.round(x), y, 2, 2, dy > 3 ? cols[f < 6 ? 0 : 3] : dx > 3.5 ? cols[k < 6 ? 1 : 2] : '#b99a6a'); }
+  return L;
+})();
+M.domino = (() => {
+  const L = lienzo(40, 30); L.fondo('#1d7a4e', '#145c3a');
+  const ficha = (x, y, a, b, vert) => { const w = vert ? 6 : 11, h = vert ? 11 : 6; L.B(x, y, w, h, P.papel); const pts = { 1: [[1, 1]], 2: [[0, 0], [2, 2]], 3: [[0, 0], [1, 1], [2, 2]], 5: [[0, 0], [2, 0], [1, 1], [0, 2], [2, 2]], 6: [[0, 0], [0, 1], [0, 2], [2, 0], [2, 1], [2, 2]] }; [a, b].forEach((n, k) => (pts[n] || []).forEach(([px, py]) => L.R(x + 1 + (vert ? px : px + k * 5), y + 1 + (vert ? py + k * 5 : py), 1, 1, P.tinta))); };
+  ficha(3, 12, 6, 3); ficha(14, 9, 6, 6, true); ficha(20, 12, 6, 5); ficha(31, 6, 5, 2, true);
+  return L;
+})();
+M.mentiroso = (() => {
+  const L = lienzo(40, 30); L.fondo(P.tomate, P.tomateO);
+  L.B(4, 6, 12, 16, P.marron); L.R(5, 7, 10, 2, '#c08a5a');
+  for (const [x, y, n] of [[19, 14, 5], [27, 16, 1], [22, 6, 3]]) { L.B(x, y, 7, 7, P.blanco); const pts = { 1: [[3, 3]], 3: [[1, 1], [3, 3], [5, 5]], 5: [[1, 1], [5, 1], [3, 3], [1, 5], [5, 5]] }[n]; for (const [a, b] of pts) L.R(x + a, y + b, 1, 1, P.tinta); }
+  L.R(31, 4, 2, 8, P.blanco); L.R(31, 13, 2, 2, P.blanco);
+  return L;
+})();
 // avatares: 12 personajes de 12×12 (piel, pelo, ropa y un detalle)
 const AVATARES = [
   ['#f2c9a0', '#6b3f1d', P.tomate, 'nada'], ['#c98e5f', P.tinta, P.cielo, 'gafas'], ['#f5d6b8', P.sol, P.menta, 'lazo'],
