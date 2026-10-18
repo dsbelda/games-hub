@@ -673,3 +673,17 @@ button.st-celda:hover { background: #ffe2da; color: var(--tinta); }
 .sb-veredicto.bien { background: var(--verde); } .sb-veredicto.mal { background: var(--tomate); }
 .sb-veredicto b { font-family: Silkscreen, monospace; font-size: 1.05rem; } .sb-veredicto.fuera { opacity: 0; }
 @media (max-width: 560px) { .sb-ops { grid-template-columns: 1fr; } .sb-jug { min-width: 0; flex: 1 1 140px; } }
+
+/* ===== Teléfono dibujado ===== */
+.tf-paso { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.tf-paso.hecho .dj-marco, .tf-paso.hecho .tf-input { opacity: .6; pointer-events: none; }
+.tf-consigna { margin: 0; font-weight: 600; }
+.tf-frase { font-family: Silkscreen, monospace; font-size: clamp(1rem, 3vw, 1.3rem); text-align: center; padding: 8px 14px; background: var(--pastel-sol); border: var(--linea); color: var(--fg); }
+.tf-input { width: min(560px, 100%); font-size: 1.1rem; padding: 10px 12px; }
+.pz-lienzo { display: block; width: 100%; height: auto; touch-action: none; background: #fff; }
+.pz-lienzo.puedo { cursor: crosshair; }
+.pz-lienzo.peque { width: min(420px, 100%); border: var(--linea); }
+.tf-paso .dj-marco { width: min(680px, 100%); }
+.tf-cadena { display: flex; flex-direction: column; align-items: center; gap: 14px; }
+.tf-item { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.tf-item.nuevo { animation: rv-entra .35s; }

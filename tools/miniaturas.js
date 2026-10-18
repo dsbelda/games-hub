@@ -449,6 +449,14 @@ M.saber = (() => {
   L.B(28, 6, 10, 18, P.blanco); L.R(31, 9, 4, 1, P.tinta); L.R(34, 10, 1, 3, P.tinta); L.R(32, 13, 2, 2, P.tinta); L.R(32, 17, 2, 2, P.tinta);
   return L;
 })();
+M.telefono = (() => {
+  const L = lienzo(40, 30); L.fondo(P.menta, P.mentaO);
+  L.B(3, 4, 15, 11, P.blanco); L.R(6, 7, 6, 1, P.tinta); L.R(6, 9, 8, 1, P.tinta); L.R(6, 11, 4, 1, P.tinta);
+  L.R(18, 9, 4, 1, P.tinta); L.R(21, 8, 1, 3, P.tinta);
+  L.B(23, 4, 15, 11, P.blanco); L.DB(30, 9, 3, P.sol); L.R(26, 13, 9, 1, P.verde);
+  L.B(12, 17, 16, 9, P.tomate); L.R(15, 19, 10, 5, P.tomateO); L.R(14, 15, 3, 3, P.tinta); L.R(23, 15, 3, 3, P.tinta); L.R(14, 15, 12, 1, P.tinta);
+  return L;
+})();
 // avatares: 12 personajes de 12×12 (piel, pelo, ropa y un detalle)
 const AVATARES = [
   ['#f2c9a0', '#6b3f1d', P.tomate, 'nada'], ['#c98e5f', P.tinta, P.cielo, 'gafas'], ['#f5d6b8', P.sol, P.menta, 'lazo'],

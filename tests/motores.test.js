@@ -350,3 +350,23 @@ test('Ruleta del saber: partidas entre CPUs, no se filtra la respuesta y el tiem
   assert.equal(e.turno, 1, 'se acabó el tiempo: pasa el turno');
   assert.equal(e.ultima.bien, false);
 });
+
+test('Teléfono dibujado: cada cadena pasa por todos, el tiempo rellena huecos y el repaso no filtra', () => {
+  const J = JUEGOS.telefono;
+  const e = J.nuevo(4);
+  for (let j = 0; j < 4; j++) assert.ok(J.accion(e, j, { tipo: 'listo', frase: `frase de ${j}` }).ok);
+  assert.equal(e.paso, 1, 'todos listos: siguiente paso');
+  const v = J.vista(e, 2);
+  assert.equal(v.tipo, 'dibujo'); assert.equal(v.anterior.frase, 'frase de 1', 'dibuja la frase de la persona anterior');
+  assert.ok(J.accion(e, 2, { tipo: 'guardar', trazos: [{ c: 3, g: 1, p: [1, 2, 300, 400] }, { p: 'malo' }] }).ok);
+  J.tiempo(e, e.hasta + 1); // se acaba el tiempo: quien no dibujó deja la hoja en blanco
+  assert.equal(e.paso, 2);
+  assert.equal(J.vista(e, 3).anterior.trazos.length, 1, 'recibe el dibujo de 2');
+  J.tiempo(e, e.hasta + 1); J.tiempo(e, e.hasta + 1);
+  assert.equal(e.fase, 'revelar');
+  for (const c of e.cadenas) { assert.equal(c.length, 4); assert.equal(new Set(c.map((x) => x.j)).size, 4, 'cada cadena pasa por todos'); }
+  const r = J.vista(e, 0);
+  assert.equal(r.revela.items.length, 1); assert.ok(!('cadenas' in r));
+  for (let k = 0; k < 16; k++) J.accion(e, 1, { tipo: 'siguiente' });
+  assert.ok(J.fin(e));
+});
