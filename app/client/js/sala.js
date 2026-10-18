@@ -75,7 +75,7 @@
   async function jugarYaCpu() {
     const r = await pedir('crear', { juego: JID, publica: false });
     if (!r.ok) return;
-    const n = { unidad: 3, mus: 3, poquer: 3, chinchon: 2, parchis: 3, revueltas: 2, saber: 2, oca: 3, chinas: 1, domino: 3, mentiroso: 3 }[JID] || 1; // CPUs para «Jugar ya»
+    const n = { unidad: 3, mus: 3, poquer: 3, chinchon: 2, parchis: 3, revueltas: 2, saber: 2, oca: 3, chinas: 1, domino: 3, mentiroso: 3, mente: 1, isla: 1 }[JID] || 1; // CPUs para «Jugar ya»
     for (let k = 0; k < n; k++) await pedir('cpu', { nivel: UI.leer('nivel', 'normal') });
     await pedir('empezar');
   }
@@ -89,6 +89,7 @@
     nivel.value = UI.leer('nivel', 'normal'); nivel.onchange = () => UI.guardar('nivel', nivel.value);
     const fila = el('div', 'fila');
     if (window.FICHA.modo.includes('cpu')) fila.append(boton('Jugar ya contra la CPU', jugarYaCpu, 'oro'), nivel);
+    else if (window.FICHA.modo.includes('solo')) fila.append(boton('Jugar solo', async () => { const r = await pedir('crear', { juego: JID, publica: false }); if (r.ok) await pedir('empezar'); }, 'oro'), el('p', 'suave', 'O crea una sala y pasa el enlace para jugar con más gente.'));
     else fila.append(el('p', 'suave', 'Este juego es para jugar con personas: crea una sala y pasa el enlace.'));
     if (window.JUEGO.local) fila.append(boton('Jugar aquí (2 en el mismo teclado)', () => window.JUEGO.local(raiz), 'oro'));
     const pub = el('label', 'check'); const cb = el('input'); cb.type = 'checkbox'; cb.checked = true; pub.append(cb, ' Que salga en la lista de salas');
@@ -221,7 +222,9 @@
     const r = s.resultado;
     const p = el('div', 'panel fin');
     const gano = r.ganadores.includes(s.yo);
-    p.append(el('h2', null, !r.ganadores.length ? 'Empate' : gano ? '¡Has ganado!' : `Gana ${r.ganadores.map((i) => s.asientos[i]?.nombre).join(' y ')}`));
+    // en los cooperativos se gana o se pierde todos juntos
+    const titulo = window.JUEGO.cooperativo ? (gano ? '¡Lo habéis conseguido!' : 'Habéis perdido') : !r.ganadores.length ? 'Empate' : gano ? '¡Has ganado!' : `Gana ${r.ganadores.map((i) => s.asientos[i]?.nombre).join(' y ')}`;
+    p.append(el('h2', null, titulo));
     p.append(el('p', 'suave', r.texto));
     const f = el('div', 'fila');
     if (s.soyAnfitrion) f.append(boton('Revancha', () => pedir('empezar'), 'oro'));

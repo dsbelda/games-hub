@@ -123,6 +123,7 @@
   // --- modo online ---------------------------------------------------------------------------------
   let lzO = null, ctxO = null, vO = null, motorO = null, ultimaFoto = null, kRemota = 0, enviadas = -1, cada = 0;
   window.JUEGO = {
+    cooperativo: true,
     local,
     evento(ev) {
       if (!ctxO) return;

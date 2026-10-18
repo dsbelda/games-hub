@@ -575,3 +575,94 @@ test('Farol: definiciones inventadas, voto (no la propia) y puntos', () => {
   assert.deepEqual(e.resultado.pts, [3, 1, 0]);
   while (!J.fin(e)) J.tiempo(e, e.hasta + 1);
 });
+
+test('Sin palabras: jugar en orden, perder vidas por cartas más bajas, estrella y CPUs que no se ven las cartas', () => {
+  const J = JUEGOS.mente;
+  const e = J.nuevo(2);
+  e.manos = [[10], [5]]; e.fase = 'jugando';
+  J._.jugar(e, 0); assert.equal(e.vidas, 1, 'el 5 era más bajo: vida menos'); assert.equal(e.fase, 'superado');
+  assert.ok(J.accion(e, 0, { tipo: 'listo' }).ok); assert.equal(e.nivel, 2);
+  J.accion(e, 1, { tipo: 'listo' }); assert.equal(e.fase, 'jugando');
+  const antes = e.manos.map((m) => m.length);
+  J.accion(e, 0, { tipo: 'estrella' }); J.accion(e, 1, { tipo: 'estrella' });
+  assert.deepEqual(e.manos.map((m) => m.length), antes.map((x) => x - 1), 'la estrella quita la más baja de cada uno');
+  assert.ok(!('manos' in J.vista(e, 0)));
+  let ganadas = 0;
+  for (let k = 0; k < 40; k++) { const f = J.nuevo(2); J.configurar(f, [{ bot: true, nivel: 'dificil' }, { bot: true, nivel: 'dificil' }]); let t = 0; while (!J.fin(f) && t < 4e7) { t += 100; J.tiempo(f, t); } assert.ok(J.fin(f)); if (!f.perdido) ganadas++; }
+  assert.ok(ganadas > 0 && ganadas < 40, `ni siempre ni nunca: ${ganadas}/40`);
+});
+
+test('Desactiva la bomba: reglas, fallos, el manual no ve la bomba y tres bombas desactivadas', () => {
+  const J = JUEGOS.bomba; const X = J._;
+  assert.equal(X.cableCorrecto(['rojo', 'rojo', 'azul'], 'A1'), 2);
+  assert.equal(X.cableCorrecto(['azul', 'amarillo', 'rojo', 'negro'], 'A3'), 0);
+  assert.equal(X.cableCorrecto(['amarillo', 'rojo', 'azul', 'blanco', 'negro', 'rojo'], 'A2'), 1);
+  const e = J.nuevo(2);
+  X.accion(e, 0, { tipo: 'listo' }); X.accion(e, 1, { tipo: 'listo' }); assert.equal(e.fase, 'activa');
+  assert.equal(J.vista(e, 1).serie, null, 'quien tiene el manual no ve la bomba'); assert.ok(J.vista(e, 1).manual);
+  assert.equal(J.vista(e, 0).manual, null, 'quien tiene la bomba no ve el manual');
+  assert.equal(X.accion(e, 1, { tipo: 'cortar', m: 0, c: 0 }).ok, false, 'solo la artificiera toca la bomba');
+  const i = e.modulos.findIndex((m) => m.tipo === 'cables'), m = e.modulos[i];
+  const malo = m.cables.findIndex((_, k) => k !== X.cableCorrecto(m.cables, e.serie));
+  X.accion(e, 0, { tipo: 'cortar', m: i, c: malo }); assert.equal(e.fallos, 1);
+  for (let b = 0; b < 3; b++) {
+    if (e.fase === 'desactivada') { X.accion(e, 0, { tipo: 'listo' }); X.accion(e, 0, { tipo: 'listo' }); X.accion(e, 1, { tipo: 'listo' }); }
+    const a = e.artificiero;
+    e.modulos.forEach((md, k) => {
+      if (md.tipo === 'cables') X.accion(e, a, { tipo: 'cortar', m: k, c: X.cableCorrecto(md.cables, e.serie) });
+      if (md.tipo === 'simbolos') for (const s of X.ordenSimbolos(md)) X.accion(e, a, { tipo: 'simbolo', m: k, s });
+      if (md.tipo === 'boton') {
+        const t0 = Date.now(); X.accion(e, a, { tipo: 'boton', m: k, fase: 'abajo' }, t0);
+        if (X.botonRapido(md, e.serie)) X.accion(e, a, { tipo: 'boton', m: k, fase: 'arriba' }, t0 + 100);
+        else { const d = X.cifraTira(md.tira); let t = t0 + 1000; const lee = (tt) => { const s = Math.max(0, Math.ceil((e.hasta - tt) / 1000)); return `${Math.floor(s / 60)}:${String(s % 60).padStart(2, '0')}`; }; while (!lee(t).includes(d)) t += 1000; X.accion(e, a, { tipo: 'boton', m: k, fase: 'arriba' }, t); }
+      }
+    });
+  }
+  assert.deepEqual(J.fin(e).ganadores, [0, 1]);
+  const f = J.nuevo(2); X.accion(f, 0, { tipo: 'listo' }); X.accion(f, 1, { tipo: 'listo' }); J.tiempo(f, f.hasta + 1); assert.ok(J.fin(f).texto.includes('BUM'));
+});
+
+test('La isla que se hunde: acciones, papeles, hundimientos y partidas entre CPUs que acaban', () => {
+  const J = JUEGOS.isla;
+  const e = J.nuevo(2);
+  assert.equal(e.estado.filter((x) => x === 1).length, 6, 'empieza con 6 inundadas');
+  const t = e.turno, aqui = e.donde[t];
+  const v = J._.vecinas(e, aqui, e.roles[t] === 'explorador')[0];
+  assert.ok(J.accion(e, t, { tipo: 'mover', a: v }).ok); assert.equal(e.acciones, 2);
+  assert.equal(J.accion(e, 1 - t, { tipo: 'mover', a: aqui }).ok, false, 'no es su turno');
+  // capturar con 4 cartas en la loseta de su tesoro
+  const p = e.loseta.findIndex((l) => J._.LOSETAS[l].t === 'fuego'); e.estado[p] = 0; e.donde[t] = p; e.manos[t] = ['fuego', 'fuego', 'fuego', 'fuego'];
+  assert.ok(J.accion(e, t, { tipo: 'capturar' }).ok); assert.deepEqual(e.capturados, ['fuego']);
+  // hundir el helipuerto hace perder
+  const f = J.nuevo(2); const h = f.loseta.indexOf(0); f.estado[h] = 1; f.inund.push(h); f.donde = f.donde.map(() => f.loseta.indexOf(1));
+  J.accion(f, f.turno, { tipo: 'terminar' });
+  while (!J.fin(f)) { f.estado[h] = 1; f.inund.push(h); J.accion(f, J.turno(f), J.bot(f, J.turno(f), 'normal', Math.random)); }
+  assert.ok(J.fin(f));
+  let ganadas = 0;
+  for (let k = 0; k < 40; k++) { const g = J.nuevo(2); J.configurar(g, [{ bot: true, nivel: 'dificil' }, { bot: true, nivel: 'dificil' }]); let s = 0; while (!J.fin(g) && s++ < 5000) { const tt = J.turno(g); assert.ok(J.accion(g, tt, J.bot(g, tt, 'dificil', Math.random)).ok); } assert.ok(J.fin(g)); if (!g.perdido) ganadas++; }
+});
+
+test('Cocina loca: cortar, cocinar, montar y entregar un pedido; la carne se quema', () => {
+  const J = JUEGOS.cocina;
+  const e = J.nuevo(1); const c = e.chefs[0];
+  const ir = (x, y, dx, dy) => { c.x = x + 0.5; c.y = y + 0.5; c.dx = dx; c.dy = dy; };
+  const pulsar = () => { e.pulso[0] = true; J.paso(e, 0.01); };
+  const cortar = () => { e.teclas[0] = 32; for (let i = 0; i < 120; i++) J.paso(e, 1 / 60); e.teclas[0] = 0; };
+  e.pedidos = [{ id: 1, receta: 'ensalada', queda: 70, total: 75 }]; e.sigPedido = 999;
+  ir(3, 1, 0, -1); pulsar(); assert.equal(c.lleva.tipo, 'lechuga');
+  ir(1, 2, -1, 0); pulsar(); cortar(); pulsar(); assert.ok(c.lleva.cortado, 'lechuga cortada');
+  ir(5, 2, 0, 1); pulsar(); assert.deepEqual(c.lleva.cosas, ['lechuga'], 'con un ingrediente listo, coger plato lo emplata');
+  ir(1, 4, -1, 0); pulsar(); assert.equal(e.cosas['0,4'].tipo, 'plato', 'plato al mostrador');
+  ir(1, 1, 0, -1); pulsar(); assert.equal(c.lleva.tipo, 'tomate');
+  ir(1, 2, -1, 0); pulsar(); cortar(); pulsar();
+  ir(1, 4, -1, 0); pulsar(); assert.deepEqual(e.cosas['0,4'].cosas, ['lechuga', 'tomate']);
+  pulsar(); assert.equal(c.lleva.tipo, 'plato');
+  ir(11, 1, 1, 0); pulsar();
+  assert.ok(e.puntos >= 20, `entregado: ${e.puntos}`); assert.equal(e.pedidos.length, 0);
+  // carne: cortar y al fogón; se hace y luego se quema
+  ir(8, 1, 0, -1); pulsar(); ir(1, 2, -1, 0); pulsar(); cortar(); pulsar();
+  ir(11, 4, 1, 0); pulsar(); assert.equal(e.cosas['12,4'].tipo, 'carne');
+  for (let i = 0; i < 60 * 7; i++) J.paso(e, 1 / 60); assert.ok(J._.listo(e.cosas['12,4']), 'hecha');
+  for (let i = 0; i < 60 * 7; i++) J.paso(e, 1 / 60); assert.ok(!J._.listo(e.cosas['12,4']), 'quemada');
+  e.reloj = 0.01; J.paso(e, 0.1); assert.ok(J.fin(e));
+});

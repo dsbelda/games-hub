@@ -556,6 +556,35 @@ M.onda = (() => {
   L.R(19, 21, 3, 3, P.tinta);
   return L;
 })();
+M.mente = (() => {
+  const L = lienzo(40, 30); L.fondo(P.noche, P.nocheO);
+  for (const [x, n, c] of [[5, '12', P.blanco], [15, '37', P.blanco], [25, '85', P.sol]]) { L.B(x, 7, 10, 14, c); L.T(n, x + 2, 11, P.tinta); }
+  L.R(4, 24, 3, 2, P.tomate); L.R(9, 24, 3, 2, P.tomate); L.R(30, 3, 2, 2, P.sol); L.R(34, 4, 1, 1, P.sol);
+  return L;
+})();
+M.bomba = (() => {
+  const L = lienzo(40, 30); L.fondo('#4a4560', P.noche);
+  L.B(4, 6, 32, 20, P.gris); L.B(6, 8, 13, 7, P.tinta); L.R(7, 9, 11, 5, P.tinta);
+  L.T('1:23', 7, 9, P.tomate);
+  for (const [k, c] of [[0, P.tomate], [1, P.cielo], [2, P.sol]]) L.R(22, 9 + k * 3, 11, 2, c);
+  L.DB(12, 21, 3, P.tomate); L.R(26, 19, 3, 3, P.blanco); L.R(31, 19, 3, 3, P.blanco);
+  return L;
+})();
+M.isla = (() => {
+  const L = lienzo(40, 30); L.fondo(P.cielo, P.cieloO);
+  const forma = [[2, 3], [1, 2, 3, 4], [0, 1, 2, 3, 4, 5], [0, 1, 2, 3, 4, 5], [1, 2, 3, 4], [2, 3]];
+  forma.forEach((cs, f) => cs.forEach((c) => { const x = 6 + c * 5, y = 1 + f * 5; const s = (f * 7 + c * 3) % 9; if (s === 0) return; L.B(x, y, 5, 5, s < 3 ? '#8fc6ff' : '#e6c98f'); }));
+  L.R(17, 12, 2, 2, P.tomate); L.R(22, 17, 2, 2, P.verde); L.R(27, 7, 2, 2, P.sol);
+  return L;
+})();
+M.cocina = (() => {
+  const L = lienzo(40, 30); L.R(0, 0, 40, 30, '#f3eddc');
+  for (let x = 0; x < 40; x += 4) L.R(x, 0, 4, 4, x % 8 ? '#c08a5a' : '#9a5b2e');
+  L.R(0, 26, 40, 4, '#9a5b2e'); L.B(14, 12, 12, 6, '#6b7088'); L.DB(20, 15, 2, P.tomate);
+  L.DB(9, 9, 3, P.cielo); L.R(7, 4, 5, 3, P.blanco); L.DB(30, 19, 3, P.tomate); L.R(28, 14, 5, 3, P.blanco);
+  L.R(3, 6, 3, 3, P.verde); L.R(34, 6, 3, 3, P.sol);
+  return L;
+})();
 // avatares: 12 personajes de 12×12 (piel, pelo, ropa y un detalle)
 const AVATARES = [
   ['#f2c9a0', '#6b3f1d', P.tomate, 'nada'], ['#c98e5f', P.tinta, P.cielo, 'gafas'], ['#f5d6b8', P.sol, P.menta, 'lazo'],
