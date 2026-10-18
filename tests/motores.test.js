@@ -330,3 +330,23 @@ test('Letras revueltas: tableros con palabras, validación de rutas, CPUs y 3 ro
   assert.ok(f && f.ganadores.length);
   assert.ok(e.puntos[1] > 0);
 });
+
+test('Ruleta del saber: partidas entre CPUs, no se filtra la respuesta y el tiempo cuenta como fallo', () => {
+  const J = JUEGOS.saber;
+  let dificil = 0, normal = 0;
+  for (let k = 0; k < 40; k++) {
+    const { f } = jugar(J, 2, k % 2 ? ['normal', 'dificil'] : ['dificil', 'normal'], k + 7);
+    if (f.ganadores.length !== 1) continue;
+    if ((k % 2 ? 1 : 0) === f.ganadores[0]) dificil++; else normal++;
+  }
+  assert.ok(dificil > normal, `difícil ${dificil} – normal ${normal}`);
+  const e = J.nuevo(3);
+  assert.equal(J.accion(e, 1, { tipo: 'girar' }).ok, false, 'no es su turno');
+  do { e.fase = 'girar'; J.accion(e, 0, { tipo: 'girar' }); } while (e.fase !== 'responder');
+  const v = J.vista(e, 0);
+  assert.equal(v.preg.opciones.length, 4);
+  assert.ok(!('correcta' in v.preg), 'la correcta no viaja');
+  J.tiempo(e, e.hasta + 1);
+  assert.equal(e.turno, 1, 'se acabó el tiempo: pasa el turno');
+  assert.equal(e.ultima.bien, false);
+});

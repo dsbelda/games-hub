@@ -440,6 +440,15 @@ M.revueltas = (() => {
   L.R(7, 5, 9, 1, P.tomate); L.R(16, 5, 1, 8, P.tomate); L.R(16, 13, 9, 1, P.tomate);
   return L;
 })();
+M.saber = (() => {
+  const L = lienzo(40, 30); L.fondo(P.cielo, P.cieloO);
+  const cols = [P.cielo, P.sol, P.verde, P.uva, '#ff9f2e', P.rosa, P.tomate];
+  L.D(14, 14, 11, P.tinta);
+  for (let y = -10; y <= 10; y++) for (let x = -10; x <= 10; x++) if (x * x + y * y <= 100) { const a = (Math.atan2(y, x) + Math.PI) / (2 * Math.PI); L.R(14 + x, 14 + y, 1, 1, cols[Math.floor(a * 7) % 7]); }
+  L.D(14, 14, 2, P.blanco); L.R(13, 1, 3, 3, P.tinta);
+  L.B(28, 6, 10, 18, P.blanco); L.R(31, 9, 4, 1, P.tinta); L.R(34, 10, 1, 3, P.tinta); L.R(32, 13, 2, 2, P.tinta); L.R(32, 17, 2, 2, P.tinta);
+  return L;
+})();
 // avatares: 12 personajes de 12×12 (piel, pelo, ropa y un detalle)
 const AVATARES = [
   ['#f2c9a0', '#6b3f1d', P.tomate, 'nada'], ['#c98e5f', P.tinta, P.cielo, 'gafas'], ['#f5d6b8', P.sol, P.menta, 'lazo'],

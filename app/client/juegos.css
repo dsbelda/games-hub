@@ -643,3 +643,33 @@ button.st-celda:hover { background: #ffe2da; color: var(--tinta); }
 .rv-mini { display: grid; grid-template-columns: repeat(4, 28px); gap: 3px; justify-content: center; margin: 8px auto; }
 .rv-mini span { display: grid; place-items: center; height: 28px; background: var(--carta); color: var(--carta-fg); border: 2px solid var(--tinta); font-family: Silkscreen, monospace; }
 @media (max-width: 700px) { .rv-cuerpo { grid-template-columns: 1fr; } .rv-mias { max-height: 140px; } }
+
+/* ===== Ruleta del saber ===== */
+.sb-jugadores { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+.sb-jug { display: flex; flex-direction: column; gap: 4px; padding: 8px 10px; border: var(--linea); background: var(--sup); min-width: 150px; }
+.sb-jug.activo { background: var(--pastel-sol); box-shadow: var(--sombra-s); }
+.sb-pjs { display: flex; gap: 3px; }
+.sb-pj { width: 24px; height: 24px; display: grid; place-items: center; font-size: .85rem; border: 2px solid var(--borde); background: var(--claro); filter: grayscale(1); opacity: .4; }
+.sb-pj.si { background: var(--c); filter: none; opacity: 1; animation: rv-entra .4s; }
+.sb-barra { display: flex; gap: 3px; } .sb-barra i { flex: 1; height: 6px; border: 2px solid var(--borde); background: var(--claro); } .sb-barra i.si { background: var(--sol); }
+.sb-centro-juego { display: flex; flex-direction: column; align-items: center; gap: 14px; min-height: 340px; }
+.sb-rueda { position: relative; width: min(300px, 80vw); aspect-ratio: 1; }
+.sb-disco { position: absolute; inset: 0; border-radius: 50%; border: 6px solid var(--tinta); box-shadow: 6px 6px 0 rgba(30, 27, 46, .3); transition: transform 1.8s cubic-bezier(.15, .7, .2, 1); }
+.sb-sector { position: absolute; left: 50%; top: 0; height: 50%; width: 2.6rem; margin-left: -1.3rem; transform-origin: 50% 100%; text-align: center; font-size: clamp(1.2rem, 5vw, 1.8rem); padding-top: 9%; }
+.sb-flecha { position: absolute; left: 50%; top: -14px; margin-left: -12px; border: 12px solid transparent; border-top: 22px solid var(--tinta); z-index: 2; }
+.sb-centro { position: absolute; left: 50%; top: 50%; width: 46px; height: 46px; margin: -23px; border-radius: 50%; background: var(--carta); border: 5px solid var(--tinta); }
+.sb-elige { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+.sb-elige .btn { background: var(--c); color: var(--tinta); }
+.sb-tarjeta { position: relative; width: min(620px, 100%); padding: 16px; border: var(--linea); border-top: 12px solid var(--c); background: var(--sup); box-shadow: var(--sombra); animation: rv-entra .3s; }
+.sb-tarjeta .fi-reloj { position: absolute; right: 12px; top: 10px; }
+.sb-cat { font-family: Silkscreen, monospace; font-size: .85rem; }
+.sb-tarjeta h3 { margin: 10px 0; font-size: 1.25rem; line-height: 1.35; }
+.sb-tiempo { height: 6px; background: var(--claro); margin-bottom: 12px; } .sb-tiempo i { display: block; height: 100%; background: var(--c); animation: sb-mengua linear forwards; transform-origin: left; }
+@keyframes sb-mengua { to { transform: scaleX(0); } }
+.sb-ops { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.sb-ops .btn { min-height: 52px; white-space: normal; height: auto; padding: 8px; }
+.sb-ops .btn.elegida { background: var(--sol); color: var(--tinta); }
+.sb-veredicto { position: fixed; left: 50%; top: 22%; transform: translateX(-50%); z-index: 50; width: min(420px, 90vw); display: flex; flex-direction: column; gap: 6px; padding: 16px 18px; border: var(--linea); box-shadow: var(--sombra); color: #fff; text-align: center; animation: rv-entra .25s; transition: opacity .4s; }
+.sb-veredicto.bien { background: var(--verde); } .sb-veredicto.mal { background: var(--tomate); }
+.sb-veredicto b { font-family: Silkscreen, monospace; font-size: 1.05rem; } .sb-veredicto.fuera { opacity: 0; }
+@media (max-width: 560px) { .sb-ops { grid-template-columns: 1fr; } .sb-jug { min-width: 0; flex: 1 1 140px; } }
