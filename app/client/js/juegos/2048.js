@@ -49,14 +49,16 @@ window.JUEGO = {
     const TECLAS = { ArrowUp: 'arriba', w: 'arriba', ArrowDown: 'abajo', s: 'abajo', ArrowLeft: 'izquierda', a: 'izquierda', ArrowRight: 'derecha', d: 'derecha' };
     document.addEventListener('keydown', (e) => { if (TECLAS[e.key] && !e.target.matches('input')) { e.preventDefault(); mover(TECLAS[e.key]); } });
     let toque = null;
-    tablero.addEventListener('touchstart', (e) => { toque = [e.touches[0].clientX, e.touches[0].clientY]; }, { passive: true });
-    tablero.addEventListener('touchmove', (e) => e.preventDefault(), { passive: false });
-    tablero.addEventListener('touchend', (e) => {
+    // deslizar con el dedo o arrastrar con el ratón (eventos de puntero: valen para los dos)
+    tablero.style.touchAction = 'none';
+    tablero.addEventListener('pointerdown', (e) => { toque = [e.clientX, e.clientY]; try { tablero.setPointerCapture(e.pointerId); } catch (x) { /* nada */ } });
+    tablero.addEventListener('pointerup', (e) => {
       if (!toque) return;
-      const dx = e.changedTouches[0].clientX - toque[0], dy = e.changedTouches[0].clientY - toque[1];
+      const dx = e.clientX - toque[0], dy = e.clientY - toque[1];
       if (Math.max(Math.abs(dx), Math.abs(dy)) > 25) mover(Math.abs(dx) > Math.abs(dy) ? (dx > 0 ? 'derecha' : 'izquierda') : (dy > 0 ? 'abajo' : 'arriba'));
       toque = null;
     });
+    tablero.addEventListener('pointercancel', () => { toque = null; });
     const guardada = UI.leer('2048', null);
     if (guardada && Array.isArray(guardada.g)) { ({ g, puntos, ganado } = guardada); pintar(); } else nueva();
   },

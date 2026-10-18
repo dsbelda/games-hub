@@ -18,7 +18,7 @@ window.JUEGO = {
     caja.append(marcador, lienzo, flechas, empezar, el('p', 'suave', 'Flechas o WASD; en el móvil, desliza el dedo. Espacio: pausa.'));
     raiz.replaceChildren(caja);
 
-    let cuerpo, dir, siguiente, comida, puntos, vivo = false, pausa = false, temporizador;
+    let motivo = '', cuerpo, dir, siguiente, comida, puntos, vivo = false, pausa = false, temporizador;
     let record = UI.leer('serpiente', 0);
     const libre = () => { let p; do { p = [Math.floor(Math.random() * N), Math.floor(Math.random() * N)]; } while (cuerpo.some(([x, y]) => x === p[0] && y === p[1])); return p; };
     function reiniciar() {
@@ -30,7 +30,10 @@ window.JUEGO = {
       if (pausa) return;
       dir = siguiente;
       const cabeza = [cuerpo[0][0] + dir[0], cuerpo[0][1] + dir[1]];
-      if (cabeza[0] < 0 || cabeza[1] < 0 || cabeza[0] >= N || cabeza[1] >= N || cuerpo.some(([x, y]) => x === cabeza[0] && y === cabeza[1])) return morir();
+      if (cabeza[0] < 0 || cabeza[1] < 0 || cabeza[0] >= N || cabeza[1] >= N) { motivo = '¡Contra la pared!'; return morir(); }
+      // la punta de la cola se aparta en este mismo paso (salvo si se come): pisarla no es morderse
+      const come = cabeza[0] === comida[0] && cabeza[1] === comida[1];
+      if ((come ? cuerpo : cuerpo.slice(0, -1)).some(([x, y]) => x === cabeza[0] && y === cabeza[1])) { motivo = '¡Te has mordido!'; return morir(); }
       cuerpo.unshift(cabeza);
       if (cabeza[0] === comida[0] && cabeza[1] === comida[1]) {
         puntos++; comida = libre();
@@ -54,7 +57,7 @@ window.JUEGO = {
         cuerpo.forEach(([x, y], i) => { g.fillStyle = i ? (i % 2 ? '#e2b33c' : '#c9973a') : '#f0c35a'; g.fillRect(x * 16 + 1, y * 16 + 1, 14, 14); });
         g.fillStyle = '#1a0f08'; const [hx, hy] = cuerpo[0]; g.fillRect(hx * 16 + 4, hy * 16 + 4, 3, 3); g.fillRect(hx * 16 + 9, hy * 16 + 4, 3, 3);
       }
-      marcador.textContent = `Puntos: ${puntos || 0} · Récord: ${record}${pausa ? ' · PAUSA' : ''}${cuerpo && !vivo ? ' · ¡Te has mordido!' : ''}`;
+      marcador.textContent = `Puntos: ${puntos || 0} · Récord: ${record}${pausa ? ' · PAUSA' : ''}${cuerpo && !vivo && motivo ? ' · ' + motivo : ''}`;
     }
     const TECLAS = { ArrowUp: 'arriba', w: 'arriba', ArrowDown: 'abajo', s: 'abajo', ArrowLeft: 'izquierda', a: 'izquierda', ArrowRight: 'derecha', d: 'derecha' };
     document.addEventListener('keydown', (e) => {

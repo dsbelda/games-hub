@@ -35,7 +35,7 @@ window.JUEGO = {
     function actualizar(dt) {
       if (fase === 'listo' || fase === 'fin') return;
       const arriba = L.teclas.has('ArrowUp') || tocaArriba, abajo = L.teclas.has('ArrowDown') || tocaAbajo;
-      cohete = (L.teclas.has('Space') || cohete && tocaCohete) && gas > 0 && val('cohete') > 0;
+      cohete = (L.teclas.has('Space') || tocaCohete) && gas > 0 && val('cohete') > 0;
       if (fase === 'rampa') {
         p.s += val('rampa') * K.empuje * dt; p.x += p.s * dt; p.y = rampaY(p.x); p.ang = p.x < 140 ? Math.atan((K.alto - 10) / 140) : -0.46;
         if (p.x >= 160) { fase = 'aire'; p.a = -0.46; }
@@ -92,7 +92,7 @@ window.JUEGO = {
       }
     }
     c.addEventListener('pointerdown', (e) => { if (fase === 'listo') { fase = 'rampa'; pintarTienda(); return; } const q = punto(e); if (q.y < H / 2) tocaArriba = true; else tocaAbajo = true; });
-    c.addEventListener('pointerup', () => { tocaArriba = tocaAbajo = false; });
+    for (const n of ['pointerup', 'pointercancel', 'pointerleave']) c.addEventListener(n, () => { tocaArriba = tocaAbajo = false; });
     function pintar() {
       const camX = p.x - 100, camY = Math.min(SUELO - H + 20, p.y - H / 2);
       const alt = Math.max(0, SUELO - p.y);
