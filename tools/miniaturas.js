@@ -528,6 +528,34 @@ M.mentiroso = (() => {
   L.R(31, 4, 2, 8, P.blanco); L.R(31, 13, 2, 2, P.blanco);
   return L;
 })();
+M.clave = (() => {
+  const L = lienzo(40, 30); L.fondo(P.noche, P.nocheO);
+  const c = [P.tomate, '#f4ead2', P.cielo, '#f4ead2', P.tomate, '#f4ead2', P.tinta, P.cielo, '#f4ead2', P.cielo, '#f4ead2', P.tomate, '#f4ead2', '#c9b48e', P.cielo];
+  c.forEach((col, k) => { const x = 3 + (k % 5) * 7, y = 4 + Math.floor(k / 5) * 7; L.B(x, y, 6, 5, col); if (col === '#f4ead2') L.R(x + 1, y + 2, 4, 1, '#9a8a6a'); });
+  return L;
+})();
+M.farol = (() => {
+  const L = lienzo(40, 30); L.fondo(P.uva, P.uvaO);
+  L.B(5, 5, 30, 9, P.papel); L.R(8, 8, 20, 1, P.tinta); L.R(8, 10, 14, 1, P.tinta);
+  L.B(5, 16, 30, 4, P.blanco); L.B(5, 21, 30, 4, P.sol); L.R(7, 22, 3, 2, P.verde);
+  L.R(30, 1, 6, 3, P.rosa); L.R(32, 4, 2, 1, P.rosaO);
+  return L;
+})();
+M.tabu = (() => {
+  const L = lienzo(40, 30); L.fondo(P.tomate, P.tomateO);
+  L.B(10, 3, 20, 24, '#fff1c7'); L.R(12, 6, 16, 2, P.tinta); L.R(12, 9, 16, 1, P.tomate);
+  for (let k = 0; k < 5; k++) L.R(14, 12 + k * 3, 12, 1, P.tomateO);
+  L.D(32, 22, 4, P.sol); L.R(30, 21, 5, 2, P.tinta);
+  return L;
+})();
+M.onda = (() => {
+  const L = lienzo(40, 30); L.fondo(P.menta, P.mentaO);
+  for (let y = -12; y <= 0; y++) for (let x = -14; x <= 14; x++) if (x * x + y * y <= 196) L.R(20 + x, 22 + y, 1, 1, P.noche);
+  for (let y = -12; y <= 0; y++) for (let x = 2; x <= 8; x++) if (x * x + y * y <= 160 && x * x + y * y > 9) L.R(20 + x, 22 + y, 1, 1, x < 4 ? P.verde : x < 6 ? P.sol : P.tomate);
+  for (let k = 0; k < 10; k++) L.R(20 - Math.round(k * 0.6), 22 - k, 1, 1, P.blanco);
+  L.R(19, 21, 3, 3, P.tinta);
+  return L;
+})();
 // avatares: 12 personajes de 12×12 (piel, pelo, ropa y un detalle)
 const AVATARES = [
   ['#f2c9a0', '#6b3f1d', P.tomate, 'nada'], ['#c98e5f', P.tinta, P.cielo, 'gafas'], ['#f5d6b8', P.sol, P.menta, 'lazo'],

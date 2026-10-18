@@ -516,3 +516,62 @@ test('Mentiroso de dados: apuestas que suben, comodines, dudar y fin', () => {
   J.tiempo(e, e.hasta + 1); assert.equal(e.revelado, null);
   for (let k = 0; k < 10; k++) { const e2 = J.nuevo(4); let s = 0; while (!J.fin(e2) && s++ < 5000) { if (e2.revelado) { J.accion(e2, 0, { tipo: 'seguir' }); continue; } const t = J.turno(e2); assert.ok(J.accion(e2, t, J.bot(e2, t, 'dificil', Math.random)).ok); } assert.ok(J.fin(e2)); }
 });
+
+test('Palabras en clave: solo los jefes ven colores, pistas válidas, turnos y asesino', () => {
+  const J = JUEGOS.clave;
+  const e = J.nuevo(4);
+  assert.ok(J.vista(e, 2).colores.every((c) => c === -1), 'un adivinador no ve colores');
+  assert.ok(J.vista(e, 0).colores.every((c) => c >= 0), 'el jefe sí');
+  assert.equal(J.accion(e, 0, { tipo: 'pista', palabra: e.palabras[0], n: 1 }).ok, false, 'no vale una palabra del tablero');
+  assert.ok(J.accion(e, 0, { tipo: 'pista', palabra: 'xilófono', n: 2 }).ok);
+  assert.equal(J.accion(e, 1, { tipo: 'tocar', i: 0 }).ok, false, 'no es su equipo');
+  const mia = e.colores.findIndex((c) => c === 0);
+  assert.ok(J.accion(e, 2, { tipo: 'tocar', i: mia }).ok); assert.equal(e.turno, 0, 'acierta y sigue');
+  const neutral = e.colores.findIndex((c, i) => c === 2 && !e.abiertas[i]);
+  assert.ok(J.accion(e, 2, { tipo: 'tocar', i: neutral }).ok); assert.equal(e.turno, 1, 'neutral: pasa el turno');
+  assert.ok(J.accion(e, 1, { tipo: 'pista', palabra: 'zzz', n: 1 }).ok);
+  assert.ok(J.accion(e, 3, { tipo: 'tocar', i: e.colores.indexOf(3) }).ok);
+  assert.deepEqual(J.fin(e).ganadores, [0, 2], 'tocar al asesino da la partida al otro equipo');
+});
+
+test('Tabú: palabras prohibidas automáticas, aciertos escritos, tarjeta oculta al equipo que adivina y fin', () => {
+  const J = JUEGOS.tabu;
+  const e = J.nuevo(4);
+  assert.equal(e.describe, 0);
+  assert.ok(J.accion(e, 0, { tipo: 'empezar' }).ok);
+  assert.equal(J.vista(e, 2).carta, null, 'su compañero no ve la tarjeta'); assert.ok(J.vista(e, 1).carta, 'el rival sí');
+  const [w, r] = require('../lib/juegos/fiesta2').TABU[e.carta];
+  assert.ok(J.accion(e, 0, { tipo: 'pista', texto: `es como un ${r[0]}` }).ok);
+  assert.equal(e.puntos[0], -1, 'tabú automático');
+  const w2 = require('../lib/juegos/fiesta2').TABU[e.carta][0];
+  assert.ok(J.accion(e, 2, { tipo: 'adivinar', texto: w2.toUpperCase() }).ok); assert.equal(e.puntos[0], 0, 'acierto escrito');
+  assert.ok(J.accion(e, 3, { tipo: 'tabu' }).ok); assert.equal(e.puntos[0], -1, 'el rival pita');
+  for (let k = 0; k < 20 && !J.fin(e); k++) { if (e.fase === 'listo') J.accion(e, e.describe, { tipo: 'empezar' }); J.tiempo(e, e.hasta + 1); }
+  assert.ok(J.fin(e)); void w;
+});
+
+test('En la onda: la aguja oculta, puntos por cercanía y rondas', () => {
+  const J = JUEGOS.onda;
+  const e = J.nuevo(3);
+  assert.equal(J.vista(e, 1).objetivo, null); assert.ok(J.vista(e, 0).objetivo >= 0);
+  e.objetivo = 50;
+  assert.ok(J.accion(e, 0, { tipo: 'pista', texto: 'una sopa' }).ok);
+  assert.ok(J.accion(e, 1, { tipo: 'dial', v: e.objetivo + 3, listo: true }).ok);
+  assert.ok(J.accion(e, 2, { tipo: 'dial', v: e.objetivo + 30, listo: true }).ok);
+  assert.deepEqual(e.resultado.pts, [2, 4, 0]);
+  while (!J.fin(e)) { J.tiempo(e, e.hasta + 1); }
+  assert.ok(J.fin(e));
+});
+
+test('Farol: definiciones inventadas, voto (no la propia) y puntos', () => {
+  const J = JUEGOS.farol;
+  const e = J.nuevo(3);
+  for (let j = 0; j < 3; j++) assert.ok(J.accion(e, j, { tipo: 'inventar', texto: `invento número ${j}` }).ok);
+  assert.equal(e.fase, 'votar'); assert.equal(e.opciones.length, 4);
+  const v = J.vista(e, 0); assert.ok(!JSON.stringify(v.opciones).includes('autor'));
+  const real = e.opciones.findIndex((o) => o.autor < 0), de1 = e.opciones.findIndex((o) => o.autor === 1), de0 = e.opciones.findIndex((o) => o.autor === 0);
+  assert.equal(J.accion(e, 0, { tipo: 'votar', o: de0 }).ok, false);
+  J.accion(e, 0, { tipo: 'votar', o: real }); J.accion(e, 1, { tipo: 'votar', o: de0 }); J.accion(e, 2, { tipo: 'votar', o: de1 });
+  assert.deepEqual(e.resultado.pts, [3, 1, 0]);
+  while (!J.fin(e)) J.tiempo(e, e.hasta + 1);
+});

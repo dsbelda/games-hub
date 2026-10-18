@@ -795,3 +795,39 @@ button.st-celda:hover { background: #ffe2da; color: var(--tinta); }
 .mt-cant { display: flex; align-items: center; gap: 10px; } .mt-cant b { font: 700 28px var(--pixel); min-width: 40px; text-align: center; }
 .mt-caras { display: flex; gap: 6px; flex-wrap: wrap; justify-content: center; }
 .mt-cara { border: 0; background: none; padding: 2px; cursor: pointer; } .mt-cara.sel .pc-dado { background: var(--sol); outline: 3px solid var(--tinta); }
+
+/* ===== Palabras en clave ===== */
+.cl-rejilla { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; width: min(680px, 100%); margin: 0 auto; }
+.cl-carta { min-height: 58px; padding: 6px 4px; border: var(--linea); background: #f4ead2; color: var(--tinta); font: 700 clamp(11px, 2.6vw, 15px) var(--texto); text-transform: uppercase; cursor: pointer; box-shadow: 0 4px 0 var(--borde); overflow-wrap: anywhere; }
+.cl-carta:disabled { cursor: default; }
+.cl-carta.rojo { border-color: #ff5a36; box-shadow: 0 4px 0 #ff5a36; } .cl-carta.azul { border-color: #4d7cfe; box-shadow: 0 4px 0 #4d7cfe; }
+.cl-carta.asesino { border-color: #1e1b2e; box-shadow: 0 4px 0 #1e1b2e; outline: 2px dashed #1e1b2e; }
+.cl-carta.abierta { color: #fff; text-decoration: line-through; opacity: .92; }
+.cl-carta.abierta.rojo { background: #ff5a36; } .cl-carta.abierta.azul { background: #4d7cfe; } .cl-carta.abierta.neutral { background: #c9b48e; color: var(--tinta); } .cl-carta.abierta.asesino { background: #1e1b2e; }
+.cl-carta.ultima { animation: rv-entra .3s; }
+.cl-eq.rojo.activo { background: #ff5a36; color: #fff; } .cl-eq.azul.activo { background: #4d7cfe; color: #fff; }
+.cl-hist { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; margin-top: 8px; }
+.cl-hist span { font-size: 13px; padding: 2px 8px; border: 2px solid var(--borde); } .cl-hist .rojo { background: #ffe0d8; color: #1e1b2e; } .cl-hist .azul { background: #dde6ff; color: #1e1b2e; }
+
+/* ===== Tabú ===== */
+.tb-carta { width: min(300px, 90%); margin: 0 auto; border: var(--linea); background: #fff1c7; color: var(--tinta); box-shadow: var(--sombra); text-align: center; padding: 10px; }
+.tb-carta b { font: 700 22px var(--pixel); display: block; padding-bottom: 6px; border-bottom: 3px solid var(--tomate); }
+.tb-carta ul { list-style: none; padding: 0; margin: 8px 0 0; } .tb-carta li { padding: 3px; font-weight: 700; color: #c93a1c; text-transform: uppercase; }
+.tb-form { width: min(560px, 100%); margin: 8px auto; gap: 8px; }
+.tb-feed { max-height: 220px; } .tb-feed .tabu { color: var(--tomate); }
+
+/* ===== En la onda ===== */
+.on-dial { display: block; width: min(460px, 100%); margin: 0 auto; }
+.on-escala { display: flex; justify-content: space-between; width: min(460px, 100%); margin: 0 auto; }
+.on-escala b { background: var(--negro); color: var(--sol); padding: 4px 8px; font-size: 14px; }
+.on-pista { text-align: center; font: 700 22px var(--texto); margin: 6px 0; }
+.on-rango { display: block; width: min(460px, 100%); margin: 6px auto; accent-color: var(--tomate); height: 32px; }
+
+/* ===== Farol ===== */
+.fa-palabra { text-align: center; } .fa-palabra small { display: block; } .fa-palabra b { font: 700 clamp(26px, 6vw, 40px) var(--pixel); color: var(--tomate); text-shadow: 3px 3px 0 var(--borde); }
+.fa-form { display: flex; flex-direction: column; gap: 8px; width: min(560px, 100%); margin: 0 auto; }
+.fa-form textarea { font: inherit; padding: 10px; border: var(--linea); background: var(--sup); color: var(--fg); resize: vertical; }
+.fa-ops { display: flex; flex-direction: column; gap: 8px; width: min(620px, 100%); margin: 0 auto; }
+.fa-op { text-align: left; padding: 10px 12px; border: var(--linea); background: var(--sup); color: var(--fg); font: 600 15px var(--texto); cursor: pointer; box-shadow: var(--sombra-s); }
+.fa-op.sel { background: var(--sol); color: var(--tinta); } .fa-op.mia { opacity: .55; cursor: default; }
+.fa-op.res { cursor: default; } .fa-op.res p { margin: 0 0 4px; } .fa-op.real { background: var(--pastel-menta); }
