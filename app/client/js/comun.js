@@ -247,5 +247,13 @@
   }
   botonTema();
 
-  cargarCuenta().then((c) => { pintarCabecera(c); botonTema(); });
+  cargarCuenta().then((c) => {
+    pintarCabecera(c); botonTema();
+    // con cuenta: amigos, mensajes e invitaciones (socket.io + social.js)
+    if (c.usuario && !document.getElementById('js-social')) {
+      const s1 = el('script'); s1.src = '/socket.io/socket.io.js';
+      s1.onload = () => { const s2 = el('script'); s2.id = 'js-social'; s2.src = `/js/social.js?v=${V}`; document.body.append(s2); };
+      document.body.append(s1);
+    }
+  });
 })();

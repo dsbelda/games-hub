@@ -11,6 +11,7 @@ const { CATALOGO } = require('./lib/catalogo');
 const JUEGOS = require('./lib/juegos');
 const { Salas } = require('./lib/salas');
 const { Cuentas } = require('./lib/cuentas');
+const { Social } = require('./lib/social');
 
 const COOKIE = 'games_id';
 const SESION = 'games_sesion';
@@ -65,6 +66,7 @@ function cubo(max, perSec) {
 
 function start({ port = 3400, host = '127.0.0.1', retardoCpu = 700, baseDatos = path.join(__dirname, 'data', 'games.db') } = {}) {
   const cuentas = new Cuentas(baseDatos);
+  const social = new Social(cuentas.db);
   const app = express();
   app.set('trust proxy', false);
   app.disable('x-powered-by');
@@ -83,6 +85,20 @@ function start({ port = 3400, host = '127.0.0.1', retardoCpu = 700, baseDatos = 
     }),
   });
   const emitir = (id, ev, d) => { for (const s of sockets.get(id) || []) s.emit(ev, d); };
+  // --- parte social: sockets por cuenta, presencia y avisos ---
+  const porUsuario = new Map(); // id de cuenta -> Set de sockets
+  const avisarUsuario = (uid, d) => io.to('u:' + uid).emit('social', d);
+  const NOMBRE_JUEGO = Object.fromEntries(CATALOGO.map((j) => [j.id, j.nombre]));
+  function presencia(uid) {
+    const conectado = (porUsuario.get(uid)?.size || 0) > 0;
+    let jugando = null;
+    for (const p of salas.jugadores.values()) {
+      if (p.usuario?.id !== uid || !p.sala) continue;
+      const s = salas.salas.get(p.sala); if (s) jugando = { juego: s.juego, nombre: NOMBRE_JUEGO[s.juego], fase: s.fase };
+    }
+    return { conectado, jugando };
+  }
+  const avisarAmigos = (uid) => { for (const a of social.amigos(uid)) if (a.estado === 'amigo') avisarUsuario(a.id, { tipo: 'presencia', id: uid }); };
   function repartir(sala) {
     for (const a of sala.asientos) if (!a.bot || a.sustituto) emitir(a.id, 'sala', salas.vista(sala, a.id));
   }
@@ -94,7 +110,8 @@ function start({ port = 3400, host = '127.0.0.1', retardoCpu = 700, baseDatos = 
   const rapido = setInterval(() => { pasos++; salas.tickRapido(1 / 30, pasos % 3 !== 0); }, 1000 / 30);
   rapido.unref();
   cuentas.limpiar();
-  setInterval(() => cuentas.limpiar(), 86400000).unref();
+  social.limpiarViejos();
+  setInterval(() => { cuentas.limpiar(); social.limpiarViejos(); }, 86400000).unref();
 
   // --- HTTP --------------------------------------------------------------------------------
   app.use((req, res, next) => {
@@ -188,8 +205,28 @@ function start({ port = 3400, host = '127.0.0.1', retardoCpu = 700, baseDatos = 
   }));
   api.get('/cuenta/datos', (req, res) => {
     if (!req.usuario) return res.status(401).json({ ok: false, error: 'Tienes que entrar con tu cuenta' });
-    res.set('Content-Disposition', 'attachment; filename="mis-datos-dsbelda-games.json"').json(cuentas.datos(req.usuario.id));
+    res.set('Content-Disposition', 'attachment; filename="mis-datos-dsbelda-games.json"').json({ ...cuentas.datos(req.usuario.id), social: social.datos(req.usuario.id) });
   });
+  // --- amigos, mensajes e invitaciones ---
+  const conAviso = (fn) => conCuenta((req) => { const r = fn(req); if (r.ok && r.para) { avisarUsuario(r.para, { tipo: r.aceptada ? 'aceptada' : 'amistad', de: req.usuario.id }); avisarUsuario(req.usuario.id, { tipo: 'amistad' }); } return r; });
+  const idDe = (v) => (Number.isInteger(Number(v)) ? Number(v) : -1);
+  api.get('/social', conCuenta((req) => {
+    const yo = req.usuario.id;
+    return { ok: true, amigos: social.amigos(yo).map((a) => ({ ...a, ...(a.estado === 'amigo' ? presencia(a.id) : {}) })), noLeidos: social.noLeidos(yo), bloqueados: social.bloqueados(yo) };
+  }));
+  api.post('/social/solicitar', conAviso((req) => social.solicitar(req.usuario.id, req.body.nombre)));
+  api.post('/social/aceptar', conAviso((req) => social.aceptar(req.usuario.id, idDe(req.body.id))));
+  api.post('/social/quitar', conAviso((req) => social.quitar(req.usuario.id, idDe(req.body.id))));
+  api.post('/social/bloquear', conCuenta((req) => social.bloquear(req.usuario.id, idDe(req.body.id), req.body.on !== false)));
+  api.get('/social/chat/:id', conCuenta((req) => { const r = { ok: true, mensajes: social.conversacion(req.usuario.id, idDe(req.params.id), req.query.antes) }; avisarUsuario(req.usuario.id, { tipo: 'leidos' }); return r; }));
+  const entregar = (req, r) => { if (r.ok) { avisarUsuario(r.mensaje.para, { tipo: 'mensaje', mensaje: r.mensaje, nombre: req.usuario.nombre }); avisarUsuario(req.usuario.id, { tipo: 'enviado', mensaje: r.mensaje }); } return r; };
+  api.post('/social/enviar', conCuenta((req) => entregar(req, social.enviar(req.usuario.id, idDe(req.body.id), req.body.texto))));
+  api.post('/social/invitar', conCuenta((req) => {
+    // solo se invita a la sala en la que estás de verdad
+    const s = salas.salaDe(parseCookie(req.headers.cookie)[COOKIE]);
+    if (!s) return { ok: false, error: 'Tienes que estar en una sala para invitar' };
+    return entregar(req, social.enviar(req.usuario.id, idDe(req.body.id), `¡Te invito a jugar a ${NOMBRE_JUEGO[s.juego]}!`, { juego: s.juego, sala: s.code }));
+  }));
   api.post('/favorito', conCuenta((req) => (CATALOGO.some((j) => j.id === req.body.juego) ? cuentas.favorito(req.usuario.id, req.body.juego, !!req.body.on) : { ok: false, error: 'Ese juego no existe' })));
   api.post('/record', conCuenta((req) => cuentas.record(req.usuario.id, String(req.body.juego), req.body.valor)));
   app.use('/api', api);
@@ -214,6 +251,14 @@ function start({ port = 3400, host = '127.0.0.1', retardoCpu = 700, baseDatos = 
     if (!sockets.has(id)) sockets.set(id, new Set());
     sockets.get(id).add(sock);
     salas.identificar(id, sock.data.usuario);
+    const uid = sock.data.usuario?.id;
+    if (uid) {
+      sock.join('u:' + uid);
+      if (!porUsuario.has(uid)) porUsuario.set(uid, new Set());
+      const era = porUsuario.get(uid).size; porUsuario.get(uid).add(sock);
+      if (!era) avisarAmigos(uid);
+      sock.on('disconnect', () => { const set = porUsuario.get(uid); set?.delete(sock); if (set && !set.size) { porUsuario.delete(uid); avisarAmigos(uid); } });
+    }
     const permitido = cubo(60, 30); // trazos del dibujo y teclas de los juegos en tiempo real llegan seguidos
     const on = (ev, fn) => sock.on(ev, (d, cb) => {
       if (typeof cb !== 'function') cb = () => {};

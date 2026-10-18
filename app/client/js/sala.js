@@ -31,7 +31,10 @@
   });
 
   // --- pantallas -----------------------------------------------------------------------------
+  // la lista de amigos llega aparte: si cambia, se repinta la sala de espera (para los botones de invitar)
+  window.addEventListener('social-cambio', () => { if (est.sala?.fase === 'espera') pintar(); });
   function pintar() {
+    if (window.Social) window.Social.salaActual = est.sala?.fase === 'espera' ? est.sala.code : null;
     if (est.sala === undefined || est.yo === null) { raiz.replaceChildren(el('p', 'suave centro', 'Conectando…')); return; }
     if (est.otra) return pantallaOtra();
     if (!est.yo.nombre) return pantallaApodo();
@@ -144,6 +147,14 @@
     const inp = el('input'); inp.readOnly = true; inp.value = enlace; inp.className = 'grow'; inp.setAttribute('aria-label', 'Enlace de invitación');
     fe.append(inp, boton('Copiar', () => { navigator.clipboard?.writeText(enlace).then(() => aviso('Enlace copiado'), () => inp.select()); }));
     a.append(fe);
+    // con cuenta: invitar a amigos conectados (les llega un aviso con «Unirme»)
+    if (window.Social) {
+      const conectados = window.Social.amigosConectados();
+      const fi = el('div', 'fila so-invitar');
+      if (conectados.length) { fi.append(el('span', 'suave', 'Invitar:')); for (const amigo of conectados) fi.append(boton(`➕ ${amigo.nombre}`, () => window.Social.invitar(amigo.id), 'mini')); }
+      fi.append(boton('👥 Amigos', () => window.Social.abrir(null), 'mini flojo'));
+      a.append(fi);
+    }
     a.append(el('h3', null, `Jugadores (${s.asientos.length}/${s.max})`), listaAsientos(s, s.soyAnfitrion));
     if (JID === 'brisca' && s.asientos.length === 4) a.append(el('p', 'suave', 'A cuatro se juega por parejas: 1.º y 3.º contra 2.º y 4.º. Usa las flechas para cambiar las parejas.'));
     if (s.soyAnfitrion) {

@@ -121,3 +121,48 @@ test('en las salas se juega con el nombre de la cuenta, nadie más puede usarlo 
     sa.close();
   } finally { srv.close(); server.close(); }
 });
+
+test('amigos: solicitud, aceptar, mensajes en directo, invitación a la sala y bloqueo', async () => {
+  const { server, io: srv, port } = await start({ baseDatos: ':memory:', port: 0, retardoCpu: 0 });
+  const base = `http://127.0.0.1:${port}`;
+  try {
+    const a = navegador(base), b = navegador(base);
+    await a.get('/'); await b.get('/');
+    await a.post('/api/cuenta/registro', { nombre: 'Lucia', clave: 'girasol-azul-77', acepto: true });
+    await b.post('/api/cuenta/registro', { nombre: 'Mario', clave: 'tortuga-roja-33', acepto: true });
+    const sb = io(base, { transports: ['websocket'], extraHeaders: { cookie: b.cookie() }, forceNew: true });
+    const avisos = []; sb.on('social', (d) => avisos.push(d));
+    await new Promise((ok) => sb.on('connect', ok));
+    assert.equal((await a.post('/api/social/enviar', { id: 2, texto: 'hola' })).ok, false, 'sin ser amigos no se escribe');
+    assert.match((await a.post('/api/social/solicitar', { nombre: 'nadie' })).error, /No hay nadie/);
+    assert.ok((await a.post('/api/social/solicitar', { nombre: 'mario' })).ok);
+    await new Promise((ok) => setTimeout(ok, 50));
+    assert.ok(avisos.some((x) => x.tipo === 'amistad'), 'a Mario le llega el aviso');
+    let sbd = await (await b.get('/api/social')).json();
+    assert.equal(sbd.amigos[0].estado, 'recibida');
+    assert.ok((await b.post('/api/social/aceptar', { id: 1 })).ok);
+    const lu = await (await a.get('/api/social')).json();
+    assert.equal(lu.amigos[0].estado, 'amigo'); assert.equal(lu.amigos[0].conectado, true, 'Mario está conectado');
+    assert.ok((await a.post('/api/social/enviar', { id: 2, texto: '¿Echamos una brisca?' })).ok);
+    await new Promise((ok) => setTimeout(ok, 50));
+    assert.ok(avisos.some((x) => x.tipo === 'mensaje' && x.mensaje.texto === '¿Echamos una brisca?'));
+    sbd = await (await b.get('/api/social')).json(); assert.equal(sbd.noLeidos[1], 1);
+    const chat = await (await b.get('/api/social/chat/1')).json(); assert.equal(chat.mensajes.length, 1);
+    assert.equal((await (await b.get('/api/social')).json()).noLeidos[1], undefined, 'leído al abrir la conversación');
+    // invitar: solo desde una sala de verdad
+    assert.match((await a.post('/api/social/invitar', { id: 2 })).error, /sala/);
+    const sa = io(base, { transports: ['websocket'], extraHeaders: { cookie: a.cookie() }, forceNew: true });
+    await new Promise((ok) => sa.on('connect', ok));
+    const r = await new Promise((ok) => sa.emit('crear', { juego: 'brisca' }, ok));
+    assert.ok(r.ok);
+    const inv = await a.post('/api/social/invitar', { id: 2 });
+    assert.ok(inv.ok); assert.equal(inv.mensaje.juego, 'brisca'); assert.equal(inv.mensaje.sala.length, 4);
+    // bloquear: deja de ser amigo y no puede escribir ni pedir amistad
+    assert.ok((await b.post('/api/social/bloquear', { id: 1, on: true })).ok);
+    assert.equal((await a.post('/api/social/enviar', { id: 2, texto: 'eh' })).ok, false);
+    assert.equal((await a.post('/api/social/solicitar', { nombre: 'Mario' })).ok, false);
+    const datos = await (await a.get('/api/cuenta/datos')).json();
+    assert.ok(datos.social.mensajes.length >= 2, 'la descarga de datos incluye los mensajes');
+    sa.close(); sb.close();
+  } finally { srv.close(); server.close(); }
+});
