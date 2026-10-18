@@ -20,15 +20,17 @@ window.Arena = (() => {
     const pulsadas = new Set();
     const recalcular = () => { let x = 0, y = 0; for (const k of pulsadas) if (dirs[k]) { x += dirs[k][0]; y += dirs[k][1]; } st.mando.x = Math.sign(x); st.mando.y = Math.sign(y); };
     document.addEventListener('keydown', (e) => { if (e.target.closest('input, textarea') || !st.v) return; if (teclas[e.code]) { e.preventDefault(); st.mando.k |= teclas[e.code]; } if (dirs[e.code]) { e.preventDefault(); pulsadas.add(e.code); recalcular(); } });
-    document.addEventListener('keyup', (e) => { if (teclas[e.code]) st.mando.k &= ~teclas[e.code]; if (dirs[e.code]) { pulsadas.delete(e.code); recalcular(); } });
+    // al soltar, el bit se borra después del próximo envío (así no se pierde una pulsación corta)
+    document.addEventListener('keyup', (e) => { if (teclas[e.code]) st.soltar = (st.soltar || 0) | teclas[e.code]; if (dirs[e.code]) { pulsadas.delete(e.code); recalcular(); } });
     window.addEventListener('blur', () => { st.mando.k = 0; pulsadas.clear(); recalcular(); });
     // mandar el mando cuando cambia (como mucho cada 50 ms)
     setInterval(() => {
       if (!st.ctx || st.ctx.fase !== 'juego' || st.ctx.yo < 0) return;
       const m = st.mando, s = `${m.a}|${m.f}|${m.x}|${m.y}|${m.k}`;
-      if (s === st.enviado && performance.now() - st.ultimoEnvio < 1000) return;
+      if (s === st.enviado && performance.now() - st.ultimoEnvio < 1000) { if (st.soltar) { m.k &= ~st.soltar; st.soltar = 0; } return; }
       st.enviado = s; st.ultimoEnvio = performance.now();
       st.ctx.enviar({ tipo: 'mando', a: m.a, f: m.f, x: m.x, y: m.y, k: m.k });
+      if (st.soltar) { m.k &= ~st.soltar; st.soltar = 0; }
     }, 50);
     return st;
   }

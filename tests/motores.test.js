@@ -438,3 +438,26 @@ test('Territorio: rodear captura, pisar un rastro mata y la partida acaba', () =
   for (let k = 0; k < 30 * 245 && !J.fin(e2); k++) { const a = e2.jug.filter((x) => x.vivo).length; J.paso(e2, 1 / 30); if (e2.jug.filter((x) => x.vivo).length < a) muertes++; if (k % 3 === 0) J.foto(e2); }
   assert.ok(J.fin(e2)); assert.ok(muertes > 0, 'hay cortes');
 });
+
+test('Tanques mejorables: disparo, experiencia, mejoras, clase y fin de partida', () => {
+  const J = JUEGOS.blindados;
+  const e = J.nuevo(1);
+  J.configurar(e, [{ bot: false }]);
+  J.paso(e, 0.01);
+  const t = e.tanques.find((x) => x.p.j === 0);
+  for (const q of e.tanques) if (q !== t) { q.x = 10; q.y = 10; }
+  e.figs.clear(); e.figs.set(999, { id: 999, tipo: 'c', x: t.x + 150, y: t.y, rot: 0, hp: 10, vx: 0, vy: 0 });
+  J.accion(e, 0, { tipo: 'mando', a: 0, f: 0, x: 0, y: 0, k: 4 });
+  for (let k = 0; k < 60; k++) J.paso(e, 1 / 30);
+  assert.equal(t.xp, 10, 'el cuadrado da 10');
+  assert.equal(J.accion(e, 0, { tipo: 'mejora', s: 'dano' }).ok, false, 'sin puntos no hay mejora');
+  t.xp = J._.xpNivel(10); t.nivel = 10; t.puntosLibres = 2;
+  assert.ok(J.accion(e, 0, { tipo: 'mejora', s: 'recarga' }).ok);
+  assert.equal(J.accion(e, 0, { tipo: 'mejora', s: 'nada' }).ok, false);
+  assert.ok(J.accion(e, 0, { tipo: 'clase', c: 'doble' }).ok);
+  assert.equal(J.accion(e, 0, { tipo: 'clase', c: 'francotirador' }).ok, false, 'solo una vez');
+  assert.equal(J.vista(e, 0).mio.clase, 'doble');
+  const e2 = J.nuevo(1); J.configurar(e2, [{ bot: true, nivel: 'dificil' }]);
+  for (let k = 0; k < 30 * 245 && !J.fin(e2); k++) { J.paso(e2, 1 / 30); if (k % 3 === 0) J.foto(e2); }
+  assert.ok(J.fin(e2)); assert.ok(e2.jug.some((p) => p.max > 300), 'alguien sube de nivel');
+});

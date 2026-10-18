@@ -492,6 +492,15 @@ M.territorio = (() => {
   L.R(5, 20, 9, 7, P.verde); L.R(5, 26, 9, 1, P.verdeO);
   return L;
 })();
+M.blindados = (() => {
+  const L = lienzo(40, 30); L.R(0, 0, 40, 30, '#e8e6e0');
+  for (let x = 0; x < 40; x += 6) L.R(x, 0, 1, 30, '#d8d5cc'); for (let y = 0; y < 30; y += 6) L.R(0, y, 40, 1, '#d8d5cc');
+  L.B(4, 4, 5, 5, P.sol); L.B(31, 5, 5, 5, P.sol); L.B(30, 21, 6, 6, P.cielo); L.B(6, 22, 5, 4, P.tomate);
+  L.R(18, 12, 12, 5, P.tinta); L.R(19, 13, 11, 3, P.gris);
+  L.DB(17, 15, 6, P.cielo);
+  for (const [x, y] of [[32, 14], [35, 14]]) L.R(x, y, 2, 2, P.cieloO);
+  return L;
+})();
 // avatares: 12 personajes de 12×12 (piel, pelo, ropa y un detalle)
 const AVATARES = [
   ['#f2c9a0', '#6b3f1d', P.tomate, 'nada'], ['#c98e5f', P.tinta, P.cielo, 'gafas'], ['#f5d6b8', P.sol, P.menta, 'lazo'],

@@ -721,3 +721,13 @@ button.st-celda:hover { background: #ffe2da; color: var(--tinta); }
 /* ===== Juegos .io ===== */
 .ar-lienzo { width: min(100%, 960px); background: #d9cfb6; cursor: crosshair; image-rendering: auto; }
 .ar-cont { position: relative; }
+.bl-hud { display: flex; flex-direction: column; gap: 8px; align-items: center; }
+.bl-xp { position: relative; width: min(520px, 100%); height: 24px; border: var(--linea); background: var(--claro); }
+.bl-xp i { position: absolute; left: 0; top: 0; bottom: 0; background: var(--sol); transition: width .3s; }
+.bl-xp span { position: relative; display: block; text-align: center; font-weight: 700; line-height: 20px; color: var(--tinta); }
+.bl-clases { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center; animation: rv-entra .3s; }
+.bl-mejoras { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; align-items: center; }
+.bl-mejoras.hay > b { color: var(--tomate); animation: sb-late 1s infinite; }
+@keyframes sb-late { 50% { opacity: .5; } }
+.bl-mejoras .btn { display: inline-flex; flex-direction: column; height: auto; padding: 4px 8px; }
+.bl-pips { display: flex; gap: 2px; margin-top: 3px; } .bl-pips i { width: 8px; height: 5px; background: var(--claro); border: 1px solid var(--borde); } .bl-pips i.si { background: var(--verde); }
