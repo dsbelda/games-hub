@@ -465,6 +465,14 @@ M.palabreria = (() => {
   L.R(4, 26, 32, 4, P.marron); for (let k = 0; k < 5; k++) L.B(6 + k * 6, 24, 5, 5, '#ffe7a8');
   return L;
 })();
+M.celulas = (() => {
+  const L = lienzo(40, 30); L.R(0, 0, 40, 30, '#f3eddc');
+  for (let x = 0; x < 40; x += 5) L.R(x, 0, 1, 30, '#e3dac2'); for (let y = 0; y < 30; y += 5) L.R(0, y, 40, 1, '#e3dac2');
+  for (const [x, y, c] of [[4, 4, P.tomate], [33, 6, P.verde], [8, 24, P.uva], [30, 25, P.sol], [20, 3, P.rosa], [36, 16, P.cielo]]) L.R(x, y, 2, 2, c);
+  L.DB(16, 15, 8, P.cielo); L.R(12, 11, 3, 3, '#9fc7ff');
+  L.DB(30, 15, 3, P.tomate);
+  return L;
+})();
 // avatares: 12 personajes de 12×12 (piel, pelo, ropa y un detalle)
 const AVATARES = [
   ['#f2c9a0', '#6b3f1d', P.tomate, 'nada'], ['#c98e5f', P.tinta, P.cielo, 'gafas'], ['#f5d6b8', P.sol, P.menta, 'lazo'],

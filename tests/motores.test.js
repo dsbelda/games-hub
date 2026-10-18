@@ -390,3 +390,16 @@ test('Palabrería: reglas de colocación, puntos, la CPU juega partidas enteras 
   const { f } = jugar(J, 2, ['dificil', 'normal'], 3);
   assert.ok(f.ganadores.length >= 1);
 });
+
+test('Células: la CPU crece, se come a otras, se reaparece y la partida acaba a los 4 minutos', () => {
+  const J = JUEGOS.celulas;
+  const e = J.nuevo(2);
+  J.configurar(e, [{ bot: false }, { bot: true, nivel: 'dificil' }]);
+  assert.equal(e.jug.length, 14, 'se rellena hasta 14');
+  const v = J.vista(e, 0);
+  assert.ok(v.comida.length > 400);
+  for (let k = 0; k < 30 * 245 && !J.fin(e); k++) { J.paso(e, 1 / 30); if (k % 3 === 0) J.foto(e); }
+  const f = J.fin(e);
+  assert.ok(f, 'termina'); assert.ok(e.jug.some((p) => p.max > 100), 'alguien crece');
+  assert.ok(f.ganadores.every((j) => j === 0 || j === 1), 'gana una persona de la sala (o su CPU)');
+});

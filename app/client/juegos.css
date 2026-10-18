@@ -717,3 +717,7 @@ button.st-celda:hover { background: #ffe2da; color: var(--tinta); }
 .pl-letras { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; width: min(420px, 92vw); padding: 16px; background: var(--sup); border: var(--linea); box-shadow: var(--sombra); }
 .pl-letras p { width: 100%; text-align: center; margin: 0 0 6px; font-weight: 700; }
 .pl-letras .btn { width: 40px; }
+
+/* ===== Juegos .io ===== */
+.ar-lienzo { width: min(100%, 960px); background: #d9cfb6; cursor: crosshair; image-rendering: auto; }
+.ar-cont { position: relative; }
