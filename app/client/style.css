@@ -394,3 +394,13 @@ img.px, .px { image-rendering: pixelated; }
 .so-invitar { flex-wrap: wrap; gap: 6px; align-items: center; margin: 6px 0; }
 .so-panel input { font: inherit; padding: 9px 12px; border: var(--linea); background: var(--sup); color: var(--fg); min-height: 44px; min-width: 0; border-radius: 0; }
 .so-panel form .btn { min-height: 44px; }
+.denunciar { border: 0; background: none; color: var(--fg-2); cursor: pointer; font-size: 12px; padding: 0 4px; opacity: .4; }
+.chat-log p:hover .denunciar, .denunciar:focus { opacity: 1; color: var(--tomate); }
+@media (hover: none) { .denunciar { opacity: .7; } }
+.denuncia-cita { margin: 0; padding: 8px 10px; border-left: 4px solid var(--tomate); background: var(--claro); overflow-wrap: anywhere; }
+.enlace-btn { border: 0; background: none; color: var(--fg-2); text-decoration: underline; cursor: pointer; font: inherit; padding: 4px; margin-top: 6px; width: 100%; text-align: center; }
+.enlace-btn[hidden] { display: none; }
+.codigos { list-style: none; counter-reset: c; display: grid; grid-template-columns: 1fr 1fr; gap: 6px; padding: 0; margin: 8px 0; }
+.codigos li { font: 700 18px/1 monospace; letter-spacing: 2px; padding: 8px; text-align: center; background: var(--claro); border: 2px solid var(--borde); user-select: all; }
+.aviso-codigos { color: var(--tomate); font-weight: 700; }
+.idioma-btn { width: auto; min-width: 44px; padding: 0 8px; font-family: 'Silkscreen', monospace; font-size: 13px; }

@@ -19,7 +19,7 @@
     const c = el('section', 'caja bienvenida');
     const d = el('div', 'caja-in');
     d.append(el('h1', null, 'Tu cuenta'),
-      el('p', null, 'Con una cuenta se guardan tus partidas, victorias, récords y favoritos, y nadie más puede usar tu nombre. Es gratis, sin correo y opcional: puedes seguir jugando sin cuenta.'));
+      el('p', null, 'Con una cuenta se guardan tus partidas, victorias, récords y favoritos, y nadie más puede usar tu nombre. Es gratis, sin correo (te damos códigos para recuperar la contraseña) y opcional: puedes seguir jugando sin cuenta.'));
     const f = el('div', 'fila');
     f.append(boton('Crear cuenta', () => Cuenta.ventana('crear'), 'primario'), boton('Ya tengo cuenta', () => Cuenta.ventana('entrar')));
     d.append(f);
@@ -111,6 +111,22 @@
       try { sessionStorage.setItem('games:aviso', 'Contraseña cambiada. Entra con la nueva'); } catch (x) { /* nada */ }
       location.reload();
     };
+    // códigos de recuperación
+    const cr = el('div');
+    const quedan = c.codigosRecuperacion || 0;
+    cr.append(el('p', quedan > 2 ? 'suave' : 'aviso-codigos', quedan === 0 ? '⚠ No tienes códigos de recuperación. Sin correo, si olvidas la contraseña perderías la cuenta: genera unos ahora.' : quedan <= 2 ? `⚠ Te quedan ${quedan} códigos de recuperación. Genera otros nuevos.` : `Te quedan ${quedan} códigos de recuperación sin usar. Cada uno vale una vez y sirve para cambiar la contraseña si la olvidas.`));
+    const fcod = el('form', 'form-cuenta');
+    const [lcod, claveCod] = campo('Tu contraseña (para generar otros)', 'current-password');
+    const bcod = el('button', 'btn', quedan ? 'Generar códigos nuevos (anula los anteriores)' : 'Generar códigos'); bcod.type = 'submit';
+    fcod.append(lcod, bcod);
+    fcod.onsubmit = async (e) => {
+      e.preventDefault();
+      const r = await Cuenta.post('/api/cuenta/codigos', { clave: claveCod.value });
+      if (!r.ok) return Avisar(r.error, 'mal');
+      const d = el('dialog', 'modal caja'); d.addEventListener('close', () => location.reload());
+      document.body.append(d); Cuenta.mostrarCodigos(d, r.codigos, () => d.close()); d.showModal();
+    };
+    cr.append(fcod);
     // datos y baja
     const fd = el('div');
     const desc = el('a', 'btn', 'Descargar mis datos'); desc.href = '/api/cuenta/datos'; desc.download = 'mis-datos-dsbelda-games.json';
@@ -132,7 +148,7 @@
     const rejilla = el('div', 'perfil-rejilla');
     const col1 = el('div'), col2 = el('div');
     col1.append(caja('Tus partidas', resumen, est), caja('Récords', rec), caja('Favoritos', fav));
-    col2.append(caja('Seguridad', fc), caja('Tus datos', fd));
+    col2.append(caja('Seguridad', fc), caja('Códigos de recuperación', cr), caja('Tus datos', fd));
     rejilla.append(col1, col2);
     raiz.replaceChildren(cab, rejilla);
     Aparecer(raiz.querySelectorAll('.caja'));

@@ -81,6 +81,7 @@
     const d = el('div', 'so-msg' + (mio ? ' mio' : ''));
     d.append(el('p', null, m.texto));
     if (m.juego && m.sala) { const a = el('a', 'btn mini oro', mio ? `Invitación a la sala ${m.sala}` : '▶ Unirme a la partida'); a.href = `/j/${m.juego}?sala=${m.sala}`; d.append(a); }
+    if (!mio) { const x = el('button', 'denunciar', '⚑ Denunciar'); x.type = 'button'; x.onclick = () => window.Denunciar({ quien: amigo(chatCon)?.nombre || '', texto: m.texto, enviar: (motivo) => post('/api/social/denunciar', { id: m.id, motivo }) }); d.append(x); }
     d.append(el('small', null, new Date(m.fecha).toLocaleString('es', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' })));
     return d;
   }
@@ -95,6 +96,7 @@
     f.onsubmit = async (e) => { e.preventDefault(); if (!i.value.trim()) return; const t = i.value; i.value = ''; const r = await post('/api/social/enviar', { id: a.id, texto: t }); if (!r.ok) { window.Avisar(r.error, 'mal'); i.value = t; } };
     const mas = el('div', 'fila so-opciones');
     if (window.Social.puedeInvitar()) mas.append(boton('🎮 Invitar a mi sala', () => window.Social.invitar(a.id), 'mini'));
+    if (a.jugando) { const l = el('a', 'btn mini oro', a.jugando.fase === 'espera' ? '➡ Unirme a su sala' : '👁 Mirar su partida'); l.href = `/j/${a.jugando.juego}?${a.jugando.fase === 'espera' ? 'sala' : 'mirar'}=${a.jugando.code}`; mas.append(l); }
     mas.append(boton('Eliminar amigo', async () => { if (mas.dataset.seguro !== 'q') { mas.dataset.seguro = 'q'; window.Avisar('Pulsa otra vez para eliminarlo'); return; } await post('/api/social/quitar', { id: a.id }); chatCon = null; cargar().then(pintar); }, 'mini flojo'),
       boton('Bloquear', async () => { if (mas.dataset.seguro !== 'b') { mas.dataset.seguro = 'b'; window.Avisar('Pulsa otra vez para bloquearlo: dejará de ser tu amigo y no podrá escribirte'); return; } await post('/api/social/bloquear', { id: a.id, on: true }); chatCon = null; cargar().then(pintar); }, 'mini flojo'));
     caja.append(lista, f, mas);

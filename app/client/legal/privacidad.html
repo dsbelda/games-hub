@@ -39,7 +39,9 @@
         <tr><td>Mensajes del chat y jugadas</td><td>Que funcionen la partida y el chat de la sala.</td><td>Solo en memoria, mientras exista la sala (como mucho 12 horas)</td></tr>
         <tr><td>Dirección IP, navegador, página pedida y hora</td><td>Seguridad: detectar ataques y abusos y resolver fallos.</td><td>14 días en los registros del servidor web</td></tr>
         <tr><td><b>Si creas cuenta:</b> nombre de usuario, contraseña (guardada cifrada con scrypt: nadie puede leerla), avatar elegido, fecha de alta y de último acceso</td><td>Que puedas entrar, reservar tu nombre y ver tu perfil.</td><td>Hasta que borres la cuenta. Si no entras en 2 años, se borra sola</td></tr>
+        <tr><td><b>Si creas cuenta:</b> 8 códigos de recuperación de la contraseña (solo se guarda su huella, no el código) y cuáles has usado</td><td>Que puedas recuperar la cuenta si olvidas la contraseña, sin pedirte correo.</td><td>Igual que la cuenta</td></tr>
         <tr><td><b>Si creas cuenta:</b> partidas jugadas y ganadas por juego, récords de los juegos en solitario y favoritos</td><td>Enseñártelos en tu perfil.</td><td>Igual que la cuenta</td></tr>
+        <tr><td><b>Si denuncias un mensaje o te denuncian:</b> el texto del mensaje, quién lo denunció y a quién, el motivo y la fecha</td><td>Moderar el chat y proteger a los jugadores.</td><td>12 meses</td></tr>
         <tr><td><b>Si usas los amigos:</b> a quién has enviado o aceptado una solicitud de amistad y a quién has bloqueado</td><td>Mostrarte tu lista de amigos, si están conectados y a qué juegan (solo a tus amigos).</td><td>Hasta que lo quites o borres la cuenta</td></tr>
         <tr><td><b>Si usas los amigos:</b> los mensajes privados entre amigos e invitaciones a una sala (texto, fecha y si se han leído)</td><td>Que podáis escribiros aunque uno no esté conectado.</td><td>6 meses; antes, si borras la cuenta</td></tr>
         <tr><td><b>Si creas cuenta:</b> una cookie de sesión <code>games_sesion</code></td><td>Mantenerte dentro sin escribir la contraseña cada vez.</td><td>90 días o hasta que cierres sesión</td></tr>
@@ -82,6 +84,7 @@
       <button type="button" class="enlace-btn" data-cookies-panel>Configurar cookies</button>
     </div>
   </footer>
+  <script src="/js/i18n.js?v=__V__"></script>
   <script src="/js/cookies.js?v=__V__"></script>
   <script src="/js/comun.js?v=__V__"></script>
 </body>

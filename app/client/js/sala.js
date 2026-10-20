@@ -9,16 +9,18 @@
   const est = { yo: null, sala: undefined, publicas: [], conectado: false };
   const pedir = (ev, d = {}) => new Promise((ok) => sock.emit(ev, d, (r) => { if (r && r.ok === false && r.error) aviso(r.error); ok(r || {}); }));
   const enviar = (a) => pedir('accion', a);
-  const paramSala = new URLSearchParams(location.search).get('sala');
+  const params = new URLSearchParams(location.search);
+  const paramSala = params.get('sala') || params.get('mirar');
+  const soloMirar = !params.get('sala') && !!params.get('mirar');
   let intentoUnirse = !!paramSala;
 
-  sock.on('connect', () => { est.conectado = true; pedir('lista', { juego: JID }).then((r) => { est.publicas = r.salas || []; pintar(); }); });
+  sock.on('connect', () => { est.conectado = true; pedir('lista', { juego: JID }).then((r) => { est.publicas = r.salas || []; pedir('enCurso', { juego: JID }).then((q) => { est.enCurso = q.partidas || []; pintar(); }); }); });
   sock.on('disconnect', () => { est.conectado = false; pintar(); });
   sock.on('connect_error', () => aviso('Sin conexión con el servidor; reintentando…'));
   sock.on('yo', (y) => { est.yo = y; pintar(); });
   // eventos en directo de la partida (p. ej. trazos del dibujo): los recibe el juego sin repintar todo
   sock.on('evento', (ev) => { if (window.JUEGO.evento) window.JUEGO.evento(ev); });
-  sock.on('salas', (l) => { est.publicas = l; if (!est.sala && !document.activeElement?.matches('input')) pintar(); });
+  sock.on('salas', (l) => { est.publicas = l; pedir('enCurso', { juego: JID }).then((q) => { est.enCurso = q.partidas || []; if (!est.sala && !document.activeElement?.matches('input')) pintar(); }); });
   let desfase = 0; // reloj del servidor - reloj de este dispositivo
   sock.on('sala', async (s) => {
     if (s && s.ahora) desfase = s.ahora - Date.now();
@@ -26,7 +28,7 @@
     if (s && s.juego !== JID) { est.otra = s; est.sala = null; pintar(); return; }
     est.otra = null;
     est.sala = s;
-    if (!s && intentoUnirse && est.yo?.nombre) { intentoUnirse = false; await pedir('unirse', { code: paramSala }); return; }
+    if (!s && intentoUnirse && est.yo?.nombre) { intentoUnirse = false; await pedir(soloMirar ? 'mirar' : 'unirse', { code: paramSala }); return; }
     pintar();
   });
 
@@ -112,6 +114,10 @@
       r.append(el('span', 'grow', `Sala de ${s.anfitrion} · ${s.jugadores}/${s.max}`), boton('Entrar', () => pedir('unirse', { code: s.code })));
       b.append(r);
     }
+    if (est.enCurso?.length) {
+      b.append(el('h3', null, 'Partidas en marcha (puedes mirar)'));
+      for (const s of est.enCurso) { const r = el('div', 'fila sala-pub'); r.append(el('span', 'grow', `${s.jugadores.join(', ')}${s.mirando ? ` · 👁 ${s.mirando}` : ''}`), boton('👁 Mirar', () => pedir('mirar', { code: s.code }), 'mini')); b.append(r); }
+    }
     c.append(a, b);
     if (!est.yo.cuenta) c.append(boton(`Cambiar apodo (${est.yo.nombre})`, () => { est.yo = { nombre: null }; pintar(); }, 'flojo'));
     raiz.replaceChildren(c);
@@ -155,6 +161,10 @@
       fi.append(boton('👥 Amigos', () => window.Social.abrir(null), 'mini flojo'));
       a.append(fi);
     }
+    if (s.espectando) {
+      a.append(el('p', 'suave', '👁 Estás mirando esta sala. Puedes sentarte si queda hueco.'));
+      if (s.asientos.length < s.max) a.append(boton('Sentarme a jugar', () => pedir('unirse', { code: s.code }), 'oro'));
+    }
     a.append(el('h3', null, `Jugadores (${s.asientos.length}/${s.max})`), listaAsientos(s, s.soyAnfitrion));
     if (JID === 'brisca' && s.asientos.length === 4) a.append(el('p', 'suave', 'A cuatro se juega por parejas: 1.º y 3.º contra 2.º y 4.º. Usa las flechas para cambiar las parejas.'));
     if (s.soyAnfitrion) {
@@ -175,7 +185,11 @@
     const box = el('section', 'panel chat');
     box.append(el('h3', null, 'Chat'));
     const log = el('div', 'chat-log');
-    for (const m of s.chat.slice(-40)) { const p = el('p'); p.append(el('b', null, m.nombre + ': '), document.createTextNode(m.texto)); log.append(p); }
+    for (const m of s.chat.slice(-40)) {
+      const p = el('p'); p.append(el('b', null, m.nombre + (m.espectador ? ' 👁' : '') + ': '), document.createTextNode(m.texto));
+      if (m.nombre !== est.yo?.nombre) { const d = el('button', 'denunciar', '⚑'); d.type = 'button'; d.title = 'Denunciar este mensaje'; d.setAttribute('aria-label', 'Denunciar este mensaje'); d.onclick = () => window.Denunciar({ quien: m.nombre, texto: m.texto, enviar: (motivo) => pedir('denunciar', { n: m.n, motivo }) }); p.append(d); }
+      log.append(p);
+    }
     const f = el('form', 'fila');
     const i = el('input'); i.className = 'grow'; i.maxLength = 200; i.placeholder = 'Escribe…'; i.setAttribute('aria-label', 'Mensaje');
     f.append(i, boton('Enviar')); f.lastChild.type = 'submit';
@@ -205,7 +219,9 @@
     const lado = el('aside', 'lado' + (chatAbierto ? ' abierto' : ''));
     const jug = el('section', 'panel');
     jug.append(el('h3', null, `Sala ${s.code}`), listaAsientos(s, false));
-    const salir = boton('Salir', () => { if (s.fase === 'fin' || confirmar()) pedir('salir'); }, 'flojo mini');
+    if (s.espectando) jug.append(el('p', 'suave', '👁 Estás mirando'));
+    else if (s.espectadores) jug.append(el('p', 'suave', `👁 ${s.espectadores} mirando`));
+    const salir = boton(s.espectando ? 'Dejar de mirar' : 'Salir', () => { if (s.espectando || s.fase === 'fin' || confirmar()) pedir('salir'); }, 'flojo mini');
     jug.append(salir);
     lado.append(jug, panelChat(s));
     const toggle = boton(chatAbierto ? 'Ocultar chat' : `Chat (${s.chat.length})`, () => { chatAbierto = !chatAbierto; pintar(); }, 'toggle-chat');
@@ -232,14 +248,14 @@
   function panelFin(s) {
     const r = s.resultado;
     const p = el('div', 'panel fin');
-    const gano = r.ganadores.includes(s.yo);
+    const gano = s.yo >= 0 && r.ganadores.includes(s.yo);
     // en los cooperativos se gana o se pierde todos juntos
     const titulo = window.JUEGO.cooperativo ? (gano ? '¡Lo habéis conseguido!' : 'Habéis perdido') : !r.ganadores.length ? 'Empate' : gano ? '¡Has ganado!' : `Gana ${r.ganadores.map((i) => s.asientos[i]?.nombre).join(' y ')}`;
     p.append(el('h2', null, titulo));
     p.append(el('p', 'suave', r.texto));
     const f = el('div', 'fila');
     if (s.soyAnfitrion) f.append(boton('Revancha', () => pedir('empezar'), 'oro'));
-    else f.append(el('span', 'suave', 'El anfitrión puede pedir la revancha.'));
+    else if (!s.espectando) f.append(el('span', 'suave', 'El anfitrión puede pedir la revancha.'));
     f.append(boton('Salir', () => pedir('salir'), 'flojo'));
     p.append(f);
     return p;

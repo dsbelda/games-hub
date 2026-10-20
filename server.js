@@ -12,6 +12,7 @@ const JUEGOS = require('./lib/juegos');
 const { Salas } = require('./lib/salas');
 const { Cuentas } = require('./lib/cuentas');
 const { Social } = require('./lib/social');
+const { Moderacion } = require('./lib/moderacion');
 
 const COOKIE = 'games_id';
 const SESION = 'games_sesion';
@@ -67,6 +68,8 @@ function cubo(max, perSec) {
 function start({ port = 3400, host = '127.0.0.1', retardoCpu = 700, baseDatos = path.join(__dirname, 'data', 'games.db') } = {}) {
   const cuentas = new Cuentas(baseDatos);
   const social = new Social(cuentas.db);
+  const mod = new Moderacion(cuentas.db);
+  social.silenciado = (uid) => mod.silenciadoHasta(Moderacion.clave(uid));
   const app = express();
   app.set('trust proxy', false);
   app.disable('x-powered-by');
@@ -77,8 +80,9 @@ function start({ port = 3400, host = '127.0.0.1', retardoCpu = 700, baseDatos = 
   const conectado = (id) => (sockets.get(id)?.size || 0) > 0;
   const salas = new Salas({
     juegos: JUEGOS, retardoCpu, conectado, alCambiar: (s) => repartir(s),
-    alEvento: (sala, ev) => { for (const a of sala.asientos) if (!a.bot) emitir(a.id, 'evento', ev); },
+    alEvento: (sala, ev) => { for (const a of sala.asientos) if (!a.bot) emitir(a.id, 'evento', ev); for (const id of sala.espectadores) emitir(id, 'evento', ev); },
     reservado: (n) => cuentas.existe(n),
+    silenciado: (id) => mod.silenciadoHasta(Moderacion.clave(salas.jugadores.get(id)?.usuario?.id, id)),
     alTerminar: (sala) => sala.asientos.forEach((a, i) => {
       const u = !a.bot && salas.jugadores.get(a.id)?.usuario;
       if (u) cuentas.apuntarPartida(u.id, sala.juego, sala.resultado.ganadores.includes(i));
@@ -94,13 +98,14 @@ function start({ port = 3400, host = '127.0.0.1', retardoCpu = 700, baseDatos = 
     let jugando = null;
     for (const p of salas.jugadores.values()) {
       if (p.usuario?.id !== uid || !p.sala) continue;
-      const s = salas.salas.get(p.sala); if (s) jugando = { juego: s.juego, nombre: NOMBRE_JUEGO[s.juego], fase: s.fase };
+      const s = salas.salas.get(p.sala); if (s && !p.mirando) jugando = { juego: s.juego, nombre: NOMBRE_JUEGO[s.juego], fase: s.fase, code: s.code };
     }
     return { conectado, jugando };
   }
   const avisarAmigos = (uid) => { for (const a of social.amigos(uid)) if (a.estado === 'amigo') avisarUsuario(a.id, { tipo: 'presencia', id: uid }); };
   function repartir(sala) {
     for (const a of sala.asientos) if (!a.bot || a.sustituto) emitir(a.id, 'sala', salas.vista(sala, a.id));
+    for (const id of sala.espectadores) emitir(id, 'sala', salas.vista(sala, id));
   }
   const listas = (juego) => io.to('lista:' + juego).emit('salas', salas.lista(juego));
   const reloj = setInterval(() => salas.tick(), 1000); // también mueve los relojes de los juegos
@@ -111,7 +116,8 @@ function start({ port = 3400, host = '127.0.0.1', retardoCpu = 700, baseDatos = 
   rapido.unref();
   cuentas.limpiar();
   social.limpiarViejos();
-  setInterval(() => { cuentas.limpiar(); social.limpiarViejos(); }, 86400000).unref();
+  mod.limpiar();
+  setInterval(() => { cuentas.limpiar(); social.limpiarViejos(); mod.limpiar(); }, 86400000).unref();
 
   // --- HTTP --------------------------------------------------------------------------------
   app.use((req, res, next) => {
@@ -181,7 +187,7 @@ function start({ port = 3400, host = '127.0.0.1', retardoCpu = 700, baseDatos = 
     const s = cuentas.crearSesion(r.id);
     cookieSesion(req, res, s.token, s.maxAge);
     console.log('[cuentas] alta', r.id);
-    res.json({ ok: true });
+    res.json({ ok: true, codigos: cuentas.generarCodigos(r.id) }); // se enseñan una sola vez
   });
   api.post('/cuenta/entrar', async (req, res) => {
     if (!limEntrar(ipDe(req))) return res.status(429).json({ ok: false, error: 'Demasiados intentos. Espera unos minutos' });
@@ -191,6 +197,23 @@ function start({ port = 3400, host = '127.0.0.1', retardoCpu = 700, baseDatos = 
     cookieSesion(req, res, s.token, s.maxAge);
     res.json({ ok: true });
   });
+  // recuperar la contraseña con un código de un solo uso (sin correo)
+  api.post('/cuenta/recuperar', async (req, res) => {
+    if (!limEntrar(ipDe(req))) return res.status(429).json({ ok: false, error: 'Demasiados intentos. Espera unos minutos' });
+    const r = await cuentas.recuperar(req.body.nombre, req.body.codigo, req.body.nueva);
+    if (!r.ok) return res.json(r);
+    const s = cuentas.crearSesion(r.id);
+    cookieSesion(req, res, s.token, s.maxAge);
+    console.log('[cuentas] contraseña recuperada', r.id);
+    res.json({ ok: true, quedan: r.quedan });
+  });
+  api.post('/cuenta/codigos', conCuenta(async (req) => {
+    if (!limEntrar(ipDe(req))) return { ok: false, error: 'Demasiados intentos. Espera unos minutos' };
+    const u = cuentas.db.prepare('SELECT nombre FROM usuarios WHERE id = ?').get(req.usuario.id);
+    const r = await cuentas.entrar(u.nombre, req.body.clave);
+    if (!r.ok) return { ok: false, error: 'La contraseña no es correcta' };
+    return { ok: true, codigos: cuentas.generarCodigos(req.usuario.id) };
+  }));
   api.post('/cuenta/salir', (req, res) => { cuentas.cerrarSesion(req.token); cookieSesion(req, res, '', 0); res.json({ ok: true }); });
   api.post('/cuenta/avatar', conCuenta((req) => cuentas.avatar(req.usuario.id, req.body.avatar)));
   api.post('/cuenta/clave', conCuenta(async (req) => {
@@ -220,6 +243,11 @@ function start({ port = 3400, host = '127.0.0.1', retardoCpu = 700, baseDatos = 
   api.post('/social/bloquear', conCuenta((req) => social.bloquear(req.usuario.id, idDe(req.body.id), req.body.on !== false)));
   api.get('/social/chat/:id', conCuenta((req) => { const r = { ok: true, mensajes: social.conversacion(req.usuario.id, idDe(req.params.id), req.query.antes) }; avisarUsuario(req.usuario.id, { tipo: 'leidos' }); return r; }));
   const entregar = (req, r) => { if (r.ok) { avisarUsuario(r.mensaje.para, { tipo: 'mensaje', mensaje: r.mensaje, nombre: req.usuario.nombre }); avisarUsuario(req.usuario.id, { tipo: 'enviado', mensaje: r.mensaje }); } return r; };
+  api.post('/social/denunciar', conCuenta((req) => {
+    const m = social.mensajeRecibido(req.usuario.id, req.body.id);
+    if (!m) return { ok: false, error: 'No encuentro ese mensaje' };
+    return mod.denunciar({ deUsuario: req.usuario.id, deIdentidad: '', contraNombre: m.nombre, contraUsuario: m.de, contexto: 'privado', texto: m.texto, motivo: String(req.body.motivo) });
+  }));
   api.post('/social/enviar', conCuenta((req) => entregar(req, social.enviar(req.usuario.id, idDe(req.body.id), req.body.texto))));
   api.post('/social/invitar', conCuenta((req) => {
     // solo se invita a la sala en la que estás de verdad
@@ -296,6 +324,20 @@ function start({ port = 3400, host = '127.0.0.1', retardoCpu = 700, baseDatos = 
       if (s) listas(s.juego);
     };
     on('unirse', tras((d) => salas.unirse(id, d.code)));
+    // mirar: salas públicas, o privadas si hay un amigo tuyo sentado
+    on('mirar', tras((d) => {
+      const s = salas.salas.get(String(d.code || '').toUpperCase());
+      const uid = sock.data.usuario?.id;
+      const amigo = !!uid && !!s && s.asientos.some((a) => { const u = !a.bot && salas.jugadores.get(a.id)?.usuario; return u && social.sonAmigos(uid, u.id); });
+      return salas.mirar(id, d.code, !!s && (s.publica || amigo));
+    }));
+    on('enCurso', (d, cb) => cb({ ok: !!JUEGOS[d.juego], partidas: JUEGOS[d.juego] ? salas.partidasEnCurso(d.juego) : [] }));
+    on('denunciar', (d, cb) => {
+      const s = salas.salaDe(id), m = s && s.chat.find((x) => x.n === Number(d.n));
+      if (!m) return cb({ ok: false, error: 'No encuentro ese mensaje' });
+      const autor = salas.jugadores.get(m.de);
+      cb(mod.denunciar({ deUsuario: sock.data.usuario?.id, deIdentidad: id, contraNombre: m.nombre, contraUsuario: autor?.usuario?.id, contraIdentidad: m.de, contexto: 'sala', sala: s.code, texto: m.texto, motivo: String(d.motivo) }));
+    });
     on('salir', tras(() => salas.salir(id)));
     on('cpu', tras((d) => salas.anadirCpu(id, d.nivel)));
     on('quitar', tras((d) => {

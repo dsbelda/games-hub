@@ -166,3 +166,81 @@ test('amigos: solicitud, aceptar, mensajes en directo, invitación a la sala y b
     sa.close(); sb.close();
   } finally { srv.close(); server.close(); }
 });
+
+test('mirar una partida, chat de sala, denunciar y silencio automático', async () => {
+  const { server, io: srv, port, cuentas } = await start({ baseDatos: ':memory:', port: 0, retardoCpu: 0 });
+  const base = `http://127.0.0.1:${port}`;
+  const conectar = async (nav) => { const s = io(base, { transports: ['websocket'], extraHeaders: { cookie: nav.cookie() }, forceNew: true }); await new Promise((ok) => s.on('connect', ok)); return s; };
+  const pedir = (s, ev, d = {}) => new Promise((ok) => s.emit(ev, d, ok));
+  try {
+    const nav = []; for (let i = 0; i < 5; i++) { const n = navegador(base); await n.get('/'); nav.push(n); }
+    const nombres = ['Ana', 'Berto', 'Carla', 'Dani', 'Eva'], claves = ['azucar-moreno-1', 'galleta-fina-22', 'naranja-dulce-33', 'cereza-roja-444', 'limon-agrio-555'];
+    for (let i = 0; i < 4; i++) assert.ok((await nav[i].post('/api/cuenta/registro', { nombre: nombres[i], clave: claves[i], acepto: true })).ok);
+    const [sa, sb, sc, sd] = await Promise.all(nav.slice(0, 4).map(conectar));
+    const sg = await conectar(nav[4]); await pedir(sg, 'hola', { nombre: 'Invitada' });
+    // Ana crea una sala privada de Brisca y juega contra la CPU
+    const r = await pedir(sa, 'crear', { juego: 'cuatro', publica: false }); assert.ok(r.ok);
+    assert.equal((await pedir(sg, 'mirar', { code: r.code })).ok, false, 'una invitada no mira una sala privada');
+    assert.equal((await pedir(sb, 'mirar', { code: r.code })).ok, false, 'ni quien no es amigo');
+    // Berto se hace amigo de Ana y entonces sí
+    assert.ok((await nav[0].post('/api/social/solicitar', { nombre: 'Berto' })).ok); assert.ok((await nav[1].post('/api/social/aceptar', { id: 1 })).ok);
+    let vista = null; sb.on('sala', (s) => { vista = s; });
+    assert.ok((await pedir(sb, 'mirar', { code: r.code })).ok);
+    await pedir(sa, 'cpu', { nivel: 'normal' }); await pedir(sa, 'empezar');
+    await new Promise((ok) => setTimeout(ok, 80));
+    assert.equal(vista.espectando, true); assert.equal(vista.yo, -1); assert.ok(vista.partida, 'el espectador ve la partida');
+    assert.equal((await pedir(sb, 'accion', { tipo: 'soltar', col: 3 })).ok, false, 'no juega');
+    // chat y denuncia desde el chat de la sala
+    assert.ok((await pedir(sb, 'chat', { texto: 'qué malo eres, imbécil' })).ok);
+    await new Promise((ok) => setTimeout(ok, 50));
+    const msg = (await new Promise((ok) => { sa.once('sala', ok); pedir(sb, 'chat', { texto: 'otra vez' }); })).chat.find((m) => m.texto === 'otra vez');
+    assert.ok(msg.n > 0 && !('de' in msg), 'el número de mensaje sí viaja; el autor interno no');
+    assert.ok((await pedir(sa, 'denunciar', { n: msg.n, motivo: 'insultos' })).ok);
+    assert.equal((await pedir(sa, 'denunciar', { n: 9999, motivo: 'x' })).ok, false);
+    // 3 cuentas distintas denuncian a Berto: silenciado
+    const sd2 = await pedir(sc, 'unirse', { code: r.code }); assert.equal(sd2.ok, false, 'la partida ya empezó');
+    await pedir(sc, 'mirar', { code: r.code }).then(() => {}); // sala privada y no amigo: no puede, no hay problema
+    for (const [n, s] of [[1, sc], [2, sd]]) { void n; void s; }
+    const para = cuentas.db.prepare('SELECT id FROM usuarios WHERE clave_min = ?').get('berto').id;
+    const ids = [1, 3, 4];
+    for (const i of ids) cuentas.db.prepare('INSERT INTO denuncias (fecha, de_usuario, de_clave, contra_nombre, contra_usuario, contra_clave, contexto, texto, motivo) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)').run(Date.now(), i, `u:${i}`, 'Berto', para, `u:${para}`, 'sala', 'x', 'insultos');
+    const mod = new (require('../lib/moderacion').Moderacion)(cuentas.db);
+    assert.equal(mod.silenciadoHasta(`u:${para}`), 0);
+    mod.denunciar({ deUsuario: 1, deIdentidad: 'a', contraNombre: 'Berto', contraUsuario: para, contexto: 'sala', texto: 'otro mensaje', motivo: 'spam' });
+    assert.ok(mod.silenciadoHasta(`u:${para}`) > Date.now(), 'tres cuentas distintas: silencio de 24 h');
+    assert.equal((await pedir(sb, 'chat', { texto: 'hola' })).ok, false, 'silenciado en el chat de sala');
+    assert.equal((await nav[1].post('/api/social/enviar', { id: 1, texto: 'hola' })).ok, false, 'y en los privados');
+    assert.equal(mod.denunciar({ deUsuario: null, deIdentidad: 'x', contraNombre: 'Berto', contraUsuario: para, contexto: 'sala', texto: 't', motivo: 'otro' }).silenciado, false);
+    // Berto deja de mirar
+    await pedir(sb, 'salir'); await new Promise((ok) => setTimeout(ok, 30));
+    for (const s of [sa, sb, sc, sd, sg]) s.close();
+  } finally { srv.close(); server.close(); }
+});
+
+test('recuperar la contraseña con códigos de un solo uso', async () => {
+  const { server, io: srv, port } = await start({ baseDatos: ':memory:', port: 0 });
+  const base = `http://127.0.0.1:${port}`;
+  try {
+    const a = navegador(base); await a.get('/');
+    const r = await a.post('/api/cuenta/registro', { nombre: 'Olvidadiza', clave: 'tomate-maduro-1', acepto: true });
+    assert.equal(r.codigos.length, 8); assert.match(r.codigos[0], /^[A-Z2-9]{4}-[A-Z2-9]{4}$/);
+    assert.equal((await (await a.get('/api/cuenta')).json()).codigosRecuperacion, 8);
+    const b = navegador(base); await b.get('/');
+    assert.equal((await b.post('/api/cuenta/recuperar', { nombre: 'Olvidadiza', codigo: 'AAAA-BBBB', nueva: 'pepino-verde-22' })).ok, false, 'código falso');
+    assert.equal((await b.post('/api/cuenta/recuperar', { nombre: 'nadie', codigo: r.codigos[0], nueva: 'pepino-verde-22' })).ok, false);
+    assert.match((await b.post('/api/cuenta/recuperar', { nombre: 'olvidadiza', codigo: r.codigos[0].toLowerCase().replace('-', ' '), nueva: '12345678' })).error, /más usadas/, 'contraseña mala: el código no se gasta');
+    const ok = await b.post('/api/cuenta/recuperar', { nombre: 'olvidadiza', codigo: r.codigos[0].toLowerCase().replace('-', ' '), nueva: 'pepino-verde-22' });
+    assert.ok(ok.ok); assert.equal(ok.quedan, 7);
+    assert.equal((await (await a.get('/api/cuenta')).json()).usuario, null, 'se cierran las demás sesiones');
+    assert.equal((await b.post('/api/cuenta/recuperar', { nombre: 'Olvidadiza', codigo: r.codigos[0], nueva: 'otra-clave-333' })).ok, false, 'el código ya está usado');
+    assert.ok((await (await b.get('/api/cuenta')).json()).usuario, 'y entra con la nueva');
+    // nuevos códigos: piden la contraseña y anulan los anteriores
+    assert.equal((await b.post('/api/cuenta/codigos', { clave: 'mal' })).ok, false);
+    const n = await b.post('/api/cuenta/codigos', { clave: 'pepino-verde-22' }); assert.equal(n.codigos.length, 8);
+    const c = navegador(base); await c.get('/');
+    assert.equal((await c.post('/api/cuenta/recuperar', { nombre: 'Olvidadiza', codigo: r.codigos[1], nueva: 'calabaza-naranja-4' })).ok, false, 'los códigos viejos ya no valen');
+    // 5 fallos bloquean la recuperación
+    for (let i = 0; i < 5; i++) await c.post('/api/cuenta/recuperar', { nombre: 'Olvidadiza', codigo: `ZZZZ-000${i}`, nueva: 'calabaza-naranja-4' });
+    assert.match((await c.post('/api/cuenta/recuperar', { nombre: 'Olvidadiza', codigo: n.codigos[0], nueva: 'calabaza-naranja-4' })).error, /Demasiados intentos/);
+  } finally { srv.close(); server.close(); }
+});

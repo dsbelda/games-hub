@@ -685,3 +685,16 @@ test('Acción en tiempo real: Hockey, Sumo, Bombas y Carreras acaban entre CPUs'
   for (let k = 0; k < 6; k++) { const h = H.nuevo(2); H.configurar(h, k % 2 ? [{ bot: true, nivel: 'normal' }, { bot: true, nivel: 'dificil' }] : [{ bot: true, nivel: 'dificil' }, { bot: true, nivel: 'normal' }]); let s = 0; while (!H.fin(h) && s < 30 * 600) { H.paso(h, 1 / 30); s++; } if (H.fin(h).ganadores[0] === k % 2) dif++; }
   assert.ok(dif >= 4, `hockey difícil ${dif}/6`);
 });
+
+test('Espectadores: ningún juego falla al pedir la vista de quien mira (asiento -1)', () => {
+  const nombres = Object.keys(JUEGOS);
+  assert.ok(nombres.length > 40);
+  for (const id of nombres) {
+    const J = JUEGOS[id], n = Math.max(J.min, 2) <= J.max ? Math.max(J.min, 2) : J.min;
+    const e = J.nuevo(n, Math.random);
+    if (J.configurar) J.configurar(e, Array.from({ length: n }, () => ({ bot: false, nivel: 'normal' })));
+    const v = J.vista(e, -1);
+    assert.ok(v && typeof v === 'object', `${id}: vista de espectador`);
+    if (J.foto) assert.ok(J.foto(e), `${id}: foto`);
+  }
+});

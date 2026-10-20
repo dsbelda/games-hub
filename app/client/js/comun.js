@@ -72,6 +72,24 @@
     return Math.min(f, 4);
   }
 
+  // pantalla de códigos de recuperación (se enseñan una sola vez): copiar, descargar y confirmar que se han guardado
+  function mostrarCodigos(d, codigos, alContinuar) {
+    d.replaceChildren();
+    const cab = el('div', 'modal-cab'); cab.append(el('h2', null, 'Tus códigos de recuperación'));
+    const c = el('div', 'caja-in modal-form');
+    const texto = codigos.join('\n');
+    const lista = el('ol', 'codigos'); for (const k of codigos) lista.append(el('li', null, k));
+    const fila = el('div', 'fila');
+    const bc = el('button', 'btn mini', 'Copiar'); bc.type = 'button'; bc.onclick = () => navigator.clipboard?.writeText(texto).then(() => aviso('Códigos copiados', 'bien'), () => aviso('No se pudo copiar', 'mal'));
+    const bd = el('button', 'btn mini', 'Descargar'); bd.type = 'button';
+    bd.onclick = () => { const a = el('a'); a.href = URL.createObjectURL(new Blob([`Códigos de recuperación de dsbelda games\nCada uno vale una sola vez.\n\n${texto}\n`], { type: 'text/plain' })); a.download = 'codigos-recuperacion-dsbelda-games.txt'; a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 2000); };
+    fila.append(bc, bd);
+    const l = el('label', 'check'); const ck = el('input'); ck.type = 'checkbox'; l.append(ck, ' Ya los he guardado en un sitio seguro');
+    const seguir = el('button', 'btn primario ancho', 'Continuar'); seguir.type = 'button'; seguir.disabled = true; ck.onchange = () => { seguir.disabled = !ck.checked; };
+    seguir.onclick = alContinuar;
+    c.append(el('p', null, 'Sin correo, estos códigos son la única forma de recuperar tu contraseña si la olvidas. Cada uno vale una sola vez. No se volverán a mostrar (aunque puedes generar otros nuevos desde Tu cuenta).'), lista, fila, l, seguir);
+    d.append(cab, c);
+  }
   function ventanaCuenta(modo = 'entrar') {
     const d = el('dialog', 'modal caja');
     d.setAttribute('aria-labelledby', 'modal-titulo');
@@ -91,8 +109,11 @@
     };
     const [ln, iNombre] = campo('Usuario', 'text', 'username');
     iNombre.maxLength = 16; iNombre.autocapitalize = 'off'; iNombre.spellcheck = false;
+    const [lcod, iCodigo] = campo('Código de recuperación', 'text', 'off');
+    iCodigo.maxLength = 12; iCodigo.autocapitalize = 'characters'; iCodigo.spellcheck = false; iCodigo.placeholder = 'XXXX-XXXX';
     const [lc, iClave] = campo('Contraseña', 'password', 'current-password');
     iClave.maxLength = 200;
+    const etqClave = lc.firstChild;
     const ver = el('button', 'ver-clave', 'Ver'); ver.type = 'button';
     ver.onclick = () => { const v = iClave.type === 'password'; iClave.type = v ? 'text' : 'password'; ver.textContent = v ? 'Ocultar' : 'Ver'; };
     lc.append(ver);
@@ -107,23 +128,31 @@
     const nota = el('p', 'suave nota');
     const error = el('p', 'error'); error.setAttribute('role', 'alert');
     const enviar = el('button', 'btn primario ancho'); enviar.type = 'submit';
-    f.append(ln, lc, medidor, medTxt, acepto, nota, error, enviar);
+    const olvido = el('button', 'enlace-btn', '¿Has olvidado la contraseña?'); olvido.type = 'button';
+    const volver = el('button', 'enlace-btn', '← Volver a entrar'); volver.type = 'button';
+    f.append(ln, lcod, lc, medidor, medTxt, acepto, nota, error, enviar, olvido, volver);
     d.append(cab, pestanas, f);
 
     const poner = (m) => {
       modo = m;
-      const crear = m === 'crear';
-      h.textContent = crear ? 'Crea tu cuenta' : 'Entra en tu cuenta';
+      const crear = m === 'crear', rec = m === 'recuperar';
+      h.textContent = rec ? 'Recupera tu contraseña' : crear ? 'Crea tu cuenta' : 'Entra en tu cuenta';
+      pestanas.hidden = rec;
       pe.setAttribute('aria-pressed', String(!crear)); pc.setAttribute('aria-pressed', String(crear));
-      enviar.textContent = crear ? 'Crear cuenta' : 'Entrar';
-      iClave.autocomplete = crear ? 'new-password' : 'current-password';
-      medidor.hidden = medTxt.hidden = acepto.hidden = !crear;
-      nota.textContent = crear
-        ? 'Guarda tus partidas, victorias, récords y favoritos, y reserva tu nombre. Sin correo: apunta bien la contraseña, porque no se puede recuperar.'
-        : '¿No tienes cuenta? Crea una en «Crear cuenta». También puedes jugar sin cuenta.';
+      enviar.textContent = rec ? 'Cambiar contraseña' : crear ? 'Crear cuenta' : 'Entrar';
+      iClave.autocomplete = crear || rec ? 'new-password' : 'current-password';
+      etqClave.textContent = rec ? 'Contraseña nueva' : 'Contraseña';
+      lcod.hidden = !rec; iCodigo.required = rec;
+      medidor.hidden = medTxt.hidden = !(crear || rec); acepto.hidden = !crear;
+      olvido.hidden = m !== 'entrar'; volver.hidden = !rec;
+      nota.textContent = rec
+        ? 'Escribe tu usuario, uno de los códigos de recuperación que te dimos al crear la cuenta y una contraseña nueva. Cada código vale una sola vez.'
+        : crear
+          ? 'Guarda tus partidas, victorias, récords y favoritos, y reserva tu nombre. No pedimos correo: al terminar te daremos unos códigos para recuperar la contraseña si la olvidas.'
+          : '¿No tienes cuenta? Crea una en «Crear cuenta». También puedes jugar sin cuenta.';
       error.textContent = '';
     };
-    pe.onclick = () => poner('entrar'); pc.onclick = () => poner('crear');
+    pe.onclick = () => poner('entrar'); pc.onclick = () => poner('crear'); olvido.onclick = () => poner('recuperar'); volver.onclick = () => poner('entrar');
     iClave.oninput = () => {
       const n = fuerza(iClave.value);
       medidor.dataset.n = iClave.value ? n : 0;
@@ -133,9 +162,13 @@
       e.preventDefault();
       error.textContent = '';
       enviar.disabled = true; enviar.classList.add('cargando');
-      const r = await post(modo === 'crear' ? '/api/cuenta/registro' : '/api/cuenta/entrar', { nombre: iNombre.value.trim(), clave: iClave.value, acepto: ca.checked });
+      const r = modo === 'recuperar'
+        ? await post('/api/cuenta/recuperar', { nombre: iNombre.value.trim(), codigo: iCodigo.value, nueva: iClave.value })
+        : await post(modo === 'crear' ? '/api/cuenta/registro' : '/api/cuenta/entrar', { nombre: iNombre.value.trim(), clave: iClave.value, acepto: ca.checked });
       enviar.disabled = false; enviar.classList.remove('cargando');
       if (!r.ok) { error.textContent = r.error || 'No se pudo'; d.classList.remove('temblor'); void d.offsetWidth; d.classList.add('temblor'); return; }
+      if (modo === 'recuperar') { avisoTrasRecargar(`Contraseña cambiada. Te quedan ${r.quedan} códigos${r.quedan <= 2 ? ': genera otros nuevos desde Tu cuenta' : ''}`); location.reload(); return; }
+      if (modo === 'crear' && r.codigos) { mostrarCodigos(d, r.codigos, () => { avisoTrasRecargar(`¡Bienvenido/a, ${iNombre.value.trim()}! Tu cuenta está creada`); location.reload(); }); return; }
       avisoTrasRecargar(modo === 'crear' ? `¡Bienvenido/a, ${iNombre.value.trim()}! Tu cuenta está creada` : `Hola de nuevo, ${iNombre.value.trim()}`);
       location.reload(); // las salas (sockets) reconocen la cuenta al reconectar
     };
@@ -150,6 +183,7 @@
   window.Cuenta = {
     cargar: cargarCuenta,
     ventana: ventanaCuenta,
+    mostrarCodigos,
     avatarUrl,
     post,
     async salir() { await post('/api/cuenta/salir'); avisoTrasRecargar('Has cerrado la sesión'); location.href = '/'; },
@@ -171,6 +205,24 @@
     // récord de un juego en solitario: se guarda en la cuenta si hay sesión
     async record(juego, valor) { const c = await cargarCuenta(); if (c.usuario) post('/api/record', { juego, valor }); },
   };
+  // denunciar un mensaje: elegir motivo y enviar (la función «enviar» hace la petición según el sitio)
+  const MOTIVOS = [['insultos', 'Insultos o lenguaje ofensivo'], ['acoso', 'Acoso o amenazas'], ['spam', 'Spam o publicidad'], ['inapropiado', 'Contenido sexual o inapropiado'], ['datos', 'Datos personales'], ['otro', 'Otro motivo']];
+  function denunciar({ quien, texto, enviar }) {
+    const d = el('dialog', 'modal caja');
+    const cab = el('div', 'modal-cab'); const h = el('h2', null, 'Denunciar mensaje');
+    const x = el('button', 'modal-x', '×'); x.type = 'button'; x.setAttribute('aria-label', 'Cerrar'); x.onclick = () => d.close(); cab.append(h, x);
+    const f = el('form', 'caja-in modal-form');
+    const cita = el('blockquote', 'denuncia-cita'); cita.append(el('b', null, quien + ': '), document.createTextNode(texto));
+    const l = el('label', 'campo'); l.append(el('span', null, 'Motivo'));
+    const sel = el('select'); for (const [v, t] of MOTIVOS) { const o = el('option', null, t); o.value = v; sel.append(o); } l.append(sel);
+    const nota = el('p', 'suave nota', 'Se guardará este mensaje y quién lo denuncia, y el titular lo revisará. Si varias cuentas denuncian a la misma persona, se la silencia unas horas.');
+    const err = el('p', 'error'); const b = el('button', 'btn primario ancho', 'Enviar denuncia'); b.type = 'submit';
+    f.append(cita, l, nota, err, b); d.append(cab, f);
+    f.onsubmit = async (e) => { e.preventDefault(); b.disabled = true; const r = await enviar(sel.value); b.disabled = false; if (!r.ok) { err.textContent = r.error || 'No se pudo enviar'; return; } d.close(); aviso('Gracias, hemos recibido tu denuncia', 'bien'); };
+    d.addEventListener('close', () => d.remove()); d.addEventListener('click', (e) => { if (e.target === d) d.close(); });
+    document.body.append(d); d.showModal();
+  }
+  window.Denunciar = denunciar;
   window.Avisar = aviso;
   window.Confeti = confeti;
 
