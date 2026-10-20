@@ -3,7 +3,7 @@
 // Uso: node tests/humo.js   (no deja datos: la sala se borra al salir)
 const { chromium } = require(process.env.PLAYWRIGHT || '/home/ubuntu/herramientas/navegador/node_modules/playwright');
 (async () => {
-  const b = await chromium.launch(); const p = await b.newPage(); const errs = [];
+  const b = await chromium.launch(); const p = await (await b.newContext({ locale: 'es-ES' })).newPage(); const errs = [];
   p.on('console', m => m.type() === 'error' && errs.push(m.text())); p.on('pageerror', e => errs.push(String(e)));
   const ws = []; p.on('websocket', w => ws.push(w.url()));
   await p.goto('https://games.dsbelda.dev/'); await p.waitForSelector('.ficha');
