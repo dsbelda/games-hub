@@ -1,0 +1,4635 @@
+{
+ "2048": [
+  "lib/catalogo.js"
+ ],
+ "__cf_bm": [
+  "html:/legal/cookies"
+ ],
+ ", las salas multijugador no funcionarán; los juegos en solitario sí.": [
+  "html:/legal/cookies"
+ ],
+ "¡{0} ha dicho STOP! Termina rápido": [
+  "app/client/js/juegos/stop.js"
+ ],
+ "¡{0} y tú ya sois amigos!": [
+  "app/client/js/social.js"
+ ],
+ "¡2048! Puedes seguir jugando": [
+  "app/client/js/juegos/2048.js"
+ ],
+ "¡A dibujar!": [
+  "app/client/js/juegos/telefono.js"
+ ],
+ "¡Adivina lo que describe {0}!": [
+  "app/client/js/juegos/tabu.js"
+ ],
+ "¡Agua se ha evaporado!": [
+  "app/client/js/juegos/fuegoagua.js"
+ ],
+ "¡Al agua!": [
+  "app/client/js/juegos/carretera.js"
+ ],
+ "¡Al jardín de la oca!": [
+  "lib/juegos/oca.js"
+ ],
+ "¡Al vacío!": [
+  "app/client/js/juegos/saltos.js"
+ ],
+ "¡Bienvenido/a, {0}! Tu cuenta está creada": [
+  "app/client/js/comun.js"
+ ],
+ "¡Boom! Prueba otra vez": [
+  "app/client/js/juegos/buscaminas.js"
+ ],
+ "¡CABEZA! -{0}": [
+  "app/client/js/juegos/arqueros.js"
+ ],
+ "¡canta TUTE!": [
+  "lib/juegos/tute.js"
+ ],
+ "¡Cantar TUTE!": [
+  "app/client/js/juegos/tute.js"
+ ],
+ "¡COMBO ×{0}!": [
+  "app/client/js/juegos/frutas.js"
+ ],
+ "¡Con todo!": [
+  "app/client/js/juegos/poquer.js"
+ ],
+ "¡Contra la pared!": [
+  "app/client/js/juegos/serpiente.js"
+ ],
+ "¡Cuatro de golpe!": [
+  "app/client/js/juegos/bloques.js"
+ ],
+ "¡Cuatro en línea!": [
+  "lib/juegos/cuatro.js"
+ ],
+ "¡Demasiado lento!": [
+  "app/client/js/juegos/carretera.js"
+ ],
+ "¡Describe! Sin decir la palabra ni las prohibidas": [
+  "app/client/js/juegos/tabu.js"
+ ],
+ "¡Despejado en {0} s!": [
+  "app/client/js/juegos/buscaminas.js"
+ ],
+ "¡Dibuja! (sin letras ni números)": [
+  "app/client/js/juegos/dibujo.js"
+ ],
+ "¡Dominó de {0}!": [
+  "app/client/js/juegos/domino.js"
+ ],
+ "¡El cortacésped ha salvado la casa!": [
+  "app/client/js/juegos/plantas.js"
+ ],
+ "¡El tren!": [
+  "app/client/js/juegos/carretera.js"
+ ],
+ "¡Flota lista!": [
+  "app/client/js/juegos/hundir.js"
+ ],
+ "¡Frenesí! {0} s": [
+  "app/client/js/juegos/galletas.js"
+ ],
+ "¡Frenesí! Producción ×7 durante 77 s": [
+  "app/client/js/juegos/galletas.js"
+ ],
+ "¡Fuego se ha apagado!": [
+  "app/client/js/juegos/fuegoagua.js"
+ ],
+ "¡Fuego! Elige casilla en el tablero rival": [
+  "app/client/js/juegos/hundir.js"
+ ],
+ "¡Gana el jugador {0}! ({1}–{2})": [
+  "app/client/js/juegos/memoria.js"
+ ],
+ "¡ha acertado! (+{0})": [
+  "lib/juegos/dibujo.js"
+ ],
+ "¡Has aguantado las 10 oleadas!": [
+  "app/client/js/juegos/plantas.js"
+ ],
+ "¡HAS CHOCADO!": [
+  "app/client/js/juegos/serpientes.js"
+ ],
+ "¡Has ganado!": [
+  "app/client/js/sala.js"
+ ],
+ "¡Has roto el muro de hielo! ¡El pingüino vuela!": [
+  "app/client/js/juegos/volar.js"
+ ],
+ "¡Has terminado todos los niveles!": [
+  "app/client/js/juegos/honda.js"
+ ],
+ "¡Jaque! Te toca": [
+  "app/client/js/juegos/ajedrez.js"
+ ],
+ "¡La bodega está llena!": [
+  "app/client/js/juegos/minero.js"
+ ],
+ "¡listo!": [
+  "app/client/js/juegos/eras.js"
+ ],
+ "¡Llegas a la {0}!": [
+  "app/client/js/juegos/eras.js"
+ ],
+ "¡Lo habéis conseguido!": [
+  "app/client/js/sala.js"
+ ],
+ "¡Lo habéis conseguido! Tiempo total: {0} s": [
+  "app/client/js/juegos/fuegoagua.js"
+ ],
+ "¡Los zombis se han comido tus sesos!": [
+  "app/client/js/juegos/plantas.js"
+ ],
+ "¡Magnífico!": [
+  "app/client/js/juegos/palabra.js"
+ ],
+ "¡Máquina destrozada! Rescate: {0} 💰": [
+  "app/client/js/juegos/minero.js"
+ ],
+ "¡Muy bien!": [
+  "app/client/js/juegos/palabra.js"
+ ],
+ "¡Muy buena!": [
+  "app/client/js/comun.js"
+ ],
+ "¡Nivel {0} superado en {1} s!": [
+  "app/client/js/juegos/fuegoagua.js"
+ ],
+ "¡Nivel {0} superado! {1} · {2} puntos": [
+  "app/client/js/juegos/honda.js"
+ ],
+ "¡Nivel {0} superado! Cuando estéis listos, el siguiente.": [
+  "app/client/js/juegos/mente.js"
+ ],
+ "¡Nivel 10! Elige clase:": [
+  "app/client/js/juegos/blindados.js"
+ ],
+ "¡Nivel superado!": [
+  "app/client/js/juegos/fuegoagua.js"
+ ],
+ "¡No puedes decir la palabra!": [
+  "lib/juegos/impostor.js"
+ ],
+ "¡No puedes votar la tuya!": [
+  "lib/juegos/farol.js"
+ ],
+ "¡Nuevo récord!": [
+  "app/client/js/juegos/memoria.js",
+  "app/client/js/juegos/serpiente.js"
+ ],
+ "¡Nuevo récord! {0}": [
+  "app/client/js/juegos/bloques.js",
+  "app/client/js/juegos/burbujas.js"
+ ],
+ "¡Nuevo récord! {0} s": [
+  "app/client/js/juegos/buscaminas.js"
+ ],
+ "¡Nuevo récord! {0}:{1}": [
+  "app/client/js/juegos/solitario.js"
+ ],
+ "¡Nuevo!": [
+  "html:ventana"
+ ],
+ "¡Oleada {0} superada!": [
+  "app/client/js/juegos/torres.js"
+ ],
+ "¡órdago!": [
+  "app/client/js/juegos/mus.js"
+ ],
+ "¡Otro lanzamiento!": [
+  "app/client/js/juegos/tortuga.js"
+ ],
+ "¡Pantalla limpia! +1000": [
+  "app/client/js/juegos/burbujas.js"
+ ],
+ "¡pilla a quien no dijo «Unidad»! (+2)": [
+  "lib/juegos/unidad.js"
+ ],
+ "¡Pillado {0}! (+2)": [
+  "app/client/js/juegos/unidad.js"
+ ],
+ "¡Por los pelos!": [
+  "app/client/js/juegos/palabra.js"
+ ],
+ "¡PREPARADOS! {0}": [
+  "app/client/js/juegos/sumo.js"
+ ],
+ "¡Récord! {0}": [
+  "app/client/js/juegos/carretera.js",
+  "app/client/js/juegos/dino.js",
+  "app/client/js/juegos/frutas.js",
+  "app/client/js/juegos/pajaro.js",
+  "app/client/js/juegos/saltos.js"
+ ],
+ "¡Récord! {0} m · +{1} 💰": [
+  "app/client/js/juegos/volar.js"
+ ],
+ "¡Récord! {0} m (+{1} 💰)": [
+  "app/client/js/juegos/tortuga.js"
+ ],
+ "¡Se acabó! Llegaste a la oleada {0}": [
+  "app/client/js/juegos/torres.js"
+ ],
+ "¡Se acerca una gran oleada de zombis!": [
+  "app/client/js/juegos/plantas.js"
+ ],
+ "¡Sin combustible! Rescate: {0} 💰": [
+  "app/client/js/juegos/minero.js"
+ ],
+ "¡Solitario completado!": [
+  "app/client/js/juegos/solitario.js"
+ ],
+ "¡STOP! {s} s": [
+  "app/client/js/juegos/stop.js"
+ ],
+ "¡Suerte! +{0} galletas": [
+  "app/client/js/juegos/galletas.js"
+ ],
+ "¡TANQUE DESTRUIDO!": [
+  "app/client/js/juegos/blindados.js"
+ ],
+ "¡Te ha llevado el río!": [
+  "app/client/js/juegos/carretera.js"
+ ],
+ "¡TE HAN COMIDO!": [
+  "app/client/js/juegos/celulas.js"
+ ],
+ "¡TE HAN CORTADO!": [
+  "app/client/js/juegos/territorio.js"
+ ],
+ "¡Te han pillado! Adivina la palabra para ganar igualmente": [
+  "app/client/js/juegos/impostor.js"
+ ],
+ "¡Te has mordido!": [
+  "app/client/js/juegos/serpiente.js"
+ ],
+ "¡Tira el dado!": [
+  "app/client/js/juegos/parchis.js"
+ ],
+ "¡Todas las cadenas vistas!": [
+  "lib/juegos/telefono.js"
+ ],
+ "¡Todos los niveles en {0} s!": [
+  "lib/juegos/fuegoagua.js"
+ ],
+ "¡Tú estás dibujando!": [
+  "lib/juegos/dibujo.js"
+ ],
+ "¡Tute! (4 reyes o 4 caballos)": [
+  "lib/juegos/tute.js"
+ ],
+ "¡Uf, en la última!": [
+  "app/client/js/juegos/palabra.js"
+ ],
+ "¡Un pedido caducado! −10": [
+  "lib/juegos/cocina.js"
+ ],
+ "¡Ups! Aquí no hay nada": [
+  "html:/no-existe"
+ ],
+ "¡Uy! {0} jugó el {1}, pero había {2}. Se pierde una vida.": [
+  "app/client/js/juegos/mente.js"
+ ],
+ "¡Victoria en {0}:{1}! Nuevo récord": [
+  "app/client/js/juegos/eras.js"
+ ],
+ "¡Ya sois amigos!": [
+  "app/client/js/social.js"
+ ],
+ "¿A qué loseta?": [
+  "app/client/js/juegos/isla.js"
+ ],
+ "¿A quién expulsáis? Vota en su tarjeta": [
+  "app/client/js/juegos/lobo.js"
+ ],
+ "¿Cómo te llamas?": [
+  "app/client/js/sala.js"
+ ],
+ "¿Cuál es la definición de verdad?": [
+  "app/client/js/juegos/farol.js"
+ ],
+ "¿Cuál es la palabra?": [
+  "app/client/js/juegos/impostor.js"
+ ],
+ "¿Dónde está la pista en la escala? Mueve la aguja": [
+  "app/client/js/juegos/onda.js"
+ ],
+ "¿Has olvidado la contraseña?": [
+  "app/client/js/comun.js"
+ ],
+ "¿Mus o no hay mus?": [
+  "app/client/js/juegos/mus.js"
+ ],
+ "¿No tienes cuenta? Crea una en «Crear cuenta». También puedes jugar sin cuenta.": [
+  "app/client/js/comun.js"
+ ],
+ "¿Por qué lado?": [
+  "app/client/js/juegos/domino.js"
+ ],
+ "¿Qué es?": [
+  "app/client/js/juegos/telefono.js"
+ ],
+ "¿Qué es? Escríbelo": [
+  "app/client/js/juegos/tabu.js"
+ ],
+ "¿Qué han dibujado? Descríbelo en una frase:": [
+  "app/client/js/juegos/telefono.js"
+ ],
+ "¿Qué letra es el comodín?": [
+  "app/client/js/juegos/palabreria.js"
+ ],
+ "¿Qué loseta inundada achicas con los sacos?": [
+  "app/client/js/juegos/isla.js"
+ ],
+ "¿Qué significa…?": [
+  "app/client/js/juegos/farol.js"
+ ],
+ "¿Quién es el impostor? Vota": [
+  "app/client/js/juegos/impostor.js"
+ ],
+ "¿Seguro? Pasar": [
+  "app/client/js/juegos/palabreria.js"
+ ],
+ "¿Seguro? Pulsa otra vez": [
+  "app/client/js/juegos/ajedrez.js",
+  "app/client/js/juegos/arqueros.js",
+  "app/client/js/juegos/billar.js",
+  "app/client/js/juegos/damas.js",
+  "app/client/js/juegos/galletas.js",
+  "app/client/js/juegos/hundir.js"
+ ],
+ "¿Tienes cuenta?": [
+  "app/client/js/sala.js"
+ ],
+ ". También puedes borrar o bloquear las cookies desde tu navegador (normalmente en Ajustes → Privacidad). Si bloqueas": [
+  "html:/legal/cookies"
+ ],
+ "· próxima en {0} s": [
+  "app/client/js/juegos/plantas.js"
+ ],
+ "· tú: {0}": [
+  "app/client/js/juegos/mus.js"
+ ],
+ "«{0}» no está en el diccionario": [
+  "lib/juegos/revueltas.js"
+ ],
+ "«{0}»: ¡casi!": [
+  "app/client/js/juegos/dibujo.js"
+ ],
+ "(sé majo en el chat).": [
+  "app/client/js/sala.js"
+ ],
+ "(sin pista)": [
+  "lib/juegos/impostor.js"
+ ],
+ "(tú eres la {0})": [
+  "app/client/js/juegos/brisca.js"
+ ],
+ "(tú)": [
+  "app/client/js/juegos/chinchon.js",
+  "app/client/js/juegos/lobo.js",
+  "app/client/js/juegos/mentiroso.js"
+ ],
+ "{0} (tú)": [
+  "app/client/js/juegos/ajedrez.js"
+ ],
+ "{0} está descartando…": [
+  "app/client/js/juegos/isla.js"
+ ],
+ "{0} está eligiendo palabra…": [
+  "app/client/js/juegos/dibujo.js"
+ ],
+ "{0} está pensando una pista…": [
+  "app/client/js/juegos/onda.js"
+ ],
+ "{0} puntos de máximo": [
+  "lib/juegos/arena.js"
+ ],
+ "← → moverse y taladrar a los lados · ↓ taladrar · ↑ volar (gasta combustible). Para en un edificio para entrar.": [
+  "app/client/js/juegos/minero.js"
+ ],
+ "← → para moverte, ↑ para saltar y espacio para chutar. Mete el balón en la portería contraria (bajo el larguero). Gana quien marque más en 90 segundos.": [
+  "lib/catalogo.js"
+ ],
+ "← → para moverte. En el móvil, toca a la izquierda o a la derecha.": [
+  "app/client/js/juegos/saltos.js"
+ ],
+ "← Volver a entrar": [
+  "html:ventana"
+ ],
+ "← Volver a los juegos": [
+  "html:/legal/cookies"
+ ],
+ "↑ ↓ avanzar · ← → girar · espacio disparar. ¡Las balas rebotan!": [
+  "app/client/js/juegos/tanques.js"
+ ],
+ "↑ ↓ para avanzar y retroceder, ← → para girar y espacio para disparar. Las balas rebotan en las paredes y también te dan a ti. El último tanque vivo gana la ronda; gana quien llegue a 5.": [
+  "lib/catalogo.js"
+ ],
+ "↑ acelera, ↓ frena (y marcha atrás), ← → giran y espacio es el turbo (uno por vuelta). Fuera del asfalto se va muy lento. Gana quien completa antes las 3 vueltas.": [
+  "lib/catalogo.js"
+ ],
+ "+ CPU difícil": [
+  "app/client/js/sala.js"
+ ],
+ "<h><b>Cloudflare</b>: la red que protege y acelera la web; ve tu IP y las peticiones que haces. Es una empresa de EE. UU. adherida al Marco de Privacidad de Datos UE-EE. UU., que garantiza un nivel de protección adecuado.": [
+  "html:/legal/privacidad"
+ ],
+ "<h><b>Los demás jugadores de tu sala</b>: tu apodo (o nombre de usuario y avatar) y tus mensajes. Tus estadísticas, récords y favoritos solo los ves tú.": [
+  "html:/legal/privacidad"
+ ],
+ "<h><b>OVHcloud</b>: el servidor donde está la web, en Francia (Unión Europea).": [
+  "html:/legal/privacidad"
+ ],
+ "<h><b>Si creas cuenta:</b> 8 códigos de recuperación de la contraseña (solo se guarda su huella, no el código) y cuáles has usado": [
+  "html:/legal/privacidad"
+ ],
+ "<h><b>Si creas cuenta:</b> nombre de usuario, contraseña (guardada cifrada con scrypt: nadie puede leerla), avatar elegido, fecha de alta y de último acceso": [
+  "html:/legal/privacidad"
+ ],
+ "<h><b>Si creas cuenta:</b> partidas jugadas y ganadas por juego, récords de los juegos en solitario y favoritos": [
+  "html:/legal/privacidad"
+ ],
+ "<h><b>Si creas cuenta:</b> una cookie de sesión <code>games_sesion</code>": [
+  "html:/legal/privacidad"
+ ],
+ "<h><b>Si denuncias un mensaje o te denuncian:</b> el texto del mensaje, quién lo denunció y a quién, el motivo y la fecha": [
+  "html:/legal/privacidad"
+ ],
+ "<h><b>Si tienes cuenta, lo haces tú mismo desde <a href=\"/cuenta\">Tu cuenta</a></b>: descargar todos tus datos en un fichero (portabilidad y acceso), cambiar el avatar o la contraseña, o borrar la cuenta con todo lo que tiene (supresión), al momento.": [
+  "html:/legal/privacidad"
+ ],
+ "<h><b>Si usas los amigos:</b> a quién has enviado o aceptado una solicitud de amistad y a quién has bloqueado": [
+  "html:/legal/privacidad"
+ ],
+ "<h><b>Si usas los amigos:</b> los mensajes privados entre amigos e invitaciones a una sala (texto, fecha y si se han leído)": [
+  "html:/legal/privacidad"
+ ],
+ "<h><b>Tus amigos</b> (solo quienes hayáis aceptado los dos): tu nombre, tu avatar, si estás conectado, a qué juegas y los mensajes que les envíes. Quien no es tu amigo no ve nada de esto. Los mensajes privados no los lee nadie más, salvo que haga falta por una denuncia o una obligación legal.": [
+  "html:/legal/privacidad"
+ ],
+ "<h>Al jugar aceptas las <a href=\"/legal/aviso\" target=\"_blank\">normas</a> (sé majo en el chat).": [
+  "html:/j/brisca"
+ ],
+ "<h>David Sánchez Belda, Valencia (España). Correo: <a href=\"mailto:dsbelda@gmail.com\">dsbelda@gmail.com</a>.": [
+  "html:/legal/privacidad"
+ ],
+ "<h>En resumen: para jugar <b>no hace falta darnos nada</b>. Si creas una cuenta (es opcional), solo guardamos un nombre de usuario que tú eliges, tu contraseña cifrada y lo que juegas. <b>No pedimos correo, nombre real ni teléfono.</b>": [
+  "html:/legal/privacidad"
+ ],
+ "<h>Es una web <b>gratuita y sin ánimo de lucro</b>: no se vende nada, no hay publicidad y no se cobra por jugar. Si eso cambiara, se completarían estos datos con lo que exige la Ley 34/2002 (LSSI) y se avisaría aquí.": [
+  "html:/legal/aviso"
+ ],
+ "<h>Esta web (<b>games.dsbelda.dev</b>) es un proyecto personal de <b>David Sánchez Belda</b>, con residencia en Valencia (España). Contacto: <a href=\"mailto:dsbelda@gmail.com\">dsbelda@gmail.com</a>.": [
+  "html:/legal/aviso"
+ ],
+ "<h>Esta web <b>solo usa cookies y almacenamiento técnicos</b>, necesarios para que funcione o que guardan lo que tú eliges. <b>No hay publicidad, ni analítica, ni redes sociales, ni cookies de terceros para seguirte.</b> Por eso no hace falta pedirte permiso con un aviso (art. 22.2 de la LSSI y guía sobre cookies de la AEPD).": [
+  "html:/legal/cookies"
+ ],
+ "<h>Filtros <span id=\"n-filtros\"></span>": [
+  "html:ventana"
+ ],
+ "<h>Para cualquier otra cosa, puedes pedir acceso, rectificación, supresión, oposición, limitación o portabilidad escribiendo a <a href=\"mailto:dsbelda@gmail.com\">dsbelda@gmail.com</a>. Si juegas sin cuenta, como no pedimos datos que te identifiquen, puede que no podamos saber qué datos son tuyos (art. 11 del RGPD); en ese caso te lo explicaremos. Para borrar al momento lo que hay en tu navegador, borra las cookies y los datos de este sitio.": [
+  "html:/legal/privacidad"
+ ],
+ "<h>Se guardan <b>solo en tu navegador</b> (almacenamiento local); no llegan al servidor, salvo el apodo cuando juegas": [
+  "html:/legal/privacidad"
+ ],
+ "<h>Si algún día se añade publicidad o analítica, se actualizará esta tabla y aparecerá un aviso para que aceptes o rechaces esas cookies <b>antes</b> de que se usen, con las dos opciones igual de visibles. Podrás cambiar de opinión cuando quieras desde «Configurar cookies».": [
+  "html:/legal/cookies"
+ ],
+ "<h>Si crees que no se respetan tus derechos, puedes reclamar ante la Agencia Española de Protección de Datos: <a href=\"https://www.aepd.es\" rel=\"noopener\">www.aepd.es</a>.": [
+  "html:/legal/privacidad"
+ ],
+ "<h>Si quieres, puedes crear una cuenta gratuita con un nombre de usuario y una contraseña para guardar tus partidas, récords y favoritos. No pedimos correo: al crear la cuenta te damos <b>8 códigos de recuperación de un solo uso</b> para cambiar la contraseña si la olvidas, así que guárdalos bien. No uses como nombre de usuario tu nombre real completo ni nada ofensivo o que suplante a otra persona; esas cuentas se pueden borrar. Una persona, una cuenta para jugar limpio. Puedes borrar tu cuenta cuando quieras desde «Tu cuenta».": [
+  "html:/legal/aviso"
+ ],
+ "<h>Un identificador aleatorio en la cookie <code>games_id</code>": [
+  "html:/legal/privacidad"
+ ],
+ "⏱ ¡Tiempo! ({0})": [
+  "app/client/js/juegos/saber.js"
+ ],
+ "▶ Jugar": [
+  "html:ventana"
+ ],
+ "▶ Jugar a la Brisca": [
+  "html:ventana"
+ ],
+ "▶ Unirme a la partida": [
+  "app/client/js/social.js"
+ ],
+ "☀️ Día: debate": [
+  "app/client/js/juegos/lobo.js"
+ ],
+ "⚖️ Votación": [
+  "app/client/js/juegos/lobo.js"
+ ],
+ "⚠ No tienes códigos de recuperación. Sin correo, si olvidas la contraseña perderías la cuenta: genera unos ahora.": [
+  "app/client/js/cuenta.js"
+ ],
+ "⚠ Te quedan {0} códigos de recuperación. Genera otros nuevos.": [
+  "app/client/js/cuenta.js"
+ ],
+ "✔ ¡Bomba desactivada!": [
+  "app/client/js/juegos/bomba.js"
+ ],
+ "✔ La de verdad": [
+  "app/client/js/juegos/farol.js"
+ ],
+ "✔ Módulo {0} desactivado": [
+  "app/client/js/juegos/bomba.js"
+ ],
+ "✖ {0} (módulo {1})": [
+  "app/client/js/juegos/bomba.js"
+ ],
+ "➡ Unirme a su sala": [
+  "app/client/js/social.js"
+ ],
+ "⭐ Retirar petición": [
+  "app/client/js/juegos/mente.js"
+ ],
+ "🌅 Cae la tarde…": [
+  "app/client/js/juegos/lobo.js"
+ ],
+ "🌙 Noche (la bruja actúa)": [
+  "app/client/js/juegos/lobo.js"
+ ],
+ "🎉 ¡Gana el pueblo!": [
+  "app/client/js/juegos/impostor.js"
+ ],
+ "🎮 Invitar a mi sala": [
+  "app/client/js/social.js"
+ ],
+ "🎲 ¡Te toca jugar a {0}!": [
+  "app/client/js/portal.js"
+ ],
+ "🎲 Al azar": [
+  "app/client/js/juegos/hundir.js"
+ ],
+ "🐧 ¡A volar!": [
+  "app/client/js/juegos/volar.js"
+ ],
+ "🐺 Chat de los lobos (solo lo veis vosotros)": [
+  "app/client/js/juegos/lobo.js"
+ ],
+ "👁 Estás mirando": [
+  "app/client/js/sala.js"
+ ],
+ "👁 Estás mirando esta sala. Puedes sentarte si queda hueco.": [
+  "app/client/js/sala.js"
+ ],
+ "👁 Mirar su partida": [
+  "app/client/js/social.js"
+ ],
+ "👑 ¡{0} gana el personaje de {1}!": [
+  "app/client/js/juegos/saber.js"
+ ],
+ "👑 ¡Corona! Elige qué personaje quieres intentar ganar": [
+  "app/client/js/juegos/saber.js"
+ ],
+ "👑 Pregunta por el personaje": [
+  "app/client/js/juegos/saber.js"
+ ],
+ "👤 Para jugar en solitario": [
+  "app/client/js/juego.js"
+ ],
+ "👥 2-4 jugadores": [
+  "html:/j/brisca"
+ ],
+ "💣 Tienes la bomba delante: describe lo que ves y haz lo que te digan.": [
+  "app/client/js/juegos/bomba.js"
+ ],
+ "📅 Día {0}": [
+  "app/client/js/juegos/volar.js"
+ ],
+ "📕 Manual de desactivación": [
+  "app/client/js/juegos/bomba.js"
+ ],
+ "📕 Tienes el manual. {0} tiene la bomba: pregúntale y dile qué hacer.": [
+  "app/client/js/juegos/bomba.js"
+ ],
+ "📣 ¡Tabú!": [
+  "app/client/js/juegos/tabu.js"
+ ],
+ "📣 ¡Tabú! «{0}»{1}": [
+  "app/client/js/juegos/tabu.js"
+ ],
+ "🔔 ¡Te toca! · {0}": [
+  "app/client/js/sala.js"
+ ],
+ "🔮 ¡es lobo!": [
+  "app/client/js/juegos/lobo.js"
+ ],
+ "🔮 no es lobo": [
+  "app/client/js/juegos/lobo.js"
+ ],
+ "🤝 ¡Listos!": [
+  "app/client/js/juegos/mente.js"
+ ],
+ "🤫 ¡Gana el impostor!": [
+  "app/client/js/juegos/impostor.js"
+ ],
+ "🤫 Eres el impostor": [
+  "app/client/js/juegos/impostor.js"
+ ],
+ "1 año": [
+  "html:/legal/cookies"
+ ],
+ "1 año en tu navegador": [
+  "html:/legal/privacidad"
+ ],
+ "1 jug.": [
+  "html:ventana"
+ ],
+ "1-2 jug.": [
+  "html:ventana"
+ ],
+ "1-30 jug.": [
+  "html:ventana"
+ ],
+ "1-4 jug.": [
+  "html:ventana"
+ ],
+ "1-8 jug.": [
+  "html:ventana"
+ ],
+ "12 meses": [
+  "html:/legal/privacidad"
+ ],
+ "14 días en los registros del servidor web": [
+  "html:/legal/privacidad"
+ ],
+ "2 jug.": [
+  "html:ventana"
+ ],
+ "2-10 jug.": [
+  "html:ventana"
+ ],
+ "2-12 jug.": [
+  "html:ventana"
+ ],
+ "2-4 jug.": [
+  "html:ventana"
+ ],
+ "2-5 jug.": [
+  "html:ventana"
+ ],
+ "2-6 jug.": [
+  "html:ventana"
+ ],
+ "2-8 jug.": [
+  "html:ventana"
+ ],
+ "3-10 jug.": [
+  "html:ventana"
+ ],
+ "4 jug.": [
+  "html:ventana"
+ ],
+ "4-10 jug.": [
+  "html:ventana"
+ ],
+ "5 o más": [
+  "app/client/js/portal.js"
+ ],
+ "5-12 jug.": [
+  "html:ventana"
+ ],
+ "6 meses; antes, si borras la cuenta": [
+  "html:/legal/privacidad"
+ ],
+ "68 juegos": [
+  "html:ventana"
+ ],
+ "90 días o hasta que cierres sesión": [
+  "html:/legal/cookies"
+ ],
+ "A {0} goles · tu mazo es el azul (abajo): muévelo con el ratón, el dedo o las flechas": [
+  "app/client/js/juegos/hockey.js"
+ ],
+ "A cuatro se juega por parejas: 1.º y 3.º contra 2.º y 4.º. Usa las flechas para cambiar las parejas.": [
+  "app/client/js/sala.js"
+ ],
+ "abcdefghijklmnñopqrstuvwxyz": [
+  "app/client/js/juegos/palabreria.js"
+ ],
+ "Abuela": [
+  "app/client/js/juegos/galletas.js"
+ ],
+ "Acción desconocida": [
+  "lib/juegos/ajedrez.js",
+  "lib/juegos/arqueros.js",
+  "lib/juegos/billar.js",
+  "lib/juegos/blindados.js",
+  "lib/juegos/bomba.js",
+  "lib/juegos/bombas.js",
+  "lib/juegos/brisca.js",
+  "lib/juegos/cabezones.js",
+  "lib/juegos/carreras.js",
+  "lib/juegos/celulas.js",
+  "lib/juegos/chinas.js",
+  "lib/juegos/chinchon.js",
+  "lib/juegos/clave.js",
+  "lib/juegos/cocina.js",
+  "lib/juegos/cuatro.js",
+  "lib/juegos/damas.js",
+  "lib/juegos/dibujo.js",
+  "lib/juegos/domino.js",
+  "lib/juegos/farol.js",
+  "lib/juegos/fuegoagua.js",
+  "lib/juegos/hockey.js",
+  "lib/juegos/hundir.js",
+  "lib/juegos/impostor.js",
+  "lib/juegos/isla.js",
+  "lib/juegos/mente.js",
+  "lib/juegos/mentiroso.js",
+  "lib/juegos/mus.js",
+  "lib/juegos/oca.js",
+  "lib/juegos/onda.js",
+  "lib/juegos/palabreria.js",
+  "lib/juegos/parchis.js",
+  "lib/juegos/poquer.js",
+  "lib/juegos/revueltas.js",
+  "lib/juegos/saber.js",
+  "lib/juegos/serpientes.js",
+  "lib/juegos/stop.js",
+  "lib/juegos/sumo.js",
+  "lib/juegos/tabu.js",
+  "lib/juegos/tanques.js",
+  "lib/juegos/telefono.js",
+  "lib/juegos/territorio.js",
+  "lib/juegos/tute.js",
+  "lib/juegos/unidad.js"
+ ],
+ "Acción no válida": [
+  "lib/salas.js"
+ ],
+ "Acelerar": [
+  "app/client/js/juegos/carreras.js"
+ ],
+ "Aceptar": [
+  "app/client/js/cookies.js",
+  "app/client/js/social.js"
+ ],
+ "Acepto las": [
+  "app/client/js/comun.js"
+ ],
+ "Achica dos losetas por acción": [
+  "app/client/js/juegos/isla.js"
+ ],
+ "Acorazado": [
+  "app/client/js/juegos/hundir.js"
+ ],
+ "Acoso o amenazas": [
+  "app/client/js/comun.js"
+ ],
+ "Adivina la palabra de 5 letras en 6 intentos. Una nueva cada día, la misma para todos.": [
+  "lib/catalogo.js"
+ ],
+ "Adivina tu equipo": [
+  "lib/juegos/tabu.js"
+ ],
+ "Agua": [
+  "app/client/js/juegos/fuegoagua.js"
+ ],
+ "Ahí hay otra bola": [
+  "lib/juegos/billar.js"
+ ],
+ "Ahí no": [
+  "lib/juegos/isla.js"
+ ],
+ "Ahí no cabe (los barcos no pueden tocarse)": [
+  "app/client/js/juegos/hundir.js"
+ ],
+ "Ahí no se puede": [
+  "app/client/js/juegos/solitario.js"
+ ],
+ "Ahora el agujero de destino": [
+  "app/client/js/juegos/chinas.js"
+ ],
+ "Ahora mismo no hay ninguna. ¡Crea tú una!": [
+  "app/client/js/sala.js"
+ ],
+ "Ahora mismo no usamos cookies de publicidad, de analítica ni de terceros, así que no hay nada que activar o desactivar.": [
+  "app/client/js/cookies.js"
+ ],
+ "Ahora no": [
+  "lib/juegos/bomba.js",
+  "lib/juegos/clave.js",
+  "lib/juegos/dibujo.js",
+  "lib/juegos/domino.js",
+  "lib/juegos/farol.js",
+  "lib/juegos/impostor.js",
+  "lib/juegos/mente.js",
+  "lib/juegos/mentiroso.js",
+  "lib/juegos/mus.js",
+  "lib/juegos/onda.js",
+  "lib/juegos/revueltas.js",
+  "lib/juegos/saber.js",
+  "lib/juegos/stop.js",
+  "lib/juegos/tabu.js",
+  "lib/juegos/telefono.js"
+ ],
+ "Ahora no das tú la pista": [
+  "lib/juegos/clave.js"
+ ],
+ "Ahora no hay pregunta": [
+  "lib/juegos/saber.js"
+ ],
+ "Ahora no puedes cambiar de clase": [
+  "lib/juegos/blindados.js"
+ ],
+ "Ahora no puedes cambiar el 7": [
+  "lib/juegos/brisca.js",
+  "lib/juegos/tute.js"
+ ],
+ "Ahora no puedes hacer eso": [
+  "lib/juegos/lobo.js"
+ ],
+ "Ahora no se adivina": [
+  "lib/juegos/dibujo.js"
+ ],
+ "Ahora no se revisa": [
+  "lib/juegos/stop.js"
+ ],
+ "Ahora no se vota": [
+  "lib/juegos/farol.js",
+  "lib/juegos/impostor.js"
+ ],
+ "Ahora no te toca adivinar": [
+  "lib/juegos/clave.js"
+ ],
+ "Ahora no tienes tanque": [
+  "lib/juegos/blindados.js"
+ ],
+ "Ahora no toca girar": [
+  "lib/juegos/saber.js"
+ ],
+ "Ahora toca descartarse": [
+  "lib/juegos/mus.js"
+ ],
+ "Ahora toca una casilla libre": [
+  "app/client/js/juegos/palabreria.js"
+ ],
+ "Ajedrez": [
+  "lib/catalogo.js"
+ ],
+ "Ajedrez de verdad con enroque, al paso y coronación. Contra un amigo o contra la CPU.": [
+  "lib/catalogo.js"
+ ],
+ "Al jugar aceptas las": [
+  "app/client/js/sala.js"
+ ],
+ "al máximo": [
+  "app/client/js/juegos/minero.js",
+  "app/client/js/juegos/tortuga.js",
+  "app/client/js/juegos/volar.js"
+ ],
+ "Alas": [
+  "app/client/js/juegos/volar.js"
+ ],
+ "Aldeano": [
+  "app/client/js/juegos/lobo.js"
+ ],
+ "Aletea entre las tuberías sin tocarlas. Tan sencillo como desesperante.": [
+  "lib/catalogo.js"
+ ],
+ "Alinea cuatro fichas antes que tu rival.": [
+  "lib/catalogo.js"
+ ],
+ "Almacenamiento local": [
+  "html:/legal/cookies"
+ ],
+ "Altura: {0} · Récord: {1}": [
+  "app/client/js/juegos/saltos.js"
+ ],
+ "Ametralladora": [
+  "app/client/js/juegos/blindados.js"
+ ],
+ "Amigos": [
+  "app/client/js/social.js"
+ ],
+ "Amigos y mensajes": [
+  "app/client/js/social.js"
+ ],
+ "Androide": [
+  "app/client/js/juegos/eras.js"
+ ],
+ "Antes tienes que robar": [
+  "lib/juegos/unidad.js"
+ ],
+ "Añadir": [
+  "app/client/js/social.js"
+ ],
+ "Añadir {0} a favoritos": [
+  "app/client/js/portal.js"
+ ],
+ "Añadir 2048 a favoritos": [
+  "html:ventana"
+ ],
+ "Añadir a favoritos": [
+  "app/client/js/juego.js",
+  "app/client/js/portal.js"
+ ],
+ "Añadir Ajedrez a favoritos": [
+  "html:ventana"
+ ],
+ "Añadir Aprende a volar a favoritos": [
+  "html:ventana"
+ ],
+ "Añadir Arqueros a favoritos": [
+  "html:ventana"
+ ],
+ "Añadir Billar a favoritos": [
+  "html:ventana"
+ ],
+ "Añadir Bloques a favoritos": [
+  "html:ventana"
+ ],
+ "Añadir Bombas a favoritos": [
+  "html:ventana"
+ ],
+ "Añadir Brisca a favoritos": [
+  "html:ventana"
+ ],
+ "Añadir Burbujas a favoritos": [
+  "html:ventana"
+ ],
+ "Añadir Buscaminas a favoritos": [
+  "html:ventana"
+ ],
+ "Añadir Cabezones a favoritos": [
+  "html:ventana"
+ ],
+ "Añadir Carreras a favoritos": [
+  "html:ventana"
+ ],
+ "Añadir Catán a favoritos": [
+  "html:ventana"
+ ],
+ "Añadir Células a favoritos": [
+  "html:ventana"
+ ],
+ "Añadir Chinchón a favoritos": [
+  "html:ventana"
+ ],
+ "Añadir Cocina loca a favoritos": [
+  "html:ventana"
+ ],
+ "Añadir Corta frutas a favoritos": [
+  "html:ventana"
+ ],
+ "Añadir Cruza la carretera a favoritos": [
+  "html:ventana"
+ ],
+ "Añadir Cuatro en raya a favoritos": [
+  "html:ventana"
+ ],
+ "Añadir Damas a favoritos": [
+  "html:ventana"
+ ],
+ "Añadir Damas chinas a favoritos": [
+  "html:ventana"
+ ],
+ "Añadir Desactiva la bomba a favoritos": [
+  "html:ventana"
+ ],
+ "Añadir Dibuja y adivina a favoritos": [
+  "html:ventana"
+ ],
+ "Añadir Dinosaurio sin internet a favoritos": [
+  "html:ventana"
+ ],
+ "Añadir Dominó por parejas a favoritos": [
+  "html:ventana"
+ ],
+ "Añadir El impostor a favoritos": [
+  "html:ventana"
+ ],
+ "Añadir El juego de la Unidad a favoritos": [
+  "html:ventana"
+ ],
+ "Añadir En la onda a favoritos": [
+  "html:ventana"
+ ],
+ "Añadir Farol a favoritos": [
+  "html:ventana"
+ ],
+ "Añadir Fuego y Agua a favoritos": [
+  "html:ventana"
+ ],
+ "Añadir Galletas a favoritos": [
+  "html:ventana"
+ ],
+ "Añadir Guerra de eras a favoritos": [
+  "html:ventana"
+ ],
+ "Añadir Hockey de aire a favoritos": [
+  "html:ventana"
+ ],
+ "Añadir Hombre lobo a favoritos": [
+  "html:ventana"
+ ],
+ "Añadir Huerto contra zombis a favoritos": [
+  "html:ventana"
+ ],
+ "Añadir Hundir la flota a favoritos": [
+  "html:ventana"
+ ],
+ "Añadir La isla que se hunde a favoritos": [
+  "html:ventana"
+ ],
+ "Añadir La Oca a favoritos": [
+  "html:ventana"
+ ],
+ "Añadir Lanza la tortuga a favoritos": [
+  "html:ventana"
+ ],
+ "Añadir Lanza pájaros a favoritos": [
+  "html:ventana"
+ ],
+ "Añadir Letras revueltas a favoritos": [
+  "html:ventana"
+ ],
+ "Añadir Memoria a favoritos": [
+  "html:ventana"
+ ],
+ "Añadir Mentiroso de dados a favoritos": [
+  "html:ventana"
+ ],
+ "Añadir Minero a favoritos": [
+  "html:ventana"
+ ],
+ "Añadir Mus a favoritos": [
+  "html:ventana"
+ ],
+ "Añadir Pájaro saltarín a favoritos": [
+  "html:ventana"
+ ],
+ "Añadir Palabra del día a favoritos": [
+  "html:ventana"
+ ],
+ "Añadir Palabras en clave a favoritos": [
+  "html:ventana"
+ ],
+ "Añadir Palabrería a favoritos": [
+  "html:ventana"
+ ],
+ "Añadir Parchís a favoritos": [
+  "html:ventana"
+ ],
+ "Añadir Póquer a favoritos": [
+  "html:ventana"
+ ],
+ "Añadir Ruleta del saber a favoritos": [
+  "html:ventana"
+ ],
+ "Añadir Saltos al cielo a favoritos": [
+  "html:ventana"
+ ],
+ "Añadir Serpiente a favoritos": [
+  "html:ventana"
+ ],
+ "Añadir Serpientes a favoritos": [
+  "html:ventana"
+ ],
+ "Añadir Sin palabras a favoritos": [
+  "html:ventana"
+ ],
+ "Añadir Solitario a favoritos": [
+  "html:ventana"
+ ],
+ "Añadir Stop a favoritos": [
+  "html:ventana"
+ ],
+ "Añadir Sumo de bolas a favoritos": [
+  "html:ventana"
+ ],
+ "Añadir SwJacK a favoritos": [
+  "html:ventana"
+ ],
+ "Añadir Tabú a favoritos": [
+  "html:ventana"
+ ],
+ "Añadir Tanques en laberinto a favoritos": [
+  "html:ventana"
+ ],
+ "Añadir Tanques mejorables a favoritos": [
+  "html:ventana"
+ ],
+ "Añadir Teléfono dibujado a favoritos": [
+  "html:ventana"
+ ],
+ "Añadir Territorio a favoritos": [
+  "html:ventana"
+ ],
+ "Añadir Test imposible a favoritos": [
+  "html:ventana"
+ ],
+ "Añadir Torres de defensa a favoritos": [
+  "html:ventana"
+ ],
+ "Añadir Tute a favoritos": [
+  "html:ventana"
+ ],
+ "Apostar": [
+  "app/client/js/juegos/mentiroso.js"
+ ],
+ "Aprende a volar": [
+  "lib/catalogo.js"
+ ],
+ "Apuesta cuántos dados hay de una cara entre todos los cubiletes (los unos son comodines). Cada apuesta sube la anterior. Si crees que alguien miente, di «¡Dudo!»: quien se equivoque pierde un dado. Gana el último con dados.": [
+  "lib/catalogo.js"
+ ],
+ "Apunta con el ratón o el dedo, elige la fuerza y tira. La primera bola que metas decide tu grupo. Si metes la blanca o tocas primero una bola que no es tuya, el rival tiene bola en mano. La negra, la última.": [
+  "lib/catalogo.js"
+ ],
+ "Apunta y dispara. Tres o más burbujas iguales juntas explotan, y las que se quedan colgando caen. Cada 6 fallos baja el techo. Si llegan a la línea roja, se acaba.": [
+  "lib/catalogo.js"
+ ],
+ "Apunta y toca para disparar. Pulsa la burbuja de abajo a la derecha para cambiarla.": [
+  "app/client/js/juegos/burbujas.js"
+ ],
+ "Aquí no hay tesoro que capturar": [
+  "lib/juegos/isla.js"
+ ],
+ "Arquero": [
+  "app/client/js/juegos/eras.js"
+ ],
+ "Arqueros": [
+  "lib/catalogo.js"
+ ],
+ "Arrastra desde la honda hacia atrás y suelta. Toca con el pájaro en el aire para usar su poder: el amarillo acelera, el azul se divide en tres y el negro explota. Acaba con todos los glotones; los pájaros que te sobren dan estrellas.": [
+  "lib/catalogo.js"
+ ],
+ "Arrastra desde la honda hacia atrás y suelta. Toca la pantalla con el pájaro en el aire para usar su poder.": [
+  "app/client/js/juegos/honda.js"
+ ],
+ "Arrastra el dedo por letras que se tocan (también en diagonal) sin repetir ninguna. Palabras de 3 letras o más; las letras raras valen más y las palabras largas llevan premio. Se juega a la vez y gana quien más sume en 3 rondas.": [
+  "lib/catalogo.js"
+ ],
+ "Arrastra el ratón o el dedo para cortar. Tres o más de un tajo es un combo con puntos extra. Si cortas una bomba o se te escapan tres frutas, se acaba.": [
+  "lib/catalogo.js"
+ ],
+ "Arrastra hacia atrás desde donde quieras y suelta. Teclado: ← → ángulo, ↑ ↓ fuerza, espacio.": [
+  "app/client/js/juegos/arqueros.js"
+ ],
+ "Arrastra hacia atrás para tensar el arco: la dirección es el ángulo y el largo, la fuerza. Ojo con el viento. En el cuerpo quitas vida; en la cabeza, mucha más. Tus flechas anteriores te sirven de guía.": [
+  "lib/catalogo.js"
+ ],
+ "Arrastra por letras vecinas (también en diagonal). O tócalas una a una y toca otra vez la última para enviar.": [
+  "app/client/js/juegos/revueltas.js"
+ ],
+ "Arte y letras": [
+  "app/client/js/juegos/saber.js"
+ ],
+ "As": [
+  "app/client/js/juegos/brisca.js",
+  "app/client/js/juegos/cartas-es.js"
+ ],
+ "asdfghjklñ": [
+  "app/client/js/juegos/palabra.js"
+ ],
+ "Así ha quedado la ronda": [
+  "app/client/js/juegos/farol.js"
+ ],
+ "Atacar": [
+  "app/client/js/juegos/lobo.js"
+ ],
+ "Ataque aéreo": [
+  "app/client/js/juegos/eras.js"
+ ],
+ "Aún no hay apuesta": [
+  "lib/juegos/mentiroso.js"
+ ],
+ "Aún no hay cartas en la mesa": [
+  "app/client/js/juegos/mente.js"
+ ],
+ "Aún no se dispara": [
+  "lib/juegos/hundir.js"
+ ],
+ "Aún no se juega": [
+  "lib/juegos/mente.js"
+ ],
+ "Aún no tienes amigos aquí. Pídele a alguien su nombre de usuario y añádelo arriba.": [
+  "app/client/js/social.js"
+ ],
+ "Avatar no válido": [
+  "lib/cuentas.js"
+ ],
+ "Aviso de cookies": [
+  "app/client/js/cookies.js"
+ ],
+ "Aviso legal": [
+  "html:ventana"
+ ],
+ "Aviso legal y normas de uso": [
+  "html:/legal/aviso"
+ ],
+ "Aviso legal y normas de uso · dsbelda games": [
+  "html:/legal/aviso"
+ ],
+ "Ayudantes": [
+  "app/client/js/juegos/galletas.js"
+ ],
+ "Azul": [
+  "app/client/js/juegos/clave.js"
+ ],
+ "Backspace": [
+  "app/client/js/juegos/palabra.js"
+ ],
+ "Baja las cartas a las cuatro pilas, del As al Rey y por palos. En las columnas, de mayor a menor alternando rojo y negro. En un hueco solo va un Rey.": [
+  "lib/catalogo.js"
+ ],
+ "Baja por la rampa y planea: baja el morro para coger velocidad y súbelo para ganar altura. Con lo que ganes cada día, mejora rampa, trineo, alas y cohete. La meta: el muro de 3000 m.": [
+  "lib/catalogo.js"
+ ],
+ "Bajar": [
+  "app/client/js/juegos/bloques.js"
+ ],
+ "Banco": [
+  "app/client/js/juegos/galletas.js"
+ ],
+ "Base legal": [
+  "html:/legal/privacidad"
+ ],
+ "Billar": [
+  "lib/catalogo.js"
+ ],
+ "Blindaje": [
+  "app/client/js/juegos/blindados.js"
+ ],
+ "Bloqueados": [
+  "app/client/js/social.js"
+ ],
+ "Bloquear": [
+  "app/client/js/social.js"
+ ],
+ "Bloques": [
+  "app/client/js/cuenta.js",
+  "lib/catalogo.js"
+ ],
+ "Bodega": [
+  "app/client/js/juegos/minero.js"
+ ],
+ "Bola 8 contra un amigo o la CPU: lisas o rayadas y, al final, la negra.": [
+  "lib/catalogo.js"
+ ],
+ "Bola en mano: colócala": [
+  "app/client/js/juegos/billar.js"
+ ],
+ "Bolas en una plataforma que se encoge: empuja a los demás al agua y aguanta el último.": [
+  "lib/catalogo.js"
+ ],
+ "Bombardeo": [
+  "app/client/js/juegos/eras.js"
+ ],
+ "Bombas": [
+  "lib/catalogo.js"
+ ],
+ "Borrar": [
+  "app/client/js/juegos/palabra.js"
+ ],
+ "Bota de plataforma en plataforma y sube todo lo que puedas.": [
+  "lib/catalogo.js"
+ ],
+ "Bote": [
+  "app/client/js/juegos/poquer.js"
+ ],
+ "Botón": [
+  "app/client/js/juegos/bomba.js"
+ ],
+ "Botón · la tira": [
+  "app/client/js/juegos/bomba.js"
+ ],
+ "Brisca": [
+  "lib/catalogo.js"
+ ],
+ "Brisca · Juega gratis · dsbelda games": [
+  "html:/j/brisca"
+ ],
+ "Brisca, cartas, tablero y juegos rápidos. Ponte un apodo, juega contra la CPU o crea una sala y pasa el enlace.": [
+  "html:ventana"
+ ],
+ "Bruja": [
+  "app/client/js/juegos/lobo.js"
+ ],
+ "Buena": [
+  "app/client/js/comun.js"
+ ],
+ "Burbujas": [
+  "app/client/js/cuenta.js",
+  "lib/catalogo.js"
+ ],
+ "Buscaminas": [
+  "lib/catalogo.js"
+ ],
+ "Buscaminas difícil": [
+  "app/client/js/cuenta.js"
+ ],
+ "Buscaminas fácil": [
+  "app/client/js/cuenta.js"
+ ],
+ "Buscar": [
+  "html:ventana"
+ ],
+ "Buscar juego": [
+  "html:ventana"
+ ],
+ "Buscar juego…": [
+  "html:/no-existe"
+ ],
+ "Buscar juego… ( / )": [
+  "html:ventana"
+ ],
+ "Caballero": [
+  "app/client/js/juegos/eras.js"
+ ],
+ "Caballo": [
+  "app/client/js/juegos/brisca.js",
+  "app/client/js/juegos/cartas-es.js"
+ ],
+ "Cabezones": [
+  "lib/catalogo.js"
+ ],
+ "Cables": [
+  "app/client/js/juegos/bomba.js"
+ ],
+ "Cada clic hornea el doble (y un poco más según tu producción)": [
+  "app/client/js/juegos/galletas.js"
+ ],
+ "Cada noche descubres si alguien es lobo. Ayuda al pueblo sin que te descubran.": [
+  "app/client/js/juegos/lobo.js"
+ ],
+ "Cada número dice cuántas minas tocan esa casilla. Clic para destapar; clic derecho o mantener pulsado para poner bandera. El primer toque nunca es mina.": [
+  "lib/catalogo.js"
+ ],
+ "Cada uno escribe una definición inventada para la palabra. Después se mezclan con la de verdad y votáis cuál es la auténtica. Acertar da 2 puntos y cada voto que se lleve tu invento, 1.": [
+  "lib/catalogo.js"
+ ],
+ "Cada uno escribe una frase. Se pasa al siguiente, que la dibuja; el siguiente describe el dibujo, otro dibuja esa descripción… Al final se repasan las cadenas una a una. No hay puntos: solo risas.": [
+  "lib/catalogo.js"
+ ],
+ "Cada uno recibe un papel secreto: lobo, vidente, bruja o aldeano. De noche los lobos eligen víctima y la vidente investiga. De día se debate y se vota a quién expulsar. Gana el pueblo si caen los lobos.": [
+  "lib/catalogo.js"
+ ],
+ "Cada uno tiene tantas cartas (del 1 al 100) como el nivel. Entre todos hay que dejarlas en la mesa de menor a mayor, sin turnos y sin hablar: juegas tu carta más baja cuando creas que nadie tiene una menor. Si alguien la tenía, perdéis una vida. Si todos pedís estrella, cada uno descarta su carta más baja.": [
+  "lib/catalogo.js"
+ ],
+ "Cada uno tira una carta por turno y gana la baza la más alta del triunfo o, si no hay, la más alta del palo que salió. As 11, tres 10, rey 4, caballo 3 y sota 2. Gana quien pase de 60.": [
+  "lib/catalogo.js"
+ ],
+ "Cada uno ve solo sus dados. Apuesta cuántos hay entre todos… o di «¡Dudo!».": [
+  "lib/catalogo.js"
+ ],
+ "Cae la tarde… pronto será de noche": [
+  "app/client/js/juegos/lobo.js"
+ ],
+ "Caer": [
+  "app/client/js/juegos/bloques.js"
+ ],
+ "Cáliz del mar": [
+  "app/client/js/juegos/isla.js"
+ ],
+ "cambia el 7 de triunfo": [
+  "lib/juegos/brisca.js",
+  "lib/juegos/tute.js"
+ ],
+ "Cambiar": [
+  "app/client/js/cuenta.js",
+  "app/client/js/juegos/onda.js",
+  "app/client/js/juegos/telefono.js"
+ ],
+ "Cambiar a modo oscuro": [
+  "html:ventana"
+ ],
+ "Cambiar contraseña": [
+  "app/client/js/comun.js",
+  "app/client/js/cuenta.js"
+ ],
+ "Cambiar el 7 por el triunfo": [
+  "app/client/js/juegos/brisca.js",
+  "app/client/js/juegos/tute.js"
+ ],
+ "Cambios": [
+  "html:/legal/privacidad"
+ ],
+ "Cancelar": [
+  "app/client/js/juegos/domino.js",
+  "app/client/js/juegos/palabreria.js",
+  "app/client/js/social.js"
+ ],
+ "Cantidad": [
+  "app/client/js/juegos/poquer.js"
+ ],
+ "Cantidad no válida": [
+  "lib/juegos/poquer.js"
+ ],
+ "Cañón": [
+  "app/client/js/juegos/eras.js",
+  "app/client/js/juegos/torres.js",
+  "app/client/js/juegos/tortuga.js"
+ ],
+ "Caparazón": [
+  "app/client/js/juegos/tortuga.js"
+ ],
+ "Cárcel": [
+  "app/client/js/juegos/oca.js"
+ ],
+ "Carreras": [
+  "lib/catalogo.js"
+ ],
+ "Carta boca abajo": [
+  "app/client/js/juegos/memoria.js"
+ ],
+ "carta-es dorso": [
+  "app/client/js/juegos/brisca.js",
+  "app/client/js/juegos/cartas-es.js"
+ ],
+ "carta-es dorso peque": [
+  "app/client/js/juegos/mus.js"
+ ],
+ "carta-es hueco": [
+  "app/client/js/juegos/chinchon.js"
+ ],
+ "carta-u dorso-u": [
+  "app/client/js/juegos/unidad.js"
+ ],
+ "Cartas": [
+  "app/client/js/juego.js",
+  "app/client/js/portal.js"
+ ],
+ "Cartas de colores y números: descártalas todas antes que nadie.": [
+  "lib/catalogo.js"
+ ],
+ "Casco": [
+  "app/client/js/juegos/minero.js"
+ ],
+ "Casilla no válida": [
+  "lib/juegos/hundir.js"
+ ],
+ "Casino": [
+  "app/client/js/juego.js",
+  "app/client/js/portal.js"
+ ],
+ "Casino pixel art multijugador: ruleta, blackjack, gallos, fútbol, tu habitación…": [
+  "lib/catalogo.js"
+ ],
+ "Catán": [
+  "lib/catalogo.js"
+ ],
+ "Catán clásico con CPU, chat, música y diseño pixel art medieval.": [
+  "lib/catalogo.js"
+ ],
+ "Catán y SwJacK son webs aparte, con sus propias condiciones. «Catan» es una marca de CATAN GmbH; la versión enlazada es una adaptación no oficial para jugar entre amigos, sin relación con esa empresa.": [
+  "html:/legal/aviso"
+ ],
+ "Categoría: {0}": [
+  "app/client/js/juegos/impostor.js"
+ ],
+ "Categorías": [
+  "html:ventana"
+ ],
+ "Células": [
+  "lib/catalogo.js"
+ ],
+ "Cerrar": [
+  "app/client/js/comun.js",
+  "app/client/js/cookies.js"
+ ],
+ "Cerrar sesión": [
+  "app/client/js/cuenta.js"
+ ],
+ "cf_clearance": [
+  "html:/legal/cookies"
+ ],
+ "Chat": [
+  "app/client/js/sala.js"
+ ],
+ "Chica": [
+  "app/client/js/juegos/mus.js"
+ ],
+ "Chinchón": [
+  "lib/catalogo.js"
+ ],
+ "Ciencia": [
+  "app/client/js/juegos/saber.js"
+ ],
+ "Clic derecho o mantener pulsado para poner bandera.": [
+  "app/client/js/juegos/buscaminas.js"
+ ],
+ "Cobre": [
+  "app/client/js/juegos/minero.js"
+ ],
+ "Cochecitos vistos desde arriba, curvas cerradas y un turbo por vuelta. Tres vueltas.": [
+  "lib/catalogo.js"
+ ],
+ "Cocina loca": [
+  "lib/catalogo.js"
+ ],
+ "Código": [
+  "app/client/js/sala.js"
+ ],
+ "Código de recuperación": [
+  "app/client/js/comun.js"
+ ],
+ "Código de sala": [
+  "app/client/js/sala.js"
+ ],
+ "Códigos copiados": [
+  "app/client/js/comun.js"
+ ],
+ "Códigos de recuperación": [
+  "app/client/js/cuenta.js"
+ ],
+ "Códigos de recuperación de dsbelda gamesnCada uno vale una sola vez.nn{0}n": [
+  "app/client/js/comun.js"
+ ],
+ "coge del descarte": [
+  "lib/juegos/chinchon.js"
+ ],
+ "Coge ingredientes de los cajones, córtalos en la tabla (mantén «cortar»), cocina la carne en el fogón sin que se queme y monta el plato: ensalada (lechuga y tomate), hamburguesa (pan y carne) o bocadillo vegetal (pan, lechuga y tomate). Entrégalo en la campanilla. 3 minutos para hacer todos los puntos posibles.": [
+  "lib/catalogo.js"
+ ],
+ "Cohete": [
+  "app/client/js/juegos/galletas.js",
+  "app/client/js/juegos/volar.js"
+ ],
+ "Coloca 5 barcos sin que se toquen. Por turnos, dispara a una casilla del rival: agua, tocado o hundido. Si aciertas, repites. Gana quien hunda toda la flota contraria.": [
+  "lib/catalogo.js"
+ ],
+ "Coloca poblados, recoge recursos con los dados, comercia y construye. Gana quien llega a 10 puntos.": [
+  "lib/catalogo.js"
+ ],
+ "Coloca torres junto al camino y revienta oleadas de globos cada vez más duros.": [
+  "lib/catalogo.js"
+ ],
+ "Coloca tu flota": [
+  "app/client/js/juegos/hundir.js"
+ ],
+ "Coloca tus barcos y hunde la flota rival antes de que hunda la tuya.": [
+  "lib/catalogo.js"
+ ],
+ "Columna no válida": [
+  "lib/juegos/cuatro.js"
+ ],
+ "Combustible": [
+  "app/client/js/juegos/volar.js"
+ ],
+ "Come puntitos, crece y trágate a las células más pequeñas. Con amigos y rivales de la CPU en el mismo mapa.": [
+  "lib/catalogo.js"
+ ],
+ "Come, crece y no te muerdas la cola.": [
+  "lib/catalogo.js"
+ ],
+ "Cómo controlarlas": [
+  "html:/legal/cookies"
+ ],
+ "Como en el bar: cuatro jugadores en dos parejas, doble seis y a 100 puntos.": [
+  "lib/catalogo.js"
+ ],
+ "Cómo jugar": [
+  "html:ventana"
+ ],
+ "Cómo se juega": [
+  "html:/j/palabra"
+ ],
+ "Cómo se usa": [
+  "html:/legal/aviso"
+ ],
+ "Comodín": [
+  "app/client/js/juegos/unidad.js"
+ ],
+ "Comodín roba cuatro": [
+  "app/client/js/juegos/unidad.js"
+ ],
+ "Compra tropas: avanzan solas y luchan. Matando ganas oro y experiencia; con experiencia pasas de era (tropas, torreta y ataque especial mejores). Gana quien destruye la base contraria.": [
+  "lib/catalogo.js"
+ ],
+ "Con amigos": [
+  "app/client/js/portal.js"
+ ],
+ "Con una cuenta se guardan tus partidas, victorias, récords y favoritos, y nadie más puede usar tu nombre. Es gratis, sin correo (te damos códigos para recuperar la contraseña) y opcional: puedes seguir jugando sin cuenta.": [
+  "app/client/js/cuenta.js"
+ ],
+ "Concentraos… pulsad «Listos» para empezar el nivel": [
+  "app/client/js/juegos/mente.js"
+ ],
+ "Conectando…": [
+  "app/client/js/sala.js"
+ ],
+ "Configurar": [
+  "app/client/js/cookies.js"
+ ],
+ "Configurar cookies": [
+  "html:ventana"
+ ],
+ "Congela más": [
+  "app/client/js/juegos/torres.js"
+ ],
+ "Contenido sexual o inapropiado": [
+  "app/client/js/comun.js"
+ ],
+ "Conteo de la mano": [
+  "app/client/js/juegos/mus.js"
+ ],
+ "Contesta antes de que acabe el tiempo": [
+  "app/client/js/juegos/saber.js"
+ ],
+ "Continuar": [
+  "app/client/js/comun.js"
+ ],
+ "Contra la CPU": [
+  "app/client/js/portal.js"
+ ],
+ "Contra un órdago solo se quiere o no se quiere": [
+  "lib/juegos/mus.js"
+ ],
+ "Contraseña": [
+  "app/client/js/comun.js"
+ ],
+ "Contraseña actual": [
+  "app/client/js/cuenta.js"
+ ],
+ "Contraseña cambiada. Entra con la nueva": [
+  "app/client/js/cuenta.js"
+ ],
+ "Contraseña cambiada. Te quedan {0} códigos{1}": [
+  "app/client/js/comun.js"
+ ],
+ "Contraseña nueva": [
+  "app/client/js/comun.js"
+ ],
+ "Cookie propia, técnica": [
+  "html:/legal/cookies"
+ ],
+ "Cookie propia, técnica (solo si creas cuenta o entras)": [
+  "html:/legal/cookies"
+ ],
+ "Cookies": [
+  "html:ventana"
+ ],
+ "Cookies de Cloudflare, técnicas": [
+  "html:/legal/cookies"
+ ],
+ "Cooperativo en tiempo real: cortad, cocinad, emplatad y servid los pedidos antes de que caduquen.": [
+  "lib/catalogo.js"
+ ],
+ "Cooperativo: jugad todas las cartas en orden… sin deciros nada. Solo intuición.": [
+  "lib/catalogo.js"
+ ],
+ "Cooperativo: recuperad los cuatro tesoros y escapad en helicóptero antes de que la isla desaparezca bajo el agua.": [
+  "lib/catalogo.js"
+ ],
+ "Copiado: pégalo donde quieras": [
+  "app/client/js/juegos/palabra.js"
+ ],
+ "Copiar": [
+  "app/client/js/comun.js",
+  "app/client/js/sala.js"
+ ],
+ "Corona": [
+  "app/client/js/juegos/saber.js"
+ ],
+ "Corona en:": [
+  "app/client/js/juegos/ajedrez.js"
+ ],
+ "Corta frutas": [
+  "lib/catalogo.js"
+ ],
+ "CPU": [
+  "html:ventana"
+ ],
+ "CPU difícil": [
+  "app/client/js/juegos/eras.js",
+  "app/client/js/sala.js"
+ ],
+ "Crea tu cuenta": [
+  "app/client/js/comun.js"
+ ],
+ "Crea tu cuenta, recoge fichas y prueba la ruleta, el blackjack, la feria y mucho más con tus amigos.": [
+  "lib/catalogo.js"
+ ],
+ "Crear cuenta": [
+  "html:ventana"
+ ],
+ "Crear sala para amigos": [
+  "app/client/js/sala.js"
+ ],
+ "Cristal del viento": [
+  "app/client/js/juegos/isla.js"
+ ],
+ "Cruza la carretera": [
+  "app/client/js/cuenta.js",
+  "lib/catalogo.js"
+ ],
+ "Cuánto tiempo": [
+  "html:/legal/privacidad"
+ ],
+ "Cuatro en raya": [
+  "lib/catalogo.js"
+ ],
+ "Cuentas": [
+  "html:/legal/aviso"
+ ],
+ "Da cartas a cualquiera, esté donde esté": [
+  "app/client/js/juegos/isla.js"
+ ],
+ "Da la vuelta a dos cartas cada vez y encuentra todas las parejas con los menos intentos posibles.": [
+  "lib/catalogo.js"
+ ],
+ "Da pistas sin decirla… y encuentra al impostor.": [
+  "app/client/js/juegos/impostor.js"
+ ],
+ "Dado": [
+  "app/client/js/juegos/oca.js",
+  "app/client/js/juegos/parchis.js"
+ ],
+ "Damas": [
+  "lib/catalogo.js"
+ ],
+ "Damas chinas": [
+  "lib/catalogo.js"
+ ],
+ "Damas españolas: comer es obligatorio y la dama vuela.": [
+  "lib/catalogo.js"
+ ],
+ "Daño": [
+  "app/client/js/juegos/blindados.js"
+ ],
+ "Daño doble": [
+  "app/client/js/juegos/torres.js"
+ ],
+ "Dar la vuelta al montón": [
+  "app/client/js/juegos/solitario.js"
+ ],
+ "Dardos": [
+  "app/client/js/juegos/torres.js"
+ ],
+ "Darte el servicio que pides al entrar a jugar o al crear tu cuenta (art. 6.1.b del RGPD). Al crear la cuenta aceptas expresamente estas condiciones.": [
+  "html:/legal/privacidad"
+ ],
+ "Dato": [
+  "html:/legal/privacidad"
+ ],
+ "De 30 minutos a unos días": [
+  "html:/legal/cookies"
+ ],
+ "de altura": [
+  "app/client/js/cuenta.js"
+ ],
+ "De la Edad de Piedra al Futuro: manda tropas, evoluciona y destruye la base rival.": [
+  "lib/catalogo.js"
+ ],
+ "De noche atacan los lobos; de día, el pueblo debate y vota. Mejor con voz.": [
+  "lib/catalogo.js"
+ ],
+ "De noche, elige con los otros lobos a quién atacar. De día, disimula.": [
+  "app/client/js/juegos/lobo.js"
+ ],
+ "De oca a oca y tiro porque me toca. El de toda la vida, con puentes, posada, pozo, laberinto, cárcel y la muerte.": [
+  "lib/catalogo.js"
+ ],
+ "Debatid quién puede ser lobo (por el chat o en voz alta)": [
+  "app/client/js/juegos/lobo.js"
+ ],
+ "Dedo mecánico": [
+  "app/client/js/juegos/galletas.js"
+ ],
+ "Dejar de mirar": [
+  "app/client/js/sala.js"
+ ],
+ "Dejarla (te sustituye la CPU) y jugar aquí": [
+  "app/client/js/sala.js"
+ ],
+ "Deportes": [
+  "app/client/js/juegos/saber.js"
+ ],
+ "Depósito": [
+  "app/client/js/juegos/minero.js"
+ ],
+ "Derecha": [
+  "app/client/js/juegos/bloques.js"
+ ],
+ "Desactiva la bomba": [
+  "lib/catalogo.js"
+ ],
+ "Desbloquear": [
+  "app/client/js/social.js"
+ ],
+ "Descargar": [
+  "app/client/js/comun.js"
+ ],
+ "Descarte": [
+  "app/client/js/juegos/chinchon.js"
+ ],
+ "Describe la palabra sin decir las cinco prohibidas antes de que se acabe el tiempo. El otro equipo te vigila.": [
+  "lib/catalogo.js"
+ ],
+ "Desliza el dedo y trocea las frutas que saltan. ¡Ni se te ocurra cortar una bomba!": [
+  "lib/catalogo.js"
+ ],
+ "Desliza las fichas: dos iguales se juntan y suman. Intenta llegar al 2048 sin llenar el tablero.": [
+  "lib/catalogo.js"
+ ],
+ "Destacados": [
+  "html:ventana"
+ ],
+ "Destapa todo el campo sin pisar ninguna mina. Tres tamaños y récord de tiempo.": [
+  "lib/catalogo.js"
+ ],
+ "Di «mus» o «no hay mus»": [
+  "lib/juegos/mus.js"
+ ],
+ "Día {0}": [
+  "app/client/js/juegos/lobo.js"
+ ],
+ "Diamante": [
+  "app/client/js/juegos/minero.js"
+ ],
+ "días de racha": [
+  "app/client/js/cuenta.js"
+ ],
+ "Dibuja {0}: ¿qué es?": [
+  "app/client/js/juegos/dibujo.js"
+ ],
+ "Dibuja y adivina": [
+  "lib/catalogo.js"
+ ],
+ "Difícil": [
+  "app/client/js/juegos/buscaminas.js"
+ ],
+ "Dinosaurio": [
+  "app/client/js/cuenta.js"
+ ],
+ "Dinosaurio sin internet": [
+  "lib/catalogo.js"
+ ],
+ "Dirección IP, navegador, página pedida y hora": [
+  "html:/legal/privacidad"
+ ],
+ "Disimula: da pistas creíbles y descubre la palabra.": [
+  "app/client/js/juegos/impostor.js"
+ ],
+ "Dispara a figuras y a otros tanques, sube de nivel, mejora tu tanque y elige clase.": [
+  "lib/catalogo.js"
+ ],
+ "Dispara burbujas y junta tres del mismo color para que exploten. El clásico de las tardes de ordenador.": [
+  "lib/catalogo.js"
+ ],
+ "Dispara la tortuga con un cañón y llévala lo más lejos posible a base de muelles, bombas y balazos.": [
+  "lib/catalogo.js"
+ ],
+ "Disparo automático activado": [
+  "app/client/js/juegos/blindados.js"
+ ],
+ "Disparo automático desactivado": [
+  "app/client/js/juegos/blindados.js"
+ ],
+ "Distancia: {0} · Récord: {1}": [
+  "app/client/js/juegos/dino.js"
+ ],
+ "Doble": [
+  "app/client/js/juegos/blindados.js"
+ ],
+ "Dominó por parejas": [
+  "lib/catalogo.js"
+ ],
+ "Dos cañones": [
+  "app/client/js/juegos/blindados.js"
+ ],
+ "Dos cartas tuyas y cinco en la mesa. Apuesta, iguala, sube o retírate en cada ronda. Gana la mejor jugada de 5 cartas o quien haga retirarse a los demás. Quien se queda sin fichas, fuera. Sin dinero de verdad.": [
+  "lib/catalogo.js"
+ ],
+ "Dos equipos y 25 palabras. El jefe da una pista de una palabra para que su equipo encuentre a sus agentes. ¡Cuidado con el asesino!": [
+  "lib/catalogo.js"
+ ],
+ "Dos jugadores": [
+  "app/client/js/juegos/memoria.js"
+ ],
+ "DSBELDA": [
+  "html:ventana"
+ ],
+ "DSBELDA games": [
+  "html:ventana"
+ ],
+ "dsbelda games · Juegos online para jugar con amigos": [
+  "html:ventana"
+ ],
+ "dsbelda games, inicio": [
+  "html:ventana"
+ ],
+ "dsbelda.dev": [
+  "html:ventana"
+ ],
+ "Duelo de arqueros por turnos: calcula ángulo, fuerza y viento… y apunta a la cabeza.": [
+  "lib/catalogo.js"
+ ],
+ "Duermes… (cierra los ojos 😴)": [
+  "app/client/js/juegos/lobo.js"
+ ],
+ "Duración": [
+  "html:ventana"
+ ],
+ "Echa una partida con tus amigos": [
+  "html:ventana"
+ ],
+ "Edad de la Pólvora": [
+  "app/client/js/juegos/eras.js"
+ ],
+ "Edad de Piedra": [
+  "app/client/js/juegos/eras.js"
+ ],
+ "Ej.: «Cesto de mimbre que se usaba para…»": [
+  "app/client/js/juegos/farol.js"
+ ],
+ "El anfitrión puede pedir la revancha.": [
+  "app/client/js/sala.js"
+ ],
+ "El apodo debe tener al menos 2 letras": [
+  "lib/salas.js"
+ ],
+ "El chat no se revisa en directo. Si ves algo que no debería estar, escribe al correo de arriba. El titular puede cerrar salas o bloquear el acceso a quien no cumpla las normas.": [
+  "html:/legal/aviso"
+ ],
+ "El código, los dibujos y los textos de esta web son de David Sánchez Belda. La Brisca, el Mus, el Parchís, el Cuatro en raya, la Serpiente, el 2048 y el juego de memoria son juegos tradicionales o de reglas libres. «El juego de la Unidad» es una versión propia, sin relación con ninguna marca comercial de juegos de cartas.": [
+  "html:/legal/aviso"
+ ],
+ "El de cartas de toda la vida: ordénalas por palos del As al Rey.": [
+  "lib/catalogo.js"
+ ],
+ "El de cuando se caía la conexión: salta cactus y esquiva pájaros sin parar.": [
+  "lib/catalogo.js"
+ ],
+ "El dibujo es demasiado grande": [
+  "lib/juegos/dibujo.js"
+ ],
+ "El impostor": [
+  "lib/catalogo.js"
+ ],
+ "El juego de la Unidad": [
+  "lib/catalogo.js"
+ ],
+ "El muñeco bota solo: muévelo a los lados con las flechas (o tocando a izquierda y derecha). Las grises se mueven, las marrones se rompen y los muelles te lanzan. Si te caes, se acaba.": [
+  "lib/catalogo.js"
+ ],
+ "El nombre de usuario debe tener de 3 a 16 letras, números, «_» o «-» (sin espacios)": [
+  "lib/cuentas.js"
+ ],
+ "El número va del 1 al 9": [
+  "lib/juegos/clave.js"
+ ],
+ "El pueblo vota…": [
+  "app/client/js/juegos/lobo.js"
+ ],
+ "El teléfono escacharrado con dibujos: escribe, dibuja, adivina… y ríete de cómo acaba la frase.": [
+  "lib/catalogo.js"
+ ],
+ "El turno no ha empezado": [
+  "lib/juegos/tabu.js"
+ ],
+ "El usuario o el código no son correctos": [
+  "lib/cuentas.js"
+ ],
+ "Elige a alguien del pueblo": [
+  "lib/juegos/lobo.js"
+ ],
+ "Elige a quién atacar": [
+  "app/client/js/juegos/lobo.js"
+ ],
+ "Elige a quién mirar": [
+  "app/client/js/juegos/lobo.js"
+ ],
+ "Elige de 1 a 4 cartas para descartarte": [
+  "lib/juegos/mus.js"
+ ],
+ "Elige de qué loseta (con alguien) y a cuál": [
+  "lib/juegos/isla.js"
+ ],
+ "Elige qué carta tirar": [
+  "app/client/js/juegos/chinchon.js"
+ ],
+ "Elige qué fichas cambiar": [
+  "lib/juegos/palabreria.js"
+ ],
+ "Elige qué vas a dibujar": [
+  "app/client/js/juegos/dibujo.js"
+ ],
+ "Elige un apodo primero": [
+  "lib/salas.js"
+ ],
+ "Elige un color": [
+  "lib/juegos/unidad.js"
+ ],
+ "Elige una categoría que te falte": [
+  "lib/juegos/saber.js"
+ ],
+ "Elige una de las tres": [
+  "lib/juegos/dibujo.js"
+ ],
+ "Elige una loseta inundada": [
+  "lib/juegos/isla.js"
+ ],
+ "Elige una planta arriba y toca una casilla. Toca los soles para recogerlos. Pala: quitar una planta.": [
+  "app/client/js/juegos/plantas.js"
+ ],
+ "Elige una torre y ponla en una casilla libre. Cada globo reventado baja de nivel y da dinero. Mejora o vende tus torres. Si llegan demasiados al final, pierdes. ¿Hasta qué oleada llegas?": [
+  "lib/catalogo.js"
+ ],
+ "Elige una torre y toca una casilla libre (no el camino). Toca una torre para mejorarla o venderla.": [
+  "app/client/js/juegos/torres.js"
+ ],
+ "Empate": [
+  "app/client/js/sala.js"
+ ],
+ "Empezar": [
+  "app/client/js/juegos/bloques.js",
+  "app/client/js/juegos/eras.js",
+  "app/client/js/juegos/frutas.js",
+  "app/client/js/juegos/serpiente.js"
+ ],
+ "Empezar de cero": [
+  "app/client/js/juegos/galletas.js"
+ ],
+ "Empezar partida": [
+  "app/client/js/sala.js"
+ ],
+ "empezó {0}": [
+  "app/client/js/juegos/telefono.js"
+ ],
+ "Empieza quien tiene el seis doble": [
+  "app/client/js/juegos/domino.js"
+ ],
+ "En la onda": [
+  "lib/catalogo.js"
+ ],
+ "En solitario": [
+  "app/client/js/portal.js"
+ ],
+ "En tu turno gira la ruleta y contesta en 20 segundos. Si aciertas, sigues. Con 3 aciertos seguidos (o si sale la corona) eliges categoría y, si aciertas, ganas su personaje. Gana quien junte los 6.": [
+  "lib/catalogo.js"
+ ],
+ "En tu turno mueve una ficha a un agujero vecino o salta sobre fichas (tuyas o ajenas) tantas veces como puedas. Gana quien llena la punta contraria. Se juega de 2, 3, 4 o 6 (con 5, una punta queda libre).": [
+  "lib/catalogo.js"
+ ],
+ "En tu turno, 3 acciones: moverte, achicar una loseta inundada, dar una carta de tesoro a quien esté contigo o capturar un tesoro (4 cartas iguales en su loseta). Luego robas 2 cartas y se inunda la isla. Cada uno tiene un papel especial. Ganáis con los 4 tesoros, todos en el helipuerto y una carta de helicóptero.": [
+  "lib/catalogo.js"
+ ],
+ "En tus favoritos": [
+  "app/client/js/juego.js"
+ ],
+ "en un clic": [
+  "html:ventana"
+ ],
+ "En verde las tuyas; con nombre, las de los demás; en gris, las que nadie vio.": [
+  "app/client/js/juegos/revueltas.js"
+ ],
+ "en-linea": [
+  "app/client/js/social.js"
+ ],
+ "Encuentra las parejas: en solitario o dos en el mismo móvil.": [
+  "lib/catalogo.js"
+ ],
+ "Enlace de invitación": [
+  "app/client/js/sala.js"
+ ],
+ "Ensalada": [
+  "app/client/js/juegos/cocina.js"
+ ],
+ "Enseñártelos en tu perfil.": [
+  "html:/legal/privacidad"
+ ],
+ "Enter": [
+  "app/client/js/juegos/palabra.js",
+  "app/client/js/juegos/telefono.js"
+ ],
+ "Entiendo que no se puede deshacer": [
+  "app/client/js/cuenta.js"
+ ],
+ "entra con tu cuenta": [
+  "app/client/js/sala.js"
+ ],
+ "Entra en tu cuenta": [
+  "app/client/js/comun.js"
+ ],
+ "Entrar": [
+  "app/client/js/comun.js",
+  "app/client/js/sala.js"
+ ],
+ "Enviada. Puedes cambiarla mientras los demás escriben.": [
+  "app/client/js/juegos/farol.js"
+ ],
+ "Enviar": [
+  "app/client/js/juegos/farol.js",
+  "app/client/js/juegos/lobo.js",
+  "app/client/js/juegos/palabra.js",
+  "app/client/js/juegos/tabu.js",
+  "app/client/js/sala.js",
+  "app/client/js/social.js"
+ ],
+ "Envido {0} más": [
+  "app/client/js/juegos/mus.js"
+ ],
+ "Equipos rojo y azul; el primero de cada uno es el jefe y ve de qué color es cada palabra. Da una pista (una palabra y un número) y su equipo toca cartas: si es suya, sigue; si no, pasa el turno. Si tocáis al asesino, perdéis. Gana quien encuentra antes a todos sus agentes.": [
+  "lib/catalogo.js"
+ ],
+ "Eres {0} · Nivel {1} de {2} · muévete con las flechas o W A D": [
+  "app/client/js/juegos/fuegoagua.js"
+ ],
+ "Eres el jefe: da una pista de una palabra y un número": [
+  "app/client/js/juegos/clave.js"
+ ],
+ "Error del juego": [
+  "lib/salas.js"
+ ],
+ "Es de noche…": [
+  "app/client/js/juegos/lobo.js"
+ ],
+ "Es la tuya": [
+  "app/client/js/juegos/farol.js"
+ ],
+ "Esa carta no": [
+  "lib/juegos/clave.js",
+  "lib/juegos/isla.js"
+ ],
+ "Esa carta no se usa así": [
+  "lib/juegos/isla.js"
+ ],
+ "Esa carta no sirve ahora": [
+  "lib/juegos/unidad.js"
+ ],
+ "Esa casilla está ocupada": [
+  "lib/juegos/palabreria.js"
+ ],
+ "Esa columna está llena": [
+  "lib/juegos/cuatro.js"
+ ],
+ "Esa ficha no es tuya": [
+  "lib/juegos/chinas.js"
+ ],
+ "Esa ficha no puede moverse": [
+  "lib/juegos/parchis.js"
+ ],
+ "Esa jugada no vale": [
+  "lib/juegos/ajedrez.js"
+ ],
+ "Esa palabra no está en el diccionario": [
+  "app/client/js/juegos/palabra.js"
+ ],
+ "Esa sala es privada: solo pueden mirarla los amigos de quien juega": [
+  "lib/salas.js"
+ ],
+ "Escalera al cielo": [
+  "app/client/js/juegos/fuegoagua-niveles.js"
+ ],
+ "Escape": [
+  "app/client/js/cookies.js",
+  "app/client/js/social.js"
+ ],
+ "Escarchado": [
+  "app/client/js/juegos/plantas.js"
+ ],
+ "Escopeta": [
+  "app/client/js/juegos/tortuga.js"
+ ],
+ "Escribe a {0}. Solo vosotros dos veis esta conversación.": [
+  "app/client/js/social.js"
+ ],
+ "Escribe con el teclado o pulsa las letras. Sin tildes.": [
+  "app/client/js/juegos/palabra.js"
+ ],
+ "Escribe lo que crees que es": [
+  "app/client/js/juegos/dibujo.js"
+ ],
+ "Escribe tu frase": [
+  "app/client/js/juegos/telefono.js"
+ ],
+ "Escribe tu usuario, uno de los códigos de recuperación que te dimos al crear la cuenta y una contraseña nueva. Cada código vale una sola vez.": [
+  "app/client/js/comun.js"
+ ],
+ "Escribe un mensaje…": [
+  "app/client/js/social.js"
+ ],
+ "Escribe una definición": [
+  "lib/juegos/farol.js"
+ ],
+ "Escribe una frase para que otro la dibuje (cuanto más loca, mejor):": [
+  "app/client/js/juegos/telefono.js"
+ ],
+ "Escribe una palabra": [
+  "lib/juegos/clave.js"
+ ],
+ "Escribe una palabra de 5 letras. Verde: la letra está en su sitio. Amarillo: está, pero en otro sitio. Gris: no está. Sin tildes.": [
+  "lib/catalogo.js"
+ ],
+ "Escribe una pista": [
+  "lib/juegos/impostor.js",
+  "lib/juegos/onda.js"
+ ],
+ "Escribe una pista (opcional si estáis juntos)": [
+  "app/client/js/juegos/tabu.js"
+ ],
+ "Escribe…": [
+  "app/client/js/sala.js"
+ ],
+ "Ese cable no": [
+  "lib/juegos/bomba.js"
+ ],
+ "Ese juego no existe": [
+  "lib/salas.js"
+ ],
+ "Ese juego no existe o todavía no está listo.": [
+  "html:/no-existe"
+ ],
+ "Ese juego no tiene récords": [
+  "lib/cuentas.js"
+ ],
+ "Ese módulo no": [
+  "lib/juegos/bomba.js"
+ ],
+ "Ese nombre de usuario ya existe": [
+  "lib/cuentas.js"
+ ],
+ "Ese nombre es de una cuenta. Elige otro apodo o entra con tu cuenta": [
+  "lib/salas.js"
+ ],
+ "Ese símbolo no": [
+  "lib/juegos/bomba.js"
+ ],
+ "Esmeralda": [
+  "app/client/js/juegos/minero.js"
+ ],
+ "Eso no es subir": [
+  "lib/juegos/poquer.js"
+ ],
+ "Espacio o ↑ para saltar y ↓ para agacharte (en el móvil, toca para saltar). Cada vez va más rápido y de vez en cuando se hace de noche.": [
+  "lib/catalogo.js"
+ ],
+ "Espacio o ↑ para saltar, ↓ para agacharte. En el móvil, toca la pantalla o «Saltar»; mantén «Agacharse».": [
+  "app/client/js/juegos/dino.js"
+ ],
+ "Espadachín": [
+  "app/client/js/juegos/eras.js"
+ ],
+ "Espectador": [
+  "app/client/js/juegos/lobo.js"
+ ],
+ "Espera a la siguiente mano": [
+  "lib/juegos/poquer.js"
+ ],
+ "Espera a la siguiente ronda": [
+  "lib/juegos/chinchon.js"
+ ],
+ "Esperando a los demás… (puedes cambiarlo)": [
+  "app/client/js/juegos/telefono.js"
+ ],
+ "Esperando a los otros lobos…": [
+  "app/client/js/juegos/lobo.js"
+ ],
+ "Esperando a que el anfitrión empiece…": [
+  "app/client/js/sala.js"
+ ],
+ "Esperando a que se descarten los demás…": [
+  "app/client/js/juegos/mus.js"
+ ],
+ "Esta noche los lobos no han atacado a nadie.": [
+  "app/client/js/juegos/lobo.js"
+ ],
+ "Están jugando… mira cómo acaba en el repaso": [
+  "app/client/js/juegos/telefono.js"
+ ],
+ "Estás en": [
+  "html:/j/palabra"
+ ],
+ "Estás en una sala de {0} (código {1}){2}.": [
+  "app/client/js/sala.js"
+ ],
+ "Estás muerto: solo puedes mirar": [
+  "lib/juegos/lobo.js"
+ ],
+ "Estas normas valen también para los mensajes privados entre amigos. Si alguien te molesta, puedes eliminarlo de tus amigos o bloquearlo desde el panel 👥: no podrá volver a escribirte ni enviarte solicitudes.": [
+  "html:/legal/aviso"
+ ],
+ "Estás silenciado unas horas por denuncias de otros jugadores": [
+  "lib/social.js"
+ ],
+ "Estás silenciado unas horas por denuncias de otros jugadores (hasta las {0})})": [
+  "lib/salas.js"
+ ],
+ "Estatua de la tierra": [
+  "app/client/js/juegos/isla.js"
+ ],
+ "Este juego es para jugar con personas: crea una sala y pasa el enlace.": [
+  "app/client/js/sala.js"
+ ],
+ "Este juego es solo para personas": [
+  "lib/salas.js"
+ ],
+ "Estira la honda y derriba las torres de los glotones que se comieron los huevos.": [
+  "lib/catalogo.js"
+ ],
+ "Estrategia": [
+  "app/client/js/juego.js",
+  "app/client/js/portal.js"
+ ],
+ "Evolucionar": [
+  "app/client/js/juegos/eras.js"
+ ],
+ "Excava cada vez más hondo, vende minerales y mejora tu máquina. Cuidado con la lava.": [
+  "lib/catalogo.js"
+ ],
+ "Explorador": [
+  "app/client/js/juegos/isla.js"
+ ],
+ "Explosión grande": [
+  "app/client/js/juegos/torres.js"
+ ],
+ "Fábrica": [
+  "app/client/js/juegos/galletas.js"
+ ],
+ "Fácil": [
+  "app/client/js/juegos/buscaminas.js"
+ ],
+ "Faltan jugadores (mínimo {0})": [
+  "app/client/js/sala.js"
+ ],
+ "Farol": [
+  "lib/catalogo.js"
+ ],
+ "Favoritos": [
+  "app/client/js/cuenta.js"
+ ],
+ "Fichas de letras, casillas que multiplican y un diccionario de 635.000 palabras. Cruza palabras y suma más que nadie.": [
+  "lib/catalogo.js"
+ ],
+ "Fiesta": [
+  "app/client/js/juego.js",
+  "app/client/js/portal.js"
+ ],
+ "fila centro mus-cartas": [
+  "app/client/js/juegos/mus.js"
+ ],
+ "fila sala-pub": [
+  "app/client/js/sala.js"
+ ],
+ "Filas: {0} · Récord: {1}": [
+  "app/client/js/juegos/carretera.js"
+ ],
+ "Fin": [
+  "app/client/js/juegos/lobo.js"
+ ],
+ "Fin de la mano": [
+  "app/client/js/juegos/poquer.js"
+ ],
+ "Fin de la partida": [
+  "app/client/js/juegos/bloques.js",
+  "app/client/js/juegos/burbujas.js",
+  "app/client/js/juegos/frutas.js"
+ ],
+ "FIN DE LA PARTIDA": [
+  "app/client/js/juegos/torres.js"
+ ],
+ "FIN DE LA RONDA": [
+  "app/client/js/juegos/tanques.js"
+ ],
+ "FIN DEL JUEGO": [
+  "app/client/js/juegos/dino.js"
+ ],
+ "Fin del turno: {0} aciertos, {1} tabús, {2} pasadas": [
+  "app/client/js/juegos/tabu.js"
+ ],
+ "Flechas o WASD (o ratón/dedo) para moverte · sal de tu zona, rodea un trozo y vuelve · si alguien pisa tu rastro, caes": [
+  "app/client/js/juegos/territorio.js"
+ ],
+ "Flechas o WASD para moverte · espacio: coger / soltar / emplatar · E (mantener) en la tabla: cortar · la carne cortada va al fogón · entrega en la campanilla 🛎️": [
+  "app/client/js/juegos/cocina.js"
+ ],
+ "Flechas o WASD para moverte y espacio para poner una bomba: estalla a los 2,5 segundos en cruz, rompe bloques y alcanza a quien pille (¡también a ti!). Coge mejoras: más bombas 💣, más fuego 🔥 y patines 👟. El último en pie gana la ronda; a 3 rondas.": [
+  "lib/catalogo.js"
+ ],
+ "Flechas o WASD; en el móvil, desliza el dedo.": [
+  "app/client/js/juegos/2048.js"
+ ],
+ "Flechas o WASD; en el móvil, desliza el dedo. Espacio: pausa.": [
+  "app/client/js/juegos/serpiente.js"
+ ],
+ "Flechas para moverte (o toca para avanzar y desliza a los lados). Esquiva coches y trenes y cruza el río por los troncos. No te quedes quieto: la pantalla avanza sola.": [
+  "lib/catalogo.js"
+ ],
+ "Flechas para moverte. En el móvil, toca para avanzar o desliza hacia los lados.": [
+  "app/client/js/juegos/carretera.js"
+ ],
+ "Floja": [
+  "app/client/js/comun.js"
+ ],
+ "Flota lista. Esperando a que el rival coloque la suya…": [
+  "app/client/js/juegos/hundir.js"
+ ],
+ "Forma al menos una palabra de 2 letras": [
+  "lib/juegos/palabreria.js"
+ ],
+ "Francotirador": [
+  "app/client/js/juegos/blindados.js",
+  "app/client/js/juegos/eras.js",
+  "app/client/js/juegos/torres.js"
+ ],
+ "Freno": [
+  "app/client/js/juegos/carreras.js"
+ ],
+ "Frutas: {0} · Récord: {1}": [
+  "app/client/js/juegos/frutas.js"
+ ],
+ "Fuego": [
+  "app/client/js/juegos/fuegoagua.js"
+ ],
+ "Fuego no puede tocar el agua; Agua no puede tocar la lava; el veneno verde mata a los dos. Recoged vuestras gemas y llegad cada uno a su puerta. Los botones abren las compuertas mientras alguien los pisa: ¡ayudaos!": [
+  "lib/catalogo.js"
+ ],
+ "Fuego y Agua": [
+  "lib/catalogo.js"
+ ],
+ "Fuera de favoritos": [
+  "app/client/js/juego.js"
+ ],
+ "Fuera de la mesa": [
+  "lib/juegos/billar.js"
+ ],
+ "Fuera del tablero": [
+  "lib/juegos/palabreria.js"
+ ],
+ "Fuerza": [
+  "app/client/js/juegos/billar.js"
+ ],
+ "Fusilero": [
+  "app/client/js/juegos/eras.js"
+ ],
+ "Fútbol 1 contra 1 con cabezas enormes: salta, cabecea y chuta. Partidos de 90 segundos.": [
+  "lib/catalogo.js"
+ ],
+ "Futuro": [
+  "app/client/js/juegos/eras.js"
+ ],
+ "Galletas": [
+  "app/client/js/cuenta.js",
+  "lib/catalogo.js"
+ ],
+ "games": [
+  "html:ventana"
+ ],
+ "games_id": [
+  "html:/legal/cookies"
+ ],
+ "games_sesion": [
+  "html:/legal/cookies"
+ ],
+ "games:2048": [
+  "html:/legal/cookies"
+ ],
+ "games:2048-record": [
+  "html:/legal/cookies"
+ ],
+ "games:apodo": [
+  "html:/legal/cookies"
+ ],
+ "games:cookies": [
+  "html:/legal/cookies"
+ ],
+ "games:favoritos": [
+  "html:/legal/cookies"
+ ],
+ "games:memoria-…": [
+  "html:/legal/cookies"
+ ],
+ "games:nivel": [
+  "html:/legal/cookies"
+ ],
+ "games:recientes": [
+  "html:/legal/cookies"
+ ],
+ "games:serpiente": [
+  "html:/legal/cookies"
+ ],
+ "Gana la baza la carta más alta del triunfo o del palo que salió. Hay que asistir al palo y montar si puedes. Tras ganar una baza, con rey y caballo del mismo palo cantas 20 (40 en el triunfo). Con 4 reyes o 4 caballos: ¡tute!": [
+  "lib/catalogo.js"
+ ],
+ "Garrote": [
+  "app/client/js/juegos/eras.js"
+ ],
+ "Gasolinera": [
+  "app/client/js/juegos/minero.js"
+ ],
+ "Generar códigos": [
+  "app/client/js/cuenta.js"
+ ],
+ "Generar códigos nuevos (anula los anteriores)": [
+  "app/client/js/cuenta.js"
+ ],
+ "Geografía": [
+  "app/client/js/juegos/saber.js"
+ ],
+ "Gira": [
+  "app/client/js/juegos/unidad.js"
+ ],
+ "Gira la ruleta, acierta preguntas de 6 categorías y consigue todos los personajes antes que nadie.": [
+  "lib/catalogo.js"
+ ],
+ "Girar": [
+  "app/client/js/juegos/bloques.js"
+ ],
+ "Gracias, hemos recibido tu denuncia": [
+  "app/client/js/comun.js"
+ ],
+ "Grande": [
+  "app/client/js/juegos/mus.js"
+ ],
+ "Gratis · sin registro · con amigos": [
+  "html:ventana"
+ ],
+ "Guarda tus partidas, victorias, récords y favoritos, y reserva tu nombre. No pedimos correo: al terminar te daremos unos códigos para recuperar la contraseña si la olvidas.": [
+  "app/client/js/comun.js"
+ ],
+ "Guardar mi elección": [
+  "app/client/js/cookies.js"
+ ],
+ "Guerra de eras": [
+  "app/client/js/cuenta.js",
+  "lib/catalogo.js"
+ ],
+ "GUERRA DE ERAS": [
+  "app/client/js/juegos/eras.js"
+ ],
+ "Guisantero": [
+  "app/client/js/juegos/plantas.js"
+ ],
+ "Ha metido sus cuatro fichas": [
+  "lib/juegos/parchis.js"
+ ],
+ "Habéis perdido": [
+  "app/client/js/sala.js"
+ ],
+ "Había {0} palabras · la más larga: «{1}»": [
+  "app/client/js/juegos/revueltas.js"
+ ],
+ "Habilidad": [
+  "app/client/js/juego.js",
+  "app/client/js/portal.js"
+ ],
+ "Habla con tu manada…": [
+  "app/client/js/juegos/lobo.js"
+ ],
+ "hace un rato": [
+  "app/client/js/social.js"
+ ],
+ "Hacen falta al menos {0} jugadores (puedes añadir CPUs)": [
+  "lib/salas.js"
+ ],
+ "Hamburguesa": [
+  "app/client/js/juegos/cocina.js"
+ ],
+ "Han destruido tu base": [
+  "app/client/js/juegos/eras.js"
+ ],
+ "Han pillado al impostor… ¿adivinará la palabra?": [
+  "app/client/js/juegos/impostor.js"
+ ],
+ "Has cerrado la sesión": [
+  "app/client/js/comun.js"
+ ],
+ "Has enviado muchas denuncias en poco tiempo": [
+  "lib/moderacion.js"
+ ],
+ "Has enviado muchas solicitudes hoy": [
+  "lib/social.js"
+ ],
+ "Has muerto (ahora lo ves todo)": [
+  "app/client/js/juegos/lobo.js"
+ ],
+ "Has votado": [
+  "app/client/js/juegos/lobo.js"
+ ],
+ "Has votado. Esperando al resto…": [
+  "app/client/js/juegos/impostor.js"
+ ],
+ "Hasta que borres la cuenta. Si no entras en 2 años, se borra sola": [
+  "html:/legal/privacidad"
+ ],
+ "Hasta que lo borres": [
+  "html:/legal/cookies"
+ ],
+ "Hasta que lo quites o borres la cuenta": [
+  "html:/legal/privacidad"
+ ],
+ "hay": [
+  "app/client/js/juegos/blindados.js"
+ ],
+ "Hay al menos": [
+  "app/client/js/juegos/mentiroso.js"
+ ],
+ "Hay un envite: quiere o no quiere": [
+  "lib/juegos/mus.js"
+ ],
+ "Hecho en Valencia por David Sánchez Belda ·": [
+  "html:ventana"
+ ],
+ "Helicóptero": [
+  "app/client/js/juegos/isla.js"
+ ],
+ "Helicóptero: ¿de qué loseta (con alguien)?": [
+  "app/client/js/juegos/isla.js"
+ ],
+ "Hielo": [
+  "app/client/js/juegos/torres.js"
+ ],
+ "Hierro": [
+  "app/client/js/juegos/minero.js"
+ ],
+ "Historia": [
+  "app/client/js/juegos/saber.js"
+ ],
+ "Hockey de aire": [
+  "lib/catalogo.js"
+ ],
+ "Hombre lobo": [
+  "lib/catalogo.js"
+ ],
+ "Honda": [
+  "app/client/js/juegos/eras.js"
+ ],
+ "Hornea galletas, contrata abuelas y construye un imperio de chocolate. Sigue aunque te vayas.": [
+  "lib/catalogo.js"
+ ],
+ "Hornear una galleta": [
+  "app/client/js/juegos/galletas.js"
+ ],
+ "Huerto contra zombis": [
+  "lib/catalogo.js"
+ ],
+ "Huerto de galletas": [
+  "app/client/js/juegos/galletas.js"
+ ],
+ "Hundir la flota": [
+  "lib/catalogo.js"
+ ],
+ "Identificador aleatorio para reconocerte en las salas y reconectarte si se corta la conexión.": [
+  "html:/legal/cookies"
+ ],
+ "Igual que la cuenta": [
+  "html:/legal/privacidad"
+ ],
+ "Ingeniera": [
+  "app/client/js/juegos/isla.js"
+ ],
+ "Insultos o lenguaje ofensivo": [
+  "app/client/js/comun.js"
+ ],
+ "Intentos": [
+  "app/client/js/juegos/palabra.js"
+ ],
+ "Interés legítimo en mantener la web segura y evitar abusos (art. 6.1.f del RGPD), para los registros del servidor.": [
+  "html:/legal/privacidad"
+ ],
+ "Inventa una definición que parezca de diccionario": [
+  "app/client/js/juegos/farol.js"
+ ],
+ "Invitación a la sala {0}": [
+  "app/client/js/social.js"
+ ],
+ "Invitación enviada a {0}": [
+  "app/client/js/social.js"
+ ],
+ "Invitar:": [
+  "app/client/js/sala.js"
+ ],
+ "Izquierda": [
+  "app/client/js/juegos/bloques.js"
+ ],
+ "Jardín": [
+  "app/client/js/juegos/oca.js"
+ ],
+ "Jinete de dino": [
+  "app/client/js/juegos/eras.js"
+ ],
+ "Juega gratis con tus amigos.": [
+  "html:/j/palabra"
+ ],
+ "Juega tu carta cuando creas que es la más baja de la mesa": [
+  "app/client/js/juegos/mente.js"
+ ],
+ "Juego": [
+  "app/client/js/juegos/mus.js"
+ ],
+ "Juegos": [
+  "html:ventana"
+ ],
+ "Juegos gratis para jugar con amigos: Brisca, cartas, tablero, habilidad y más. Sin registro ni descargas.": [
+  "html:ventana"
+ ],
+ "Jugada no válida": [
+  "lib/juegos/damas.js"
+ ],
+ "Jugadas": [
+  "app/client/js/juegos/palabra.js"
+ ],
+ "Jugadores": [
+  "html:ventana"
+ ],
+ "Jugar": [
+  "app/client/js/juegos/palabreria.js"
+ ],
+ "Jugar aquí (2 en el mismo teclado)": [
+  "app/client/js/sala.js"
+ ],
+ "Jugar solo": [
+  "app/client/js/sala.js"
+ ],
+ "Jugar ya contra la CPU": [
+  "app/client/js/sala.js"
+ ],
+ "Kiwi": [
+  "app/client/js/juegos/frutas.js"
+ ],
+ "La bomba la tendrá {0}. Cuando estéis todos, ¡listos! (y empieza la cuenta atrás)": [
+  "app/client/js/juegos/bomba.js"
+ ],
+ "La bomba no está activa": [
+  "lib/juegos/bomba.js"
+ ],
+ "La contraseña actual no es correcta": [
+  "lib/cuentas.js"
+ ],
+ "La contraseña no es correcta": [
+  "lib/cuentas.js"
+ ],
+ "La de toda la vida con baraja española: 2 o 4 jugadores, por parejas.": [
+  "lib/catalogo.js"
+ ],
+ "La estrella de seis puntas: lleva tus diez fichas al otro lado saltando sobre las demás.": [
+  "lib/catalogo.js"
+ ],
+ "La flota debe tener 5 barcos": [
+  "lib/juegos/hundir.js"
+ ],
+ "La isla que se hunde": [
+  "lib/catalogo.js"
+ ],
+ "La mano ha terminado": [
+  "lib/juegos/domino.js"
+ ],
+ "La mano sigue": [
+  "lib/juegos/mus.js",
+  "lib/juegos/poquer.js"
+ ],
+ "La mesa de los recreativos: el disco vuela y tú solo tienes un mazo. A 7 goles.": [
+  "lib/catalogo.js"
+ ],
+ "La Oca": [
+  "lib/catalogo.js"
+ ],
+ "La palabra tiene que tocar alguna de las que ya están": [
+  "lib/juegos/palabreria.js"
+ ],
+ "La partida ha terminado": [
+  "lib/juegos/ajedrez.js",
+  "lib/juegos/arqueros.js",
+  "lib/juegos/billar.js",
+  "lib/juegos/bomba.js",
+  "lib/juegos/brisca.js",
+  "lib/juegos/chinas.js",
+  "lib/juegos/chinchon.js",
+  "lib/juegos/clave.js",
+  "lib/juegos/cuatro.js",
+  "lib/juegos/damas.js",
+  "lib/juegos/dibujo.js",
+  "lib/juegos/domino.js",
+  "lib/juegos/farol.js",
+  "lib/juegos/hundir.js",
+  "lib/juegos/impostor.js",
+  "lib/juegos/isla.js",
+  "lib/juegos/lobo.js",
+  "lib/juegos/mente.js",
+  "lib/juegos/mentiroso.js",
+  "lib/juegos/mus.js",
+  "lib/juegos/oca.js",
+  "lib/juegos/onda.js",
+  "lib/juegos/palabreria.js",
+  "lib/juegos/parchis.js",
+  "lib/juegos/poquer.js",
+  "lib/juegos/revueltas.js",
+  "lib/juegos/saber.js",
+  "lib/juegos/stop.js",
+  "lib/juegos/tabu.js",
+  "lib/juegos/telefono.js",
+  "lib/juegos/tute.js",
+  "lib/juegos/unidad.js"
+ ],
+ "La partida ya ha empezado": [
+  "lib/salas.js"
+ ],
+ "La primera palabra necesita al menos 2 letras": [
+  "lib/juegos/palabreria.js"
+ ],
+ "La primera palabra pasa por la estrella del centro.": [
+  "app/client/js/juegos/palabreria.js"
+ ],
+ "La primera palabra tiene que pasar por la estrella del centro": [
+  "lib/juegos/palabreria.js"
+ ],
+ "La sala está llena": [
+  "lib/salas.js"
+ ],
+ "La siguiente es más difícil y cambia quién la tiene delante.": [
+  "app/client/js/juegos/bomba.js"
+ ],
+ "La web se ofrece tal cual, sin garantía de que esté siempre disponible. Las partidas en curso pueden cortarse por mantenimiento o actualizaciones. El titular no responde de lo que escriban otros jugadores en el chat ni del contenido de webs externas enlazadas.": [
+  "html:/legal/aviso"
+ ],
+ "Laberinto": [
+  "app/client/js/juegos/oca.js"
+ ],
+ "Laberinto, bombas que estallan en cruz y mejoras. Sé el último en pie.": [
+  "lib/catalogo.js"
+ ],
+ "Lancha": [
+  "app/client/js/juegos/hundir.js"
+ ],
+ "Lanza la tortuga": [
+  "app/client/js/cuenta.js",
+  "lib/catalogo.js"
+ ],
+ "Lanza más rápido": [
+  "app/client/js/juegos/torres.js"
+ ],
+ "Lanza pájaros": [
+  "app/client/js/cuenta.js",
+  "lib/catalogo.js"
+ ],
+ "Largo": [
+  "app/client/js/portal.js"
+ ],
+ "Las fichas tienen que ir en la misma fila o columna": [
+  "lib/juegos/palabreria.js"
+ ],
+ "Las fichas tienen que quedar seguidas": [
+  "lib/juegos/palabreria.js"
+ ],
+ "Las letras tienen que estar juntas": [
+  "lib/juegos/revueltas.js"
+ ],
+ "Las puede poner Cloudflare para frenar ataques y robots. No se usan para seguirte.": [
+  "html:/legal/cookies"
+ ],
+ "Láser": [
+  "app/client/js/juegos/eras.js"
+ ],
+ "Lejos y fuerte": [
+  "app/client/js/juegos/blindados.js"
+ ],
+ "Letra no válida": [
+  "lib/juegos/palabreria.js"
+ ],
+ "Letras revueltas": [
+  "lib/catalogo.js"
+ ],
+ "Ley aplicable": [
+  "html:/legal/aviso"
+ ],
+ "Liga tríos y escaleras y cierra antes que nadie. ¡Siete seguidas del mismo palo es chinchón!": [
+  "lib/catalogo.js"
+ ],
+ "Líneas": [
+  "app/client/js/juegos/bloques.js"
+ ],
+ "Listo": [
+  "app/client/js/juegos/stop.js"
+ ],
+ "Listo para votar": [
+  "app/client/js/juegos/lobo.js"
+ ],
+ "Listo. Puedes cambiarlo hasta que acabe el tiempo.": [
+  "app/client/js/juegos/onda.js"
+ ],
+ "Llenar": [
+  "app/client/js/juegos/minero.js"
+ ],
+ "Llenar el depósito: {0} 💰": [
+  "app/client/js/juegos/minero.js"
+ ],
+ "Lleva a la gallina lo más lejos posible entre coches, ríos y trenes.": [
+  "lib/catalogo.js"
+ ],
+ "Lleva tus 10 fichas a la punta marcada con línea discontinua · jugada {0}/{1}": [
+  "app/client/js/juegos/chinas.js"
+ ],
+ "Lluvia de flechas": [
+  "app/client/js/juegos/eras.js"
+ ],
+ "Lluvia de meteoritos": [
+  "app/client/js/juegos/eras.js"
+ ],
+ "Lobo": [
+  "app/client/js/juegos/lobo.js"
+ ],
+ "Los barcos deben medir 5, 4, 3, 3 y 2": [
+  "lib/juegos/hundir.js"
+ ],
+ "Los barcos no pueden tocarse": [
+  "lib/juegos/hundir.js"
+ ],
+ "Los demás están moviendo sus agujas…": [
+  "app/client/js/juegos/onda.js"
+ ],
+ "Los glotones se han salido con la suya. ¡Otra vez!": [
+  "app/client/js/juegos/honda.js"
+ ],
+ "Los juegos son para todas las edades, pero las salas tienen chat con otras personas. Si tienes menos de 14 años, juega con permiso de tus padres o tutores.": [
+  "html:/legal/aviso"
+ ],
+ "Mantener tu sesión abierta.": [
+  "html:/legal/cookies"
+ ],
+ "Mantenerte dentro sin escribir la contraseña cada vez.": [
+  "html:/legal/privacidad"
+ ],
+ "Manzana": [
+  "app/client/js/juegos/frutas.js"
+ ],
+ "Más alcance": [
+  "app/client/js/juegos/torres.js"
+ ],
+ "Más información": [
+  "app/client/js/cookies.js"
+ ],
+ "Más juegos": [
+  "html:/j/palabra"
+ ],
+ "Mecha": [
+  "app/client/js/juegos/eras.js"
+ ],
+ "Medio": [
+  "app/client/js/juegos/buscaminas.js",
+  "app/client/js/portal.js"
+ ],
+ "Mejora no válida": [
+  "lib/juegos/blindados.js"
+ ],
+ "Mejoras": [
+  "app/client/js/juegos/blindados.js",
+  "app/client/js/juegos/galletas.js",
+  "app/client/js/juegos/tortuga.js"
+ ],
+ "Memoria": [
+  "lib/catalogo.js"
+ ],
+ "Menores": [
+  "html:/legal/aviso"
+ ],
+ "Mensaje": [
+  "app/client/js/sala.js"
+ ],
+ "Mensajera": [
+  "app/client/js/juegos/isla.js"
+ ],
+ "Mensajes del chat y jugadas": [
+  "html:/legal/privacidad"
+ ],
+ "Mentiroso de dados": [
+  "lib/catalogo.js"
+ ],
+ "Mesa vacía: sale quien ganó la mano": [
+  "app/client/js/juegos/domino.js"
+ ],
+ "Mina de chocolate": [
+  "app/client/js/juegos/galletas.js"
+ ],
+ "Minero": [
+  "app/client/js/cuenta.js",
+  "lib/catalogo.js"
+ ],
+ "Mínimo 8 caracteres": [
+  "app/client/js/comun.js"
+ ],
+ "Mirad los dados…": [
+  "lib/juegos/mentiroso.js"
+ ],
+ "Mirando la partida": [
+  "app/client/js/juegos/impostor.js"
+ ],
+ "Mirar": [
+  "app/client/js/juegos/lobo.js"
+ ],
+ "mn-carta grande": [
+  "app/client/js/juegos/mente.js"
+ ],
+ "Moderar el chat y proteger a los jugadores.": [
+  "html:/legal/privacidad"
+ ],
+ "Modo": [
+  "app/client/js/juegos/memoria.js"
+ ],
+ "Mosquetero": [
+  "app/client/js/juegos/eras.js"
+ ],
+ "Mostrarlo a los demás jugadores de tu sala.": [
+  "html:/legal/privacidad"
+ ],
+ "Mostrarte tu lista de amigos, si están conectados y a qué juegan (solo a tus amigos).": [
+  "html:/legal/privacidad"
+ ],
+ "Motivo": [
+  "app/client/js/comun.js"
+ ],
+ "Motor": [
+  "app/client/js/juegos/blindados.js",
+  "app/client/js/juegos/minero.js"
+ ],
+ "Muerte": [
+  "app/client/js/juegos/oca.js"
+ ],
+ "Mueve el ratón o el dedo hacia donde quieras ir. Para comerte a otra célula tienes que ser un 25 % más grande. Espacio (o doble toque) te divide en dos para cazar. Cuanto más grande, más lenta. Si te comen, vuelves enseguida. Gana quien llegue a más masa en 4 minutos.": [
+  "lib/catalogo.js"
+ ],
+ "Mueve el ratón o el dedo por tu mitad de la mesa (o usa las flechas): el mazo lo sigue. Golpea el disco hacia la portería rival y defiende la tuya. Gana quien llega antes a 7 goles.": [
+  "lib/catalogo.js"
+ ],
+ "Mueve en diagonal hacia delante. Comer es obligatorio, y por donde más piezas comas. Al llegar al final, tu peón se hace dama y vuela por las diagonales. Pierde quien no puede mover.": [
+  "lib/catalogo.js"
+ ],
+ "Mueve la serpiente con las flechas (o deslizando el dedo), come manzanas y no choques con las paredes ni contigo.": [
+  "lib/catalogo.js"
+ ],
+ "Mueve la vista arrastrando o con ← →. Las tropas avanzan solas.": [
+  "app/client/js/juegos/eras.js"
+ ],
+ "Mueve y gira las piezas para completar líneas, que desaparecen. Cuatro de golpe dan muchos puntos. Si llegan arriba, se acaba.": [
+  "lib/catalogo.js"
+ ],
+ "Muévete con las flechas o WASD (en el móvil, mantén el dedo hacia donde quieras ir) y embiste con espacio (o el botón). La plataforma se va haciendo pequeña. El último que quede gana la ronda; a 3 rondas.": [
+  "lib/catalogo.js"
+ ],
+ "Muévete con las flechas, WASD o el ratón/dedo. Fuera de tu zona dejas un rastro; al volver te quedas con todo lo que has rodeado. Si alguien pisa tu rastro, caes; si tú pisas el de otro, cae él. El borde también mata. Gana quien llegue a tener más mapa en 4 minutos.": [
+  "lib/catalogo.js"
+ ],
+ "Munición": [
+  "app/client/js/juegos/tortuga.js"
+ ],
+ "Mus": [
+  "app/client/js/juegos/mus.js",
+  "lib/catalogo.js"
+ ],
+ "Nada de apodos ni mensajes insultantes, racistas, sexuales, amenazantes o que inciten al odio.": [
+  "html:/legal/aviso"
+ ],
+ "Nada que seguir": [
+  "lib/juegos/chinchon.js"
+ ],
+ "Nadie": [
+  "app/client/js/juegos/domino.js"
+ ],
+ "Nadie cobra en esta mano.": [
+  "app/client/js/juegos/mus.js"
+ ],
+ "NADIE GANA LA RONDA": [
+  "app/client/js/juegos/sumo.js"
+ ],
+ "Naranja": [
+  "app/client/js/juegos/frutas.js"
+ ],
+ "Necesarias para que funcionen las salas y para recordar tu apodo, tus récords y esta elección. No sirven para seguirte.": [
+  "app/client/js/cookies.js"
+ ],
+ "Necesitas 4 cartas de ese tesoro": [
+  "lib/juegos/isla.js"
+ ],
+ "Ningún juego cumple esos filtros. ¿Quitamos alguno?": [
+  "app/client/js/portal.js"
+ ],
+ "Nivel": [
+  "app/client/js/juegos/bloques.js",
+  "app/client/js/juegos/buscaminas.js"
+ ],
+ "Nivel {0} de {1} · Glotones: {2} · Pájaros: {3}": [
+  "app/client/js/juegos/honda.js"
+ ],
+ "Nivel de la CPU": [
+  "app/client/js/sala.js"
+ ],
+ "Nivel no válido": [
+  "lib/juegos/fuegoagua.js"
+ ],
+ "No dibujas tú": [
+  "lib/juegos/dibujo.js"
+ ],
+ "No encontrado · dsbelda games": [
+  "html:/no-existe"
+ ],
+ "No es tu turno": [
+  "lib/juegos/ajedrez.js",
+  "lib/juegos/arqueros.js",
+  "lib/juegos/billar.js",
+  "lib/juegos/brisca.js",
+  "lib/juegos/chinas.js",
+  "lib/juegos/chinchon.js",
+  "lib/juegos/cuatro.js",
+  "lib/juegos/damas.js",
+  "lib/juegos/domino.js",
+  "lib/juegos/hundir.js",
+  "lib/juegos/isla.js",
+  "lib/juegos/mentiroso.js",
+  "lib/juegos/mus.js",
+  "lib/juegos/oca.js",
+  "lib/juegos/palabreria.js",
+  "lib/juegos/parchis.js",
+  "lib/juegos/poquer.js",
+  "lib/juegos/saber.js",
+  "lib/juegos/tute.js",
+  "lib/juegos/unidad.js"
+ ],
+ "No es tu turno de dar pista": [
+  "lib/juegos/impostor.js"
+ ],
+ "No es un botón": [
+  "lib/juegos/bomba.js"
+ ],
+ "No hagas spam, no te hagas pasar por otra persona y no compartas datos personales (tuyos o ajenos) en el chat.": [
+  "html:/legal/aviso"
+ ],
+ "No hay descarte": [
+  "lib/juegos/chinchon.js"
+ ],
+ "No hay envite": [
+  "lib/juegos/mus.js"
+ ],
+ "No hay mus": [
+  "app/client/js/juegos/mus.js"
+ ],
+ "No hay nada que igualar": [
+  "lib/juegos/poquer.js"
+ ],
+ "No hay nada que quitar": [
+  "lib/social.js"
+ ],
+ "No hay nadie a quien pillar": [
+  "lib/juegos/unidad.js"
+ ],
+ "No hay nadie con ese nombre de usuario": [
+  "lib/social.js"
+ ],
+ "No hay ninguna sala con ese código": [
+  "lib/salas.js"
+ ],
+ "No hay partida en marcha": [
+  "lib/salas.js"
+ ],
+ "No hay solicitud que aceptar": [
+  "lib/social.js"
+ ],
+ "No juegas": [
+  "lib/juegos/arena.js"
+ ],
+ "No juegas en esta sala": [
+  "lib/salas.js"
+ ],
+ "No llevas nada para vender.": [
+  "app/client/js/juegos/minero.js"
+ ],
+ "No puedes cantar eso ahora": [
+  "lib/juegos/tute.js"
+ ],
+ "No puedes denunciarte a ti mismo": [
+  "lib/moderacion.js"
+ ],
+ "No puedes envenenar a esa persona": [
+  "lib/juegos/lobo.js"
+ ],
+ "No puedes ir ahí": [
+  "lib/juegos/chinas.js",
+  "lib/juegos/isla.js"
+ ],
+ "No puedes mirar a esa persona": [
+  "lib/juegos/lobo.js"
+ ],
+ "No puedes pasar: hay una apuesta": [
+  "lib/juegos/poquer.js"
+ ],
+ "No puedes salvar": [
+  "lib/juegos/lobo.js"
+ ],
+ "No puedes ser tu propio amigo (aunque lo seas)": [
+  "lib/social.js"
+ ],
+ "No quedan estrellas": [
+  "lib/juegos/mente.js"
+ ],
+ "no querido": [
+  "app/client/js/juegos/mus.js"
+ ],
+ "No quiero": [
+  "app/client/js/juegos/mus.js"
+ ],
+ "No se crean perfiles, no se toman decisiones automatizadas sobre ti y no se venden ni se ceden datos a nadie.": [
+  "html:/legal/privacidad"
+ ],
+ "No se pudo": [
+  "app/client/js/comun.js"
+ ],
+ "No se pudo cargar el catálogo.": [
+  "app/client/js/portal.js"
+ ],
+ "No se pudo cargar el juego": [
+  "app/client/js/juego.js"
+ ],
+ "No se pudo cargar tu cuenta. Prueba a recargar.": [
+  "app/client/js/cuenta.js"
+ ],
+ "No se pudo copiar": [
+  "app/client/js/comun.js"
+ ],
+ "No se pudo enviar": [
+  "app/client/js/comun.js"
+ ],
+ "No se pudo guardar": [
+  "app/client/js/comun.js"
+ ],
+ "No se puede enviar": [
+  "lib/social.js"
+ ],
+ "No se puede enviar la solicitud": [
+  "lib/social.js"
+ ],
+ "No se puede mover": [
+  "lib/salas.js"
+ ],
+ "No se puede quitar": [
+  "lib/salas.js"
+ ],
+ "No te quedan acciones": [
+  "lib/juegos/isla.js"
+ ],
+ "No te quedan cartas": [
+  "lib/juegos/mente.js"
+ ],
+ "No te quedan cartas: mira cómo acaban los demás": [
+  "app/client/js/juegos/mente.js"
+ ],
+ "No tienes bola en mano": [
+  "lib/juegos/billar.js"
+ ],
+ "No tienes esa carta": [
+  "lib/juegos/brisca.js",
+  "lib/juegos/chinchon.js",
+  "lib/juegos/tute.js",
+  "lib/juegos/unidad.js"
+ ],
+ "No tienes esas fichas": [
+  "lib/juegos/palabreria.js"
+ ],
+ "No tienes poderes: observa, debate y vota bien.": [
+  "app/client/js/juegos/lobo.js"
+ ],
+ "No tienes puntos": [
+  "lib/juegos/blindados.js"
+ ],
+ "No tienes tute": [
+  "lib/juegos/tute.js"
+ ],
+ "No uses programas para hacer trampas ni intentes saturar o atacar el servidor.": [
+  "html:/legal/aviso"
+ ],
+ "No vale una palabra del tablero (ni parte de ella)": [
+  "lib/juegos/clave.js"
+ ],
+ "No válido": [
+  "lib/juegos/stop.js"
+ ],
+ "No votar a nadie": [
+  "app/client/js/juegos/lobo.js"
+ ],
+ "Nombre": [
+  "html:/legal/cookies"
+ ],
+ "Nombre de usuario de tu amigo": [
+  "app/client/js/social.js"
+ ],
+ "Normal": [
+  "app/client/js/comun.js"
+ ],
+ "normas": [
+  "html:ventana"
+ ],
+ "Normas": [
+  "html:/legal/aviso"
+ ],
+ "Nueva contraseña (mínimo 8)": [
+  "app/client/js/cuenta.js"
+ ],
+ "Nueva partida": [
+  "app/client/js/juegos/2048.js",
+  "app/client/js/juegos/burbujas.js",
+  "app/client/js/juegos/buscaminas.js",
+  "app/client/js/juegos/memoria.js",
+  "app/client/js/juegos/solitario.js",
+  "app/client/js/juegos/torres.js"
+ ],
+ "O crea una sala y pasa el enlace para jugar con más gente.": [
+  "app/client/js/sala.js"
+ ],
+ "Oca": [
+  "app/client/js/juegos/oca.js"
+ ],
+ "Ocio": [
+  "app/client/js/juegos/saber.js"
+ ],
+ "Ocultar": [
+  "app/client/js/comun.js"
+ ],
+ "Oleada en marcha…": [
+  "app/client/js/juegos/torres.js"
+ ],
+ "Opción no válida": [
+  "lib/juegos/farol.js"
+ ],
+ "Órdago": [
+  "app/client/js/juegos/mus.js"
+ ],
+ "Oro": [
+  "app/client/js/juegos/minero.js"
+ ],
+ "oro su-emb": [
+  "app/client/js/juegos/sumo.js"
+ ],
+ "Otra partida": [
+  "app/client/js/juegos/eras.js"
+ ],
+ "Otro día": [
+  "app/client/js/juegos/volar.js"
+ ],
+ "Página no encontrada.": [
+  "html:/no-existe"
+ ],
+ "Pájaro saltarín": [
+  "app/client/js/cuenta.js",
+  "lib/catalogo.js"
+ ],
+ "Palabra del día": [
+  "app/client/js/cuenta.js",
+  "lib/catalogo.js"
+ ],
+ "Palabra del día · Juega gratis · dsbelda games": [
+  "html:/j/palabra"
+ ],
+ "Palabra n.º 4": [
+  "html:/j/palabra"
+ ],
+ "Palabras": [
+  "app/client/js/juego.js",
+  "app/client/js/portal.js"
+ ],
+ "Palabras en clave": [
+  "lib/catalogo.js"
+ ],
+ "Palabrería": [
+  "lib/catalogo.js"
+ ],
+ "Para cerrar te puede quedar como mucho una carta suelta de 5 o menos": [
+  "lib/juegos/chinchon.js"
+ ],
+ "Para darla tenéis que estar en la misma loseta": [
+  "app/client/js/juegos/isla.js"
+ ],
+ "Para decir «¡Stop!» tienes que rellenarlas todas": [
+  "lib/juegos/stop.js"
+ ],
+ "Para jugar no hace falta cuenta: basta con elegir un apodo. Puedes jugar contra la CPU o crear una sala y compartir su enlace.": [
+  "html:/legal/aviso"
+ ],
+ "Para qué": [
+  "html:/legal/cookies"
+ ],
+ "Parchís": [
+  "lib/catalogo.js"
+ ],
+ "Pares": [
+  "app/client/js/juegos/mus.js"
+ ],
+ "Partidas": [
+  "app/client/js/cuenta.js"
+ ],
+ "Partidas en marcha (puedes mirar)": [
+  "app/client/js/sala.js"
+ ],
+ "Pasa este enlace a tus amigos:": [
+  "app/client/js/sala.js"
+ ],
+ "Pasar": [
+  "app/client/js/juegos/palabreria.js",
+  "app/client/js/juegos/poquer.js",
+  "app/client/js/juegos/tabu.js",
+  "app/client/js/juegos/unidad.js"
+ ],
+ "Pasar turno": [
+  "app/client/js/juegos/clave.js"
+ ],
+ "Paso": [
+  "app/client/js/juegos/mus.js"
+ ],
+ "peón": [
+  "app/client/js/juegos/ajedrez.js"
+ ],
+ "Petardo": [
+  "app/client/js/juegos/plantas.js"
+ ],
+ "Pide a quien tiene la bomba que te describa lo que ve. Tú no ves la bomba; ella no ve el manual.": [
+  "app/client/js/juegos/bomba.js"
+ ],
+ "Pide mus para cambiar cartas o córtalo. Luego se apuesta a grande (cartas altas), chica (bajas), pares y juego (31 o más; si nadie, al punto). Paso, envido, quiero, no quiero u órdago. Gana la primera pareja en llegar a 40.": [
+  "lib/catalogo.js"
+ ],
+ "Piedra de fuego": [
+  "app/client/js/juegos/isla.js"
+ ],
+ "Piezas que caen: encájalas y completa líneas. Cada vez más rápido.": [
+  "lib/catalogo.js"
+ ],
+ "Piloto": [
+  "app/client/js/juegos/isla.js"
+ ],
+ "Planta girasoles y guisanteros para que los zombis no lleguen a tu casa.": [
+  "lib/catalogo.js"
+ ],
+ "Plata": [
+  "app/client/js/juegos/minero.js"
+ ],
+ "Plataformas cooperativas para dos: Fuego no pisa el agua y Agua no pisa la lava. Online o en el mismo teclado.": [
+  "lib/catalogo.js"
+ ],
+ "Plátano": [
+  "app/client/js/juegos/frutas.js"
+ ],
+ "Poción desconocida": [
+  "lib/juegos/lobo.js"
+ ],
+ "Política de cookies": [
+  "app/client/js/cookies.js"
+ ],
+ "Política de cookies · dsbelda games": [
+  "html:/legal/cookies"
+ ],
+ "política de privacidad": [
+  "app/client/js/comun.js"
+ ],
+ "Política de privacidad": [
+  "html:/legal/privacidad"
+ ],
+ "Política de privacidad · dsbelda games": [
+  "html:/legal/privacidad"
+ ],
+ "Pon una ficha que encaje por uno de los dos extremos; si no puedes, pasas. Quien se queda sin fichas hace dominó y su pareja se apunta los puntos de los rivales. Si nadie puede poner (tranque), gana la pareja con menos puntos. A 100.": [
+  "lib/catalogo.js"
+ ],
+ "Póquer": [
+  "lib/catalogo.js"
+ ],
+ "Por equipos. Tienes 60 segundos para que tu equipo adivine todas las palabras que puedas. Si estáis juntos, habla y marca «Acertada»; online, escribe pistas (si llevan una palabra prohibida, ¡tabú!) y tu equipo escribe lo que cree. El otro equipo puede pitar.": [
+  "lib/catalogo.js"
+ ],
+ "Por parejas y a 8 reyes: grande, chica, pares y juego. Envida, quiere… ¡u órdago!": [
+  "lib/catalogo.js"
+ ],
+ "Por turnos, uno elige una palabra y la dibuja. Los demás escriben lo que creen que es: cuanto antes acierten, más puntos (y quien dibuja también gana). Con el tiempo se destapan letras.": [
+  "lib/catalogo.js"
+ ],
+ "Portaaviones": [
+  "app/client/js/juegos/hundir.js"
+ ],
+ "Posada": [
+  "app/client/js/juegos/oca.js"
+ ],
+ "Posición no válida": [
+  "lib/juegos/hundir.js"
+ ],
+ "Pozo": [
+  "app/client/js/juegos/oca.js"
+ ],
+ "Preguntas trampa y botones que mienten. ¿Llegarás al final?": [
+  "lib/catalogo.js"
+ ],
+ "Preparaos": [
+  "app/client/js/juegos/bomba.js"
+ ],
+ "Primero coloca la bola blanca": [
+  "lib/juegos/billar.js"
+ ],
+ "Primero hay que pulsarlo": [
+  "lib/juegos/bomba.js"
+ ],
+ "Primero roba una carta": [
+  "lib/juegos/chinchon.js"
+ ],
+ "Primo de la Brisca: hay que asistir y montar, y se cantan las 20 y las 40.": [
+  "lib/catalogo.js"
+ ],
+ "Privacidad": [
+  "html:ventana"
+ ],
+ "Probar": [
+  "app/client/js/juegos/dibujo.js",
+  "app/client/js/juegos/impostor.js"
+ ],
+ "Pronto": [
+  "app/client/js/portal.js"
+ ],
+ "Propiedad intelectual": [
+  "html:/legal/aviso"
+ ],
+ "Puedes cerrar tirando la carta adecuada": [
+  "app/client/js/juegos/chinchon.js"
+ ],
+ "Puedes llevarte todo lo que guardamos de ti en un fichero, o borrar la cuenta para siempre (con tus estadísticas, récords y favoritos).": [
+  "app/client/js/cuenta.js"
+ ],
+ "Puedes ver lo que hay en": [
+  "html:/legal/cookies"
+ ],
+ "Puente": [
+  "app/client/js/juegos/oca.js"
+ ],
+ "Pulsa «Rendirse» otra vez para abandonar": [
+  "app/client/js/juegos/ajedrez.js",
+  "app/client/js/juegos/arqueros.js",
+  "app/client/js/juegos/billar.js",
+  "app/client/js/juegos/damas.js",
+  "app/client/js/juegos/hundir.js"
+ ],
+ "Pulsa «Salir» otra vez para dejar la partida (te sustituirá la CPU)": [
+  "app/client/js/sala.js"
+ ],
+ "Pulsa el corazón de cualquier juego en la portada para tenerlo aquí.": [
+  "app/client/js/cuenta.js"
+ ],
+ "PULSA ESPACIO O TOCA": [
+  "app/client/js/juegos/dino.js"
+ ],
+ "Pulsa la galleta para hornear. Compra ayudantes que hornean solos y mejoras que los hacen el doble de buenos. Atento a la galleta dorada. Se guarda solo y, mientras no estás, se sigue horneando a medio gas.": [
+  "lib/catalogo.js"
+ ],
+ "Pulsa otra vez para bloquearlo: dejará de ser tu amigo y no podrá escribirte": [
+  "app/client/js/social.js"
+ ],
+ "Pulsa otra vez para eliminarlo": [
+  "app/client/js/social.js"
+ ],
+ "Pulsa una columna para soltar tu ficha. Gana quien junte cuatro en línea: en horizontal, vertical o diagonal.": [
+  "lib/catalogo.js"
+ ],
+ "Punto": [
+  "app/client/js/juegos/mus.js"
+ ],
+ "Puntos: {0} · Récord: {1}": [
+  "app/client/js/juegos/burbujas.js",
+  "app/client/js/juegos/pajaro.js"
+ ],
+ "Puntos: {0} · Récord: {1}{2}": [
+  "app/client/js/juegos/2048.js",
+  "app/client/js/juegos/bloques.js"
+ ],
+ "Puntos: {0} · Récord: {1}{2}{3}": [
+  "app/client/js/juegos/serpiente.js"
+ ],
+ "Qué datos se tratan": [
+  "html:/legal/privacidad"
+ ],
+ "Que funcionen la partida y el chat de la sala.": [
+  "html:/legal/privacidad"
+ ],
+ "Que podáis escribiros aunque uno no esté conectado.": [
+  "html:/legal/privacidad"
+ ],
+ "Que puedas entrar, reservar tu nombre y ver tu perfil.": [
+  "html:/legal/privacidad"
+ ],
+ "Que puedas recuperar la cuenta si olvidas la contraseña, sin pedirte correo.": [
+  "html:/legal/privacidad"
+ ],
+ "Que salga en la lista de salas": [
+  "app/client/js/sala.js"
+ ],
+ "Qué usamos": [
+  "html:/legal/cookies"
+ ],
+ "Quedan menos de 7 fichas en la bolsa: ya no se puede cambiar": [
+  "lib/juegos/palabreria.js"
+ ],
+ "Quién está detrás": [
+  "html:/legal/aviso"
+ ],
+ "Quién más ve los datos": [
+  "html:/legal/privacidad"
+ ],
+ "Quien tiene la bomba ve los módulos (cables, botón, símbolos) pero no el manual; los demás tienen el manual pero no ven la bomba. Habla (en persona, por llamada o por el chat) para desactivarla antes de que se acabe el tiempo. Tres fallos y ¡bum! Son tres bombas y cada vez cambia quién la tiene.": [
+  "lib/catalogo.js"
+ ],
+ "Quiero": [
+  "app/client/js/juegos/mus.js"
+ ],
+ "Quitar de favoritos": [
+  "app/client/js/juego.js",
+  "app/client/js/portal.js"
+ ],
+ "Quitar filtros": [
+  "html:ventana"
+ ],
+ "Racha": [
+  "app/client/js/juegos/palabra.js"
+ ],
+ "Rampa": [
+  "app/client/js/juegos/volar.js"
+ ],
+ "Rápido": [
+  "app/client/js/portal.js"
+ ],
+ "Ratón o dedo para girar · espacio, clic mantenido o el botón Turbo para acelerar (pierdes longitud) · que tu cabeza no toque a otra serpiente": [
+  "app/client/js/juegos/serpientes.js"
+ ],
+ "Ratón o dedo para moverte · espacio (o el botón Dividir) para partirte en dos y cazar · hay que ser un 25 % más grande para comerse a otra": [
+  "app/client/js/juegos/celulas.js"
+ ],
+ "Recarga": [
+  "app/client/js/juegos/blindados.js"
+ ],
+ "Recarga rápida": [
+  "app/client/js/juegos/torres.js"
+ ],
+ "Rechazar": [
+  "app/client/js/cookies.js",
+  "app/client/js/social.js"
+ ],
+ "Recoge los soles y gástalos en plantas: el Solecito da más soles, el Guisantero dispara, la Nuez aguanta, el Escarchado frena, la Mina explota al pisarla y el Petardo arrasa. Aguanta 10 oleadas.": [
+  "lib/catalogo.js"
+ ],
+ "Recoger": [
+  "app/client/js/juegos/palabreria.js"
+ ],
+ "Récord: {0} s": [
+  "app/client/js/juegos/buscaminas.js"
+ ],
+ "Recordar lo que elijas en «Configurar cookies».": [
+  "html:/legal/cookies"
+ ],
+ "Recordar tu apodo y el nivel de la CPU que elegiste.": [
+  "html:/legal/cookies"
+ ],
+ "Recordarlos para la próxima vez.": [
+  "html:/legal/privacidad"
+ ],
+ "Récords": [
+  "app/client/js/cuenta.js"
+ ],
+ "Récords, apodo y preferencias": [
+  "html:/legal/privacidad"
+ ],
+ "Recupera tu contraseña": [
+  "app/client/js/comun.js"
+ ],
+ "Rendirse": [
+  "app/client/js/juegos/ajedrez.js",
+  "app/client/js/juegos/arqueros.js",
+  "app/client/js/juegos/billar.js",
+  "app/client/js/juegos/damas.js",
+  "app/client/js/juegos/hundir.js"
+ ],
+ "Reparación": [
+  "app/client/js/juegos/minero.js"
+ ],
+ "Reparar": [
+  "app/client/js/juegos/minero.js"
+ ],
+ "Reserva": [
+  "app/client/js/juegos/bloques.js"
+ ],
+ "Reservar": [
+  "app/client/js/juegos/bloques.js"
+ ],
+ "Responde 30 preguntas con trampa. Lee con calma: a veces la respuesta no está donde crees. Tienes 3 vidas y un comodín para saltarte una.": [
+  "lib/catalogo.js"
+ ],
+ "Responder": [
+  "app/client/js/social.js"
+ ],
+ "Responsabilidad": [
+  "html:/legal/aviso"
+ ],
+ "Responsable": [
+  "html:/legal/privacidad"
+ ],
+ "Respuesta no válida": [
+  "lib/juegos/saber.js"
+ ],
+ "Resultado de la mano": [
+  "app/client/js/juegos/poquer.js"
+ ],
+ "Resultado de la ronda": [
+  "app/client/js/juegos/stop.js"
+ ],
+ "Resultados": [
+  "app/client/js/portal.js"
+ ],
+ "Retirarse": [
+  "app/client/js/juegos/poquer.js"
+ ],
+ "Revancha": [
+  "app/client/js/sala.js"
+ ],
+ "Rey": [
+  "app/client/js/juegos/brisca.js",
+  "app/client/js/juegos/cartas-es.js"
+ ],
+ "roba del mazo": [
+  "lib/juegos/chinchon.js"
+ ],
+ "Roba del mazo o del descarte": [
+  "app/client/js/juegos/chinchon.js"
+ ],
+ "Roba del mazo o del descarte y tira una. Junta tríos del mismo número o escaleras del mismo palo. Cierra cuando te quede como mucho una carta suelta de 5 o menos. Quien pase de 100 puntos queda fuera.": [
+  "lib/catalogo.js"
+ ],
+ "Robar": [
+  "app/client/js/juegos/unidad.js"
+ ],
+ "Robar carta": [
+  "app/client/js/juegos/solitario.js"
+ ],
+ "Robar de 3 en 3": [
+  "app/client/js/juegos/solitario.js"
+ ],
+ "Robar una carta": [
+  "app/client/js/juegos/unidad.js"
+ ],
+ "Rojo": [
+  "app/client/js/juegos/clave.js"
+ ],
+ "Ronda": [
+  "app/client/js/juegos/stop.js"
+ ],
+ "Ronda {0} · gana quien llegue a {1} · flechas/WASD o mantén el dedo hacia donde ir · espacio: embestir": [
+  "app/client/js/juegos/sumo.js"
+ ],
+ "Ronda {0}: aún no hay apuesta · {1} dados en la mesa · los unos son comodines": [
+  "app/client/js/juegos/mentiroso.js"
+ ],
+ "Rubí": [
+  "app/client/js/juegos/minero.js"
+ ],
+ "Ruleta del saber": [
+  "lib/catalogo.js"
+ ],
+ "Ruta no válida": [
+  "lib/juegos/revueltas.js"
+ ],
+ "Saber que eres la misma persona al volver a la sala o al reconectarte. No va unido a tu nombre ni a ningún otro dato.": [
+  "html:/legal/privacidad"
+ ],
+ "Saca con un 5, come y cuéntate 20, haz barreras y mete tus cuatro fichas en casa.": [
+  "lib/catalogo.js"
+ ],
+ "Sacos de arena": [
+  "app/client/js/juegos/isla.js"
+ ],
+ "Sal de tu zona, rodea un trozo de mapa y vuelve para quedártelo. Pero si alguien pisa tu rastro…": [
+  "lib/catalogo.js"
+ ],
+ "Sala de espera": [
+  "app/client/js/sala.js"
+ ],
+ "Sale una escala, por ejemplo «Frío — Caliente». Quien da la pista ve la zona premiada y escribe algo que, para él, esté justo ahí. Los demás mueven su aguja. Cuanto más cerca, más puntos (y quien dio la pista se lleva la media).": [
+  "lib/catalogo.js"
+ ],
+ "Sale una letra: rellena las 8 categorías con palabras que empiecen por ella. Quien acabe puede decir «¡Stop!». Luego se revisan y se tachan las que no valgan. Únicas 10, repetidas 5 y si eres el único, 20.": [
+  "lib/catalogo.js"
+ ],
+ "Sale una palabra rarísima. Invéntate una definición creíble y engaña a los demás… y encuentra la de verdad.": [
+  "lib/catalogo.js"
+ ],
+ "Salida": [
+  "app/client/js/juegos/oca.js"
+ ],
+ "Salir": [
+  "app/client/js/juegos/minero.js",
+  "app/client/js/sala.js"
+ ],
+ "Salir de esa sala y jugar aquí": [
+  "app/client/js/sala.js"
+ ],
+ "Salir de la sala": [
+  "app/client/js/sala.js"
+ ],
+ "Salta": [
+  "app/client/js/juegos/unidad.js"
+ ],
+ "Saltos al cielo": [
+  "app/client/js/cuenta.js",
+  "lib/catalogo.js"
+ ],
+ "Sandía": [
+  "app/client/js/juegos/frutas.js"
+ ],
+ "Se acabó el tiempo": [
+  "lib/juegos/revueltas.js"
+ ],
+ "Se acabó el tiempo de escribir": [
+  "lib/juegos/stop.js"
+ ],
+ "Se aplica la ley española. Para cualquier conflicto, los juzgados de Valencia, salvo que la ley te dé derecho a acudir a los de tu domicilio.": [
+  "html:/legal/aviso"
+ ],
+ "Se guardará este mensaje y quién lo denuncia, y el titular lo revisará. Si varias cuentas denuncian a la misma persona, se la silencia unas horas.": [
+  "app/client/js/comun.js"
+ ],
+ "Se ha quedado sin cartas": [
+  "lib/juegos/unidad.js"
+ ],
+ "Se mueve y achica también en diagonal": [
+  "app/client/js/juegos/isla.js"
+ ],
+ "Seguir ya": [
+  "app/client/js/juegos/mentiroso.js"
+ ],
+ "Seguridad": [
+  "app/client/js/cuenta.js"
+ ],
+ "Seguridad: detectar ataques y abusos y resolver fallos.": [
+  "html:/legal/privacidad"
+ ],
+ "Serpiente": [
+  "app/client/js/cuenta.js",
+  "lib/catalogo.js"
+ ],
+ "Serpientes": [
+  "lib/catalogo.js"
+ ],
+ "si": [
+  "app/client/js/juegos/saber.js"
+ ],
+ "Si esto cambia": [
+  "html:/legal/cookies"
+ ],
+ "Si se empieza a tratar algún dato nuevo (por ejemplo, con publicidad), se actualizará esta página antes de hacerlo y, cuando haga falta, se te pedirá permiso.": [
+  "html:/legal/privacidad"
+ ],
+ "Sigue horneando para desbloquear mejoras.": [
+  "app/client/js/juegos/galletas.js"
+ ],
+ "Sigue jugando": [
+  "html:ventana"
+ ],
+ "Siguiente": [
+  "app/client/js/juegos/bloques.js"
+ ],
+ "Siguiente mano ya": [
+  "app/client/js/juegos/mus.js",
+  "app/client/js/juegos/poquer.js"
+ ],
+ "Siguiente ronda": [
+  "app/client/js/juegos/farol.js",
+  "app/client/js/juegos/onda.js"
+ ],
+ "Siguiente ronda ya": [
+  "app/client/js/juegos/chinchon.js",
+  "app/client/js/juegos/impostor.js",
+  "app/client/js/juegos/revueltas.js",
+  "app/client/js/juegos/stop.js"
+ ],
+ "Siguiente turno": [
+  "app/client/js/juegos/tabu.js"
+ ],
+ "Silkscreen": [
+  "app/client/js/juegos/lienzo.js"
+ ],
+ "Símbolos": [
+  "app/client/js/juegos/bomba.js"
+ ],
+ "Sin barcos": [
+  "app/client/js/juegos/hundir.js"
+ ],
+ "Sin conexión con el servidor": [
+  "app/client/js/comun.js"
+ ],
+ "Sin conexión con el servidor; reintentando…": [
+  "app/client/js/sala.js"
+ ],
+ "Sin correo, estos códigos son la única forma de recuperar tu contraseña si la olvidas. Cada uno vale una sola vez. No se volverán a mostrar (aunque puedes generar otros nuevos desde Tu cuenta).": [
+  "app/client/js/comun.js"
+ ],
+ "sin estrellas": [
+  "app/client/js/juegos/mente.js"
+ ],
+ "Sin palabras": [
+  "lib/catalogo.js"
+ ],
+ "Sin pedidos… ¡de momento!": [
+  "app/client/js/juegos/cocina.js"
+ ],
+ "sin récord": [
+  "app/client/js/cuenta.js"
+ ],
+ "Sin récord en este nivel todavía": [
+  "app/client/js/juegos/buscaminas.js"
+ ],
+ "sin-record": [
+  "app/client/js/cuenta.js"
+ ],
+ "Soldado": [
+  "app/client/js/juegos/eras.js"
+ ],
+ "Solecito": [
+  "app/client/js/juegos/plantas.js"
+ ],
+ "Soles: {0} · Oleada {1} de 10{2} · Récord: {3}": [
+  "app/client/js/juegos/plantas.js"
+ ],
+ "Solitario": [
+  "app/client/js/cuenta.js",
+  "app/client/js/juegos/memoria.js",
+  "lib/catalogo.js"
+ ],
+ "Solo": [
+  "app/client/js/portal.js"
+ ],
+ "solo bloques": [
+  "app/client/js/juegos/bloques.js"
+ ],
+ "solo burbujas": [
+  "app/client/js/juegos/burbujas.js"
+ ],
+ "solo buscaminas": [
+  "app/client/js/juegos/buscaminas.js"
+ ],
+ "solo carretera": [
+  "app/client/js/juegos/carretera.js"
+ ],
+ "Solo cartas de tesoro a otra persona": [
+  "lib/juegos/isla.js"
+ ],
+ "Solo con dos cartas o menos": [
+  "lib/juegos/unidad.js"
+ ],
+ "solo dino": [
+  "app/client/js/juegos/dino.js"
+ ],
+ "Solo el anfitrión puede añadir CPUs": [
+  "lib/salas.js"
+ ],
+ "Solo el anfitrión puede empezar": [
+  "lib/salas.js"
+ ],
+ "Solo el anfitrión puede quitar jugadores": [
+  "lib/salas.js"
+ ],
+ "Solo el anfitrión, antes de empezar": [
+  "lib/salas.js"
+ ],
+ "Solo el otro equipo pita": [
+  "lib/juegos/tabu.js"
+ ],
+ "Solo el piloto, una vez por turno": [
+  "lib/juegos/isla.js"
+ ],
+ "Solo en la memoria del servidor mientras juegas; se borra al reiniciarlo": [
+  "html:/legal/privacidad"
+ ],
+ "Solo en memoria, mientras exista la sala (como mucho 12 horas)": [
+  "html:/legal/privacidad"
+ ],
+ "solo eras": [
+  "app/client/js/juegos/eras.js"
+ ],
+ "Solo es un apodo para la partida. Sin cuentas ni contraseñas.": [
+  "app/client/js/sala.js"
+ ],
+ "solo frutas": [
+  "app/client/js/juegos/frutas.js"
+ ],
+ "solo fuegoagua": [
+  "app/client/js/juegos/fuegoagua.js"
+ ],
+ "solo honda": [
+  "app/client/js/juegos/honda.js"
+ ],
+ "Solo los lobos": [
+  "lib/juegos/lobo.js"
+ ],
+ "Solo los que ya se pueden jugar": [
+  "html:ventana"
+ ],
+ "solo minero": [
+  "app/client/js/juegos/minero.js"
+ ],
+ "solo pajaro": [
+  "app/client/js/juegos/pajaro.js"
+ ],
+ "solo palabra": [
+  "app/client/js/juegos/palabra.js"
+ ],
+ "solo plantas": [
+  "app/client/js/juegos/plantas.js"
+ ],
+ "Solo puedes escribir a tus amigos": [
+  "lib/social.js"
+ ],
+ "Solo puedes tirar la carta que has robado": [
+  "lib/juegos/unidad.js"
+ ],
+ "Solo quien describe": [
+  "lib/juegos/tabu.js"
+ ],
+ "Solo quien tiene la bomba delante": [
+  "lib/juegos/bomba.js"
+ ],
+ "solo saltos": [
+  "app/client/js/juegos/saltos.js"
+ ],
+ "solo solitario": [
+  "app/client/js/juegos/solitario.js"
+ ],
+ "solo torres": [
+  "app/client/js/juegos/torres.js"
+ ],
+ "solo tortuga": [
+  "app/client/js/juegos/tortuga.js"
+ ],
+ "Solo una loseta inundada tuya o vecina": [
+  "lib/juegos/isla.js"
+ ],
+ "solo volar": [
+  "app/client/js/juegos/volar.js"
+ ],
+ "Sorpréndeme": [
+  "html:ventana"
+ ],
+ "Sota": [
+  "app/client/js/juegos/brisca.js",
+  "app/client/js/juegos/cartas-es.js"
+ ],
+ "Space": [
+  "app/client/js/juegos/arqueros.js",
+  "app/client/js/juegos/billar.js",
+  "app/client/js/juegos/burbujas.js",
+  "app/client/js/juegos/dino.js",
+  "app/client/js/juegos/lienzo.js",
+  "app/client/js/juegos/pajaro.js",
+  "app/client/js/juegos/sumo.js",
+  "app/client/js/juegos/tortuga.js",
+  "app/client/js/juegos/volar.js"
+ ],
+ "Spam o publicidad": [
+  "app/client/js/comun.js"
+ ],
+ "Stop": [
+  "lib/catalogo.js"
+ ],
+ "Submarino": [
+  "app/client/js/juegos/hundir.js"
+ ],
+ "Suma fichas iguales hasta llegar al 2048.": [
+  "lib/catalogo.js"
+ ],
+ "Sumo de bolas": [
+  "lib/catalogo.js"
+ ],
+ "SwJacK": [
+  "lib/catalogo.js"
+ ],
+ "Tablas: 40 jugadas sin comer ni mover peón": [
+  "lib/juegos/damas.js"
+ ],
+ "Tablero": [
+  "app/client/js/juego.js",
+  "app/client/js/juegos/cuatro.js",
+  "app/client/js/portal.js"
+ ],
+ "Tablero de 2048": [
+  "app/client/js/juegos/2048.js"
+ ],
+ "Tablero de bloques": [
+  "app/client/js/juegos/bloques.js"
+ ],
+ "Tablero de la serpiente": [
+  "app/client/js/juegos/serpiente.js"
+ ],
+ "Tabú": [
+  "lib/catalogo.js"
+ ],
+ "Taladra hacia abajo y a los lados y vuela hacia arriba con la hélice. Sube los minerales a la superficie para venderlos y mejora la máquina. Vigila el combustible y el casco. Se guarda solo.": [
+  "lib/catalogo.js"
+ ],
+ "Taladro": [
+  "app/client/js/juegos/minero.js"
+ ],
+ "Taller": [
+  "app/client/js/juegos/minero.js"
+ ],
+ "Tamaño": [
+  "app/client/js/juegos/memoria.js"
+ ],
+ "Tanque": [
+  "app/client/js/juegos/eras.js"
+ ],
+ "Tanques en laberinto": [
+  "lib/catalogo.js"
+ ],
+ "Tanques en un laberinto y balas que rebotan. En tiempo real, de 2 a 4. ¡Cuidado con tus propios disparos!": [
+  "lib/catalogo.js"
+ ],
+ "Tanques mejorables": [
+  "lib/catalogo.js"
+ ],
+ "Te quedan {0} códigos de recuperación sin usar. Cada uno vale una vez y sirve para cambiar la contraseña si la olvidas.": [
+  "app/client/js/cuenta.js"
+ ],
+ "Te sirve la que has robado: tírala o pasa": [
+  "app/client/js/juegos/unidad.js"
+ ],
+ "Te toca": [
+  "app/client/js/juegos/ajedrez.js",
+  "app/client/js/juegos/damas.js",
+  "app/client/js/juegos/tute.js",
+  "app/client/js/juegos/unidad.js"
+ ],
+ "Te toca describir. Cuando estés listo…": [
+  "app/client/js/juegos/tabu.js"
+ ],
+ "Te toca: ¡gira la ruleta!": [
+  "app/client/js/juegos/saber.js"
+ ],
+ "Te toca: ¡tienes que comer!": [
+  "app/client/js/juegos/damas.js"
+ ],
+ "Te toca: ¡tira el dado!": [
+  "app/client/js/juegos/oca.js"
+ ],
+ "Te toca: arrastra hacia atrás y suelta": [
+  "app/client/js/juegos/arqueros.js"
+ ],
+ "Te toca: asiste y monta si puedes": [
+  "app/client/js/juegos/tute.js"
+ ],
+ "Te toca: coloca fichas y pulsa «Jugar»": [
+  "app/client/js/juegos/palabreria.js"
+ ],
+ "Te toca: da tu pista (una o dos palabras)": [
+  "app/client/js/juegos/impostor.js"
+ ],
+ "Te toca: elige carta": [
+  "app/client/js/juegos/brisca.js"
+ ],
+ "Te toca: elige columna": [
+  "app/client/js/juegos/cuatro.js"
+ ],
+ "Te toca: elige ficha": [
+  "app/client/js/juegos/domino.js"
+ ],
+ "Te toca: elige una ficha": [
+  "app/client/js/juegos/chinas.js"
+ ],
+ "Te toca: sube la apuesta o duda": [
+  "app/client/js/juegos/mentiroso.js"
+ ],
+ "Técnicas (siempre activas)": [
+  "app/client/js/cookies.js"
+ ],
+ "Teléfono dibujado": [
+  "lib/catalogo.js"
+ ],
+ "Templo": [
+  "app/client/js/juegos/galletas.js"
+ ],
+ "Tenéis que estar en la misma loseta": [
+  "lib/juegos/isla.js"
+ ],
+ "Tengo un código": [
+  "app/client/js/sala.js"
+ ],
+ "Terminar": [
+  "app/client/js/juegos/telefono.js"
+ ],
+ "Terminar la noche": [
+  "app/client/js/juegos/lobo.js"
+ ],
+ "Terminar turno": [
+  "app/client/js/juegos/isla.js"
+ ],
+ "Territorio": [
+  "lib/catalogo.js"
+ ],
+ "Test imposible": [
+  "lib/catalogo.js"
+ ],
+ "Texas Hold'em con fichas de mentira: farolea a tus amigos (o a la CPU).": [
+  "lib/catalogo.js"
+ ],
+ "Tienda": [
+  "app/client/js/juegos/tortuga.js",
+  "app/client/js/juegos/volar.js"
+ ],
+ "Tiene que descartar otra persona": [
+  "lib/juegos/isla.js"
+ ],
+ "Tienes más de 5 cartas: toca una para descartarla (o usa una especial)": [
+  "app/client/js/juegos/isla.js"
+ ],
+ "Tienes otra partida abierta": [
+  "app/client/js/sala.js"
+ ],
+ "Tienes que asistir al palo y montar si puedes (o fallar con triunfo)": [
+  "lib/juegos/tute.js"
+ ],
+ "Tienes que descartar": [
+  "lib/juegos/isla.js"
+ ],
+ "Tienes que subir la apuesta": [
+  "lib/juegos/mentiroso.js"
+ ],
+ "Tienes una poción para salvar a la víctima de los lobos y otra para envenenar a alguien. Una vez cada una.": [
+  "app/client/js/juegos/lobo.js"
+ ],
+ "Tipo": [
+  "html:/legal/cookies"
+ ],
+ "Tira el dado y avanza. Oca: saltas a la siguiente y vuelves a tirar; puente y dado, igual. Posada: un turno sin tirar; cárcel: dos; pozo: hasta que caiga otro. Laberinto: a la 30. Muerte: a empezar. Gana quien llega justo a la 63.": [
+  "lib/catalogo.js"
+ ],
+ "Tira el dado y mueve una ficha. Sales con un 5; el 6 repite (y vale 7 sin fichas en casa). Comer da 20 casillas y llegar a meta, 10. Dos fichas juntas son barrera. En los seguros no se come.": [
+  "lib/catalogo.js"
+ ],
+ "Tira una carta del mismo color o número. Si no puedes, roba. Cuando te quede una, pulsa «¡Unidad!» o te pueden pillar. Gana quien se quede sin cartas.": [
+  "lib/catalogo.js"
+ ],
+ "Tirar": [
+  "app/client/js/juegos/chinchon.js"
+ ],
+ "Tiro no válido": [
+  "lib/juegos/arqueros.js",
+  "lib/juegos/billar.js"
+ ],
+ "Toca la pantalla o pulsa espacio para aletear.": [
+  "app/client/js/juegos/pajaro.js"
+ ],
+ "Toca la pantalla o pulsa espacio para aletear. Cada tubería que pasas es un punto. Si tocas una tubería o el suelo, se acaba.": [
+  "lib/catalogo.js"
+ ],
+ "Toca las cartas que quieres cambiar": [
+  "app/client/js/juegos/mus.js"
+ ],
+ "Toca las fichas que quieres devolver a la bolsa": [
+  "app/client/js/juegos/palabreria.js"
+ ],
+ "Toca las respuestas que no valgan para tacharlas. Pulsa «Listo» al acabar.": [
+  "app/client/js/juegos/stop.js"
+ ],
+ "TOCA PARA COLOCAR LA BLANCA": [
+  "app/client/js/juegos/billar.js"
+ ],
+ "TOCA PARA FIJAR EL ÁNGULO": [
+  "app/client/js/juegos/tortuga.js"
+ ],
+ "Toca para fijar el ángulo y otra vez para la fuerza. En el aire, toca para dispararle y que remonte. Muelles y bombas ayudan; pinchos y cactus frenan. Gasta lo ganado en mejoras.": [
+  "lib/catalogo.js"
+ ],
+ "TOCA PARA LA FUERZA": [
+  "app/client/js/juegos/tortuga.js"
+ ],
+ "TOCA PARA SALIR": [
+  "app/client/js/juegos/volar.js"
+ ],
+ "TOCA PARA VOLAR": [
+  "app/client/js/juegos/pajaro.js"
+ ],
+ "Toca un barco puesto para quitarlo. Los barcos no pueden tocarse, ni en diagonal.": [
+  "app/client/js/juegos/hundir.js"
+ ],
+ "Toca una carta para moverla sola, o arrástrala. Doble clic también la sube a las pilas.": [
+  "app/client/js/juegos/solitario.js"
+ ],
+ "Toca una ficha de tu atril y luego una casilla. Las palabras se cruzan como en un crucigrama y todas tienen que existir. Las casillas de colores doblan o triplican letra o palabra, y usar las 7 fichas da 50 puntos. La primera palabra pasa por la estrella.": [
+  "lib/catalogo.js"
+ ],
+ "Toca una pieza para ver adónde puede ir y luego la casilla de destino. Gana quien da jaque mate. Si juegas con negras, el tablero se gira.": [
+  "lib/catalogo.js"
+ ],
+ "Todavía no has terminado ninguna partida con tu cuenta. ¡Ve a por la primera!": [
+  "app/client/js/cuenta.js"
+ ],
+ "Todo": [
+  "app/client/js/juegos/poquer.js"
+ ],
+ "Todos": [
+  "app/client/js/portal.js"
+ ],
+ "Todos los juegos": [
+  "app/client/js/portal.js"
+ ],
+ "Todos reciben la misma palabra menos el impostor, que solo sabe la categoría. Por turnos, cada uno da una pista. Luego se vota quién es. Si le pillan, aún puede ganar adivinando la palabra.": [
+  "lib/catalogo.js"
+ ],
+ "Todos tenéis la misma palabra… menos uno. Da pistas, descubre al impostor o disimula si lo eres.": [
+  "lib/catalogo.js"
+ ],
+ "Torre de magos": [
+  "app/client/js/juegos/galletas.js"
+ ],
+ "Torres de defensa": [
+  "app/client/js/cuenta.js",
+  "lib/catalogo.js"
+ ],
+ "Torreta": [
+  "app/client/js/juegos/eras.js"
+ ],
+ "Trabajo en equipo": [
+  "app/client/js/juegos/fuegoagua-niveles.js"
+ ],
+ "Trazo no válido": [
+  "lib/juegos/dibujo.js"
+ ],
+ "Trineo": [
+  "app/client/js/juegos/volar.js"
+ ],
+ "Tu apodo": [
+  "app/client/js/sala.js"
+ ],
+ "Tu avatar": [
+  "app/client/js/cuenta.js"
+ ],
+ "Tu contraseña": [
+  "app/client/js/cuenta.js"
+ ],
+ "Tu contraseña (para generar otros)": [
+  "app/client/js/cuenta.js"
+ ],
+ "Tu cuenta": [
+  "app/client/js/comun.js",
+  "app/client/js/cuenta.js"
+ ],
+ "Tu cuenta · dsbelda games": [
+  "html:/cuenta"
+ ],
+ "Tu cuenta de dsbelda games: partidas, récords y favoritos.": [
+  "html:/cuenta"
+ ],
+ "Tu cuenta se ha borrado. ¡Hasta pronto!": [
+  "app/client/js/cuenta.js"
+ ],
+ "Tú das la pista: la zona premiada está en el dial. Escribe algo que esté ahí en la escala.": [
+  "app/client/js/juegos/onda.js"
+ ],
+ "Tu disparo": [
+  "app/client/js/juegos/hundir.js"
+ ],
+ "Tu flota": [
+  "app/client/js/juegos/hundir.js"
+ ],
+ "Tu palabra secreta": [
+  "app/client/js/juegos/impostor.js"
+ ],
+ "Tu papel": [
+  "app/client/js/juegos/impostor.js",
+  "app/client/js/juegos/lobo.js"
+ ],
+ "tu pareja": [
+  "app/client/js/juegos/brisca.js",
+  "app/client/js/juegos/domino.js",
+  "app/client/js/juegos/tute.js"
+ ],
+ "Tu pareja ya ha envidado": [
+  "lib/juegos/mus.js"
+ ],
+ "Tu pista": [
+  "app/client/js/juegos/impostor.js"
+ ],
+ "Tu pista (p. ej. «una sopa de sobre»)": [
+  "app/client/js/juegos/onda.js"
+ ],
+ "Tu serpiente va hacia el ratón o el dedo. Come bolitas para crecer. Si tu cabeza toca el cuerpo de otra, mueres y te conviertes en bolitas (¡y al revés!). Espacio o mantener pulsado para acelerar, a cambio de un poco de longitud. Gana quien llegue más lejos en 4 minutos.": [
+  "lib/catalogo.js"
+ ],
+ "tuberías": [
+  "app/client/js/cuenta.js"
+ ],
+ "turno mio": [
+  "app/client/js/juegos/fuegoagua.js",
+  "app/client/js/juegos/hundir.js",
+  "app/client/js/juegos/impostor.js",
+  "app/client/js/juegos/lobo.js",
+  "app/client/js/juegos/stop.js"
+ ],
+ "Tus códigos de recuperación": [
+  "app/client/js/comun.js"
+ ],
+ "Tus datos": [
+  "app/client/js/cuenta.js"
+ ],
+ "Tus derechos": [
+  "html:/legal/privacidad"
+ ],
+ "Tus favoritos": [
+  "html:ventana"
+ ],
+ "Tus favoritos (si juegas sin cuenta) y los últimos juegos que abriste, para «Sigue jugando».": [
+  "html:/legal/cookies"
+ ],
+ "Tus partidas": [
+  "app/client/js/cuenta.js"
+ ],
+ "Tus récords y la partida de 2048 a medias.": [
+  "html:/legal/cookies"
+ ],
+ "Tute": [
+  "lib/catalogo.js"
+ ],
+ "Tutti frutti: nombre, animal, país, comida… con la letra que salga. ¡El más rápido dice Stop!": [
+  "lib/catalogo.js"
+ ],
+ "Última actualización: 17 de octubre de 2026 (cuentas de usuario).": [
+  "html:/legal/cookies"
+ ],
+ "Última actualización: 18 de octubre de 2026 (amigos y mensajes privados).": [
+  "html:/legal/privacidad"
+ ],
+ "última era": [
+  "app/client/js/juegos/eras.js"
+ ],
+ "Un barco se sale del tablero": [
+  "lib/juegos/hundir.js"
+ ],
+ "Un pingüino, una rampa y un sueño: volar. Mejora alas y cohete hasta romper el muro de hielo.": [
+  "lib/catalogo.js"
+ ],
+ "Un pulpo jugando al mus en la playa": [
+  "app/client/js/juegos/telefono.js"
+ ],
+ "Un tablero de 4×4 letras y 90 segundos para encontrar más palabras que nadie. Todos a la vez.": [
+  "lib/catalogo.js"
+ ],
+ "Una cookie es un pequeño fichero que una web guarda en tu navegador. El almacenamiento local es parecido: guarda datos en tu navegador que la web puede volver a leer.": [
+  "html:/legal/cookies"
+ ],
+ "Una palabra": [
+  "app/client/js/juegos/clave.js"
+ ],
+ "Una serpiente enorme entre muchas: come, crece y haz que las demás choquen contra ti.": [
+  "lib/catalogo.js"
+ ],
+ "Una vez por turno vuela a cualquier loseta": [
+  "app/client/js/juegos/isla.js"
+ ],
+ "Unirme": [
+  "app/client/js/social.js"
+ ],
+ "Unirse": [
+  "app/client/js/sala.js"
+ ],
+ "Uno dibuja, los demás adivinan antes de que se acabe el tiempo. ¡Sin letras!": [
+  "lib/catalogo.js"
+ ],
+ "Uno sabe dónde está la aguja entre dos opuestos y da una pista; los demás intentan ponerse en su onda.": [
+  "lib/catalogo.js"
+ ],
+ "Uno tiene la bomba delante y los demás el manual. Hablad rápido: el reloj no espera.": [
+  "lib/catalogo.js"
+ ],
+ "Usamos cookies técnicas para que los juegos funcionen y, si nos dejas, otras para": [
+  "app/client/js/cookies.js"
+ ],
+ "Usuario": [
+  "app/client/js/comun.js"
+ ],
+ "Usuario o contraseña incorrectos": [
+  "lib/cuentas.js"
+ ],
+ "Uva": [
+  "app/client/js/juegos/frutas.js"
+ ],
+ "Vaciar": [
+  "app/client/js/juegos/hundir.js"
+ ],
+ "Valor no válido": [
+  "lib/cuentas.js"
+ ],
+ "Vas muy rápido: espera un poco": [
+  "lib/social.js"
+ ],
+ "Velocidad de bala": [
+  "app/client/js/juegos/blindados.js"
+ ],
+ "Venta": [
+  "app/client/js/juegos/minero.js"
+ ],
+ "Ver": [
+  "app/client/js/comun.js",
+  "app/client/js/social.js"
+ ],
+ "Ver el siguiente": [
+  "app/client/js/juegos/telefono.js"
+ ],
+ "Ver todos": [
+  "html:ventana"
+ ],
+ "Ver todos los juegos": [
+  "html:/no-existe"
+ ],
+ "Victorias": [
+  "app/client/js/cuenta.js"
+ ],
+ "Vidente": [
+  "app/client/js/juegos/lobo.js"
+ ],
+ "Vigila a {0}: si dice una prohibida, ¡pita!": [
+  "app/client/js/juegos/tabu.js"
+ ],
+ "Votado. Esperando a los demás…": [
+  "app/client/js/juegos/farol.js"
+ ],
+ "Votar": [
+  "app/client/js/juegos/lobo.js"
+ ],
+ "Voto no válido": [
+  "lib/juegos/impostor.js",
+  "lib/juegos/lobo.js"
+ ],
+ "Vuelves en un momento · tu máximo: {0}": [
+  "app/client/js/juegos/arena.js"
+ ],
+ "WASD para moverte · ratón para apuntar · clic para disparar · E disparo automático · 1-5 mejoras · en el móvil, mantén el dedo": [
+  "app/client/js/juegos/blindados.js"
+ ],
+ "WASD para moverte, ratón para apuntar y clic para disparar (E: disparo automático). Cuadrados, triángulos y pentágonos dan experiencia; cada nivel, un punto de mejora (teclas 1-5). En el nivel 10 eliges clase: Doble, Francotirador o Ametralladora. En el móvil, mantén el dedo para moverte y disparar a la vez.": [
+  "lib/catalogo.js"
+ ],
+ "Web aparte": [
+  "html:ventana"
+ ],
+ "XXXX-XXXX": [
+  "html:ventana"
+ ],
+ "y": [
+  "app/client/js/cookies.js",
+  "app/client/js/juegos/mus.js"
+ ],
+ "y la": [
+  "app/client/js/comun.js"
+ ],
+ "y se guardarán tus partidas.": [
+  "app/client/js/sala.js"
+ ],
+ "Ya está al máximo": [
+  "lib/juegos/blindados.js"
+ ],
+ "Ya ha empezado": [
+  "lib/salas.js"
+ ],
+ "Ya has colocado tu flota": [
+  "lib/juegos/hundir.js"
+ ],
+ "Ya has disparado ahí": [
+  "lib/juegos/hundir.js"
+ ],
+ "Ya has mirado esta noche": [
+  "app/client/js/juegos/lobo.js"
+ ],
+ "Ya has robado": [
+  "lib/juegos/chinchon.js",
+  "lib/juegos/unidad.js"
+ ],
+ "Ya has tirado: mueve una ficha": [
+  "lib/juegos/parchis.js"
+ ],
+ "Ya hay 20 personas mirando esa partida": [
+  "lib/salas.js"
+ ],
+ "Ya la has acertado": [
+  "lib/juegos/dibujo.js"
+ ],
+ "Ya le has enviado una solicitud": [
+  "lib/social.js"
+ ],
+ "Ya los he guardado en un sitio seguro": [
+  "app/client/js/comun.js"
+ ],
+ "Ya no se escribe": [
+  "lib/juegos/farol.js"
+ ],
+ "Ya no se pueden colocar barcos": [
+  "lib/juegos/hundir.js"
+ ],
+ "Ya sois amigos": [
+  "lib/social.js"
+ ],
+ "Ya te has descartado": [
+  "lib/juegos/mus.js"
+ ],
+ "Ya tengo cuenta": [
+  "app/client/js/cuenta.js"
+ ]
+}

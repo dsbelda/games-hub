@@ -1,0 +1,160 @@
+640	That game doesn't exist or isn't ready yet.	Ce jeu n'existe pas ou n'est pas encore prêt.
+641	That game has no records	Ce jeu n'a pas de records
+642	Not that module	Pas ce module
+643	That username already exists	Ce nom d'utilisateur existe déjà
+644	That name belongs to an account. Pick another nickname or sign in with your account	Ce nom appartient à un compte. Choisis un autre pseudo ou connecte-toi avec ton compte
+645	Not that symbol	Pas ce symbole
+646	Emerald	Émeraude
+647	That isn't raising	Ce n'est pas relancer
+648	Space or ↑ to jump and ↓ to duck (on mobile, tap to jump). It gets faster and faster and it turns night every so often.	Espace ou ↑ pour sauter et ↓ pour te baisser (sur mobile, touche pour sauter). Ça va de plus en plus vite et de temps en temps la nuit tombe.
+649	Space or ↑ to jump, ↓ to duck. On mobile, tap the screen or “Jump”; hold “Duck”.	Espace ou ↑ pour sauter, ↓ pour te baisser. Sur mobile, touche l'écran ou « Sauter » ; maintiens « Se baisser ».
+650	Swordsman	Épéiste
+651	Spectator	Spectateur
+652	Wait for the next hand	Attends la main suivante
+653	Wait for the next round	Attends la manche suivante
+654	Waiting for the others… (you can change it)	On attend les autres… (tu peux le modifier)
+655	Waiting for the other wolves…	On attend les autres loups…
+656	Waiting for the host to start…	On attend que l'hôte lance la partie…
+657	Waiting for the others to discard…	On attend que les autres se défaussent…
+658	Tonight the wolves attacked nobody.	Cette nuit, les loups n'ont attaqué personne.
+659	They're playing… watch how it ends in the recap	Ils jouent… regarde comment ça finit dans le récapitulatif
+660	You're in	Tu es dans
+661	You're in a {0} room (code {1}){2}.	Tu es dans un salon de {0} (code {1}){2}.
+662	You're dead: you can only watch	Tu es mort : tu peux seulement regarder
+663	These rules also apply to private messages between friends. If someone bothers you, you can remove them from your friends or block them from the 👥 panel: they won't be able to message you or send you requests again.	Ces règles valent aussi pour les messages privés entre amis. Si quelqu'un t'embête, tu peux le retirer de tes amis ou le bloquer depuis le panneau 👥 : il ne pourra plus t'écrire ni t'envoyer de demandes.
+664	You're muted for a few hours because of reports from other players	Tu es réduit au silence quelques heures à cause de signalements d'autres joueurs
+665	=	=
+666	Earth Statue	Statue de la terre
+667	This game is for playing with people: create a room and share the link.	Ce jeu se joue avec des personnes : crée un salon et partage le lien.
+668	This game is only for people	Ce jeu est réservé aux personnes
+669	Pull the slingshot and knock down the towers of the gluttons who ate the eggs.	Tends la fronde et fais tomber les tours des gloutons qui ont mangé les œufs.
+670	Strategy	Stratégie
+671	Evolve	Évoluer
+672	Dig deeper and deeper, sell minerals and upgrade your machine. Watch out for lava.	Creuse de plus en plus profond, vends des minerais et améliore ta machine. Attention à la lave.
+673	Explorer	Explorateur
+674	Big blast	Grosse explosion
+675	Factory	Usine
+676	Easy	Facile
+677	More players needed (minimum {0})	Il manque des joueurs (minimum {0})
+678	Bluff	Bluff
+679	Favourites	Favoris
+680	Letter tiles, multiplier squares and a 635,000-word dictionary. Cross words and outscore everyone.	Des jetons de lettres, des cases multiplicatrices et un dictionnaire de 635 000 mots. Croise des mots et marque plus que tout le monde.
+681	Party	Soirée
+682	=	=
+683	=	=
+684	Rows: {0} · Record: {1}	Lignes : {0} · Record : {1}
+685	End	Fin
+686	End of the hand	Fin de la main
+687	End of the game	Fin de la partie
+688	GAME OVER	FIN DE LA PARTIE
+689	END OF THE ROUND	FIN DE LA MANCHE
+690	GAME OVER	FIN DU JEU
+691	End of turn: {0} correct, {1} taboos, {2} passed	Fin du tour : {0} bonnes, {1} tabous, {2} passées
+692	Arrows or WASD (or mouse/finger) to move · leave your zone, loop round a patch and come back · if someone steps on your trail, you fall	Flèches ou WASD (ou souris/doigt) pour te déplacer · sors de ta zone, entoure un morceau et reviens · si quelqu'un marche sur ta traînée, tu tombes
+693	Arrows or WASD to move · space: pick up / put down / plate · E (hold) on the board: chop · chopped meat goes on the stove · hand in at the bell 🛎️	Flèches ou WASD pour te déplacer · espace : prendre / poser / dresser · E (maintenir) sur la planche : couper · la viande coupée va sur le feu · à rendre à la clochette 🛎️
+694	Arrows or WASD to move and space to drop a bomb: it explodes after 2.5 seconds in a cross, breaks blocks and hits anyone it catches (you too!). Pick up power-ups: more bombs 💣, more fire 🔥 and skates 👟. The last one standing wins the round; first to 3 rounds.	Flèches ou WASD pour te déplacer et espace pour poser une bombe : elle explose au bout de 2,5 secondes en croix, casse les blocs et touche quiconque se trouve dessus (toi aussi !). Ramasse des bonus : plus de bombes 💣, plus de feu 🔥 et des patins 👟. Le dernier debout gagne la manche ; premier à 3 manches.
+695	Arrows or WASD; on mobile, swipe your finger.	Flèches ou WASD ; sur mobile, glisse le doigt.
+696	Arrows or WASD; on mobile, swipe your finger. Space: pause.	Flèches ou WASD ; sur mobile, glisse le doigt. Espace : pause.
+697	Arrow keys to move (or tap to advance and swipe sideways). Dodge cars and trains and cross the river on the logs. Don't stand still: the screen scrolls on its own.	Flèches pour te déplacer (ou touche pour avancer et glisse sur les côtés). Esquive voitures et trains et traverse la rivière sur les troncs. Ne reste pas immobile : l'écran avance tout seul.
+698	Arrow keys to move. On mobile, tap to move forward or swipe sideways.	Flèches pour te déplacer. Sur mobile, touche pour avancer ou glisse sur les côtés.
+699	Weak	Faible
+700	Fleet ready. Waiting for your rival to place theirs…	Flotte prête. On attend que l'adversaire place la sienne…
+701	Form at least one word of 2 letters	Forme au moins un mot de 2 lettres
+702	Sniper	Tireur d'élite
+703	Brake	Frein
+704	Fruit: {0} · Record: {1}	Fruits : {0} · Record : {1}
+705	Fire	Feu
+706	Fire can't touch water; Water can't touch lava; green poison kills both. Collect your gems and each reach your own door. Buttons open the gates while someone stands on them: help each other!	Feu ne peut pas toucher l'eau ; Eau ne peut pas toucher la lave ; le poison vert tue les deux. Ramassez vos gemmes et rejoignez chacun votre porte. Les boutons ouvrent les portes tant que quelqu'un marche dessus : aidez-vous !
+707	Fire and Water	Feu et Eau
+708	Removed from favourites	Retiré des favoris
+709	Off the table	Hors de la table
+710	Off the board	Hors du plateau
+711	Power	Force
+712	Rifleman	Fusilier
+713	1-on-1 football with huge heads: jump, head the ball and kick. 90-second matches.	Football en 1 contre 1 avec d'énormes têtes : saute, fais des têtes et tire. Matchs de 90 secondes.
+714	Future	Futur
+715	Cookies	Cookies
+716	=	=
+717	=	=
+718	=	=
+719	=	=
+720	=	=
+721	=	=
+722	=	=
+723	=	=
+724	=	=
+725	=	=
+726	=	=
+727	=	=
+728	Highest trump wins the trick, or the highest of the suit led. You must follow suit and beat the card if you can. After winning a trick, with king and knight of the same suit you call 20 (40 in trumps). With 4 kings or 4 knights: tute!	Le pli revient à l'atout le plus haut ou à la carte la plus haute de la couleur demandée. Il faut fournir la couleur et monter si tu peux. Après avoir gagné un pli, avec roi et cavalier de la même couleur tu annonces 20 (40 à l'atout). Avec 4 rois ou 4 cavaliers : tute !
+729	Club	Gourdin
+730	Petrol station	Station-service
+731	Generate codes	Générer des codes
+732	Generate new codes (cancels the old ones)	Générer de nouveaux codes (annule les anciens)
+733	Geography	Géographie
+734	Spin	Tourne
+735	Spin the wheel, answer questions from 6 categories and collect every character before anyone else.	Fais tourner la roue, réponds à des questions de 6 catégories et récupère tous les personnages avant les autres.
+736	Spin	Tourner
+737	Thanks, we've received your report	Merci, nous avons bien reçu ton signalement
+738	Large	Grande
+739	Free · no sign-up · with friends	Gratuit · sans inscription · entre amis
+740	Your games, wins, records and favourites are saved and your name is reserved. We don't ask for an email: when you finish we'll give you codes to recover your password if you forget it.	Tes parties, victoires, records et favoris sont sauvegardés et ton nom est réservé. Nous ne demandons pas d'e-mail : à la fin, nous te donnerons des codes pour récupérer ton mot de passe si tu l'oublies.
+741	Save my choice	Enregistrer mon choix
+742	War of the Ages	Guerre des âges
+743	WAR OF THE AGES	GUERRE DES ÂGES
+744	Peashooter	Tireur de pois
+745	Has got all four pieces in	A fait rentrer ses quatre pions
+746	You lost	Vous avez perdu
+747	There were {0} words · the longest: “{1}”	Il y avait {0} mots · le plus long : « {1} »
+748	Skill	Adresse
+749	Talk to your pack…	Parle à ta meute…
+750	a while ago	il y a un moment
+751	At least {0} players are needed (you can add CPUs)	Il faut au moins {0} joueurs (tu peux ajouter des CPU)
+752	Burger	Hamburger
+753	They've destroyed your base	Ils ont détruit ta base
+754	The impostor's been caught… will they guess the word?	L'imposteur a été pris… va-t-il deviner le mot ?
+755	You've signed out	Tu t'es déconnecté
+756	You've sent a lot of reports in a short time	Tu as envoyé beaucoup de signalements en peu de temps
+757	You've sent a lot of requests today	Tu as envoyé beaucoup de demandes aujourd'hui
+758	You died (now you see everything)	Tu es mort (maintenant tu vois tout)
+759	You've voted	Tu as voté
+760	You've voted. Waiting for the rest…	Tu as voté. On attend les autres…
+761	Until you delete the account. If you don't sign in for 2 years, it's deleted automatically	Jusqu'à ce que tu supprimes le compte. Si tu ne te connectes pas pendant 2 ans, il est supprimé automatiquement
+762	Until you delete it	Jusqu'à ce que tu le supprimes
+763	Until you remove it or delete the account	Jusqu'à ce que tu le retires ou supprimes le compte
+764	there are	il y a
+765	There are at least	Il y a au moins
+766	There's a raise: accept or decline	Il y a une relance : accepte ou refuse
+767	Made in Valencia by David Sánchez Belda ·	Fait à Valence par David Sánchez Belda ·
+768	Helicopter	Hélicoptère
+769	Helicopter: from which tile (with someone on it)?	Hélicoptère : de quelle tuile (avec quelqu'un dessus) ?
+770	Ice	Glace
+771	Iron	Fer
+772	History	Histoire
+773	Air Hockey	Air hockey
+774	Werewolf	Loup-garou
+775	Slingshot	Fronde
+776	Bake cookies, hire grandmas and build a chocolate empire. Keeps going while you're away.	Fais cuire des cookies, engage des mamies et construis un empire de chocolat. Ça continue même quand tu es parti.
+777	Bake a cookie	Cuire un cookie
+778	Garden vs. Zombies	Jardin contre zombies
+779	Cookie farm	Ferme à cookies
+780	Battleship	Bataille navale
+781	Random identifier to recognise you in rooms and reconnect you if the connection drops.	Identifiant aléatoire pour te reconnaître dans les salons et te reconnecter si la connexion coupe.
+782	Same as the account	Comme le compte
+783	Engineer	Ingénieure
+784	Insults or offensive language	Insultes ou propos offensants
+785	Tries	Essais
+786	Legitimate interest in keeping the website safe and preventing abuse (art. 6.1.f GDPR), for the server logs.	Intérêt légitime à maintenir le site sûr et à éviter les abus (art. 6.1.f du RGPD), pour les journaux du serveur.
+787	Invent a definition that looks like a dictionary one	Invente une définition qui ressemble à celle d'un dictionnaire
+788	Invitation to room {0}	Invitation au salon {0}
+789	Invitation sent to {0}	Invitation envoyée à {0}
+790	Invite:	Inviter :
+791	Left	Gauche
+792	Garden	Jardin
+793	Dino rider	Cavalier de dino
+794	Play free with your friends.	Joue gratuitement avec tes amis.
+795	Play your card when you think it's the lowest on the table	Joue ta carte quand tu penses que c'est la plus basse de la table
+796	Game	Jeu
+797	Games	Jeux
+798	Free games to play with friends: Brisca, cards, board games, skill and more. No sign-up or downloads.	Jeux gratuits à jouer entre amis : Brisca, cartes, jeux de plateau, adresse et plus encore. Sans inscription ni téléchargement.
+799	Invalid move	Coup non valide

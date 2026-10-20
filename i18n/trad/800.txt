@@ -1,0 +1,160 @@
+800	Moves	Coups
+801	Players	Joueurs
+802	Play	Jouer
+803	Play here (2 on the same keyboard)	Jouer ici (2 sur le même clavier)
+804	Play solo	Jouer en solo
+805	Play now against the CPU	Jouer tout de suite contre le CPU
+806	Kiwi	Kiwi
+807	{0} will have the bomb. When everyone's ready, go! (and the countdown starts)	{0} aura la bombe. Quand tout le monde est prêt, c'est parti ! (et le compte à rebours commence)
+808	The bomb isn't active	La bombe n'est pas active
+809	The current password is wrong	Le mot de passe actuel est incorrect
+810	The password is wrong	Le mot de passe est incorrect
+811	The classic one with a Spanish deck: 2 or 4 players, in pairs.	Le classique avec un jeu espagnol : 2 ou 4 joueurs, par équipes de deux.
+812	The six-pointed star: take your ten pieces to the other side by jumping over the others.	L'étoile à six branches : amène tes dix pions de l'autre côté en sautant par-dessus les autres.
+813	The fleet must have 5 ships	La flotte doit avoir 5 bateaux
+814	The sinking island	L'île qui coule
+815	The hand is over	La main est terminée
+816	The hand goes on	La main continue
+817	The arcade table: the puck flies and you only have a mallet. First to 7 goals.	La table de l'arcade : le palet vole et tu n'as qu'un maillet. Premier à 7 buts.
+818	Goose Game	Jeu de l'oie
+819	The word must touch one that's already there	Le mot doit toucher un de ceux déjà posés
+820	The game is over	La partie est terminée
+821	The game has already started	La partie a déjà commencé
+822	The first word needs at least 2 letters	Le premier mot doit avoir au moins 2 lettres
+823	The first word goes through the star in the centre.	Le premier mot passe par l'étoile du centre.
+824	The first word has to go through the star in the centre	Le premier mot doit passer par l'étoile du centre
+825	The room is full	Le salon est plein
+826	The next one is harder and changes who has it in front of them.	La suivante est plus difficile et change qui l'a devant lui.
+827	The website is provided as is, with no guarantee that it will always be available. Games in progress may be interrupted for maintenance or updates. The owner is not responsible for what other players write in the chat or for the content of linked external websites.	Le site est fourni tel quel, sans garantie de disponibilité permanente. Les parties en cours peuvent être interrompues pour maintenance ou mises à jour. Le titulaire n'est pas responsable de ce que d'autres joueurs écrivent dans le chat ni du contenu des sites externes liés.
+828	Maze	Labyrinthe
+829	Maze, bombs that blow up in a cross and power-ups. Be the last one standing.	Labyrinthe, bombes qui explosent en croix et bonus. Sois le dernier debout.
+830	Boat	Bateau
+831	Launch the turtle	Lance la tortue
+832	Throw faster	Lance plus vite
+833	Launch birds	Lance des oiseaux
+834	Long	Long
+835	The tiles must be in the same row or column	Les jetons doivent être sur la même ligne ou colonne
+836	The tiles must be consecutive	Les jetons doivent se suivre
+837	The letters must be together	Les lettres doivent être côte à côte
+838	Cloudflare may set them to stop attacks and bots. They're not used to track you.	Cloudflare peut les poser pour bloquer les attaques et les robots. Elles ne servent pas à te suivre.
+839	Laser	Laser
+840	Far and strong	Loin et fort
+841	Invalid letter	Lettre non valide
+842	Scrambled letters	Lettres mélangées
+843	Applicable law	Droit applicable
+844	Make sets and runs and go out before anyone else. Seven in a row of the same suit is a chinchón!	Fais des brelans et des suites et ferme avant tout le monde. Sept à la suite de la même couleur, c'est un chinchón !
+845	Lines	Lignes
+846	Ready	Prêt
+847	Ready to vote	Prêt à voter
+848	Ready. You can change it until time runs out.	Prêt. Tu peux le modifier jusqu'à la fin du temps.
+849	Fill	Remplir
+850	Fill the tank: {0} 💰	Faire le plein : {0} 💰
+851	Take the chicken as far as possible between cars, rivers and trains.	Emmène la poule le plus loin possible entre voitures, rivières et trains.
+852	Take your 10 pieces to the tip marked with a dashed line · move {0}/{1}	Amène tes 10 pions à la pointe marquée en pointillés · coup {0}/{1}
+853	Rain of arrows	Pluie de flèches
+854	Meteor shower	Pluie de météorites
+855	Wolf	Loup
+856	Ships must be 5, 4, 3, 3 and 2 long	Les bateaux doivent mesurer 5, 4, 3, 3 et 2
+857	Ships can't touch each other	Les bateaux ne peuvent pas se toucher
+858	The others are moving their needles…	Les autres déplacent leurs aiguilles…
+859	The gluttons got away with it. Again!	Les gloutons s'en sont tirés. Encore une fois !
+860	The games are for all ages, but the rooms have chat with other people. If you're under 14, play with your parents' or guardians' permission.	Les jeux sont pour tous les âges, mais les salons ont un chat avec d'autres personnes. Si tu as moins de 14 ans, joue avec la permission de tes parents ou tuteurs.
+861	Keeping your session open.	Garder ta session ouverte.
+862	Keeping you signed in without typing the password every time.	Te garder connecté sans retaper le mot de passe à chaque fois.
+863	Apple	Pomme
+864	More range	Plus de portée
+865	More information	Plus d'informations
+866	More games	Plus de jeux
+867	Fuse	Mèche
+868	Medium	Moyen
+869	Invalid upgrade	Amélioration non valide
+870	Upgrades	Améliorations
+871	Memory	Mémoire
+872	Minors	Mineurs
+873	Message	Message
+874	Messenger	Messagère
+875	Chat messages and moves	Messages du chat et coups joués
+876	Liar's dice	Dés du menteur
+877	Empty table: whoever won the hand starts	Table vide : celui qui a gagné la main commence
+878	Chocolate mine	Mine de chocolat
+879	Miner	Mineur
+880	Minimum 8 characters	Minimum 8 caractères
+881	Look at the dice…	Regardez les dés…
+882	Watching the game	Tu regardes la partie
+883	Watch	Regarder
+884	=	=
+885	Moderating the chat and protecting players.	Modérer le chat et protéger les joueurs.
+886	Mode	Mode
+887	Musketeer	Mousquetaire
+888	Showing it to the other players in your room.	L'afficher aux autres joueurs de ton salon.
+889	Showing you your friends list, whether they're online and what they're playing (only to your friends).	T'afficher ta liste d'amis, s'ils sont connectés et à quoi ils jouent (uniquement à tes amis).
+890	Reason	Motif
+891	Engine	Moteur
+892	Death	Mort
+893	Move the mouse or your finger where you want to go. To eat another cell you must be 25% bigger. Space (or double tap) splits you in two to hunt. The bigger you are, the slower. If you're eaten, you come back right away. Whoever reaches the most mass in 4 minutes wins.	Déplace la souris ou le doigt où tu veux aller. Pour manger une autre cellule, il faut être 25 % plus gros. Espace (ou double touche) te divise en deux pour chasser. Plus tu es gros, plus tu es lent. Si on te mange, tu reviens tout de suite. Celui qui atteint la plus grande masse en 4 minutes gagne.
+894	Move the mouse or your finger on your half of the table (or use the arrows): the mallet follows it. Hit the puck towards the opponent's goal and defend yours. First to 7 goals wins.	Déplace la souris ou le doigt sur ta moitié de table (ou utilise les flèches) : le maillet la suit. Frappe le palet vers le but adverse et défends le tien. Le premier à 7 buts gagne.
+895	Move diagonally forward. Capturing is compulsory, and take the route with the most pieces. On reaching the end, your man becomes a king and flies along the diagonals. You lose if you can't move.	Avance en diagonale. Prendre est obligatoire, et par le chemin qui prend le plus de pièces. Arrivé au bout, ton pion devient dame et vole sur les diagonales. Perd celui qui ne peut plus jouer.
+896	Move the snake with the arrows (or by swiping), eat apples and don't hit the walls or yourself.	Dirige le serpent avec les flèches (ou en glissant le doigt), mange des pommes et ne heurte ni les murs ni toi-même.
+897	Move the view by dragging or with ← →. Troops advance on their own.	Déplace la vue en glissant ou avec ← →. Les troupes avancent toutes seules.
+898	Move and rotate the pieces to complete lines, which disappear. Four at once give lots of points. If they reach the top, it's over.	Déplace et fais pivoter les pièces pour compléter des lignes, qui disparaissent. Quatre d'un coup rapportent beaucoup de points. Si elles atteignent le haut, c'est fini.
+899	Move with the arrows or WASD (on mobile, hold your finger where you want to go) and charge with space (or the button). The platform keeps shrinking. The last one left wins the round; first to 3 rounds.	Déplace-toi avec les flèches ou WASD (sur mobile, maintiens le doigt là où tu veux aller) et fonce avec espace (ou le bouton). La plateforme rétrécit. Le dernier restant gagne la manche ; premier à 3 manches.
+900	Move with the arrows, WASD or mouse/finger. Outside your zone you leave a trail; when you return you keep everything you've surrounded. If someone steps on your trail, you fall; if you step on someone else's, they fall. The edge kills too. Whoever has the most map after 4 minutes wins.	Déplace-toi avec les flèches, WASD ou la souris/le doigt. En dehors de ta zone tu laisses une traînée ; en revenant tu gardes tout ce que tu as entouré. Si quelqu'un marche sur ta traînée, tu tombes ; si tu marches sur celle d'un autre, il tombe. Le bord tue aussi. Celui qui a le plus de carte après 4 minutes gagne.
+901	Ammo	Munitions
+902	Mus	Mus
+903	No nicknames or messages that are insulting, racist, sexual, threatening or inciting hatred.	Pas de pseudos ni de messages insultants, racistes, sexuels, menaçants ou incitant à la haine.
+904	Nothing to follow	Rien à suivre
+905	Nobody	Personne
+906	Nobody collects on this hand.	Personne ne gagne sur cette main.
+907	NOBODY WINS THE ROUND	PERSONNE NE GAGNE LA MANCHE
+908	Orange	Orange
+909	Needed for the rooms to work and to remember your nickname, your records and this choice. They're not used to track you.	Nécessaires au fonctionnement des salons et pour retenir ton pseudo, tes records et ce choix. Elles ne servent pas à te suivre.
+910	You need 4 cards of that treasure	Il te faut 4 cartes de ce trésor
+911	No game matches those filters. Shall we remove one?	Aucun jeu ne correspond à ces filtres. On en retire un ?
+912	Level	Niveau
+913	Level {0} of {1} · Gluttons: {2} · Birds: {3}	Niveau {0} sur {1} · Gloutons : {2} · Oiseaux : {3}
+914	CPU level	Niveau du CPU
+915	Invalid level	Niveau non valide
+916	You're not drawing	Ce n'est pas toi qui dessines
+917	Not found · dsbelda games	Introuvable · dsbelda games
+918	It's not your turn	Ce n'est pas ton tour
+919	It's not your turn to give a clue	Ce n'est pas ton tour de donner un indice
+920	It's not a button	Ce n'est pas un bouton
+921	Don't spam, don't pretend to be someone else and don't share personal data (yours or anyone else's) in the chat.	Ne fais pas de spam, ne te fais pas passer pour quelqu'un d'autre et ne partage pas de données personnelles (les tiennes ou celles d'autrui) dans le chat.
+922	There is no discard	Il n'y a pas de défausse
+923	There is no bet	Il n'y a pas de mise
+924	There is no mus	Il n'y a pas de mus
+925	There's nothing to match	Il n'y a rien à égaler
+926	There's nothing to remove	Il n'y a rien à retirer
+927	There's nobody to catch	Il n'y a personne à attraper
+928	There's nobody with that username	Il n'y a personne avec ce nom d'utilisateur
+929	There's no room with that code	Il n'y a aucun salon avec ce code
+930	There's no game in progress	Il n'y a pas de partie en cours
+931	There's no request to accept	Il n'y a aucune demande à accepter
+932	You're not playing	Tu ne joues pas
+933	You're not playing in this room	Tu ne joues pas dans ce salon
+934	You're carrying nothing to sell.	Tu ne transportes rien à vendre.
+935	You can't call that now	Tu ne peux pas annoncer ça maintenant
+936	You can't report yourself	Tu ne peux pas te signaler toi-même
+937	You can't poison that person	Tu ne peux pas empoisonner cette personne
+938	You can't go there	Tu ne peux pas aller là
+939	You can't watch that person	Tu ne peux pas regarder cette personne
+940	You can't pass: there's a bet	Tu ne peux pas passer : il y a une mise
+941	You can't save	Tu ne peux pas sauver
+942	You can't be your own friend (even if you are)	Tu ne peux pas être ton propre ami (même si tu l'es)
+943	No stars left	Il ne reste plus d'étoiles
+944	not wanted	refusé
+945	I don't want it	Je n'en veux pas
+946	No profiles are created, no automated decisions are made about you, and no data is sold or handed to anyone.	Aucun profil n'est créé, aucune décision automatisée n'est prise à ton sujet et aucune donnée n'est vendue ni cédée à personne.
+947	It couldn't be done	Impossible
+948	The catalogue couldn't be loaded.	Impossible de charger le catalogue.
+949	The game couldn't be loaded	Impossible de charger le jeu
+950	Your account couldn't be loaded. Try reloading.	Impossible de charger ton compte. Essaie de recharger.
+951	Couldn't copy	Impossible de copier
+952	Couldn't send	Impossible d'envoyer
+953	Couldn't save	Impossible d'enregistrer
+954	Can't send	Envoi impossible
+955	The request can't be sent	La demande ne peut pas être envoyée
+956	Can't move	Impossible de bouger
+957	Can't be removed	Ne peut pas être retiré
+958	You have no actions left	Il ne te reste plus d'actions
+959	You have no cards left	Il ne te reste plus de cartes

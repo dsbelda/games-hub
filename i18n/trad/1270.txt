@@ -1,0 +1,120 @@
+1270	Type	Type
+1271	Roll the die and move. Goose: jump to the next one and roll again; bridge and dice, same. Inn: lose a turn; prison: two; well: until another lands. Maze: to 30. Death: start over. Whoever reaches exactly 63 wins.	Lance le dé et avance. Oie : saute à la suivante et relance ; pont et dés, pareil. Auberge : un tour sans jouer ; prison : deux ; puits : jusqu'à ce qu'un autre tombe. Labyrinthe : retour à la 30. Mort : on recommence. Gagne celui qui arrive pile à la 63.
+1272	Roll the die and move a piece. You leave with a 5; a 6 repeats (and counts 7 with no pieces at home). Capturing gives 20 squares and reaching the goal, 10. Two pieces together form a barrier. You can't capture on safe squares.	Lance le dé et déplace un pion. On sort avec un 5 ; le 6 rejoue (et vaut 7 sans pions à la maison). Manger donne 20 cases et arriver au but, 10. Deux pions ensemble forment une barrière. On ne mange pas sur les cases sûres.
+1273	Play a card of the same colour or number. If you can't, draw. When you have one left, press “Unity!” or you can be caught. Whoever runs out of cards wins.	Joue une carte de la même couleur ou du même numéro. Si tu ne peux pas, pioche. Quand il t'en reste une, appuie sur « Unité ! » ou on peut te prendre. Celui qui n'a plus de cartes gagne.
+1274	Throw	Lancer
+1275	Invalid shot	Tir non valide
+1276	Tap the screen or press space to flap.	Touche l'écran ou appuie sur espace pour battre des ailes.
+1277	Tap the screen or press space to flap. Every pipe you pass is a point. If you touch a pipe or the ground, it's over.	Touche l'écran ou appuie sur espace pour battre des ailes. Chaque tuyau passé vaut un point. Si tu touches un tuyau ou le sol, c'est fini.
+1278	Tap the cards you want to swap	Touche les cartes que tu veux changer
+1279	Tap the tiles you want to return to the bag	Touche les jetons que tu veux remettre dans le sac
+1280	Tap the answers that aren't valid to strike them out. Press “Done” when finished.	Touche les réponses non valables pour les barrer. Appuie sur « Prêt » quand tu as fini.
+1281	TAP TO PLACE THE CUE BALL	TOUCHE POUR PLACER LA BLANCHE
+1282	TAP TO SET THE ANGLE	TOUCHE POUR FIXER L'ANGLE
+1283	Tap to set the angle and again for the power. In the air, tap to shoot and gain height. Springs and bombs help; spikes and cacti slow you. Spend what you earn on upgrades.	Touche pour fixer l'angle et encore pour la force. En l'air, touche pour tirer et remonter. Ressorts et bombes aident ; piques et cactus ralentissent. Dépense tes gains en améliorations.
+1284	TAP FOR POWER	TOUCHE POUR LA FORCE
+1285	TAP TO EXIT	TOUCHE POUR SORTIR
+1286	TAP TO FLY	TOUCHE POUR VOLER
+1287	Tap a placed ship to remove it. Ships can't touch, not even diagonally.	Touche un bateau posé pour le retirer. Les bateaux ne peuvent pas se toucher, même en diagonale.
+1288	Tap a card to move it on its own, or drag it. Double click also sends it to the piles.	Touche une carte pour la déplacer seule, ou glisse-la. Un double clic l'envoie aussi sur les piles.
+1289	Tap a tile on your rack and then a square. Words cross like in a crossword and must all exist. Coloured squares double or triple a letter or word, and using all 7 tiles gives 50 points. The first word goes through the star.	Touche un jeton de ton chevalet puis une case. Les mots se croisent comme dans des mots croisés et doivent tous exister. Les cases colorées doublent ou triplent une lettre ou un mot, et utiliser les 7 jetons donne 50 points. Le premier mot passe par l'étoile.
+1290	Tap a piece to see where it can go, then the destination square. Whoever checkmates wins. If you play black, the board is flipped.	Touche une pièce pour voir où elle peut aller, puis la case d'arrivée. Gagne celui qui fait échec et mat. Si tu joues les noirs, le plateau est retourné.
+1291	You haven't finished any game with your account yet. Go for the first one!	Tu n'as encore terminé aucune partie avec ton compte. Va chercher la première !
+1292	All	Tout
+1293	Everyone	Tous
+1294	All games	Tous les jeux
+1295	Everyone gets the same word except the impostor, who only knows the category. In turns, each gives a clue. Then you vote on who it is. If caught, they can still win by guessing the word.	Tout le monde reçoit le même mot sauf l'imposteur, qui ne connaît que la catégorie. À tour de rôle, chacun donne un indice. Ensuite on vote pour savoir qui c'est. S'il est pris, il peut encore gagner en devinant le mot.
+1296	You all have the same word… except one. Give clues, find the impostor or blend in if you are one.	Vous avez tous le même mot… sauf un. Donne des indices, démasque l'imposteur ou fais profil bas si c'est toi.
+1297	Wizard tower	Tour de mages
+1298	Tower defence	Défense de tours
+1299	Turret	Tourelle
+1300	Teamwork	Travail d'équipe
+1301	Invalid stroke	Trait non valide
+1302	Sled	Traîneau
+1303	Your nickname	Ton pseudo
+1304	Your avatar	Ton avatar
+1305	Your password	Ton mot de passe
+1306	Your password (to generate new ones)	Ton mot de passe (pour en générer d'autres)
+1307	Your account	Ton compte
+1308	Your account · dsbelda games	Ton compte · dsbelda games
+1309	Your dsbelda games account: games, records and favourites.	Ton compte dsbelda games : parties, records et favoris.
+1310	Your account has been deleted. See you soon!	Ton compte a été supprimé. À bientôt !
+1311	You give the clue: the target zone is on the dial. Write something that sits there on the scale.	C'est toi qui donnes l'indice : la zone gagnante est sur le cadran. Écris quelque chose qui se situe là sur l'échelle.
+1312	Your shot	Ton tir
+1313	Your fleet	Ta flotte
+1314	Your secret word	Ton mot secret
+1315	Your role	Ton rôle
+1316	your partner	ton partenaire
+1317	Your partner has already raised	Ton partenaire a déjà relancé
+1318	Your clue	Ton indice
+1319	Your clue (e.g. “instant soup”)	Ton indice (p. ex. « une soupe en sachet »)
+1320	Your snake heads towards the mouse or your finger. Eat dots to grow. If your head touches another's body, you die and turn into dots (and vice versa!). Space or hold to speed up, at the cost of a bit of length. Whoever gets furthest in 4 minutes wins.	Ton serpent va vers la souris ou ton doigt. Mange des boules pour grandir. Si ta tête touche le corps d'un autre, tu meurs et tu te transformes en boules (et inversement !). Espace ou appui maintenu pour accélérer, au prix d'un peu de longueur. Celui qui va le plus loin en 4 minutes gagne.
+1321	=	=
+1322	=	=
+1323	Your recovery codes	Tes codes de récupération
+1324	Your data	Tes données
+1325	Your rights	Tes droits
+1326	Your favourites	Tes favoris
+1327	Your favourites (if you play without an account) and the last games you opened, for “Keep playing”.	Tes favoris (si tu joues sans compte) et les derniers jeux que tu as ouverts, pour « Continue à jouer ».
+1328	Your games	Tes parties
+1329	Your records and your half-finished 2048 game.	Tes records et ta partie de 2048 en cours.
+1330	Tute	Tute
+1331	Tutti frutti: name, animal, country, food… with the letter that comes up. The fastest says Stop!	Petit bac : nom, animal, pays, nourriture… avec la lettre qui sort. Le plus rapide dit Stop !
+1332	Last updated: 17 October 2026 (user accounts).	Dernière mise à jour : 17 octobre 2026 (comptes d'utilisateur).
+1333	Last updated: 18 October 2026 (friends and private messages).	Dernière mise à jour : 18 octobre 2026 (amis et messages privés).
+1334	=	=
+1335	A ship goes off the board	Un bateau sort du plateau
+1336	A penguin, a ramp and a dream: flying. Upgrade wings and rocket until you break the ice wall.	Un pingouin, une rampe et un rêve : voler. Améliore ailes et fusée jusqu'à briser le mur de glace.
+1337	An octopus playing mus on the beach	Une pieuvre jouant au mus sur la plage
+1338	A 4×4 letter board and 90 seconds to find more words than anyone. Everyone at once.	Une grille de 4×4 lettres et 90 secondes pour trouver plus de mots que tout le monde. Tous en même temps.
+1339	A cookie is a small file that a website stores in your browser. Local storage is similar: it saves data in your browser that the website can read again.	Un cookie est un petit fichier qu'un site enregistre dans ton navigateur. Le stockage local est similaire : il conserve des données dans ton navigateur que le site peut relire.
+1340	One word	Un mot
+1341	One huge snake among many: eat, grow and make the others crash into you.	Un énorme serpent parmi beaucoup d'autres : mange, grandis et fais en sorte que les autres se heurtent à toi.
+1342	Once per turn, fly to any tile	Une fois par tour, vole vers n'importe quelle tuile
+1343	Join	Rejoindre
+1344	Join	Rejoindre
+1345	One draws, the others guess before time runs out. No letters!	L'un dessine, les autres devinent avant la fin du temps. Sans lettres !
+1346	One knows where the needle is between two opposites and gives a clue; the others try to get on their wavelength.	L'un sait où est l'aiguille entre deux opposés et donne un indice ; les autres essaient de se mettre sur sa longueur d'onde.
+1347	One has the bomb in front of them and the others have the manual. Talk fast: the clock won't wait.	L'un a la bombe devant lui et les autres le manuel. Parlez vite : l'horloge n'attend pas.
+1348	We use technical cookies so the games work and, if you let us, others for	Nous utilisons des cookies techniques pour que les jeux fonctionnent et, si tu nous y autorises, d'autres pour
+1349	Username	Utilisateur
+1350	Wrong username or password	Nom d'utilisateur ou mot de passe incorrect
+1351	Grape	Raisin
+1352	Empty	Vider
+1353	Invalid value	Valeur non valide
+1354	You're going too fast: wait a moment	Tu vas trop vite : attends un peu
+1355	Bullet speed	Vitesse de balle
+1356	Sale	Vente
+1357	View	Voir
+1358	See the next one	Voir le suivant
+1359	See all	Tout voir
+1360	See all games	Voir tous les jeux
+1361	Wins	Victoires
+1362	Seer	Voyante
+1363	Watch {0}: if they say a forbidden word, buzz!	Surveille {0} : s'il dit un mot interdit, buzze !
+1364	Voted. Waiting for the others…	Voté. On attend les autres…
+1365	Vote	Voter
+1366	Invalid vote	Vote non valide
+1367	You'll be back in a moment · your best: {0}	Tu reviens dans un instant · ton meilleur : {0}
+1368	WASD to move · mouse to aim · click to shoot · E auto-fire · 1-5 upgrades · on mobile, hold your finger	WASD pour te déplacer · souris pour viser · clic pour tirer · E tir automatique · 1-5 améliorations · sur mobile, maintiens le doigt
+1369	WASD to move, mouse to aim and click to shoot (E: auto-fire). Squares, triangles and pentagons give experience; each level, an upgrade point (keys 1-5). At level 10 you pick a class: Twin, Sniper or Machine Gun. On mobile, hold your finger to move and shoot at once.	WASD pour te déplacer, souris pour viser et clic pour tirer (E : tir automatique). Carrés, triangles et pentagones donnent de l'expérience ; à chaque niveau, un point d'amélioration (touches 1-5). Au niveau 10 tu choisis une classe : Double, Tireur d'élite ou Mitrailleuse. Sur mobile, maintiens le doigt pour te déplacer et tirer en même temps.
+1370	Separate site	Site à part
+1371	=	=
+1372	and the	et la
+1373	and your games will be saved.	et tes parties seront sauvegardées.
+1374	Already at maximum	Déjà au maximum
+1375	It has already started	Elle a déjà commencé
+1376	You've already placed your fleet	Tu as déjà placé ta flotte
+1377	You've already shot there	Tu as déjà tiré là
+1378	You've already looked tonight	Tu as déjà regardé cette nuit
+1379	You've already drawn	Tu as déjà pioché
+1380	You've already rolled: move a piece	Tu as déjà lancé : déplace un pion
+1381	20 people are already watching that game	20 personnes regardent déjà cette partie
+1382	You've already got it right	Tu l'as déjà trouvé
+1383	You've already sent them a request	Tu lui as déjà envoyé une demande
+1384	I've already saved them somewhere safe	Je les ai déjà mis en lieu sûr
+1385	No more writing	On n'écrit plus
+1386	Ships can no longer be placed	On ne peut plus placer de bateaux
+1387	You're already friends	Vous êtes déjà amis
+1388	You've already discarded	Tu t'es déjà défaussé
+1389	I already have an account	J'ai déjà un compte

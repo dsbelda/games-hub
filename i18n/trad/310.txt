@@ -1,0 +1,160 @@
+310	Invalid avatar	Avatar non valide
+311	Cookie notice	Avis sur les cookies
+312	Legal notice	Mentions légales
+313	Legal notice and rules of use	Mentions légales et règles d'utilisation
+314	Legal notice and rules of use · dsbelda games	Mentions légales et règles d'utilisation · dsbelda games
+315	Helpers	Aides
+316	Blue	Bleu
+317	=	=
+318	Move the cards to the four foundations, from Ace to King and by suit. In the columns, from high to low alternating red and black. Only a King goes in an empty space.	Déplace les cartes sur les quatre fondations, de l'As au Roi et par couleur. Dans les colonnes, de la plus haute à la plus basse en alternant rouge et noir. Seul un Roi peut aller sur une place vide.
+319	Go down the ramp and glide: lower the nose to gain speed and raise it to gain height. With what you earn each day, upgrade the ramp, sled, wings and rocket. The goal: the 3000 m wall.	Descends la rampe et plane : baisse le nez pour prendre de la vitesse et relève-le pour gagner de l'altitude. Avec ce que tu gagnes chaque jour, améliore la rampe, le traîneau, les ailes et la fusée. Le but : le mur de 3000 m.
+320	Down	Bas
+321	Bank	Banque
+322	Legal basis	Base juridique
+323	Pool	Billard
+324	Armour	Blindage
+325	Blocked	Bloqués
+326	Block	Bloquer
+327	Blocks	Blocs
+328	Cargo hold	Soute
+329	8-ball against a friend or the CPU: solids or stripes and, at the end, the black.	Billard américain contre un ami ou le CPU : pleines ou rayées et, à la fin, la noire.
+330	Ball in hand: place it	Bille en main : place-la
+331	Balls on a shrinking platform: push the others into the water and outlast them.	Des billes sur une plateforme qui rétrécit : pousse les autres à l'eau et tiens le plus longtemps.
+332	Bombardment	Bombardement
+333	Bombs	Bombes
+334	Erase	Effacer
+335	Bounce from platform to platform and climb as high as you can.	Rebondis de plateforme en plateforme et monte le plus haut possible.
+336	Pot	Pot
+337	Button	Bouton
+338	Button · the strip	Bouton · la bande
+339	Brisca	Brisca
+340	Brisca · Play free · dsbelda games	Brisca · Joue gratuitement · dsbelda games
+341	Brisca, cards, board and quick games. Pick a nickname, play against the CPU or create a room and share the link.	Brisca, cartes, jeux de plateau et jeux rapides. Choisis un pseudo, joue contre le CPU ou crée un salon et partage le lien.
+342	Witch	Sorcière
+343	Good	Bonne
+344	Bubbles	Bulles
+345	Minesweeper	Démineur
+346	Minesweeper hard	Démineur difficile
+347	Minesweeper easy	Démineur facile
+348	Search	Rechercher
+349	Search games	Rechercher un jeu
+350	Search games…	Rechercher un jeu…
+351	Search games… ( / )	Rechercher un jeu… ( / )
+352	Knight	Cavalier
+353	Horse	Cheval
+354	Big Heads	Grosses têtes
+355	Wires	Fils
+356	Each click bakes double (and a bit more depending on your production)	Chaque clic cuit le double (et un peu plus selon ta production)
+357	Every night you find out whether someone is a wolf. Help the village without being found out.	Chaque nuit tu découvres si quelqu'un est un loup. Aide le village sans te faire démasquer.
+358	Each number says how many mines touch that square. Click to reveal; right-click or long-press to plant a flag. The first click is never a mine.	Chaque chiffre indique combien de mines touchent cette case. Clique pour révéler ; clic droit ou appui long pour poser un drapeau. Le premier clic n'est jamais une mine.
+359	Everyone writes an invented definition for the word. They're then mixed with the real one and you vote on which is genuine. Guessing right gives 2 points and each vote your invention gets, 1.	Chacun écrit une définition inventée pour le mot. Elles sont ensuite mélangées avec la vraie et vous votez pour celle qui est authentique. Trouver la bonne donne 2 points et chaque vote que reçoit ton invention, 1.
+360	Everyone writes a sentence. It's passed on to the next person, who draws it; the next one describes the drawing, another draws that description… In the end the chains are reviewed one by one. No points: just laughs.	Chacun écrit une phrase. Elle passe au suivant, qui la dessine ; le suivant décrit le dessin, un autre dessine cette description… À la fin, on passe en revue les chaînes une à une. Pas de points : que des rires.
+361	Everyone gets a secret role: wolf, seer, witch or villager. At night the wolves pick a victim and the seer investigates. By day you debate and vote on who to expel. The village wins if the wolves fall.	Chacun reçoit un rôle secret : loup, voyante, sorcière ou villageois. La nuit, les loups choisissent une victime et la voyante enquête. Le jour, on débat et on vote qui expulser. Le village gagne si les loups tombent.
+362	Everyone has as many cards (from 1 to 100) as the level number. Together you must lay them on the table from lowest to highest, with no turns and no talking: play your lowest card when you think nobody has a lower one. If someone did, you lose a life. If everyone asks for a star, each discards their lowest card.	Chacun a autant de cartes (de 1 à 100) que le numéro du niveau. Ensemble, vous devez les poser sur la table de la plus petite à la plus grande, sans tours et sans parler : joue ta plus petite carte quand tu penses que personne n'en a de plus basse. Si quelqu'un en avait une, vous perdez une vie. Si tout le monde demande une étoile, chacun défausse sa plus petite carte.
+363	Everyone plays one card per turn and the highest trump wins the trick or, if there is none, the highest of the suit led. Ace 11, three 10, king 4, knight 3 and jack 2. Whoever passes 60 wins.	Chacun joue une carte par tour et le pli revient à l'atout le plus haut ou, s'il n'y en a pas, à la carte la plus haute de la couleur demandée. As 11, trois 10, roi 4, cavalier 3 et valet 2. Celui qui dépasse 60 gagne.
+364	Everyone sees only their own dice. Bet how many there are in total… or say “I doubt it!”.	Chacun ne voit que ses dés. Parie combien il y en a en tout… ou dis « Je doute ! ».
+365	Dusk falls… it will soon be night	Le soir tombe… la nuit sera bientôt là
+366	Fall	Tomber
+367	Sea Chalice	Calice de la mer
+368	swaps the trump 7	échange le 7 d'atout
+369	Change	Changer
+370	Switch to dark mode	Passer en mode sombre
+371	Change password	Changer le mot de passe
+372	Swap the 7 for the trump card	Échanger le 7 contre l'atout
+373	Changes	Changements
+374	Cancel	Annuler
+375	Amount	Quantité
+376	Invalid amount	Quantité non valide
+377	Cannon	Canon
+378	Shell	Carapace
+379	Jail	Prison
+380	Races	Courses
+381	Face-down card	Carte face cachée
+382	=	=
+383	=	=
+384	=	=
+385	=	=
+386	Cards	Cartes
+387	Cards of colours and numbers: discard them all before anyone else.	Cartes de couleurs et de chiffres : défausse-les toutes avant les autres.
+388	Hull	Coque
+389	Invalid square	Case non valide
+390	Casino	Casino
+391	Multiplayer pixel-art casino: roulette, blackjack, roosters, football, your own room…	Casino pixel art multijoueur : roulette, blackjack, coqs, football, ta chambre…
+392	Catan	Catan
+393	Classic Catan with CPU, chat, music and medieval pixel-art design.	Catan classique avec CPU, chat, musique et design pixel art médiéval.
+394	Catan and SwJacK are separate websites, with their own terms. “Catan” is a trademark of CATAN GmbH; the linked version is an unofficial adaptation for playing among friends, unrelated to that company.	Catan et SwJacK sont des sites distincts, avec leurs propres conditions. « Catan » est une marque de CATAN GmbH ; la version liée est une adaptation non officielle pour jouer entre amis, sans lien avec cette entreprise.
+395	Category: {0}	Catégorie : {0}
+396	Categories	Catégories
+397	Cells	Cellules
+398	Close	Fermer
+399	Sign out	Se déconnecter
+400	=	=
+401	Chat	Chat
+402	Small	Petite
+403	Chinchón	Chinchón
+404	Science	Sciences
+405	Right-click or long-press to plant a flag.	Clic droit ou appui long pour poser un drapeau.
+406	Copper	Cuivre
+407	Little cars seen from above, tight bends and one turbo per lap. Three laps.	De petites voitures vues de dessus, des virages serrés et un turbo par tour. Trois tours.
+408	Crazy Kitchen	Cuisine folle
+409	Code	Code
+410	Recovery code	Code de récupération
+411	Room code	Code du salon
+412	Codes copied	Codes copiés
+413	Recovery codes	Codes de récupération
+414	=	=
+415	picks from the discard pile	prend dans la défausse
+416	Take ingredients from the crates, chop them on the board (hold “chop”), cook the meat on the stove without burning it and assemble the dish: salad (lettuce and tomato), burger (bun and meat) or veggie sandwich (bread, lettuce and tomato). Hand it in at the bell. 3 minutes to score as many points as you can.	Prends des ingrédients dans les caisses, coupe-les sur la planche (maintiens « couper »), fais cuire la viande sur le feu sans la brûler et monte le plat : salade (laitue et tomate), hamburger (pain et viande) ou sandwich végétal (pain, laitue et tomate). Remets-le à la clochette. 3 minutes pour marquer un maximum de points.
+417	Rocket	Fusée
+418	Place 5 ships without letting them touch. Take turns shooting at a square of your rival: water, hit or sunk. If you hit, you go again. Whoever sinks the whole enemy fleet wins.	Place 5 bateaux sans qu'ils se touchent. À tour de rôle, tire sur une case de l'adversaire : à l'eau, touché ou coulé. Si tu touches, tu rejoues. Celui qui coule toute la flotte adverse gagne.
+419	Place settlements, collect resources with the dice, trade and build. Whoever reaches 10 points wins.	Place des colonies, récolte des ressources avec les dés, échange et construis. Le premier à atteindre 10 points gagne.
+420	Place towers next to the path and burst waves of ever tougher balloons.	Place des tours le long du chemin et fais éclater des vagues de ballons de plus en plus résistants.
+421	Place your fleet	Place ta flotte
+422	Place your ships and sink the enemy fleet before they sink yours.	Place tes bateaux et coule la flotte adverse avant qu'elle ne coule la tienne.
+423	Invalid column	Colonne non valide
+424	Fuel	Carburant
+425	Eat dots, grow and swallow smaller cells. With friends and CPU rivals on the same map.	Mange des points, grandis et avale les plus petites cellules. Avec des amis et des rivaux CPU sur la même carte.
+426	Eat, grow and don't bite your own tail.	Mange, grandis et ne te mords pas la queue.
+427	How to control them	Comment les contrôler
+428	Like in the bar: four players in two pairs, double six and to 100 points.	Comme au café : quatre joueurs en deux équipes, double six et à 100 points.
+429	How to play	Comment jouer
+430	How to play	Comment jouer
+431	How it works	Comment ça marche
+432	Wild	Joker
+433	Wild draw four	Joker +4
+434	Buy troops: they advance and fight on their own. Killing earns gold and experience; with experience you move up an era (better troops, turret and special attack). Whoever destroys the enemy base wins.	Achète des troupes : elles avancent et se battent toutes seules. En tuant, tu gagnes de l'or et de l'expérience ; avec l'expérience, tu changes d'ère (meilleures troupes, tourelle et attaque spéciale). Celui qui détruit la base adverse gagne.
+435	With friends	Entre amis
+436	With an account your games, wins, records and favourites are saved, and nobody else can use your name. It's free, needs no email (we give you codes to recover your password) and is optional: you can keep playing without an account.	Avec un compte, tes parties, victoires, records et favoris sont sauvegardés, et personne d'autre ne peut utiliser ton nom. C'est gratuit, sans e-mail (nous te donnons des codes pour récupérer ton mot de passe) et facultatif : tu peux continuer à jouer sans compte.
+437	Focus… press “Ready” to start the level	Concentrez-vous… appuyez sur « Prêts » pour commencer le niveau
+438	Connecting…	Connexion…
+439	Settings	Réglages
+440	Cookie settings	Paramétrer les cookies
+441	Freezes more	Gèle davantage
+442	Sexual or inappropriate content	Contenu sexuel ou inapproprié
+443	Hand count	Décompte de la main
+444	Answer before time runs out	Réponds avant la fin du temps
+445	Continue	Continuer
+446	Against the CPU	Contre le CPU
+447	Against an “órdago” you can only call or fold	Face à un « órdago », on peut seulement suivre ou se coucher
+448	Password	Mot de passe
+449	Current password	Mot de passe actuel
+450	Password changed. Sign in with the new one	Mot de passe changé. Connecte-toi avec le nouveau
+451	Password changed. You have {0} codes left{1}	Mot de passe changé. Il te reste {0} codes{1}
+452	New password	Nouveau mot de passe
+453	Own cookie, technical	Cookie propre, technique
+454	Own cookie, technical (only if you create an account or sign in)	Cookie propre, technique (seulement si tu crées un compte ou te connectes)
+455	Cookies	Cookies
+456	Cloudflare cookies, technical	Cookies de Cloudflare, techniques
+457	Real-time co-op: chop, cook, plate and serve the orders before they expire.	Coopératif en temps réel : coupez, cuisinez, dressez et servez les commandes avant qu'elles n'expirent.
+458	Co-op: play every card in order… without telling each other anything. Pure intuition.	Coopératif : jouez toutes les cartes dans l'ordre… sans rien vous dire. Pure intuition.
+459	Co-op: recover the four treasures and escape by helicopter before the island sinks under the water.	Coopératif : récupérez les quatre trésors et échappez-vous en hélicoptère avant que l'île ne disparaisse sous l'eau.
+460	Copied: paste it wherever you like	Copié : colle-le où tu veux
+461	Copy	Copier
+462	Crown	Couronne
+463	Crown on:	Couronne sur :
+464	Fruit Slicer	Coupe-fruits
+465	CPU	CPU
+466	Hard CPU	CPU difficile
+467	Create your account	Crée ton compte
+468	Create your account, collect chips and try the roulette, blackjack, the fair and much more with your friends.	Crée ton compte, ramasse des jetons et essaie la roulette, le blackjack, la fête foraine et bien plus avec tes amis.
+469	Create account	Créer un compte

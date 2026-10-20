@@ -1,0 +1,140 @@
+1130	A very rare word comes up. Invent a believable definition and fool the others… and find the real one.	Un mot rarissime sort. Invente une définition crédible et trompe les autres… et trouve la vraie.
+1131	Exit	Sortie
+1132	Leave	Quitter
+1133	Leave that room and play here	Quitter ce salon et jouer ici
+1134	Leave the room	Quitter le salon
+1135	Jump	Saute
+1136	Leaps to the sky	Sauts vers le ciel
+1137	Watermelon	Pastèque
+1138	Time's up	Le temps est écoulé
+1139	Time to write is up	Le temps d'écriture est écoulé
+1140	Spanish law applies. For any dispute, the courts of Valencia, unless the law entitles you to go to those of your home town.	La loi espagnole s'applique. Pour tout litige, les tribunaux de Valence, sauf si la loi te donne le droit de saisir ceux de ton domicile.
+1141	This message and who reports it will be saved, and the owner will review it. If several accounts report the same person, they're muted for a few hours.	Ce message et l'auteur du signalement seront conservés, et le titulaire les examinera. Si plusieurs comptes signalent la même personne, elle est réduite au silence quelques heures.
+1142	Has run out of cards	N'a plus de cartes
+1143	Moves and shrinks diagonally too	Se déplace et rétrécit aussi en diagonale
+1144	Continue now	Continuer
+1145	Security	Sécurité
+1146	Security: detecting attacks and abuse and fixing faults.	Sécurité : détecter les attaques et les abus et corriger les pannes.
+1147	Snake	Serpent
+1148	Snakes	Serpents
+1149	=	=
+1150	If this changes	Si cela change
+1151	If we start processing any new data (for example, with advertising), this page will be updated before doing so and, where needed, you'll be asked for permission.	Si nous commençons à traiter de nouvelles données (par exemple, avec de la publicité), cette page sera mise à jour avant de le faire et, si nécessaire, ton autorisation te sera demandée.
+1152	Keep baking to unlock upgrades.	Continue à cuire pour débloquer des améliorations.
+1153	Keep playing	Continue à jouer
+1154	Next	Suivant
+1155	Next hand now	Main suivante
+1156	Next round	Manche suivante
+1157	Next round now	Manche suivante maintenant
+1158	Next turn	Tour suivant
+1159	=	=
+1160	Symbols	Symboles
+1161	No ships	Aucun bateau
+1162	No connection to the server	Pas de connexion au serveur
+1163	No connection to the server; retrying…	Pas de connexion au serveur ; nouvelle tentative…
+1164	Without email, these codes are the only way to recover your password if you forget it. Each one works only once. They won't be shown again (though you can generate new ones from Your account).	Sans e-mail, ces codes sont le seul moyen de récupérer ton mot de passe si tu l'oublies. Chacun ne vaut qu'une fois. Ils ne seront plus affichés (mais tu peux en générer de nouveaux depuis Ton compte).
+1165	no stars	sans étoiles
+1166	No words	Sans mots
+1167	No orders… for now!	Pas de commandes… pour l'instant !
+1168	no record	pas de record
+1169	No record on this level yet	Pas encore de record à ce niveau
+1170	=	=
+1171	Soldier	Soldat
+1172	Sunflower	Tournesol
+1173	Suns: {0} · Wave {1} of 10{2} · Record: {3}	Soleils : {0} · Vague {1} sur 10{2} · Record : {3}
+1174	Solitaire	Solitaire
+1175	Solo	Solo
+1176	=	=
+1177	=	=
+1178	=	=
+1179	=	=
+1180	Only treasure cards to another person	Uniquement des cartes de trésor à une autre personne
+1181	Only with two cards or fewer	Seulement avec deux cartes ou moins
+1182	=	=
+1183	Only the host can add CPUs	Seul l'hôte peut ajouter des CPU
+1184	Only the host can start	Seul l'hôte peut lancer la partie
+1185	Only the host can remove players	Seul l'hôte peut retirer des joueurs
+1186	Only the host, before starting	Seulement l'hôte, avant le début
+1187	Only the other team buzzes	Seule l'autre équipe buzze
+1188	Only the pilot, once per turn	Seulement le pilote, une fois par tour
+1189	Only in the server's memory while you play; deleted when it restarts	Uniquement dans la mémoire du serveur pendant que tu joues ; supprimé au redémarrage
+1190	Only in memory, as long as the room exists (12 hours at most)	Uniquement en mémoire, tant que le salon existe (12 heures au maximum)
+1191	=	=
+1192	It's just a nickname for the game. No accounts or passwords.	C'est juste un pseudo pour la partie. Sans comptes ni mots de passe.
+1193	=	=
+1194	=	=
+1195	=	=
+1196	Only the wolves	Seulement les loups
+1197	Only those that can already be played	Seulement ceux qui sont déjà jouables
+1198	=	=
+1199	=	=
+1200	=	=
+1201	=	=
+1202	You can only message your friends	Tu ne peux écrire qu'à tes amis
+1203	You can only discard the card you've drawn	Tu ne peux défausser que la carte que tu as piochée
+1204	Only the describer	Seulement celui qui décrit
+1205	Only whoever has the bomb in front of them	Seulement celui qui a la bombe devant lui
+1206	=	=
+1207	=	=
+1208	=	=
+1209	=	=
+1210	Only a flooded tile of yours or a neighbour's	Seulement une tuile inondée à toi ou voisine
+1211	=	=
+1212	Surprise me	Surprends-moi
+1213	Jack	Valet
+1214	=	=
+1215	Spam or advertising	Spam ou publicité
+1216	Stop	Stop
+1217	Submarine	Sous-marin
+1218	Merge equal tiles until you reach 2048.	Fusionne des tuiles identiques jusqu'à atteindre 2048.
+1219	Ball sumo	Sumo de boules
+1220	=	=
+1221	Draw: 40 moves without a capture or pawn move	Nulle : 40 coups sans prise ni mouvement de pion
+1222	Board	Plateau
+1223	2048 board	Plateau du 2048
+1224	Block board	Plateau de blocs
+1225	Snake board	Plateau du serpent
+1226	Taboo	Tabou
+1227	Drill down and sideways and fly up with the propeller. Haul minerals to the surface to sell them and upgrade the machine. Watch the fuel and the hull. It saves itself.	Fore vers le bas et sur les côtés et remonte avec l'hélice. Rapporte les minerais à la surface pour les vendre et améliore la machine. Surveille le carburant et la coque. Ça se sauvegarde tout seul.
+1228	Drill	Foreuse
+1229	Workshop	Atelier
+1230	Size	Taille
+1231	Tank	Char
+1232	Maze tanks	Chars en labyrinthe
+1233	Tanks in a maze and bouncing bullets. Real time, 2 to 4 players. Watch out for your own shots!	Des chars dans un labyrinthe et des balles qui rebondissent. En temps réel, de 2 à 4. Attention à tes propres tirs !
+1234	Upgradable tanks	Chars améliorables
+1235	You have {0} unused recovery codes left. Each works once and lets you change the password if you forget it.	Il te reste {0} codes de récupération inutilisés. Chacun vaut une fois et permet de changer le mot de passe si tu l'oublies.
+1236	The one you drew works: discard it or pass	Celle que tu as piochée convient : défausse-la ou passe
+1237	Your turn	C'est ton tour
+1238	It's your turn to describe. When you're ready…	C'est à toi de décrire. Quand tu es prêt…
+1239	Your turn: spin the wheel!	À toi : fais tourner la roue !
+1240	Your turn: you have to capture!	À toi : tu dois prendre !
+1241	Your turn: roll the die!	À toi : lance le dé !
+1242	Your turn: pull back and release	À toi : tire en arrière et lâche
+1243	Your turn: follow suit and trump if you can	À toi : fournis et coupe si tu peux
+1244	Your turn: place tiles and press “Play”	À toi : place des jetons et appuie sur « Jouer »
+1245	Your turn: give your clue (one or two words)	À toi : donne ton indice (un ou deux mots)
+1246	Your turn: choose a card	À toi : choisis une carte
+1247	Your turn: choose a column	À toi : choisis une colonne
+1248	Your turn: choose a piece	À toi : choisis un pion
+1249	Your turn: choose a piece	À toi : choisis un pion
+1250	Your turn: raise the bet or call a bluff	À toi : relance ou doute
+1251	Technical (always on)	Techniques (toujours actifs)
+1252	Drawn telephone	Téléphone dessiné
+1253	Temple	Temple
+1254	You must be on the same tile	Vous devez être sur la même tuile
+1255	I have a code	J'ai un code
+1256	Finish	Terminer
+1257	End the night	Terminer la nuit
+1258	End turn	Terminer le tour
+1259	Territory	Territoire
+1260	Impossible test	Test impossible
+1261	Texas Hold'em with play chips: bluff your friends (or the CPU).	Texas Hold'em avec des jetons pour de faux : bluffe tes amis (ou le CPU).
+1262	Shop	Boutique
+1263	Someone else has to discard	Quelqu'un d'autre doit se défausser
+1264	You have more than 5 cards: tap one to discard it (or use a special)	Tu as plus de 5 cartes : touche-en une pour la défausser (ou utilise une spéciale)
+1265	You have another game open	Tu as une autre partie ouverte
+1266	You must follow suit and trump if you can (or fail with a trump)	Tu dois fournir et couper si tu peux (ou rater avec un atout)
+1267	You have to discard	Tu dois te défausser
+1268	You have to raise the bet	Tu dois relancer
+1269	You have one potion to save the wolves' victim and another to poison someone. Once each.	Tu as une potion pour sauver la victime des loups et une autre pour empoisonner quelqu'un. Une fois chacune.

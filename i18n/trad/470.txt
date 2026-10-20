@@ -1,0 +1,170 @@
+470	Create a room for friends	Créer un salon pour des amis
+471	Wind Crystal	Cristal du vent
+472	Cross the Road	Traverse la route
+473	How long	Combien de temps
+474	Four in a Row	Puissance 4
+475	Accounts	Comptes
+476	Gives cards to anyone, wherever they are	Donne des cartes à n'importe qui, où qu'il soit
+477	Flip two cards each time and find all the pairs in as few tries as possible.	Retourne deux cartes à chaque fois et trouve toutes les paires en un minimum d'essais.
+478	Give clues without saying it… and find the impostor.	Donne des indices sans le dire… et trouve l'imposteur.
+479	Die	Dé
+480	Draughts	Dames
+481	Chinese Checkers	Dames chinoises
+482	Spanish draughts: capturing is compulsory and the queen flies.	Dames espagnoles : la prise est obligatoire et la dame vole.
+483	Damage	Dégâts
+484	Double damage	Dégâts doublés
+485	Flip the pile over	Retourner la pioche
+486	Darts	Fléchettes
+487	To give you the service you ask for when you start playing or create your account (art. 6.1.b GDPR). By creating the account you expressly accept these terms.	Te fournir le service que tu demandes en commençant à jouer ou en créant ton compte (art. 6.1.b du RGPD). En créant le compte, tu acceptes expressément ces conditions.
+488	Data	Donnée
+489	From 30 minutes to a few days	De 30 minutes à quelques jours
+490	high	de hauteur
+491	From the Stone Age to the Future: send troops, evolve and destroy the enemy base.	De l'âge de pierre au futur : envoie des troupes, évolue et détruis la base adverse.
+492	At night the wolves attack; by day the village debates and votes. Better with voice.	La nuit, les loups attaquent ; le jour, le village débat et vote. Mieux avec la voix.
+493	At night, choose with the other wolves who to attack. By day, play innocent.	La nuit, choisis avec les autres loups qui attaquer. Le jour, fais l'innocent.
+494	Goose by goose, and I roll again because it's my turn. The classic one, with bridges, inn, well, maze, jail and death.	D'oie en oie, et je relance parce que c'est mon tour. Le classique, avec ponts, auberge, puits, labyrinthe, prison et la mort.
+495	Debate who could be a wolf (in the chat or out loud)	Débattez de qui peut être un loup (dans le chat ou à voix haute)
+496	Mechanical finger	Doigt mécanique
+497	Stop watching	Arrêter de regarder
+498	Leave it (the CPU takes your place) and play here	La quitter (le CPU te remplace) et jouer ici
+499	Sports	Sports
+500	Tank	Réservoir
+501	Right	Droite
+502	Defuse the Bomb	Désamorce la bombe
+503	Unblock	Débloquer
+504	Download	Télécharger
+505	Discard pile	Défausse
+506	Describe the word without saying the five forbidden ones before time runs out. The other team is watching you.	Décris le mot sans dire les cinq mots interdits avant la fin du temps. L'autre équipe te surveille.
+507	Swipe your finger and slice the fruit that jumps. Don't even think of cutting a bomb!	Glisse le doigt et tranche les fruits qui sautent. N'essaie surtout pas de couper une bombe !
+508	Slide the tiles: two equal ones merge and add up. Try to reach 2048 without filling the board.	Fais glisser les tuiles : deux identiques fusionnent et s'additionnent. Essaie d'atteindre 2048 sans remplir la grille.
+509	Featured	À la une
+510	Uncover the whole field without stepping on a mine. Three sizes and a time record.	Découvre tout le champ sans marcher sur une mine. Trois tailles et un record de temps.
+511	Say “mus” or “no hay mus”	Dis « mus » ou « no hay mus »
+512	Day {0}	Jour {0}
+513	Diamond	Diamant
+514	days streak	jours de série
+515	{0} draws: what is it?	{0} dessine : qu'est-ce que c'est ?
+516	Draw and Guess	Dessine et devine
+517	Hard	Difficile
+518	Dinosaur	Dinosaure
+519	No-Internet Dinosaur	Dinosaure hors-ligne
+520	IP address, browser, requested page and time	Adresse IP, navigateur, page demandée et heure
+521	Play innocent: give believable clues and discover the word.	Fais l'innocent : donne des indices crédibles et découvre le mot.
+522	Shoot shapes and other tanks, level up, upgrade your tank and choose a class.	Tire sur des formes et sur d'autres chars, monte de niveau, améliore ton char et choisis une classe.
+523	Shoot bubbles and match three of the same colour to pop them. The classic of computer afternoons.	Tire des bulles et réunis-en trois de la même couleur pour les faire éclater. Le classique des après-midi devant l'ordinateur.
+524	Fire the turtle from a cannon and take it as far as possible with springs, bombs and blasts.	Tire la tortue avec un canon et emmène-la le plus loin possible grâce aux ressorts, aux bombes et aux tirs.
+525	Auto-fire on	Tir automatique activé
+526	Auto-fire off	Tir automatique désactivé
+527	Distance: {0} · Record: {1}	Distance : {0} · Record : {1}
+528	Double	Double
+529	Dominoes in Pairs	Dominos par équipes
+530	Two cannons	Deux canons
+531	Two cards of your own and five on the table. Bet, call, raise or fold each round. The best 5-card hand wins, or whoever makes the others fold. Run out of chips and you're out. No real money.	Deux cartes à toi et cinq sur la table. Mise, suis, relance ou couche-toi à chaque tour. La meilleure main de 5 cartes gagne, ou celui qui fait coucher les autres. Plus de jetons, tu es éliminé. Sans argent réel.
+532	Two teams and 25 words. The spymaster gives a one-word clue so their team finds their agents. Beware the assassin!	Deux équipes et 25 mots. Le chef donne un indice d'un mot pour que son équipe trouve ses agents. Attention à l'assassin !
+533	Two players	Deux joueurs
+534	=	=
+535	dsbelda games	dsbelda games
+536	dsbelda games · Online games to play with friends	dsbelda games · Jeux en ligne à jouer entre amis
+537	dsbelda games, home	dsbelda games, accueil
+538	=	=
+539	Turn-based archery duel: work out angle, power and wind… and aim for the head.	Duel d'archers au tour par tour : calcule l'angle, la force et le vent… et vise la tête.
+540	You're asleep… (close your eyes 😴)	Tu dors… (ferme les yeux 😴)
+541	Duration	Durée
+542	Start a game with your friends	Lance une partie avec tes amis
+543	Gunpowder Age	Âge de la poudre
+544	Stone Age	Âge de pierre
+545	E.g.: “A wicker basket that used to be…”	Ex. : « Panier d'osier qui servait à… »
+546	The host can ask for a rematch.	L'hôte peut demander la revanche.
+547	The nickname must have at least 2 letters	Le pseudo doit comporter au moins 2 lettres
+548	The chat isn't reviewed live. If you see something that shouldn't be there, write to the email above. The owner can close rooms or block access to anyone who doesn't follow the rules.	Le chat n'est pas modéré en direct. Si tu vois quelque chose qui ne devrait pas être là, écris à l'adresse ci-dessus. Le titulaire peut fermer des salons ou bloquer l'accès à ceux qui ne respectent pas les règles.
+549	The code, drawings and texts of this website are by David Sánchez Belda. Brisca, Mus, Parchís, Four in a Row, Snake, 2048 and the memory game are traditional games or have free rules. “The Unity Game” is our own version, unrelated to any commercial card-game brand.	Le code, les dessins et les textes de ce site sont de David Sánchez Belda. La Brisca, le Mus, le Parchís, le Puissance 4, le Serpent, le 2048 et le jeu de mémoire sont des jeux traditionnels ou aux règles libres. « Le jeu de l'Unité » est une version maison, sans lien avec aucune marque commerciale de jeux de cartes.
+550	The classic card one: sort them by suit from Ace to King.	Le jeu de cartes classique : range-les par couleur de l'As au Roi.
+551	From when the connection dropped: jump over cacti and dodge birds non-stop.	Celui de quand la connexion tombait : saute par-dessus les cactus et esquive les oiseaux sans arrêt.
+552	The drawing is too big	Le dessin est trop grand
+553	The Impostor	L'imposteur
+554	The Unity Game	Le jeu de l'Unité
+555	The little guy bounces by himself: move him sideways with the arrows (or by tapping left and right). Grey platforms move, brown ones break and springs launch you. If you fall, it's over.	Le bonhomme rebondit tout seul : déplace-le sur les côtés avec les flèches (ou en touchant à gauche et à droite). Les grises bougent, les marron cassent et les ressorts te propulsent. Si tu tombes, c'est fini.
+556	The username must be 3 to 16 letters, numbers, “_” or “-” (no spaces)	Le nom d'utilisateur doit comporter de 3 à 16 lettres, chiffres, « _ » ou « - » (sans espaces)
+557	The number goes from 1 to 9	Le nombre va de 1 à 9
+558	The village votes…	Le village vote…
+559	Broken telephone with drawings: write, draw, guess… and laugh at how the sentence ends up.	Le téléphone arabe en dessins : écris, dessine, devine… et rigole de la façon dont la phrase finit.
+560	The turn hasn't started	Le tour n'a pas commencé
+561	The username or the code isn't correct	Le nom d'utilisateur ou le code n'est pas correct
+562	Choose someone from the village	Choisis quelqu'un du village
+563	Choose who to attack	Choisis qui attaquer
+564	Choose who to look at	Choisis qui observer
+565	Choose 1 to 4 cards to discard	Choisis de 1 à 4 cartes à défausser
+566	Choose which tile (with someone on it) and to which one	Choisis de quelle tuile (avec quelqu'un dessus) et vers laquelle
+567	Choose which card to play	Choisis quelle carte jouer
+568	Choose which tiles to swap	Choisis quelles tuiles échanger
+569	Choose what you'll draw	Choisis ce que tu vas dessiner
+570	Choose a nickname first	Choisis d'abord un pseudo
+571	Choose a colour	Choisis une couleur
+572	Choose a category you're missing	Choisis une catégorie qu'il te manque
+573	Choose one of the three	Choisis l'un des trois
+574	Choose a flooded tile	Choisis une tuile inondée
+575	Pick a plant above and tap a square. Tap the suns to collect them. Shovel: remove a plant.	Choisis une plante en haut et touche une case. Touche les soleils pour les ramasser. Pelle : retirer une plante.
+576	Pick a tower and put it on a free square. Each popped balloon drops a level and gives money. Upgrade or sell your towers. If too many reach the end, you lose. How many waves can you reach?	Choisis une tour et place-la sur une case libre. Chaque ballon éclaté perd un niveau et rapporte de l'argent. Améliore ou vends tes tours. Si trop de ballons arrivent au bout, tu perds. Jusqu'à quelle vague tiens-tu ?
+577	Pick a tower and tap a free square (not the path). Tap a tower to upgrade or sell it.	Choisis une tour et touche une case libre (pas le chemin). Touche une tour pour l'améliorer ou la vendre.
+578	Draw	Égalité
+579	Start	Commencer
+580	Start from scratch	Recommencer à zéro
+581	Start game	Lancer la partie
+582	{0} started	{0} a commencé
+583	Whoever has the double six starts	Celui qui a le double six commence
+584	On the Same Wavelength	Sur la même longueur d'onde
+585	Solo	En solo
+586	On your turn spin the wheel and answer within 20 seconds. If you're right, you carry on. With 3 right in a row (or if the crown comes up) you pick a category and, if you get it right, win its character. Whoever collects all 6 wins.	À ton tour, fais tourner la roue et réponds en 20 secondes. Si tu as bon, tu continues. Avec 3 bonnes réponses d'affilée (ou si la couronne sort), tu choisis une catégorie et, si tu réussis, tu gagnes son personnage. Le premier à réunir les 6 gagne.
+587	On your turn move a piece to a neighbouring hole or jump over pieces (yours or others') as many times as you can. Whoever fills the opposite point wins. Played by 2, 3, 4 or 6 (with 5, one point stays empty).	À ton tour, déplace un pion vers un trou voisin ou saute par-dessus des pions (à toi ou aux autres) autant de fois que tu peux. Celui qui remplit la pointe opposée gagne. Se joue à 2, 3, 4 ou 6 (à 5, une pointe reste libre).
+588	On your turn, 3 actions: move, bail out a flooded tile, give a treasure card to someone with you or capture a treasure (4 matching cards on its tile). Then you draw 2 cards and the island floods. Everyone has a special role. You win with all 4 treasures, everyone on the helipad and a helicopter card.	À ton tour, 3 actions : te déplacer, vider une tuile inondée, donner une carte trésor à quelqu'un qui est avec toi ou capturer un trésor (4 cartes identiques sur sa tuile). Ensuite tu pioches 2 cartes et l'île s'inonde. Chacun a un rôle spécial. Vous gagnez avec les 4 trésors, tout le monde sur l'héliport et une carte hélicoptère.
+589	In your favourites	Dans tes favoris
+590	in one click	en un clic
+591	Yours in green; with a name, the others'; in grey, the ones nobody saw.	En vert, les tiens ; avec un nom, ceux des autres ; en gris, ceux que personne n'a vus.
+592	=	=
+593	Find the pairs: solo or two on the same phone.	Trouve les paires : en solo ou à deux sur le même téléphone.
+594	Invitation link	Lien d'invitation
+595	Salad	Salade
+596	To show them to you on your profile.	Te les montrer sur ton profil.
+597	=	=
+598	I understand this can't be undone	Je comprends que c'est irréversible
+599	sign in with your account	connecte-toi avec ton compte
+600	Sign in to your account	Connecte-toi à ton compte
+601	Sign in	Se connecter
+602	Sent. You can change it while the others write.	Envoyé. Tu peux le modifier pendant que les autres écrivent.
+603	Send	Envoyer
+604	I raise {0} more	J'envoie {0} de plus
+605	Red and blue teams; the first of each is the spymaster and sees each word's colour. Give a clue (a word and a number) and their team taps cards: if it's theirs, they go on; if not, the turn passes. If you tap the assassin, you lose. Whoever finds all their agents first wins.	Équipes rouge et bleue ; le premier de chacune est le chef et voit la couleur de chaque mot. Il donne un indice (un mot et un nombre) et son équipe touche des cartes : si c'est la sienne, elle continue ; sinon, le tour passe. Si vous touchez l'assassin, vous perdez. Le premier à trouver tous ses agents gagne.
+606	You are {0} · Level {1} of {2} · move with the arrows or W A D	Tu es {0} · Niveau {1} sur {2} · déplace-toi avec les flèches ou W A D
+607	You're the spymaster: give a one-word clue and a number	Tu es le chef : donne un indice d'un mot et un nombre
+608	Game error	Erreur du jeu
+609	It's night…	C'est la nuit…
+610	It's yours	C'est le tien
+611	Not that card	Pas cette carte
+612	That card isn't used like that	Cette carte ne s'utilise pas comme ça
+613	That card is no use now	Cette carte ne sert à rien maintenant
+614	That square is taken	Cette case est occupée
+615	That column is full	Cette colonne est pleine
+616	That piece isn't yours	Ce pion n'est pas à toi
+617	That piece can't move	Ce pion ne peut pas bouger
+618	That move isn't valid	Ce coup n'est pas valable
+619	That word isn't in the dictionary	Ce mot n'est pas dans le dictionnaire
+620	That room is private: only friends of the players can watch it	Ce salon est privé : seuls les amis de ceux qui jouent peuvent le regarder
+621	Stairway to Heaven	Escalier vers le ciel
+622	Escape	Échap
+623	Frosty	Givré
+624	Shotgun	Fusil
+625	Write to {0}. Only the two of you can see this conversation.	Écris à {0}. Vous seuls deux voyez cette conversation.
+626	Type with the keyboard or press the letters. No accents.	Écris au clavier ou appuie sur les lettres. Sans accents.
+627	Write what you think it is	Écris ce que tu penses que c'est
+628	Write your sentence	Écris ta phrase
+629	Enter your username, one of the recovery codes we gave you when you created the account and a new password. Each code works only once.	Écris ton nom d'utilisateur, l'un des codes de récupération que nous t'avons donnés à la création du compte et un nouveau mot de passe. Chaque code ne vaut qu'une fois.
+630	Write a message…	Écris un message…
+631	Write a definition	Écris une définition
+632	Write a sentence for someone else to draw (the crazier, the better):	Écris une phrase qu'un autre va dessiner (plus elle est folle, mieux c'est) :
+633	Write a word	Écris un mot
+634	Write a 5-letter word. Green: the letter is in the right place. Yellow: it's there, but elsewhere. Grey: it isn't. No accents.	Écris un mot de 5 lettres. Vert : la lettre est à sa place. Jaune : elle y est, mais ailleurs. Gris : elle n'y est pas. Sans accents.
+635	Write a clue	Écris un indice
+636	Write a clue (optional if you're together)	Écris un indice (facultatif si vous êtes ensemble)
+637	Write…	Écris…
+638	Not that wire	Pas ce fil
+639	That game doesn't exist	Ce jeu n'existe pas

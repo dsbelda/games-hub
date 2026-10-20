@@ -1,0 +1,150 @@
+0	=	=
+1	, multiplayer rooms won't work; single-player games will.	, les salons multijoueurs ne fonctionneront pas ; les jeux en solo, si.
+2	{0} said STOP! Finish quickly	{0} a dit STOP ! Finis vite
+3	You and {0} are now friends!	Toi et {0} êtes maintenant amis !
+4	2048! You can keep playing	2048 ! Tu peux continuer à jouer
+5	Draw!	À toi de dessiner !
+6	Guess what {0} is describing!	Devine ce que décrit {0} !
+7	Water has evaporated!	L'eau s'est évaporée !
+8	Into the water!	À l'eau !
+9	To the goose garden!	Au jardin de l'oie !
+10	Into the void!	Dans le vide !
+11	Welcome, {0}! Your account is created	Bienvenue, {0} ! Ton compte est créé
+12	Boom! Try again	Boum ! Réessaie
+13	HEADER! -{0}	TÊTE ! -{0}
+14	call TUTE!	annonce TUTE !
+15	Call TUTE!	Annoncer TUTE !
+16	COMBO ×{0}!	COMBO ×{0} !
+17	All in!	Tout !
+18	Into the wall!	Dans le mur !
+19	Four at once!	Quatre d'un coup !
+20	Four in a row!	Quatre à la suite !
+21	Too slow!	Trop lent !
+22	Describe! Without saying the word or the forbidden ones	Décris ! Sans dire le mot ni les mots interdits
+23	Cleared in {0} s!	Dégagé en {0} s !
+24	Draw! (no letters or numbers)	Dessine ! (sans lettres ni chiffres)
+25	Domino by {0}!	Domino de {0} !
+26	The lawn mower saved the house!	La tondeuse a sauvé la maison !
+27	The train!	Le train !
+28	Fleet ready!	Flotte prête !
+29	Frenzy! {0} s	Frénésie ! {0} s
+30	Fire has gone out!	Le feu s'est éteint !
+31	Fire! Pick a square on the enemy board	Feu ! Choisis une case sur la grille adverse
+32	Player {0} wins! ({1}–{2})	Le joueur {0} gagne ! ({1}–{2})
+33	guessed it! (+{0})	a trouvé ! (+{0})
+34	You survived all 10 waves!	Tu as tenu les 10 vagues !
+35	YOU CRASHED!	TU AS PERCUTÉ !
+36	You won!	Tu as gagné !
+37	You broke the ice wall! The penguin flies!	Tu as brisé le mur de glace ! Le pingouin vole !
+38	You finished every level!	Tu as terminé tous les niveaux !
+39	Check! Your turn	Échec ! À toi de jouer
+40	The hold is full!	La soute est pleine !
+41	ready!	prêt !
+42	You land on {0}!	Tu arrives sur la {0} !
+43	You did it!	Vous y êtes arrivés !
+44	You did it! Total time: {0} s	Vous y êtes arrivés ! Temps total : {0} s
+45	The zombies ate your brains!	Les zombies ont mangé ton cerveau !
+46	Magnificent!	Magnifique !
+47	Machine wrecked! Rescue: {0} 💰	Machine détruite ! Sauvetage : {0} 💰
+48	Well done!	Bravo !
+49	Very good!	Très bien !
+50	Level {0} cleared in {1} s!	Niveau {0} réussi en {1} s !
+51	Level {0} cleared! {1} · {2} points	Niveau {0} réussi ! {1} · {2} points
+52	Level {0} cleared! When you're all ready, the next one.	Niveau {0} réussi ! Quand vous êtes prêts, le suivant.
+53	Level 10! Choose a class:	Niveau 10 ! Choisis une classe :
+54	Level cleared!	Niveau réussi !
+55	You can't say the word!	Tu ne peux pas dire le mot !
+56	You can't vote for yours!	Tu ne peux pas voter pour le tien !
+57	New record!	Nouveau record !
+58	New record! {0}	Nouveau record ! {0}
+59	New record! {0} s	Nouveau record ! {0} s
+60	New record! {0}:{1}	Nouveau record ! {0}:{1}
+61	New!	Nouveau !
+62	Wave {0} cleared!	Vague {0} repoussée !
+63	all-in!	à tapis !
+64	Another throw!	Un autre lancer !
+65	Screen cleared! +1000	Écran vidé ! +1000
+66	catches whoever didn't say “Uno”! (+2)	attrape celui qui n'a pas dit « Uno » ! (+2)
+67	Caught {0}! (+2)	{0} pris ! (+2)
+68	Just in time!	Juste à temps !
+69	GET READY! {0}	PRÊTS ! {0}
+70	Record! {0}	Record ! {0}
+71	Record! {0} m · +{1} 💰	Record ! {0} m · +{1} 💰
+72	Record! {0} m (+{1} 💰)	Record ! {0} m (+{1} 💰)
+73	Game over! You reached wave {0}	C'est fini ! Tu as atteint la vague {0}
+74	A big wave of zombies is coming!	Une grosse vague de zombies arrive !
+75	Out of fuel! Rescue: {0} 💰	Panne de carburant ! Sauvetage : {0} 💰
+76	Solitaire complete!	Solitaire terminé !
+77	STOP! {s} s	STOP ! {s} s
+78	Lucky! +{0} cookies	Chanceux ! +{0} cookies
+79	TANK DESTROYED!	CHAR DÉTRUIT !
+80	The river carried you away!	La rivière t'a emporté !
+81	YOU GOT EATEN!	TU T'ES FAIT MANGER !
+82	YOU GOT CUT!	TU T'ES FAIT COUPER !
+83	You've been caught! Guess the word to win anyway	Tu t'es fait attraper ! Devine le mot pour gagner quand même
+84	You bit yourself!	Tu t'es mordu !
+85	Roll the die!	Lance le dé !
+86	All chains seen!	Toutes les chaînes ont été vues !
+87	All levels in {0} s!	Tous les niveaux en {0} s !
+88	You're the one drawing!	C'est toi qui dessines !
+89	Tute! (4 kings or 4 knights)	Tute ! (4 rois ou 4 cavaliers)
+90	Phew, on the last one!	Ouf, de justesse !
+91	An order expired! −10	Une commande a expiré ! −10
+92	Oops! Nothing here	Oups ! Il n'y a rien ici
+93	Oops! {0} played {1}, but there was {2}. A life is lost.	Oups ! {0} a joué {1}, mais il y avait {2}. Une vie est perdue.
+94	Victory in {0}:{1}! New record	Victoire en {0}:{1} ! Nouveau record
+95	You're friends now!	Vous êtes amis !
+96	Which tile?	Quelle tuile ?
+97	Who do you vote out? Vote on their card	Qui expulsez-vous ? Vote sur sa carte
+98	What's your name?	Comment tu t'appelles ?
+99	Which is the real definition?	Quelle est la vraie définition ?
+100	What's the word?	Quel est le mot ?
+101	Where does the clue sit on the scale? Move the needle	Où se situe l'indice sur l'échelle ? Déplace l'aiguille
+102	Forgot your password?	Mot de passe oublié ?
+103	Mus or no mus?	Mus ou pas de mus ?
+104	Don't have an account? Create one under “Create account”. You can also play without one.	Pas de compte ? Crées-en un dans « Créer un compte ». Tu peux aussi jouer sans compte.
+105	Which side?	De quel côté ?
+106	What is it?	Qu'est-ce que c'est ?
+107	What is it? Type it	Qu'est-ce que c'est ? Écris-le
+108	What did they draw? Describe it in one sentence:	Qu'ont-ils dessiné ? Décris-le en une phrase :
+109	Which letter is the wildcard?	Quelle lettre est le joker ?
+110	Which flooded tile do you bail out with the sandbags?	Quelle tuile inondée vides-tu avec les sacs de sable ?
+111	What does it mean…?	Que signifie… ?
+112	Who is the impostor? Vote	Qui est l'imposteur ? Vote
+113	Sure? Pass	Sûr ? Passer
+114	Sure? Press again	Sûr ? Appuie encore
+115	Have an account?	Tu as un compte ?
+116	. You can also delete or block cookies from your browser (usually under Settings → Privacy). If you block	. Tu peux aussi supprimer ou bloquer les cookies depuis ton navigateur (en général dans Paramètres → Confidentialité). Si tu bloques
+117	· next in {0} s	· prochaine dans {0} s
+118	· you: {0}	· toi : {0}
+119	“{0}” isn't in the dictionary	« {0} » n'est pas dans le dictionnaire
+120	“{0}”: so close!	« {0} » : presque !
+121	(be nice in the chat).	(sois sympa dans le chat).
+122	(no clue)	(sans indice)
+123	(you are {0})	(tu es {0})
+124	(you)	(toi)
+125	{0} (you)	{0} (toi)
+126	{0} is discarding…	{0} est en train de se défausser…
+127	{0} is choosing a word…	{0} choisit un mot…
+128	{0} is thinking of a clue…	{0} réfléchit à un indice…
+129	{0} points at most	{0} points au maximum
+130	← → move and drill sideways · ↓ drill · ↑ fly (uses fuel). Stop at a building to go in.	← → se déplacer et forer sur les côtés · ↓ forer · ↑ voler (consomme du carburant). Arrête-toi devant un bâtiment pour y entrer.
+131	← → to move, ↑ to jump and space to kick. Put the ball in the opposing goal (under the crossbar). Whoever scores more in 90 seconds wins.	← → pour te déplacer, ↑ pour sauter et espace pour tirer. Mets le ballon dans le but adverse (sous la barre). Celui qui marque le plus en 90 secondes gagne.
+132	← → to move. On mobile, tap the left or the right.	← → pour te déplacer. Sur mobile, touche la gauche ou la droite.
+133	← Back to sign in	← Retour à la connexion
+134	← Back to the games	← Retour aux jeux
+135	↑ ↓ forward / back · ← → turn · space shoot. Bullets bounce!	↑ ↓ avancer / reculer · ← → tourner · espace tirer. Les balles rebondissent !
+136	↑ ↓ to move forward and back, ← → to turn and space to shoot. Bullets bounce off walls and can hit you too. The last tank standing wins the round; first to 5 wins.	↑ ↓ pour avancer et reculer, ← → pour tourner et espace pour tirer. Les balles rebondissent sur les murs et peuvent aussi te toucher. Le dernier char en vie gagne la manche ; le premier à 5 gagne.
+137	↑ accelerate, ↓ brake (and reverse), ← → steer and space is the turbo (one per lap). Off the tarmac you go very slowly. First to finish 3 laps wins.	↑ accélérer, ↓ freiner (et marche arrière), ← → tourner et espace est le turbo (un par tour). Hors de la piste, on avance très lentement. Le premier à finir 3 tours gagne.
+138	+ Hard CPU	+ CPU difficile
+139	<h><b>Cloudflare</b>: the network that protects and speeds up the website; it sees your IP and the requests you make. It is a US company adhering to the EU–US Data Privacy Framework, which guarantees an adequate level of protection.	<h><b>Cloudflare</b> : le réseau qui protège et accélère le site ; il voit ton IP et les requêtes que tu fais. C'est une entreprise américaine adhérente au Cadre de protection des données UE-États-Unis, qui garantit un niveau de protection adéquat.
+140	<h><b>The other players in your room</b>: your nickname (or username and avatar) and your messages. Only you can see your statistics, records and favourites.	<h><b>Les autres joueurs de ton salon</b> : ton pseudo (ou nom d'utilisateur et avatar) et tes messages. Seul toi vois tes statistiques, tes records et tes favoris.
+141	<h><b>OVHcloud</b>: the server hosting the website, in France (European Union).	<h><b>OVHcloud</b> : le serveur qui héberge le site, en France (Union européenne).
+142	<h><b>If you create an account:</b> 8 password recovery codes (only their fingerprint is stored, not the code) and which ones you've used	<h><b>Si tu crées un compte :</b> 8 codes de récupération du mot de passe (seule leur empreinte est conservée, pas le code) et ceux que tu as utilisés
+143	<h><b>If you create an account:</b> username, password (stored encrypted with scrypt: nobody can read it), chosen avatar, sign-up date and last access	<h><b>Si tu crées un compte :</b> nom d'utilisateur, mot de passe (chiffré avec scrypt : personne ne peut le lire), avatar choisi, date d'inscription et dernier accès
+144	<h><b>If you create an account:</b> games played and won per game, single-player records and favourites	<h><b>Si tu crées un compte :</b> parties jouées et gagnées par jeu, records des jeux en solo et favoris
+145	<h><b>If you create an account:</b> a session cookie <code>games_sesion</code>	<h><b>Si tu crées un compte :</b> un cookie de session <code>games_sesion</code>
+146	<h><b>If you report a message or are reported:</b> the message text, who reported it and who they reported, the reason and the date	<h><b>Si tu signales un message ou si on te signale :</b> le texte du message, qui l'a signalé et qui est visé, le motif et la date
+147	<h><b>If you have an account, you do it yourself from <a href="/cuenta">Your account</a></b>: download all your data in a file (portability and access), change your avatar or password, or delete the account with everything in it (erasure), instantly.	<h><b>Si tu as un compte, tu le fais toi-même depuis <a href="/cuenta">Ton compte</a></b> : télécharger toutes tes données dans un fichier (portabilité et accès), changer ton avatar ou ton mot de passe, ou supprimer le compte avec tout son contenu (effacement), immédiatement.
+148	<h><b>If you use friends:</b> who you have sent or accepted a friend request to and who you have blocked	<h><b>Si tu utilises les amis :</b> à qui tu as envoyé ou accepté une demande d'amitié et qui tu as bloqué
+149	<h><b>If you use friends:</b> private messages between friends and room invitations (text, date and whether they've been read)	<h><b>Si tu utilises les amis :</b> les messages privés entre amis et les invitations à un salon (texte, date et s'ils ont été lus)

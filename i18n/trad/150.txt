@@ -1,0 +1,160 @@
+150	<h><b>Your friends</b> (only people you have both accepted): your name, your avatar, whether you're online, what you're playing and the messages you send them. Someone who isn't your friend sees none of this. Nobody else reads private messages, unless it's needed for a report or a legal obligation.	<h><b>Tes amis</b> (seulement ceux que vous avez acceptés tous les deux) : ton nom, ton avatar, si tu es en ligne, à quoi tu joues et les messages que tu leur envoies. Quelqu'un qui n'est pas ton ami ne voit rien de tout cela. Personne d'autre ne lit les messages privés, sauf si c'est nécessaire pour un signalement ou une obligation légale.
+151	<h>By playing you accept the <a href="/legal/aviso" target="_blank">rules</a> (be nice in the chat).	<h>En jouant, tu acceptes les <a href="/legal/aviso" target="_blank">règles</a> (sois sympa dans le chat).
+152	<h>David Sánchez Belda, Valencia (Spain). Email: <a href="mailto:dsbelda@gmail.com">dsbelda@gmail.com</a>.	<h>David Sánchez Belda, Valence (Espagne). E-mail : <a href="mailto:dsbelda@gmail.com">dsbelda@gmail.com</a>.
+153	<h>In short: to play you <b>don't have to give us anything</b>. If you create an account (it's optional), we only keep a username you choose, your encrypted password and what you play. <b>We don't ask for an email, real name or phone number.</b>	<h>En bref : pour jouer, <b>tu n'as rien à nous donner</b>. Si tu crées un compte (c'est facultatif), nous ne conservons qu'un nom d'utilisateur que tu choisis, ton mot de passe chiffré et ce que tu joues. <b>Nous ne demandons ni e-mail, ni nom réel, ni téléphone.</b>
+154	<h>This is a <b>free, non-profit</b> website: nothing is sold, there is no advertising and playing costs nothing. If that ever changes, this information would be completed with what Spanish Law 34/2002 (LSSI) requires and we'd say so here.	<h>Ce site est <b>gratuit et sans but lucratif</b> : rien n'est vendu, il n'y a pas de publicité et jouer ne coûte rien. Si cela changeait, ces informations seraient complétées avec ce qu'exige la loi espagnole 34/2002 (LSSI) et nous l'indiquerions ici.
+155	<h>This website (<b>games.dsbelda.dev</b>) is a personal project by <b>David Sánchez Belda</b>, resident in Valencia (Spain). Contact: <a href="mailto:dsbelda@gmail.com">dsbelda@gmail.com</a>.	<h>Ce site (<b>games.dsbelda.dev</b>) est un projet personnel de <b>David Sánchez Belda</b>, résidant à Valence (Espagne). Contact : <a href="mailto:dsbelda@gmail.com">dsbelda@gmail.com</a>.
+156	<h>This website <b>only uses technical cookies and storage</b>, needed for it to work or to remember what you choose. <b>There is no advertising, no analytics, no social networks and no third-party cookies to track you.</b> That is why we don't need to ask your permission with a notice (art. 22.2 of the Spanish LSSI and the AEPD cookie guide).	<h>Ce site <b>n'utilise que des cookies et un stockage techniques</b>, nécessaires à son fonctionnement ou qui conservent ce que tu choisis. <b>Il n'y a ni publicité, ni statistiques, ni réseaux sociaux, ni cookies tiers pour te suivre.</b> C'est pourquoi il n'est pas nécessaire de te demander ton accord avec un bandeau (art. 22.2 de la LSSI espagnole et guide de l'AEPD sur les cookies).
+157	<h>Filters <span id="n-filtros"></span>	<h>Filtres <span id="n-filtros"></span>
+158	<h>For anything else, you can request access, rectification, erasure, objection, restriction or portability by writing to <a href="mailto:dsbelda@gmail.com">dsbelda@gmail.com</a>. If you play without an account, since we don't ask for data that identifies you, we may not be able to tell which data is yours (art. 11 GDPR); in that case we'll explain. To instantly delete what is stored in your browser, clear the cookies and data of this site.	<h>Pour toute autre demande, tu peux exercer ton droit d'accès, de rectification, d'effacement, d'opposition, de limitation ou de portabilité en écrivant à <a href="mailto:dsbelda@gmail.com">dsbelda@gmail.com</a>. Si tu joues sans compte, comme nous ne demandons aucune donnée qui t'identifie, il se peut que nous ne puissions pas savoir quelles données sont les tiennes (art. 11 du RGPD) ; dans ce cas, nous te l'expliquerons. Pour supprimer immédiatement ce qui est stocké dans ton navigateur, efface les cookies et les données de ce site.
+159	<h>They are stored <b>only in your browser</b> (local storage); they never reach the server, except the nickname when you play	<h>Ils sont conservés <b>uniquement dans ton navigateur</b> (stockage local) ; ils n'arrivent pas au serveur, sauf le pseudo quand tu joues
+160	<h>If advertising or analytics are ever added, this table will be updated and a notice will appear for you to accept or reject those cookies <b>before</b> they are used, with both options equally visible. You can change your mind at any time from “Cookie settings”.	<h>Si un jour de la publicité ou des statistiques étaient ajoutées, ce tableau serait mis à jour et un bandeau t'inviterait à accepter ou refuser ces cookies <b>avant</b> leur utilisation, avec les deux options aussi visibles l'une que l'autre. Tu pourras changer d'avis quand tu veux depuis « Paramétrer les cookies ».
+161	<h>If you think your rights are not being respected, you can complain to the Spanish Data Protection Agency: <a href="https://www.aepd.es" rel="noopener">www.aepd.es</a>.	<h>Si tu estimes que tes droits ne sont pas respectés, tu peux déposer une réclamation auprès de l'Agence espagnole de protection des données : <a href="https://www.aepd.es" rel="noopener">www.aepd.es</a>.
+162	<h>If you want, you can create a free account with a username and a password to save your games, records and favourites. We don't ask for an email: when you create the account we give you <b>8 single-use recovery codes</b> to change your password if you forget it, so keep them safe. Don't use your full real name as a username, nor anything offensive or impersonating someone else; such accounts may be deleted. One person, one account, to keep the game fair. You can delete your account at any time from “Your account”.	<h>Si tu veux, tu peux créer un compte gratuit avec un nom d'utilisateur et un mot de passe pour sauvegarder tes parties, tes records et tes favoris. Nous ne demandons pas d'e-mail : à la création du compte, nous te donnons <b>8 codes de récupération à usage unique</b> pour changer le mot de passe si tu l'oublies, alors garde-les bien. N'utilise pas ton nom réel complet comme nom d'utilisateur, ni rien d'offensant ou qui usurpe l'identité d'une autre personne ; ces comptes peuvent être supprimés. Une personne, un compte, pour jouer proprement. Tu peux supprimer ton compte quand tu veux depuis « Ton compte ».
+163	<h>A random identifier in the cookie <code>games_id</code>	<h>Un identifiant aléatoire dans le cookie <code>games_id</code>
+164	⏱ Time's up! ({0})	⏱ Temps écoulé ! ({0})
+165	▶ Play	▶ Jouer
+166	▶ Play Brisca	▶ Jouer à la Brisca
+167	▶ Join the game	▶ Rejoindre la partie
+168	☀️ Day: debate	☀️ Jour : débat
+169	⚖️ Vote	⚖️ Vote
+170	⚠ You have no recovery codes. With no email, if you forget your password you'd lose the account: generate some now.	⚠ Tu n'as aucun code de récupération. Sans e-mail, si tu oublies ton mot de passe tu perdrais le compte : génères-en maintenant.
+171	⚠ You have {0} recovery codes left. Generate new ones.	⚠ Il te reste {0} codes de récupération. Génères-en de nouveaux.
+172	✔ Bomb defused!	✔ Bombe désamorcée !
+173	✔ The real one	✔ La vraie
+174	✔ Module {0} defused	✔ Module {0} désamorcé
+175	✖ {0} (module {1})	✖ {0} (module {1})
+176	➡ Join their room	➡ Rejoindre son salon
+177	⭐ Withdraw request	⭐ Retirer la demande
+178	🌅 Dusk falls…	🌅 Le soir tombe…
+179	🌙 Night (the witch acts)	🌙 Nuit (la sorcière agit)
+180	🎉 The village wins!	🎉 Le village gagne !
+181	🎮 Invite to my room	🎮 Inviter dans mon salon
+182	🎲 It's your turn to play {0}!	🎲 C'est à toi de jouer {0} !
+183	🎲 At random	🎲 Au hasard
+184	🐧 Take off!	🐧 À l'envol !
+185	🐺 Wolves' chat (only you can see it)	🐺 Chat des loups (vous seuls le voyez)
+186	👁 You're watching	👁 Tu regardes
+187	👁 You're watching this room. You can sit down if there's a seat.	👁 Tu regardes ce salon. Tu peux t'asseoir s'il reste une place.
+188	👁 Watch their game	👁 Regarder sa partie
+189	👑 {0} wins the {1} character!	👑 {0} gagne le personnage {1} !
+190	👑 Crown! Choose which character you want to try to win	👑 Couronne ! Choisis quel personnage tu veux essayer de gagner
+191	👑 Question for the character	👑 Question pour le personnage
+192	👤 For playing solo	👤 Pour jouer en solo
+193	👥 2-4 players	👥 2-4 joueurs
+194	💣 You have the bomb in front of you: describe what you see and do what you're told.	💣 Tu as la bombe devant toi : décris ce que tu vois et fais ce qu'on te dit.
+195	📅 Day {0}	📅 Jour {0}
+196	📕 Defusal manual	📕 Manuel de désamorçage
+197	📕 You have the manual. {0} has the bomb: ask them and tell them what to do.	📕 Tu as le manuel. {0} a la bombe : interroge-le et dis-lui quoi faire.
+198	📣 Taboo!	📣 Tabou !
+199	📣 Taboo! “{0}”{1}	📣 Tabou ! « {0} »{1}
+200	🔔 Your turn! · {0}	🔔 À toi ! · {0}
+201	🔮 it's a wolf!	🔮 c'est un loup !
+202	🔮 not a wolf	🔮 pas un loup
+203	🤝 Ready!	🤝 Prêts !
+204	🤫 The impostor wins!	🤫 L'imposteur gagne !
+205	🤫 You're the impostor	🤫 Tu es l'imposteur
+206	1 year	1 an
+207	1 year in your browser	1 an dans ton navigateur
+208	1 pl.	1 j.
+209	1-2 pl.	1-2 j.
+210	1-30 pl.	1-30 j.
+211	1-4 pl.	1-4 j.
+212	1-8 pl.	1-8 j.
+213	12 months	12 mois
+214	14 days in the web server logs	14 jours dans les journaux du serveur web
+215	2 pl.	2 j.
+216	2-10 pl.	2-10 j.
+217	2-12 pl.	2-12 j.
+218	2-4 pl.	2-4 j.
+219	2-5 pl.	2-5 j.
+220	2-6 pl.	2-6 j.
+221	2-8 pl.	2-8 j.
+222	3-10 pl.	3-10 j.
+223	4 pl.	4 j.
+224	4-10 pl.	4-10 j.
+225	5 or more	5 ou plus
+226	5-12 pl.	5-12 j.
+227	6 months; earlier if you delete the account	6 mois ; avant si tu supprimes le compte
+228	68 games	68 jeux
+229	90 days or until you sign out	90 jours ou jusqu'à ce que tu te déconnectes
+230	To {0} goals · your paddle is the blue one (bottom): move it with the mouse, your finger or the arrow keys	À {0} buts · ton maillet est le bleu (en bas) : déplace-le avec la souris, le doigt ou les flèches
+231	With four players you play in pairs: 1st and 3rd against 2nd and 4th. Use the arrows to change the pairs.	À quatre, on joue par équipes : 1er et 3e contre 2e et 4e. Utilise les flèches pour changer les équipes.
+232	Grandmother	Grand-mère
+233	Unknown action	Action inconnue
+234	Invalid action	Action non valide
+235	Accelerate	Accélérer
+236	Accept	Accepter
+237	I accept the	J'accepte les
+238	Bails out two tiles per action	Vide deux tuiles par action
+239	Battleship	Cuirassé
+240	Harassment or threats	Harcèlement ou menaces
+241	Guess the 5-letter word in 6 tries. A new one every day, the same for everyone.	Devine le mot de 5 lettres en 6 essais. Un nouveau chaque jour, le même pour tous.
+242	Guess your team	Devine ton équipe
+243	Water	Eau
+244	There's another ball there	Il y a déjà une bille ici
+245	Not there	Pas là
+246	It doesn't fit there (ships can't touch)	Ça ne rentre pas là (les bateaux ne peuvent pas se toucher)
+247	You can't do that there	Impossible ici
+248	Now the destination hole	Maintenant le trou d'arrivée
+249	There are none right now. Create one!	Il n'y en a aucun pour l'instant. Crées-en un !
+250	We don't currently use advertising, analytics or third-party cookies, so there's nothing to turn on or off.	Nous n'utilisons actuellement ni cookies publicitaires, ni statistiques, ni cookies tiers : il n'y a donc rien à activer ou désactiver.
+251	Not now	Pas maintenant
+252	It's not your turn to give the clue	Ce n'est pas à toi de donner l'indice
+253	There's no question right now	Il n'y a pas de question pour l'instant
+254	You can't change class now	Tu ne peux pas changer de classe maintenant
+255	You can't swap the 7 now	Tu ne peux pas échanger le 7 maintenant
+256	You can't do that now	Tu ne peux pas faire ça maintenant
+257	Guessing isn't open now	On ne devine pas maintenant
+258	It isn't being reviewed now	On ne vérifie pas maintenant
+259	It isn't time to vote	Ce n'est pas le moment de voter
+260	It isn't your turn to guess	Ce n'est pas à toi de deviner
+261	You have no tank right now	Tu n'as pas de char pour l'instant
+262	It isn't time to spin	Ce n'est pas le moment de tourner
+263	Now you have to discard	Tu dois maintenant te défausser
+264	Now pick a free square	Choisis maintenant une case libre
+265	Chess	Échecs
+266	Real chess with castling, en passant and promotion. Against a friend or the CPU.	Des vrais échecs avec roque, prise en passant et promotion. Contre un ami ou le CPU.
+267	By playing you accept the	En jouant, tu acceptes les
+268	at max	au maximum
+269	Wings	Ailes
+270	Villager	Villageois
+271	Flap between the pipes without touching them. As simple as it is maddening.	Bats des ailes entre les tuyaux sans les toucher. Aussi simple qu'exaspérant.
+272	Line up four pieces before your rival.	Aligne quatre pions avant ton adversaire.
+273	Local storage	Stockage local
+274	Height: {0} · Record: {1}	Hauteur : {0} · Record : {1}
+275	Machine gun	Mitrailleuse
+276	Friends	Amis
+277	Friends and messages	Amis et messages
+278	Android	Androïde
+279	You have to draw first	Tu dois d'abord piocher
+280	Add	Ajouter
+281	Add {0} to favourites	Ajouter {0} aux favoris
+282	Add to favourites	Ajouter aux favoris
+283	Bet	Miser
+284	Learn to fly	Apprends à voler
+285	Bet how many dice show a face across all the cups (ones are wild). Each bet must beat the last. If you think someone is lying, say “I doubt it!”: whoever is wrong loses a die. The last player with dice wins.	Parie combien de dés montrent une face parmi tous les gobelets (les as sont des jokers). Chaque pari doit surpasser le précédent. Si tu penses que quelqu'un ment, dis « Je doute ! » : celui qui se trompe perd un dé. Le dernier joueur avec des dés gagne.
+286	Aim with the mouse or your finger, pick the power and shoot. The first ball you pot decides your group. If you pot the white or hit a ball that isn't yours first, the opponent has ball in hand. The black, last.	Vise avec la souris ou le doigt, choisis la force et tire. La première bille empochée décide de ton groupe. Si tu empoches la blanche ou touches d'abord une bille qui n'est pas à toi, l'adversaire a la main. La noire, en dernier.
+287	Aim and shoot. Three or more bubbles of the same colour together burst, and any left hanging fall. Every 6 misses the ceiling drops. If they reach the red line, it's over.	Vise et tire. Trois bulles de la même couleur ou plus qui se touchent éclatent, et celles qui restent suspendues tombent. Tous les 6 ratés, le plafond descend. S'ils atteignent la ligne rouge, c'est fini.
+288	Aim and tap to shoot. Press the bubble at the bottom right to swap it.	Vise et touche pour tirer. Appuie sur la bulle en bas à droite pour l'échanger.
+289	There's no treasure to capture here	Il n'y a pas de trésor à capturer ici
+290	Archer	Archer
+291	Archers	Archers
+292	Drag back from the slingshot and release. Tap with the bird in the air to use its power: yellow speeds up, blue splits in three and black explodes. Defeat all the gluttons; spare birds give stars.	Tire en arrière depuis la fronde et relâche. Touche quand l'oiseau est en l'air pour utiliser son pouvoir : le jaune accélère, le bleu se divise en trois et le noir explose. Élimine tous les gloutons ; les oiseaux en trop donnent des étoiles.
+293	Drag back from the slingshot and release. Tap the screen with the bird in the air to use its power.	Tire en arrière depuis la fronde et relâche. Touche l'écran quand l'oiseau est en l'air pour utiliser son pouvoir.
+294	Drag your finger across touching letters (diagonals too) without repeating any. Words of 3 letters or more; rare letters are worth more and long words earn a bonus. Everyone plays at once and whoever scores most over 3 rounds wins.	Fais glisser le doigt sur des lettres voisines (en diagonale aussi) sans en répéter. Mots de 3 lettres ou plus ; les lettres rares valent plus et les mots longs rapportent un bonus. Tout le monde joue en même temps et celui qui marque le plus en 3 manches gagne.
+295	Drag the mouse or your finger to slice. Three or more in one swipe is a combo with extra points. If you slice a bomb or let three fruits escape, it's over.	Fais glisser la souris ou le doigt pour trancher. Trois fruits ou plus d'un coup, c'est un combo avec des points en plus. Si tu tranches une bombe ou laisses échapper trois fruits, c'est fini.
+296	Drag back from wherever you like and release. Keyboard: ← → angle, ↑ ↓ power, space.	Tire en arrière d'où tu veux et relâche. Clavier : ← → angle, ↑ ↓ force, espace.
+297	Drag back to draw the bow: the direction is the angle and the length is the power. Mind the wind. A body hit takes some life; a headshot, a lot more. Your earlier arrows are a guide.	Tire en arrière pour bander l'arc : la direction est l'angle et la longueur, la force. Attention au vent. Dans le corps, tu enlèves de la vie ; dans la tête, bien plus. Tes flèches précédentes te servent de repère.
+298	Drag across neighbouring letters (diagonals too). Or tap them one by one and tap the last one again to submit.	Fais glisser sur des lettres voisines (en diagonale aussi). Ou touche-les une à une et touche encore la dernière pour valider.
+299	Arts and letters	Arts et lettres
+300	Ace	As
+301	=	=
+302	This is how the round ended	Voici comment la manche s'est terminée
+303	Attack	Attaquer
+304	Air strike	Frappe aérienne
+305	There's no bet yet	Il n'y a pas encore de pari
+306	There are no cards on the table yet	Il n'y a pas encore de cartes sur la table
+307	No shooting yet	On ne tire pas encore
+308	Not playing yet	On ne joue pas encore
+309	You have no friends here yet. Ask someone for their username and add them above.	Tu n'as pas encore d'amis ici. Demande à quelqu'un son nom d'utilisateur et ajoute-le ci-dessus.

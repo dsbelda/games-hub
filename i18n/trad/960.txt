@@ -1,0 +1,170 @@
+960	You have no cards left: watch how the others finish	Tu n'as plus de cartes : regarde comment les autres finissent
+961	You don't have the ball in hand	Tu n'as pas la bille en main
+962	You don't have that card	Tu n'as pas cette carte
+963	You don't have those tiles	Tu n'as pas ces jetons
+964	You have no powers: observe, debate and vote wisely.	Tu n'as aucun pouvoir : observe, débats et vote bien.
+965	You have no points	Tu n'as pas de points
+966	You don't have a tute	Tu n'as pas de tute
+967	Don't use programs to cheat and don't try to overload or attack the server.	N'utilise pas de programmes pour tricher et n'essaie pas de saturer ou d'attaquer le serveur.
+968	A word from the board (or part of one) isn't allowed	Un mot du plateau (ou une partie) n'est pas valable
+969	Not valid	Non valide
+970	Vote for nobody	Ne voter pour personne
+971	Name	Nom
+972	Your friend's username	Nom d'utilisateur de ton ami
+973	Normal	Normal
+974	rules	règles
+975	Rules	Règles
+976	New password (minimum 8)	Nouveau mot de passe (minimum 8)
+977	New game	Nouvelle partie
+978	Or create a room and share the link to play with more people.	Ou crée un salon et partage le lien pour jouer avec plus de monde.
+979	Goose	Oie
+980	Leisure	Loisirs
+981	Hide	Masquer
+982	Wave under way…	Vague en cours…
+983	Invalid option	Option non valide
+984	All-in	Órdago
+985	Gold	Or
+986	=	=
+987	Another game	Une autre partie
+988	Another day	Un autre jour
+989	Page not found.	Page introuvable.
+990	Hopping bird	Oiseau sauteur
+991	Word of the day	Mot du jour
+992	Word of the day · Play free · dsbelda games	Mot du jour · Joue gratuitement · dsbelda games
+993	Word no. 4	Mot n° 4
+994	Words	Mots
+995	Codenames	Mots de code
+996	Wordiness	Blabla
+997	To go out you can have at most one loose card of 5 or less	Pour fermer, il ne peut te rester qu'une carte isolée de 5 ou moins
+998	To give it you must be on the same tile	Pour la donner, vous devez être sur la même tuile
+999	To say “Stop!” you have to fill them all in	Pour dire « Stop ! » il faut toutes les remplir
+1000	You don't need an account to play: just pick a nickname. You can play against the CPU or create a room and share its link.	Pas besoin de compte pour jouer : choisis simplement un pseudo. Tu peux jouer contre le CPU ou créer un salon et partager son lien.
+1001	What for	Pourquoi
+1002	Parcheesi	Parchís
+1003	Pairs	Paires
+1004	Games	Parties
+1005	Games in progress (you can watch)	Parties en cours (tu peux regarder)
+1006	Send this link to your friends:	Envoie ce lien à tes amis :
+1007	Pass	Passer
+1008	Pass turn	Passer le tour
+1009	Pass	Passe
+1010	pawn	pion
+1011	Firecracker	Pétard
+1012	Ask whoever has the bomb to describe what they see. You can't see the bomb; they can't see the manual.	Demande à celui qui a la bombe de décrire ce qu'il voit. Toi, tu ne vois pas la bombe ; lui ne voit pas le manuel.
+1013	Ask for mus to swap cards or cut it. Then bet on grande (high cards), chica (low), pares and juego (31 or more; if nobody, punto). Pass, raise, accept, decline or all-in. First pair to reach 40 wins.	Demande mus pour changer de cartes ou coupe-le. Ensuite on mise sur grande (grosses cartes), chica (petites), paires et jeu (31 ou plus ; sinon, point). Passe, relance, accepte, refuse ou tapis. La première équipe à 40 gagne.
+1014	Fire stone	Pierre de feu
+1015	Falling pieces: fit them together and complete lines. Faster and faster.	Pièces qui tombent : emboîte-les et complète des lignes. De plus en plus vite.
+1016	Pilot	Pilote
+1017	Plant sunflowers and peashooters so the zombies don't reach your house.	Plante des tournesols et des tireurs de pois pour que les zombies n'atteignent pas ta maison.
+1018	Silver	Argent
+1019	Co-op platformer for two: Fire can't step in water and Water can't step on lava. Online or on the same keyboard.	Plateformes coopératives à deux : Feu ne marche pas dans l'eau et Eau ne marche pas sur la lave. En ligne ou sur le même clavier.
+1020	Banana	Banane
+1021	Unknown potion	Potion inconnue
+1022	Cookie policy	Politique de cookies
+1023	Cookie policy · dsbelda games	Politique de cookies · dsbelda games
+1024	privacy policy	politique de confidentialité
+1025	Privacy policy	Politique de confidentialité
+1026	Privacy policy · dsbelda games	Politique de confidentialité · dsbelda games
+1027	Place a tile that fits at either end; if you can't, you pass. Whoever runs out of tiles makes domino and their partner scores the opponents' points. If nobody can play (blocked), the pair with fewer points wins. First to 100.	Pose un domino qui s'emboîte à l'une des deux extrémités ; sinon, tu passes. Celui qui n'a plus de dominos fait domino et son partenaire marque les points des adversaires. Si personne ne peut poser (blocage), l'équipe avec le moins de points gagne. Premier à 100.
+1028	Poker	Poker
+1029	In teams. You have 60 seconds to get your team to guess as many words as you can. If you're together, speak and mark “Correct”; online, type clues (if they contain a forbidden word, taboo!) and your team types what they think. The other team can buzz.	Par équipes. Tu as 60 secondes pour faire deviner à ton équipe un maximum de mots. Si vous êtes ensemble, parle et marque « Trouvé » ; en ligne, écris des indices (s'ils contiennent un mot interdit, tabou !) et ton équipe écrit ce qu'elle pense. L'autre équipe peut buzzer.
+1030	In pairs and to 8 kings: grande, chica, pares and juego. Raise, accept… or all-in!	Par équipes de deux et à 8 rois : grande, chica, paires et jeu. Relance, accepte… ou tapis !
+1031	In turns, one picks a word and draws it. The others type what they think it is: the sooner they guess, the more points (and the drawer scores too). Letters are revealed over time.	À tour de rôle, l'un choisit un mot et le dessine. Les autres écrivent ce qu'ils pensent : plus ils trouvent vite, plus ils marquent (et le dessinateur aussi). Des lettres se dévoilent avec le temps.
+1032	Aircraft carrier	Porte-avions
+1033	Inn	Auberge
+1034	Invalid position	Position non valide
+1035	Well	Puits
+1036	Trick questions and lying buttons. Will you make it to the end?	Questions pièges et boutons menteurs. Iras-tu jusqu'au bout ?
+1037	Get ready	Préparez-vous
+1038	Place the cue ball first	Place d'abord la bille blanche
+1039	You have to press it first	Il faut d'abord appuyer dessus
+1040	Draw a card first	Pioche d'abord une carte
+1041	Brisca's cousin: you must follow suit and trump, and 20s and 40s are called.	Cousin de la Brisca : il faut fournir et couper, et on annonce les 20 et les 40.
+1042	Privacy	Confidentialité
+1043	Try	Essayer
+1044	Soon	Bientôt
+1045	Intellectual property	Propriété intellectuelle
+1046	You can go out by playing the right card	Tu peux fermer en jouant la bonne carte
+1047	You can take everything we keep about you in a file, or delete the account for good (with your statistics, records and favourites).	Tu peux emporter dans un fichier tout ce que nous gardons sur toi, ou supprimer le compte définitivement (avec tes statistiques, records et favoris).
+1048	You can see what's in	Tu peux voir ce qu'il y a dans
+1049	Bridge	Pont
+1050	Press “Give up” again to quit	Appuie encore sur « Abandonner » pour quitter
+1051	Press “Leave” again to leave the game (the CPU will take your place)	Appuie encore sur « Quitter » pour quitter la partie (le CPU prendra ta place)
+1052	Press the heart on any game on the home page to have it here.	Appuie sur le cœur d'un jeu sur la page d'accueil pour l'avoir ici.
+1053	PRESS SPACE OR TAP	APPUIE SUR ESPACE OU TOUCHE
+1054	Click the cookie to bake. Buy helpers that bake on their own and upgrades that make them twice as good. Watch for the golden cookie. It saves itself and, while you're away, keeps baking at half speed.	Clique sur le cookie pour cuire. Achète des aides qui cuisent toutes seules et des améliorations qui les rendent deux fois meilleures. Surveille le cookie doré. Ça se sauvegarde tout seul et, pendant ton absence, ça continue de cuire à mi-régime.
+1055	Press again to block them: they'll stop being your friend and won't be able to message you	Appuie encore pour le bloquer : il ne sera plus ton ami et ne pourra plus t'écrire
+1056	Press again to remove	Appuie encore pour supprimer
+1057	Press a column to drop your disc. Whoever gets four in a row wins: horizontally, vertically or diagonally.	Appuie sur une colonne pour lâcher ton jeton. Le premier à aligner quatre gagne : à l'horizontale, à la verticale ou en diagonale.
+1058	Point	Point
+1059	Points: {0} · Record: {1}	Points : {0} · Record : {1}
+1060	Points: {0} · Record: {1}{2}	Points : {0} · Record : {1}{2}
+1061	Points: {0} · Record: {1}{2}{3}	Points : {0} · Record : {1}{2}{3}
+1062	What data is processed	Quelles données sont traitées
+1063	So the game and the room chat work.	Pour que la partie et le chat du salon fonctionnent.
+1064	So you can message each other even if one of you isn't online.	Pour que vous puissiez vous écrire même si l'un de vous n'est pas connecté.
+1065	So you can sign in, reserve your name and see your profile.	Pour que tu puisses te connecter, réserver ton nom et voir ton profil.
+1066	So you can recover the account if you forget the password, without asking for an email.	Pour que tu puisses récupérer le compte si tu oublies le mot de passe, sans demander d'e-mail.
+1067	Show in the room list	Afficher dans la liste des salons
+1068	What we use	Ce que nous utilisons
+1069	Fewer than 7 tiles left in the bag: you can no longer swap	Il reste moins de 7 jetons dans le sac : on ne peut plus échanger
+1070	Who's behind it	Qui est derrière
+1071	Who else sees the data	Qui d'autre voit les données
+1072	Whoever has the bomb sees the modules (wires, button, symbols) but not the manual; the others have the manual but can't see the bomb. Talk (in person, by call or in the chat) to defuse it before time runs out. Three mistakes and boom! There are three bombs and who holds it changes each time.	Celui qui a la bombe voit les modules (fils, bouton, symboles) mais pas le manuel ; les autres ont le manuel mais ne voient pas la bombe. Parlez (en personne, par appel ou dans le chat) pour la désamorcer avant la fin du temps. Trois erreurs et boum ! Il y a trois bombes et celui qui la tient change à chaque fois.
+1073	Accept	J'accepte
+1074	Remove from favourites	Retirer des favoris
+1075	Clear filters	Effacer les filtres
+1076	Streak	Série
+1077	Ramp	Rampe
+1078	Fast	Rapide
+1079	Mouse or finger to steer · space, held click or the Turbo button to speed up (you lose length) · don't let your head touch another snake	Souris ou doigt pour tourner · espace, clic maintenu ou bouton Turbo pour accélérer (tu perds de la longueur) · ne laisse pas ta tête toucher un autre serpent
+1080	Mouse or finger to move · space (or the Split button) to split in two and hunt · you must be 25% bigger to eat another	Souris ou doigt pour te déplacer · espace (ou bouton Diviser) pour te couper en deux et chasser · il faut être 25 % plus gros pour en manger un autre
+1081	Reload	Recharge
+1082	Quick reload	Recharge rapide
+1083	Decline	Refuser
+1084	Collect suns and spend them on plants: the Sunflower gives more suns, the Peashooter fires, the Wall-nut holds, the Frost plant slows, the Mine explodes when stepped on and the Firecracker wipes out everything. Survive 10 waves.	Récupère des soleils et dépense-les en plantes : le Tournesol donne plus de soleils, le Tireur de pois tire, la Noix résiste, la plante de givre ralentit, la Mine explose quand on marche dessus et le Pétard ravage tout. Tiens 10 vagues.
+1085	Collect	Ramasser
+1086	Record: {0} s	Record : {0} s
+1087	Remembering what you choose in “Cookie settings”.	Retenir ce que tu choisis dans « Configurer les cookies ».
+1088	Remembering your nickname and the CPU level you chose.	Retenir ton pseudo et le niveau du CPU que tu as choisi.
+1089	Remembering them for next time.	Les retenir pour la prochaine fois.
+1090	Records	Records
+1091	Records, nickname and preferences	Records, pseudo et préférences
+1092	Recover your password	Récupère ton mot de passe
+1093	Give up	Abandonner
+1094	Repair	Réparation
+1095	Repair	Réparer
+1096	Reserve	Réserve
+1097	Reserve	Réserver
+1098	Answer 30 trick questions. Read carefully: sometimes the answer isn't where you think. You have 3 lives and a joker to skip one.	Réponds à 30 questions pièges. Lis calmement : parfois la réponse n'est pas où tu crois. Tu as 3 vies et un joker pour en sauter une.
+1099	Answer	Répondre
+1100	Liability	Responsabilité
+1101	Controller	Responsable
+1102	Invalid answer	Réponse non valide
+1103	Result of the hand	Résultat de la main
+1104	Result of the round	Résultat de la manche
+1105	Results	Résultats
+1106	Fold	Se retirer
+1107	Rematch	Revanche
+1108	King	Roi
+1109	draws from the deck	pioche dans le paquet
+1110	Draw from the deck or the discard pile	Pioche dans le paquet ou la défausse
+1111	Draw from the deck or the discard pile and discard one. Make sets of the same number or runs of the same suit. Go out when you have at most one loose card of 5 or less. Anyone over 100 points is out.	Pioche dans le paquet ou la défausse et défausse une carte. Fais des brelans du même numéro ou des suites de la même couleur. Ferme quand il ne te reste qu'une carte isolée de 5 ou moins. Celui qui dépasse 100 points est éliminé.
+1112	Draw	Piocher
+1113	Draw a card	Piocher une carte
+1114	Draw 3 at a time	Piocher 3 par 3
+1115	Draw a card	Piocher une carte
+1116	Red	Rouge
+1117	Round	Manche
+1118	Round {0} · first to {1} wins · arrows/WASD or hold your finger where to go · space: charge	Manche {0} · le premier à {1} gagne · flèches/WASD ou maintiens le doigt où aller · espace : foncer
+1119	Round {0}: no bet yet · {1} dice on the table · ones are wild	Manche {0} : pas encore de mise · {1} dés sur la table · les as sont des jokers
+1120	Ruby	Rubis
+1121	Knowledge wheel	Roue du savoir
+1122	Invalid route	Route non valide
+1123	Knowing you're the same person when you come back to the room or reconnect. It isn't linked to your name or any other data.	Savoir que tu es la même personne quand tu reviens dans le salon ou te reconnectes. Ce n'est lié ni à ton nom ni à aucune autre donnée.
+1124	Leave with a 5, capture and count 20, make barriers and bring your four pieces home.	Sors avec un 5, mange et compte 20, fais des barrières et ramène tes quatre pions à la maison.
+1125	Sandbags	Sacs de sable
+1126	Leave your zone, surround a piece of the map and return to keep it. But if someone steps on your trail…	Sors de ta zone, entoure un morceau de carte et reviens pour le garder. Mais si quelqu'un marche sur ta traînée…
+1127	Waiting room	Salle d'attente
+1128	A scale appears, for example “Cold — Hot”. The clue-giver sees the target zone and writes something that, to them, sits right there. The others move their needle. The closer, the more points (and the clue-giver gets the average).	Une échelle apparaît, par exemple « Froid — Chaud ». Celui qui donne l'indice voit la zone gagnante et écrit quelque chose qui, pour lui, se situe pile là. Les autres déplacent leur aiguille. Plus c'est proche, plus ils marquent (et celui qui a donné l'indice prend la moyenne).
+1129	A letter comes up: fill in the 8 categories with words that start with it. Whoever finishes can say “Stop!”. Then they're checked and invalid ones are struck out. Unique 10, repeated 5, and if you're the only one, 20.	Une lettre sort : remplis les 8 catégories avec des mots qui commencent par elle. Celui qui finit peut dire « Stop ! ». Ensuite on vérifie et on barre ceux qui ne valent pas. Uniques 10, répétés 5 et si tu es le seul, 20.
